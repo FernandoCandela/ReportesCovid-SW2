@@ -86,6 +86,8 @@
     <Folder Include="Helpers\" />
     <Folder Include="html\" />
     <Folder Include="js\" />
+    <Folder Include="MasterPage\" />
+    <Folder Include="Page\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
