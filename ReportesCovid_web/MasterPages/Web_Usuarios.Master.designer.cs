@@ -7,75 +7,57 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ReportesCovid_web.MasterPage
+namespace ReportesCovid_web.MasterPages
 {
 
 
-    public partial class MasterPageUsuarios
+    public partial class Web_Usuarios
     {
 
         /// <summary>
-        /// Control lblUsuario.
+        /// Control PlacehoderMaster.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PlacehoderMaster;
 
         /// <summary>
-        /// Control lblUserName.
+        /// Control Head.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Head;
 
         /// <summary>
-        /// Control txtCurrentPassword.
+        /// Control PageContentTitle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCurrentPassword;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageContentTitle;
 
         /// <summary>
-        /// Control txtNewPassword.
+        /// Control lbUserName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
+        protected global::System.Web.UI.WebControls.Label lbUserName;
 
         /// <summary>
-        /// Control txtNewPassword1.
+        /// Control lbUserRole.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewPassword1;
-
-        /// <summary>
-        /// Control hdnPasswordStrengthValid.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnPasswordStrengthValid;
-
-        /// <summary>
-        /// Control btnActualizarPassword.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizarPassword;
+        protected global::System.Web.UI.WebControls.Label lbUserRole;
 
         /// <summary>
         /// Control hdnRootWeb.
@@ -87,12 +69,21 @@ namespace ReportesCovid_web.MasterPage
         protected global::System.Web.UI.WebControls.HiddenField hdnRootWeb;
 
         /// <summary>
-        /// Control ContentPlaceHolder2.
+        /// Control ContentPlaceHolder1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+
+        /// <summary>
+        /// Control Foot.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Foot;
     }
 }

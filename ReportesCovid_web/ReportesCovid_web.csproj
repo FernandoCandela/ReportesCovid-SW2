@@ -90,28 +90,28 @@
     <Content Include="img\opcion.svg" />
     <Content Include="img\paciente.svg" />
     <Content Include="img\person.svg" />
-    <Content Include="Page\Medico\Inicio.aspx" />
+    <Content Include="Pages\Medico\Reporte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MasterPage\MasterPageUsuarios.Master.cs">
-      <DependentUpon>MasterPageUsuarios.Master</DependentUpon>
+    <Compile Include="MasterPages\Web_Usuarios.Master.cs">
+      <DependentUpon>Web_Usuarios.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasterPage\MasterPageUsuarios.Master.designer.cs">
-      <DependentUpon>MasterPageUsuarios.Master</DependentUpon>
+    <Compile Include="MasterPages\Web_Usuarios.Master.designer.cs">
+      <DependentUpon>Web_Usuarios.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page\Medico\Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
+    <Compile Include="Pages\Medico\Reporte.aspx.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\Medico\Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
+    <Compile Include="Pages\Medico\Reporte.aspx.designer.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MasterPage\MasterPageUsuarios.Master" />
+    <Content Include="MasterPages\Web_Usuarios.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -123,9 +123,9 @@
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="js\" />
-    <Folder Include="Page\Administrador\" />
-    <Folder Include="Page\Contacto\" />
-    <Folder Include="Page\Enfermera\" />
+    <Folder Include="Pages\Administrador\" />
+    <Folder Include="Pages\Contacto\" />
+    <Folder Include="Pages\Enfermera\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
