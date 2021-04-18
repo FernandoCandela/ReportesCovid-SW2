@@ -67,6 +67,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\index.css" />
+    <Content Include="html\1.PaginaInicio.html" />
+    <Content Include="html\10.GenerarReporte.html" />
+    <Content Include="html\11.MenuEnfermera.html" />
+    <Content Include="html\12.RegistrarPaciente.html" />
+    <Content Include="html\13.TablaModificarPaciente.html" />
+    <Content Include="html\14.ModificarPaciente.html" />
+    <Content Include="html\15.IngresarCredencial.html" />
+    <Content Include="html\16.EnviarMensaje.html" />
+    <Content Include="html\17.RecuperarCredencial.html" />
+    <Content Include="html\18.VisualizarCredencial.html" />
+    <Content Include="html\2.InicioSesion.html" />
+    <Content Include="html\3.MenuAdmin.html" />
+    <Content Include="html\4.CrearUsuario.html" />
+    <Content Include="html\5.TablaUsuario.html" />
+    <Content Include="html\6.ModificarUsuario.html" />
+    <Content Include="html\7.TablaMensaje.html" />
+    <Content Include="html\8.ResponderMensaje.html" />
+    <Content Include="html\9.BuscarPaciente.html" />
+    <Content Include="img\corazon.svg" />
+    <Content Include="img\opcion.svg" />
+    <Content Include="img\paciente.svg" />
+    <Content Include="img\person.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -82,9 +105,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="Helpers\" />
-    <Folder Include="html\" />
     <Folder Include="js\" />
     <Folder Include="MasterPage\" />
     <Folder Include="Page\" />
