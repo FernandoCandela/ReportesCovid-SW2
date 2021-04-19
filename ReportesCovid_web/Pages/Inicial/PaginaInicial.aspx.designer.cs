@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ReportesCovid_web.Pages.Medico
+namespace ReportesCovid_web.Pages.Inicial
 {
 
 
-    public partial class Reporte
+    public partial class PaginaInicial
     {
     }
 }
