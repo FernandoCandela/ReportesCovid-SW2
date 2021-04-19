@@ -183,6 +183,16 @@
     <Folder Include="Pages\Contacto\" />
     <Folder Include="Pages\Enfermera\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CTR\CTR.csproj">
+      <Project>{590c564c-b7b5-46a0-acb8-9e3d67cd0b1b}</Project>
+      <Name>CTR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{3d36a84b-3b7e-46dd-9875-00a337046d07}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
