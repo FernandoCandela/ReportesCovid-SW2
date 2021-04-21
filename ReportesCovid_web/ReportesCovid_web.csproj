@@ -92,8 +92,23 @@
     <Content Include="img\paciente.svg" />
     <Content Include="img\person.svg" />
     <Content Include="Index.html" />
+    <Content Include="Pages\Administrador\CrearUsuario.aspx" />
+    <Content Include="Pages\Administrador\MenuAdmin.aspx" />
+    <Content Include="Pages\Administrador\ModificarUsuario.aspx" />
+    <Content Include="Pages\Administrador\ResponderMensaje.aspx" />
+    <Content Include="Pages\Administrador\TablaMensaje.aspx" />
+    <Content Include="Pages\Administrador\TablaUsuario.aspx" />
+    <Content Include="Pages\Contacto\EnviarMensaje.aspx" />
+    <Content Include="Pages\Contacto\IngresarCredencial.aspx" />
+    <Content Include="Pages\Contacto\VisualizarCredencial.aspx" />
+    <Content Include="Pages\Enfermera\MenuEnfermera.aspx" />
+    <Content Include="Pages\Enfermera\ModificarPaciente.aspx" />
+    <Content Include="Pages\Enfermera\RecuperarCredencial.aspx" />
+    <Content Include="Pages\Enfermera\RegistrarPaciente.aspx" />
+    <Content Include="Pages\Enfermera\TablaModificarPaciente.aspx" />
     <Content Include="Pages\Inicial\InicioSesion.aspx" />
     <Content Include="Pages\Inicial\PaginaInicial.aspx" />
+    <Content Include="Pages\Medico\GenerarReporte.aspx" />
     <Content Include="Pages\Medico\Reporte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -143,6 +158,104 @@
     <Compile Include="MasterPages\Web_Usuarios.Master.designer.cs">
       <DependentUpon>Web_Usuarios.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Administrador\CrearUsuario.aspx.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\CrearUsuario.aspx.designer.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\MenuAdmin.aspx.cs">
+      <DependentUpon>MenuAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\MenuAdmin.aspx.designer.cs">
+      <DependentUpon>MenuAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\ModificarUsuario.aspx.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\ModificarUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\ResponderMensaje.aspx.cs">
+      <DependentUpon>ResponderMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\ResponderMensaje.aspx.designer.cs">
+      <DependentUpon>ResponderMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\TablaMensaje.aspx.cs">
+      <DependentUpon>TablaMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\TablaMensaje.aspx.designer.cs">
+      <DependentUpon>TablaMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\TablaUsuario.aspx.cs">
+      <DependentUpon>TablaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\TablaUsuario.aspx.designer.cs">
+      <DependentUpon>TablaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\EnviarMensaje.aspx.cs">
+      <DependentUpon>EnviarMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\EnviarMensaje.aspx.designer.cs">
+      <DependentUpon>EnviarMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\IngresarCredencial.aspx.cs">
+      <DependentUpon>IngresarCredencial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\IngresarCredencial.aspx.designer.cs">
+      <DependentUpon>IngresarCredencial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\VisualizarCredencial.aspx.cs">
+      <DependentUpon>VisualizarCredencial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\VisualizarCredencial.aspx.designer.cs">
+      <DependentUpon>VisualizarCredencial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\MenuEnfermera.aspx.cs">
+      <DependentUpon>MenuEnfermera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\MenuEnfermera.aspx.designer.cs">
+      <DependentUpon>MenuEnfermera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\ModificarPaciente.aspx.cs">
+      <DependentUpon>ModificarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\ModificarPaciente.aspx.designer.cs">
+      <DependentUpon>ModificarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\RecuperarCredencial.aspx.cs">
+      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\RecuperarCredencial.aspx.designer.cs">
+      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\RegistrarPaciente.aspx.cs">
+      <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\RegistrarPaciente.aspx.designer.cs">
+      <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\TablaModificarPaciente.aspx.cs">
+      <DependentUpon>TablaModificarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\TablaModificarPaciente.aspx.designer.cs">
+      <DependentUpon>TablaModificarPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Inicial\InicioSesion.aspx.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,6 +269,13 @@
     </Compile>
     <Compile Include="Pages\Inicial\PaginaInicial.aspx.designer.cs">
       <DependentUpon>PaginaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\GenerarReporte.aspx.cs">
+      <DependentUpon>GenerarReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\GenerarReporte.aspx.designer.cs">
+      <DependentUpon>GenerarReporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Medico\Reporte.aspx.cs">
       <DependentUpon>Reporte.aspx</DependentUpon>
@@ -184,9 +304,6 @@
   <ItemGroup>
     <Folder Include="Helpers\" />
     <Folder Include="js\" />
-    <Folder Include="Pages\Administrador\" />
-    <Folder Include="Pages\Contacto\" />
-    <Folder Include="Pages\Enfermera\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CTR\CTR.csproj">
