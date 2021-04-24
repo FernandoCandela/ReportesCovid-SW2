@@ -9,29 +9,29 @@ namespace DAO
 {
     public class DaoPaciente : DaoB
     {
-        public ClassResultV Usp_Cliente_Insert(DtoB dtoBase)
+        public ClassResultV Usp_Paciente_Insert(DtoB dtoBase)
         {
-            DTOCliente dto = (DTOCliente)dtoBase;
+            DtoPaciente dto = (DtoPaciente)dtoBase;
             ClassResultV cr = new ClassResultV();
             SqlParameter[] pr = new SqlParameter[3];
             try
             {
-                pr[0] = new SqlParameter("@RUC", SqlDbType.VarChar, 20)
+                pr[0] = new SqlParameter("@Nombre", SqlDbType.VarChar, 20)
                 {
-                    Value = (dto.RUC)
+                    Value = (dto.Nombre)
                 };
-                pr[1] = new SqlParameter("@Razon_Social", SqlDbType.VarChar, 200)
+                pr[1] = new SqlParameter("@Apellido", SqlDbType.VarChar, 200)
                 {
-                    Value = (dto.Razon_Social)
+                    Value = (dto.Apellido)
                 };
                 pr[2] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
-                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Cliente_Insert", pr);
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Insert", pr);
                 if (pr[2].Value.ToString() != "")
                 {
-                    cr.LugarError = ToString("Usp_Cliente_Insert()");
+                    cr.LugarError = ToString("Usp_Paciente_Insert()");
                     cr.ErrorMsj = pr[2].Value.ToString();
                 }
             }
@@ -39,7 +39,7 @@ namespace DAO
             {
                 cr.LugarError = ex.StackTrace;
                 cr.ErrorEx = ex.Message;
-                cr.ErrorMsj = "Error al crear Cliente";
+                cr.ErrorMsj = "Error al crear Paciente";
             }
             ObjCn.Close();
             return cr;
