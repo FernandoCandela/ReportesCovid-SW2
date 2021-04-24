@@ -15,9 +15,9 @@ namespace DTO
         public string Numdoc { get; set; }
         public int IN_TipoSeguro { get; set; }
         public int IN_estadopaciente { get; set; }
-        public string UsuarioCreacionId { get; set; }
+        public int UsuarioCreacionId { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public string UsuarioModificacionId { get; set; }
+        public int UsuarioModificacionId { get; set; }
         public DateTime FechaModificacion { get; set; }
         public int IN_Estado { get; set; }
         public string Credencial { get; set; }
