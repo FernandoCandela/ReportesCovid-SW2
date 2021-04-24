@@ -32,10 +32,10 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="1.PaginaInicio.html">Inicio</a>
+                        <a class="nav-link active" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="2.InicioSesion.html">Iniciar Sesion</a>
+                        <a class="nav-link active" href="/logIn">Iniciar Sesion</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#" tabindex="-1">Conocenos</a>

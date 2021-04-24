@@ -3,17 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <main class="form-signin">
-        <asp:Image ID="Image1" runat="server" CssClass="mb-4 float-md-end" ImageUrl="~/img/person.svg" Width="90%" Height="90%"/>
-        <form>
+            <asp:Image ID="Image1" runat="server" CssClass="mb-4 float-md-end" ImageUrl="~/img/person.svg" Width="90%" Height="90%"/>
             <h1 class="h3 mb-3 fw-normal">Inicio de Sesion</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Correo</label>
+                <asp:TextBox runat="server" ClientIDMode="Static" type="text" id="username" placeholder="Ingresa tu username" />
+                <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Contraseña</label>
+                <asp:TextBox runat="server" ClientIDMode="Static" type="password" id="password" placeholder="Ingresa tu contraseña" />
+                <label for="floatingPassword">Password</label>
             </div>
 
             <div class="checkbox mb-3">
@@ -24,6 +23,5 @@
             </div>
             <asp:Button runat="server" class="w-100 btn btn-lg btn-primary" type="submit" Text="Iniciar Sesion"></asp:Button>
             <p class="mt-5 mb-3 text-muted">&copy;2021</p>
-        </form>
     </main>
 </asp:Content>

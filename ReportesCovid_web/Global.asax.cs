@@ -48,7 +48,7 @@ namespace ReportesCovid_web
             #region Web Routes
             //rout para la pagina inical
             routes.MapPageRoute("", "", "~/Pages/Inicial/Paginainicial.aspx", true);
-
+            routes.MapPageRoute("logIn", "logIn", "~/Pages/Inicial/InicioSesion.aspx", true);
             //Ejemplos
             //routes.MapPageRoute("Activacion", "Activacion", "~/Pages/Web/Activacion.aspx", true);
 
