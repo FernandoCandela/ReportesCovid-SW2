@@ -22,7 +22,10 @@ namespace DTO
         public string UsuarioModificacion { get; set; }
         public DateTime FechaModificacion { get; set; }
         public bool IB_Estado { get; set; }
-
+        public string PrimerNombre { get; set; }
+        public string SegundoNombre { get; set; }
+        public string ApellidoPaterno { get; set; }
+        public string ApellidoMaterno { get; set; }
         //Nombres de los IN
         public string NombreRol { get; set; }
         public string NombreCargo { get; set; }

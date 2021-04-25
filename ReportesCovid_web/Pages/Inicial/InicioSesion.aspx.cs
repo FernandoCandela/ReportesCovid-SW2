@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using CTR;
+using DTO;
+using ReportesCovid_web.Helpers;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace ReportesCovid_web.Pages.Inicial
 {
@@ -26,25 +26,26 @@ namespace ReportesCovid_web.Pages.Inicial
             {
                 DtoUsuario dto = new DtoUsuario
                 {
-                    Correo = tCorreoLogin.Text.Trim(),
-                    //Password = Helpers.HelpE.EncryptText(tContraseña.Text.Trim()),
-                    Password = tContraseniaLogin.Text.Trim()
+                    Usuario = username.Text.Trim(),
+                    Contrasena = password.Text.Trim()
                 };
-                CmUsuarioLogin dtoR = new CtrUsuario().Usp_Usuario_Login(dto);
+                DtoUsuario dtoR = new CtrUsuario().Usp_Usuario_Login(dto);
                 if (!dtoR.HuboError)
                 {
                     Session["UsuarioLogin"] = dtoR;
-                    Response.Redirect("home/default");
+
+                    //LOGICA DE REDIRECCIONES
+                    //Response.Redirect("home/default");
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", mensajeConfirmacion("Error!", dtoR.ErrorMsj, "error"), true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop",HelpE.mensajeConfirmacion("Error!", dtoR.ErrorMsj, "error"), true);
                 }
 
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", mensajeConfirmacion("Error!", "Oops, algo salió mal :(", "error"), true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error!", "Oops, algo salió mal :(", "error"), true);
             }
         }
     }

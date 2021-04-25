@@ -16,8 +16,8 @@ namespace DAO
             SqlParameter[] pr = new SqlParameter[3];
             try
             {
-                pr[0] = new SqlParameter("@Correo", SqlDbType.VarChar, 200) { Value = dto.Usuario };
-                pr[1] = new SqlParameter("@Password", SqlDbType.VarChar, 100) { Value = dto.Contrasena };
+                pr[0] = new SqlParameter("@Usuario", SqlDbType.VarChar, 200) { Value = dto.Usuario };
+                pr[1] = new SqlParameter("@Contrasena", SqlDbType.VarChar, 100) { Value = dto.Contrasena };
                 pr[2] = new SqlParameter("@msj", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_Login", pr);
@@ -28,11 +28,15 @@ namespace DAO
                         IdUsuario = GetValue("IdUsuario", reader).ValueInt32,
                         Numdoc = GetValue("Numdoc", reader).ValueString,
                         IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
-                        Telefono = GetValue("ApMat", reader).ValueString,
+                        Telefono = GetValue("Telefono", reader).ValueString,
                         IN_Rol = GetValue("IN_Rol", reader).ValueInt32,
                         IN_Cargo = GetValue("IN_Cargo", reader).ValueInt32,
                         OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
+                        PrimerNombre = GetValue("PrimerNombre", reader).ValueString,
+                        SegundoNombre = GetValue("SegundoNombre", reader).ValueString,
+                        ApellidoPaterno = GetValue("ApellidoPaterno", reader).ValueString,
+                        ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
                         NombreRol = GetValue("NombreRol", reader).ValueString,
                         NombreCargo = GetValue("NombreCargo", reader).ValueString
                     };

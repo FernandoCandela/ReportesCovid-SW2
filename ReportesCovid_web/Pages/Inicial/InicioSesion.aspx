@@ -7,11 +7,11 @@
             <h1 class="h3 mb-3 fw-normal">Inicio de Sesion</h1>
 
             <div class="form-floating">
-                <asp:TextBox runat="server" ClientIDMode="Static" type="text" id="username" placeholder="Ingresa tu username" />
+                <asp:TextBox runat="server" CssClass="form-control" ClientIDMode="Static" type="text" id="username" placeholder="Ingresa tu username" />
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">
-                <asp:TextBox runat="server" ClientIDMode="Static" type="password" id="password" placeholder="Ingresa tu contraseña" />
+                <asp:TextBox runat="server" CssClass="form-control" ClientIDMode="Static" type="password" id="password" placeholder="Ingresa tu contraseña" />
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -21,7 +21,7 @@
                     Remember me
                 </label>
             </div>
-            <asp:Button runat="server" class="w-100 btn btn-lg btn-primary" type="submit" Text="Iniciar Sesion"></asp:Button>
+            <asp:Button runat="server" ID="btnLogin" class="w-100 btn btn-lg btn-primary" OnClick="LoguearUsuario" Text="Iniciar Sesion"></asp:Button>
             <p class="mt-5 mb-3 text-muted">&copy;2021</p>
     </main>
 </asp:Content>
