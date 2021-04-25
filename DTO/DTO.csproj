@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AuxClasses\ClassResultV.cs" />
     <Compile Include="AuxClasses\DtoB.cs" />
-    <Compile Include="Class1-test.cs" />
     <Compile Include="DtoUsuario.cs" />
     <Compile Include="DtoPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

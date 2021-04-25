@@ -22,11 +22,11 @@ namespace DAO
                 };
                 pr[1] = new SqlParameter("@Nombre", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Nombre)
+                    Value = (dto.Nombres)
                 };
                 pr[2] = new SqlParameter("@Apellido", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Apellido)
+                    Value = (dto.Apellidos)
                 };
                 pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
@@ -62,7 +62,7 @@ namespace DAO
                 };
                 pr[11] = new SqlParameter("@IN_Estado", SqlDbType.Int)
                 {
-                    Value = (dto.IN_Estado)
+                    Value = (dto.IB_Estado)
                 };
                 pr[12] = new SqlParameter("@Credencial", SqlDbType.VarChar, 200)
                 {
@@ -98,7 +98,7 @@ namespace DAO
             {
                 pr[0] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
-                    Value = (dto.Nombre)
+                    Value = (dto.Nombres)
                 };
                 pr[1] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
                 {
@@ -134,11 +134,11 @@ namespace DAO
             {
                 pr[0] = new SqlParameter("@Nombre", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Nombre)
+                    Value = (dto.Nombres)
                 };
                 pr[1] = new SqlParameter("@Apellido", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Apellido)
+                    Value = (dto.Apellidos)
                 };
                 pr[2] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
@@ -174,7 +174,7 @@ namespace DAO
                 };
                 pr[10] = new SqlParameter("@IN_Estado", SqlDbType.Int)
                 {
-                    Value = (dto.IN_Estado)
+                    Value = (dto.IB_Estado)
                 };
                 pr[11] = new SqlParameter("@Credencial", SqlDbType.VarChar, 200)
                 {
@@ -219,7 +219,7 @@ namespace DAO
                 
                 pr[2] = new SqlParameter("@IN_Estado", SqlDbType.Int)
                 {
-                    Value = (dto.IN_Estado)
+                    Value = (dto.IB_Estado)
                 };
                 pr[3] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {

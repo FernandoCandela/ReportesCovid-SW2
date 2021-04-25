@@ -46,7 +46,6 @@
     <Compile Include="AuxClasses\DaoB.cs" />
     <Compile Include="AuxClasses\Fields.cs" />
     <Compile Include="AuxClasses\SQLHelper.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DaoPaciente.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
