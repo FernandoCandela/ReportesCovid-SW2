@@ -21,7 +21,7 @@ namespace DTO
         public DateTime FechaCreacion { get; set; }
         public string UsuarioModificacion { get; set; }
         public DateTime FechaModificacion { get; set; }
-        public string IB_Estado { get; set; }
+        public bool IB_Estado { get; set; }
 
         //Nombres de los IN
         public string NombreRol { get; set; }

@@ -23,7 +23,7 @@ namespace DTO
             _msjError = msj;
             return this;
         }
-
+        public String Criterio { get; set; }
         #region Miembros de ICloneable
 
         object ICloneable.Clone()
