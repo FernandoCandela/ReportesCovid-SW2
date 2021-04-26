@@ -6,11 +6,10 @@
         <h1 class="display-5 fw-bold">MODIFICAR CUENTA</h1>
     </div>
 
-    <div class="navbar container-fluid mx-5">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+    <div class="navbar mx-5">
+            <%--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">--%>
+            <input class="form-control container-fluid" type="search" placeholder="Buscar" aria-label="Buscar">
+            <asp:Button runat="server" class="btn btn-success mt-3" type="submit" Text="Buscar"></asp:Button>
     </div>
 
     <div class="foto">

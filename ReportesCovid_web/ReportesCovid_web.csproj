@@ -108,14 +108,15 @@
     <Content Include="Pages\Administrador\TablaUsuario.aspx" />
     <Content Include="Pages\Contacto\EnviarMensaje.aspx" />
     <Content Include="Pages\Contacto\IngresarCredencial.aspx" />
+    <Content Include="Pages\Contacto\RecuperarCredencial.aspx" />
     <Content Include="Pages\Contacto\VisualizarCredencial.aspx" />
     <Content Include="Pages\Enfermera\MenuEnfermera.aspx" />
     <Content Include="Pages\Enfermera\ModificarPaciente.aspx" />
-    <Content Include="Pages\Enfermera\RecuperarCredencial.aspx" />
     <Content Include="Pages\Enfermera\RegistrarPaciente.aspx" />
     <Content Include="Pages\Enfermera\TablaModificarPaciente.aspx" />
     <Content Include="Pages\Inicial\InicioSesion.aspx" />
     <Content Include="Pages\Inicial\PaginaInicial.aspx" />
+    <Content Include="Pages\Medico\BuscarPaciente.aspx" />
     <Content Include="Pages\Medico\GenerarReporte.aspx" />
     <Content Include="Pages\Medico\Reporte.aspx" />
     <Content Include="Web.config" />
@@ -223,6 +224,13 @@
     <Compile Include="Pages\Contacto\IngresarCredencial.aspx.designer.cs">
       <DependentUpon>IngresarCredencial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.cs">
+      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.designer.cs">
+      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Contacto\VisualizarCredencial.aspx.cs">
       <DependentUpon>VisualizarCredencial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,13 +251,6 @@
     </Compile>
     <Compile Include="Pages\Enfermera\ModificarPaciente.aspx.designer.cs">
       <DependentUpon>ModificarPaciente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Enfermera\RecuperarCredencial.aspx.cs">
-      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Enfermera\RecuperarCredencial.aspx.designer.cs">
-      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Enfermera\RegistrarPaciente.aspx.cs">
       <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
@@ -278,6 +279,13 @@
     </Compile>
     <Compile Include="Pages\Inicial\PaginaInicial.aspx.designer.cs">
       <DependentUpon>PaginaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\BuscarPaciente.aspx.cs">
+      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\BuscarPaciente.aspx.designer.cs">
+      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Medico\GenerarReporte.aspx.cs">
       <DependentUpon>GenerarReporte.aspx</DependentUpon>

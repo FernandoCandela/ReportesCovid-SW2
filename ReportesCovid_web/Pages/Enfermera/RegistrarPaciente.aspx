@@ -6,7 +6,7 @@
         <main>
             <div>
                 <h4 class="mb-3">Nuevo Usuario</h4>
-                <form class="needs-validation" novalidate>
+                <div>
                     <div class="row g-3 my-4">
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label">Nombres</label>
@@ -26,7 +26,7 @@
 
                         <div class="col-6">
                             <label for="dni" class="form-label">DNI</label>
-                            <input type="number" class="form-control" id="dni" required>
+                            <input type="text" class="form-control" id="dni" required>
                             <div class="invalid-feedback">
                                 Please enter your DNI.
                             </div>
@@ -34,7 +34,7 @@
 
                         <div class="col-6">
                             <label for="emailResponsable" class="form-label">Correo de Responsable</label>
-                            <input type="email" class="form-control" id="emailResponsable" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="emailResponsable" placeholder="you@example.com" required>
                             <div class="invalid-feedback">
                                 Please enter a valid email address.
                             </div>
@@ -42,7 +42,7 @@
 
                         <div class="col-6">
                             <label for="telefonoResponsable" class="form-label">Telefono de Responsable </label>
-                            <input type="number" class="form-control" id="telefonoResponsable">
+                            <input type="text" class="form-control" id="telefonoResponsable" required>
                         </div>
 
                         <div class="col-sm-6">
@@ -52,12 +52,13 @@
                                 Valid first name is required.
                             </div>
                         </div>
+
+                        <div class="card-body m-5 position-relative">
+                            <asp:Button runat="server" class=" w-50 btn btn-primary mb-2 position-absolute top-100 start-50 translate-middle" type="submit" Text="Crear Paciente y Enviar Credencial"></asp:Button>
+                            <asp:Button runat="server" class="w-50 btn btn-secondary my-5 position-absolute top-100 start-50 translate-middle" type="submit" Text="Cargar CSV"></asp:Button>
+                        </div>
                     </div>
-                    <div class="card-body p-5 position-relative">
-                        <button class=" w-50 btn btn-primary mb-2 position-absolute top-100 start-50 translate-middle" type="submit ">Crear Paciente y Enviar Credencial</button>
-                        <button class="w-50 btn btn-secondary my-5 position-absolute top-100 start-50 translate-middle" type="submit ">Cargar CSV</button>
-                    </div>
-                </form>
+                </div>
             </div>
 
         </main>

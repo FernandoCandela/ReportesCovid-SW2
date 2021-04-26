@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Contacto.Master" AutoEventWireup="true" CodeBehind="VisualizarCredencial.aspx.cs" Inherits="ReportesCovid_web.Pages.Contacto.VisualizarCredencial" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="px-4 py-5  text-center">
+    <div class="px-4 py-5  text-center">
         <h1 class="display-5 fw-bold">SEGUIMIENTO</h1>
     </div>
 

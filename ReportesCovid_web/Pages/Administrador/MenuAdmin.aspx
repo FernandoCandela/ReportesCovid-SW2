@@ -11,8 +11,8 @@
                             <h3 class="my-0 fw-normal">Crear Cuenta</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="4.CrearUsuario.html">
-                                <asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>
+                            <asp:LinkButton ID="LinkButton1" runat="server" class="w-100 btn btn-lg btn-primary" PostBackUrl="/CrearUsuario">Crear</asp:LinkButton>
+                            <%--<a href="4.CrearUsuario.html"><asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>--%>
                         </div>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
                             <h3 class="my-0 fw-normal">Modificar Usuario</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="6.ModificarUsuario.html">
-                                <asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>
+                            <asp:LinkButton runat="server" ID="LinkButton2" class="w-100 btn btn-lg btn-primary" PostBackUrl="/ModificarUsuario">Modificar</asp:LinkButton>
+                            <%--<a href="6.ModificarUsuario.html"><asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>--%>
                         </div>
                     </div>
                 </div>
@@ -33,8 +33,8 @@
                             <h3 class="my-0 fw-normal">Revisar Mensajes</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="7.TablaMensaje.html">
-                                <asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>
+                            <asp:LinkButton ID="LinkButton3" runat="server" class="w-100 btn btn-lg btn-primary" PostBackUrl="/TablaMensaje">Entrar</asp:LinkButton>
+                            <%--<a href="7.TablaMensaje.html"><asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>--%>
                         </div>
                     </div>
                 </div>

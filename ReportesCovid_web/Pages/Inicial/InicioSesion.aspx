@@ -7,7 +7,7 @@
             <h1 class="h3 mb-3 fw-normal">Inicio de Sesion</h1>
 
             <div class="form-floating">
-                <asp:TextBox runat="server" CssClass="form-control" ClientIDMode="Static" type="text" id="username" placeholder="Ingresa tu username" />
+                <asp:TextBox runat="server" CssClass="form-control" ClientIDMode="Static" type="text" id="username" placeholder="Ingresa tu username"/>
                 <label for="floatingInput">Username</label>
             </div>
             <div class="form-floating">

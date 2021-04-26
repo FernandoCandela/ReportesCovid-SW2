@@ -26,17 +26,17 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="1.PaginaInicio.html">ESSALUD</a>
+            <a class="navbar-brand" href="/">ESSALUD</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="1.PaginaInicio.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="9.BuscarPaciente.html">Buscar Paciente</a>
+                        <a class="nav-link active" href="/BuscarPaciente">Buscar Paciente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" tabindex="-1">Cerrar Sesion</a>
+                        <a class="nav-link active" href="/" tabindex="-1">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>
@@ -44,8 +44,10 @@
     </nav>
     <!-- fin de menu -->
 
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-    </asp:ContentPlaceHolder>
+    <form runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 

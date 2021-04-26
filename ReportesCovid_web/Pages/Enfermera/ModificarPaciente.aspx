@@ -5,8 +5,8 @@
     <div class="container m-auto mt-4 shadow p-3 mb-5 bg-body rounded">
         <main>
             <div>
-                <h4 class="mb-3">Nuevo Usuario</h4>
-                <form class="needs-validation" novalidate>
+                <h4 class="mb-3">Modificando Paciente</h4>
+                <div>
                     <div class="row g-3 my-4">
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label">Nombres</label>
@@ -34,7 +34,7 @@
 
                         <div class="col-6">
                             <label for="emailResponsable" class="form-label">Correo de Responsable</label>
-                            <input type="email" class="form-control" id="emailResponsable" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="emailResponsable" placeholder="you@example.com" required>
                             <div class="invalid-feedback">
                                 Please enter a valid email address.
                             </div>
@@ -42,7 +42,7 @@
 
                         <div class="col-6">
                             <label for="telefonoResponsable" class="form-label">Telefono de Responsable </label>
-                            <input type="text" class="form-control" id="telefonoResponsable" placeholder="123456789">
+                            <input type="text" class="form-control" id="telefonoResponsable" placeholder="123456789" required>
                         </div>
 
                         <div class="col-sm-6">
@@ -59,7 +59,7 @@
                         <asp:Button runat="server" type="submit" class="btn btn-danger w-25 mb-4 position-absolute bottom-0 end-0" Text="Dar de alta"></asp:Button>
                     </div>
 
-                </form>
+                </div>
             </div>
 
         </main>

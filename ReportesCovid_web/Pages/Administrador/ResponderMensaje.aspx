@@ -9,7 +9,7 @@
         <img src="/img/paciente.svg" alt="paciente" class="rounded float-start w-25 mx-5 img-thumbnail d-block">
     </div>
 
-    <form class="row g-3 mt-4" novalidate>
+    <div class="row g-3 mt-4">
         <div class="mb-3 col-md-5">
             <label for="exampleInputNombre" class="form-label">Nombre</label>
             <input class="form-control" id="exampleInputNombre" aria-describedby="nombreHelp" disabled>
@@ -35,8 +35,8 @@
             <label for="floatingTextarea2">Respuesta</label>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary w-25 mb-4">Guardar Cambios</button>
-            <button type="submit" class="btn btn-danger w-25 mb-4">Borrar Usuario</button>
+            <asp:Button runat="server" type="submit" class="btn btn-primary w-25 mb-4" Text="Guardar Cambios"></asp:Button>
+            <asp:Button runat="server" type="submit" class="btn btn-danger w-25 mb-4" text="Borrar Usuario"></asp:Button>
         </div>
-    </form>
+    </div>
 </asp:Content>

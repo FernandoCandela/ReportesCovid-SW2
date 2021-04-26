@@ -11,9 +11,8 @@
                             <h3 class="my-0 fw-normal">Crear Paciente</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="12.RegistrarPaciente.html" class="w-100 btn btn-lg btn-primary">
-                                Entrar</a>
-
+                            <asp:LinkButton ID="LinkButton1" runat="server" class="w-100 btn btn-lg btn-primary" PostBackUrl="/RegistrarPaciente">Entrar</asp:LinkButton>
+                            <%--<a href="12.RegistrarPaciente.html" class="w-100 btn btn-lg btn-primary">Entrar</a>--%>
                         </div>
                     </div>
                 </div>
@@ -23,9 +22,8 @@
                             <h3 class="my-0 fw-normal">Modificar Paciente</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="13.TablaModificarPaciente.html" class="w-100 btn btn-lg btn-primary">
-                           Entrar
-                            </a>
+                            <asp:LinkButton ID="LinkButton2" runat="server" class="w-100 btn btn-lg btn-primary" PostBackUrl="/TablaModificarPaciente">Entrar</asp:LinkButton>
+                            <%--<a href="13.TablaModificarPaciente.html" class="w-100 btn btn-lg btn-primary">Entrar</a>--%>
 
                         </div>
                     </div>

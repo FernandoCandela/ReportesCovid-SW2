@@ -6,10 +6,10 @@
     </div>
 
     <div class="navbar container-fluid mx-5">
-        <form class="d-flex">
+        <div class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+            <asp:Button runat="server" class="btn btn-outline-success" type="submit" Text="Buscar"></asp:Button>
+        </div>
     </div>
 
     <div class="foto">

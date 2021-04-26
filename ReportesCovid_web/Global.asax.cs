@@ -48,12 +48,33 @@ namespace ReportesCovid_web
             #region Web Routes
             //rout para la pagina inical
             routes.MapPageRoute("", "", "~/Pages/Inicial/Paginainicial.aspx", true);
-            routes.MapPageRoute("logIn", "logIn", "~/Pages/Inicial/InicioSesion.aspx", true);
-            //Ejemplos
+            routes.MapPageRoute("logIn", "logIn", "~/Pages/Inicial/Iniciosesion.aspx", true);
+
             //Enfermera
-            routes.MapPageRoute("MenuEnfermera", "MenuEnfermera", "~/Pages/Enfermera/MenuEnfermera.aspx", true);
+            routes.MapPageRoute("MenuEnfermera", "MenuEnfermera", "~/Pages/Enfermera/Menuenfermera.aspx", true);
+            routes.MapPageRoute("ModificarPaciente", "ModificarPaciente", "~/Pages/Enfermera/Modificarpaciente.aspx", true);
+            routes.MapPageRoute("RegistrarPaciente", "RegistrarPaciente", "~/Pages/Enfermera/Registrarpaciente.aspx", true);
+            routes.MapPageRoute("TablaModificarPaciente", "TablaModificarPaciente", "~/Pages/Enfermera/TablaModificarpaciente.aspx", true);
 
+            //Administrador
+            routes.MapPageRoute("CrearUsuario", "CrearUsuario", "~/Pages/Administrador/Crearusuario.aspx", true);
+            routes.MapPageRoute("MenuAdmin", "MenuAdmin", "~/Pages/Administrador/Menuadmin.aspx", true);
+            routes.MapPageRoute("ModificarUsuario", "ModificarUsuario", "~/Pages/Administrador/Modificarusuario.aspx", true);
+            routes.MapPageRoute("ResponderMensaje", "ResponderMensaje", "~/Pages/Administrador/Respondermensaje.aspx", true);
+            routes.MapPageRoute("TablaMensaje", "TablaMensaje", "~/Pages/Administrador/Tablamensaje.aspx", true);
+            routes.MapPageRoute("TablaUsuario", "TablaUsuario", "~/Pages/Administrador/Tablausuario.aspx", true);
 
+            //Contacto
+            routes.MapPageRoute("EnviarMensaje", "EnviarMensaje", "~/Pages/Contacto/Enviarmensaje.aspx", true);
+            routes.MapPageRoute("IngresarCredencial", "IngresarCredencial", "~/Pages/Contacto/Ingresarcredencial.aspx", true);
+            routes.MapPageRoute("RecuperarCredencial", "RecuperarCredencial", "~/Pages/Contacto/Recuperarcredencial.aspx", true);
+            routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
+
+            //Medico
+            routes.MapPageRoute("BuscarPaciente", "BuscarPaciente", "~/Pages/Medico/BuscarPaciente.aspx", true);
+            routes.MapPageRoute("GenerarReporte", "GenerarReporte", "~/Pages/Medico/GenerarReporte.aspx", true);
+
+            //Ejemplos
             //routes.MapPageRoute("Activacion", "Activacion", "~/Pages/Web/Activacion.aspx", true);
 
 

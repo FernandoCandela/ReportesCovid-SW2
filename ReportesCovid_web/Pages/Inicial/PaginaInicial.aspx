@@ -8,11 +8,14 @@
         <h1 class="display-5 fw-bold mb-4">JUNTOS CONTRA EL COVID</h1>
         <div class="col-lg-6 mx-auto">
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a href="2.InicioSesion.html">
+                <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-primary btn-lg px-4 me-sm-3" PostBackUrl="/logIn">Iniciar Sesion</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-outline-secondary btn-lg px-4" PostBackUrl="/IngresarCredencial">Ingresar credencial</asp:LinkButton>
+
+                <%--<a href="2.InicioSesion.html">
                     <asp:Button runat="server" type="button" class="btn btn-primary btn-lg px-4 me-sm-3" Text="Iniciar Sesion"></asp:Button></a>
                 <a href="15.IngresarCredencial.html">
                     <asp:Button runat="server" type="button" class="btn btn-outline-secondary btn-lg px-4" Text="Ingresar Credencial"></asp:Button>
-                </a>
+                </a>--%>
             </div>
         </div>
     </div>
