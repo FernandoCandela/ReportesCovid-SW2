@@ -34,8 +34,10 @@ namespace ReportesCovid_web.Pages.Inicial
                 {
                     Session["UsuarioLogin"] = dtoR;
 
-                    //LOGICA DE REDIRECCIONES
-                    //Response.Redirect("home/default");
+                    if (dtoR.IN_Rol == 2)
+                    {
+                        Response.Redirect("MenuEnfermera");
+                    }
                 }
                 else
                 {

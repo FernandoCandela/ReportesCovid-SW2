@@ -11,8 +11,8 @@
                             <h3 class="my-0 fw-normal">Crear Paciente</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="12.RegistrarPaciente.html">
-                                <asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button></a>
+                            <a href="12.RegistrarPaciente.html" class="w-100 btn btn-lg btn-primary">
+                                Entrar</a>
 
                         </div>
                     </div>
@@ -23,8 +23,8 @@
                             <h3 class="my-0 fw-normal">Modificar Paciente</h3>
                         </div>
                         <div class="card-body p-5">
-                            <a href="13.TablaModificarPaciente.html">
-                                <asp:Button runat="server" type="button" class="w-100 btn btn-lg btn-primary" Text="Entrar"></asp:Button>
+                            <a href="13.TablaModificarPaciente.html" class="w-100 btn btn-lg btn-primary">
+                           Entrar
                             </a>
 
                         </div>
