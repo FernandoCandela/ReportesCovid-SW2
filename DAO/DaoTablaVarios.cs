@@ -32,8 +32,16 @@ namespace DAO
                 {
                     cr.List.Add(new DtoTablaVarios
                     {
+                        IdTabVarios= GetValue("IdTabVarios", reader).ValueInt32,
                         Valor = GetValue("Valor", reader).ValueString,
-                        Descripcion = GetValue("Descripcion", reader).ValueString
+                        Descripcion = GetValue("Descripcion", reader).ValueString,
+                        TipoAtributo = GetValue("TipoAtributo", reader).ValueString,
+                        EntidadTabla = GetValue("EntidadTabla", reader).ValueString,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool
                     });
                 }
                 reader.Close();
