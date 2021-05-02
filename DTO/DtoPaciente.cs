@@ -22,10 +22,10 @@ namespace DTO
         public bool IB_Estado { get; set; }
         public string Credencial { get; set; }
 
-        //Nombres de los IN
-        public string NombreTipodoc { get; set; }
-        public string NombreTipoSeguro { get; set; }
-        public string NombreEstadoPaciente { get; set; }
+        ////Nombres de los IN
+        //public string NombreTipodoc { get; set; }
+        //public string NombreTipoSeguro { get; set; }
+        //public string NombreEstadoPaciente { get; set; }
 
 
 
