@@ -9,10 +9,9 @@ namespace DAO
 {
     public class DaoPaciente : DaoB
     {
-        public ClassResultV Usp_Paciente_Insert(DtoB dtoBase)
+        public DtoPaciente Usp_Paciente_Insert(DtoB dtoBase)
         {
             DtoPaciente dto = (DtoPaciente)dtoBase;
-            ClassResultV cr = new ClassResultV();
             SqlParameter[] pr = new SqlParameter[9];
             try
             {
@@ -22,31 +21,31 @@ namespace DAO
                 };
                 pr[1] = new SqlParameter("@Nombres", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Nombres)
+                    Value = (V_ValidaPrNull(dto.Nombres))
                 };
                 pr[2] = new SqlParameter("@Apellidos", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Apellidos)
+                    Value = (V_ValidaPrNull(dto.Apellidos))
                 };
                 pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
-                    Value = (dto.IN_Tipodoc)
+                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
                 };
                 pr[4] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
                 {
-                    Value = (dto.Numdoc)
+                    Value = (V_ValidaPrNull(dto.Numdoc))
                 };
                 pr[5] = new SqlParameter("@IN_TipoSeguro", SqlDbType.Int)
                 {
-                    Value = (dto.IN_TipoSeguro)
+                    Value = (V_ValidaPrNull(dto.IN_TipoSeguro))
                 };
                 pr[6] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
                 {
-                    Value = (dto.IN_EstadoPaciente)
+                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
                 };
                 pr[7] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
-                    Value = (dto.UsuarioCreacionId)
+                    Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
                 pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
@@ -56,18 +55,18 @@ namespace DAO
                 dto.IdPaciente = Convert.ToInt32(pr[0].Value);
                 if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
                 {
-                    cr.ErrorMsj = Convert.ToString(pr[8].Value);
-                    cr.LugarError = "Usp_Paciente_Insert";
+                    dto.ErrorMsj = Convert.ToString(pr[8].Value);
+                    dto.LugarError = "Usp_Paciente_Insert";
                 }
             }
             catch (Exception ex)
             {
-                cr.LugarError = ex.StackTrace;
-                cr.ErrorEx = ex.Message;
-                cr.ErrorMsj = "Error al insertar Paciente";
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error al insertar Paciente";
             }
             ObjCn.Close();
-            return cr;
+            return dto;
         }
         public ClassResultV Usp_Paciente_Select(DtoB dtoBase)
         {
@@ -138,31 +137,31 @@ namespace DAO
                 };
                 pr[1] = new SqlParameter("@Nombres", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Nombres)
+                    Value = (V_ValidaPrNull(dto.Nombres))
                 };
                 pr[2] = new SqlParameter("@Apellidos", SqlDbType.VarChar, 100)
                 {
-                    Value = (dto.Apellidos)
+                    Value = (V_ValidaPrNull(dto.Apellidos))
                 };
                 pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
-                    Value = (dto.IN_Tipodoc)
+                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
                 };
                 pr[4] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
                 {
-                    Value = (dto.Numdoc)
+                    Value = (V_ValidaPrNull(dto.Numdoc))
                 };
                 pr[5] = new SqlParameter("@IN_TipoSeguro", SqlDbType.Int)
                 {
-                    Value = (dto.IN_TipoSeguro)
+                    Value = (V_ValidaPrNull(dto.IN_TipoSeguro))
                 };
                 pr[6] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
                 {
-                    Value = (dto.IN_EstadoPaciente)
+                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
                 };    
                 pr[7] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
                 {
-                    Value = (dto.UsuarioModificacionId)
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
                 };
                 pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {

@@ -9,7 +9,6 @@ namespace DTO
     public class DtoContacto : DtoB
     {
         public int IdContacto { get; set; }
-        public string PacienteId { get; set; }
         public string NombreCompleto { get; set; }
         public string IN_Tipodoc { get; set; }
         public string Numdoc { get; set; }
