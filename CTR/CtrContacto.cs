@@ -1,7 +1,6 @@
 ﻿using DTO;
 using DAO;
 
-
 namespace CTR
 {
     public class CtrContacto
