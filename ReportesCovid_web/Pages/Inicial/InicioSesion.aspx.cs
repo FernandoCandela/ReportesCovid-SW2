@@ -38,6 +38,18 @@ namespace ReportesCovid_web.Pages.Inicial
                     {
                         Response.Redirect("MenuEnfermera");
                     }
+
+                    /*para admin y medico
+                    if (dtoR.IN_Rol == 1)
+                    {
+                        Response.Redirect("MenuAdmin");
+                    }
+
+                    if (dtoR.IN_Rol == 3)
+                    {
+                        Response.Redirect("BuscarPaciente");
+                    }
+                    // --------------------------------------- */
                 }
                 else
                 {

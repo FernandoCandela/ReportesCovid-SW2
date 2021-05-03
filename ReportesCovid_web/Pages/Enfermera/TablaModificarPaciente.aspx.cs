@@ -11,7 +11,17 @@ namespace ReportesCovid_web.Pages.Enfermera
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["UsuarioLogin"] != null)
+                {
 
+                }
+                else
+                {
+                    Response.Redirect("logIn");
+                }
+            }
         }
     }
 }

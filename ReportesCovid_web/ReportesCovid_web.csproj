@@ -161,6 +161,13 @@
     <Compile Include="MasterPages\Contacto.Master.designer.cs">
       <DependentUpon>Contacto.Master</DependentUpon>
     </Compile>
+    <Compile Include="MasterPages\Usuario.Master.cs">
+      <DependentUpon>Usuario.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Usuario.Master.designer.cs">
+      <DependentUpon>Usuario.Master</DependentUpon>
+    </Compile>
     <Compile Include="MasterPages\Web_Usuarios.Master.cs">
       <DependentUpon>Web_Usuarios.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,6 +317,7 @@
     <Content Include="MasterPages\Medico.Master" />
     <Content Include="MasterPages\Enfermera.Master" />
     <Content Include="MasterPages\Contacto.Master" />
+    <Content Include="MasterPages\Usuario.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
