@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CtrContacto.cs" />
     <Compile Include="CtrPaciente.cs" />
+    <Compile Include="CtrPacienteHistoria.cs" />
     <Compile Include="CtrTablaVarios.cs" />
     <Compile Include="CtrUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
