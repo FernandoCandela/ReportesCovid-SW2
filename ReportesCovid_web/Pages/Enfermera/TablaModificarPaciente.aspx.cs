@@ -1,9 +1,13 @@
-﻿using System;
+﻿using CTR;
+using DTO;
+using ReportesCovid_web.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 namespace ReportesCovid_web.Pages.Enfermera
 {
@@ -13,15 +17,53 @@ namespace ReportesCovid_web.Pages.Enfermera
         {
             if (!IsPostBack)
             {
-                if (Session["UsuarioLogin"] != null)
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                if ( user.IN_Rol == 2)
                 {
-
+                    FirstLoad();
                 }
                 else
                 {
+                    Session.Remove("UsuarioLogin");
                     Response.Redirect("logIn");
                 }
             }
         }
+
+        public void FirstLoad()
+        {
+            CargarPacientes();
+        }
+
+
+        private void CargarPacientes()
+        {
+            try
+            {
+                List<DtoPaciente> ListPacientes = new List<DtoPaciente>();
+                ClassResultV cr = new CtrPaciente().Usp_Paciente_Select(new DtoPaciente
+                {
+                    IB_Estado = true,
+                    IN_EstadoPaciente = 1,
+                    Criterio = txtBuscar.Text.Trim()
+                }
+                );
+                //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;
+                if (!cr.HuboError)
+                {
+                    ListPacientes.AddRange(cr.List.Cast<DtoPaciente>());
+                    gvPacientes.DataSource = ListPacientes;
+                }
+                gvPacientes.DataBind();
+            }
+            catch (Exception ex)
+            {
+                
+                //ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "script", "fail('" + ex.Message + "');", true);
+            }
+        }
+
+
+
     }
 }
