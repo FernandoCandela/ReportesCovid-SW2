@@ -36,23 +36,22 @@
                     </li>
 
 
-                    <%-- si es admin --%>
-                    <li class="nav-item" id="admin1" runat="server" hidden>
-                        <a class="nav-link active" href="/CrearUsuario">Crear Cuenta</a>
+                    <%-- MENU --%>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu1" class="nav-link active"> </asp:HyperLink>
                     </li>
-                    <li class="nav-item" id="admin2" runat="server" hidden>
-                        <a class="nav-link active" href="/ModificarUsuario" tabindex="-1">Modificar Cuenta</a>
+                    <li class="nav-item"  runat="server" >
+                        <asp:HyperLink runat="server" ID="menu2" class="nav-link active" tabindex="-1"></asp:HyperLink>
                     </li>
-                    <li class="nav-item" id="admin3" runat="server" hidden>
-                        <a class="nav-link active" href="/TablaMensaje" tabindex="-1">Revisar Mensajes</a>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu3" class="nav-link active" tabindex="-1"></asp:HyperLink>
                     </li>
 
-                    <%-- si es medico --%>
+                    <%--          
                     <li class="nav-item" id="medico" runat="server" hidden>
-                        <a class="nav-link active" href="/BuscarPaciente">Buscar Paciente</a>
+                        <a class="nav-link active" href="/BuscarPaciente">Lista de Pacientes</a>
                     </li>
 
-                    <%-- si es enfermera --%>
                     <li class="nav-item" id="enfermera1" runat="server" >
                         <a class="nav-link active" href="/MenuEnfermera">Menu Enfermera</a>
                     </li>
@@ -61,7 +60,7 @@
                     </li>
                     <li class="nav-item" id="enfermera2" runat="server" >
                         <a class="nav-link active" href="/TablaModificarPaciente" tabindex="-1">Lista Paciente</a>
-                    </li>
+                    </li>--%>
 
                     <%-- --%>
 

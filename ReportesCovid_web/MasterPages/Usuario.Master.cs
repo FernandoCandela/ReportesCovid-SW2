@@ -14,38 +14,45 @@ namespace ReportesCovid_web.MasterPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Para ver que menu mostrar a cada usuario //
-            //DtoUsuario dto = new DtoUsuario();
-            //DtoUsuario dtoR = new CtrUsuario().Usp_Usuario_Login(dto);
-            //if (!dtoR.HuboError)
-            //{
-            //    Session["UsuarioLogin"] = dtoR;
+                if (!IsPostBack)
+                {
+                    if (Session["UsuarioLogin"] != null)
+                    {
+                    FirsLoad();
 
-            //    if (dtoR.IN_Rol == 1)
-            //    {
-            //            admin1.Attributes.Add("style", "visibility: visible;");
-            //            admin2.Attributes.Add("style", "visibility: visible;");
-            //            admin3.Attributes.Add("style", "visibility: visible;");
-            //    }
+                    }
+                    else
+                    {
+                        Response.Redirect("logIn");
+                    }
+                }
+        }
 
-            //    else if (dtoR.IN_Rol == 2)
-            //    {
-            //            enfermera1.Attributes.Add("style", "visibility: visible;");
-            //            enfermera2.Attributes.Add("style", "visibility: visible;");
-            //            enfermera3.Attributes.Add("style", "visibility: visible;");
-            //    }
 
-            //    else if (dtoR.IN_Rol == 3)
-            //    {
-            //            medico.Attributes.Add("style", "visibility: visible;");
-            //    }
-            //}
+        public void FirsLoad()
+        {
+            DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
 
-            //else
-            //    {
-            //        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error!", dtoR.ErrorMsj, "error"), true);
-            //    }
+            switch (user.IN_Rol)
+            {
+                case 1:
+                   
+                    break;
+                case 2:
+                    menu1.Text = "Menu Enfermera";
+                    menu1.NavigateUrl = "/MenuEnfermera";
+
+                    menu2.Text = "Registrar Paciente";
+                    menu2.NavigateUrl = "/RegistrarPaciente";
+
+                    menu3.Text = "Lista Paciente";
+                    menu3.NavigateUrl = "/TablaModificarPaciente";
+                    break;
+            }
+
 
         }
+
+
     }
 }
