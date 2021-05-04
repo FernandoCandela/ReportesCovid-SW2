@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Enfermera.Master" AutoEventWireup="true" CodeBehind="ModificarPaciente.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.ModificarPaciente" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="ModificarPaciente.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.ModificarPaciente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

@@ -69,15 +69,6 @@ namespace ReportesCovid_web.MasterPages
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl enfermera1;
 
         /// <summary>
-        /// Control enfermera2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enfermera2;
-
-        /// <summary>
         /// Control enfermera3.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace ReportesCovid_web.MasterPages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl enfermera3;
+
+        /// <summary>
+        /// Control enfermera2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl enfermera2;
 
         /// <summary>
         /// Control ContentPlaceHolder1.

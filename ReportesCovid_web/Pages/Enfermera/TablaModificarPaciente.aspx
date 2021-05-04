@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Enfermera.Master" AutoEventWireup="true" CodeBehind="TablaModificarPaciente.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.TablaModificarPaciente" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="TablaModificarPaciente.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.TablaModificarPaciente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="text-center">
-        <h1 class="display-5 fw-bold">MODIFICAR PACIENTE</h1>
+        <h1 class="display-5 fw-bold">LISTA DE PACIENTES</h1>
     </div>
 
     <div class="navbar container-fluid mx-5">
