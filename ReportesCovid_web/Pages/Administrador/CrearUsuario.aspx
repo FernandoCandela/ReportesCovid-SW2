@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Admin.Master" AutoEventWireup="true" CodeBehind="CrearUsuario.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.CrearUsuario" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="CrearUsuario.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.CrearUsuario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -12,17 +12,38 @@
             <div>
                 <h4 class="mb-3">Nuevo Usuario</h4>
                 <div class="row g-3 my-4">
+
                     <div class="col-sm-6">
-                        <label for="firstName" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <label for="firstName" class="form-label">Primer nombre</label>
+                        <%--<input type="text" class="form-control" id="firstName1">--%>
+                        <asp:TextBox runat="server" type="text" CssClass="form-control" ID="firstName1" />
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>
                     </div>
 
                     <div class="col-sm-6">
-                        <label for="lastName" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        <label for="firstName" class="form-label">Segundo nombre</label>
+                        <%--<input type="text" class="form-control" id="firstName2">--%>
+                        <asp:TextBox runat="server" type="text" CssClass="form-control" ID="firstName2" />
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Apellido Paterno</label>
+                        <%--<input type="text" class="form-control" id="lastName1" required>--%>
+                        <asp:TextBox runat="server" type="text" CssClass="form-control" ID="lastName1"/>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Apellido Materno</label>
+                        <%--<input type="text" class="form-control" id="lastName2" required>--%>
+                        <asp:TextBox runat="server" type="text" CssClass="form-control" ID="lastName2"/>
                         <div class="invalid-feedback">
                             Valid last name is required.
                         </div>
@@ -30,36 +51,46 @@
 
                     <div class="col-12">
                         <label for="dni" class="form-label">DNI</label>
-                        <input type="text" class="form-control" id="dni" placeholder="12345678" required>
+                        <%--<input type="text" class="form-control" id="dni" placeholder="12345678" required>--%>
+                        <asp:TextBox runat="server" type="text" CssClass="form-control" ID="dni"/>
                         <div class="invalid-feedback">
                             Please enter your DNI.
                         </div>
                     </div>
 
-                    <div class="col-12">
+<%--                    <div class="col-12">
                         <label for="email" class="form-label">Correo </label>
                         <input type="email" class="form-control" id="email" placeholder="you@example.com">
                         <div class="invalid-feedback">
                             Please enter a valid email address.
                         </div>
+                    </div>--%>
+
+                    <div class="col-12 form-floating">
+                        <label for="email" class="form-label">Telefono </label>
+                        <asp:TextBox runat="server" type="text" CssClass="form-control" ID="telefono" placeholder="telefono"/>
                     </div>
 
-                    <div class="col-12">
-                        <label for="telefo" class="form-label">Telefono </label>
-                        <input type="text" class="form-control" id="telefono" placeholder="123456789">
+                    <%-- añadido drop --%>
+                    <div class="col-md-5">
+                        <label for="usuario" class="form-label">Rol</label>
+                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-select-sm">
+                            <asp:ListItem Text="Administrador" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="Enfermera" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="Medico" Value="3"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
 
                     <div class="col-md-5">
-                        <label for="usuario" class="form-label">Usuario</label>
-                        <select class="form-select" id="usuario" required>
-                            <option value="">Escoge...</option>
-                            <option>Medico</option>
-                            <option>Enfermero</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid user.
-                        </div>
+                        <label for="usuario" class="form-label">Cargo</label>
+                        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-select-sm">
+                            <asp:ListItem Text="Cargo1" ></asp:ListItem>
+                            <asp:ListItem Text="Cargo2" ></asp:ListItem>
+                            <asp:ListItem Text="Cargo3" ></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
+                    <%--  --%>
+
                 </div>
                 <asp:Button runat="server" class="w-50 btn btn-primary btn-lg" type="submit" Text="Crear Usuario"></asp:Button>
             </div>

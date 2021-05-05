@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Admin.Master" AutoEventWireup="true" CodeBehind="MenuAdmin.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.WebForm1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="MenuAdmin.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container my-md-5">

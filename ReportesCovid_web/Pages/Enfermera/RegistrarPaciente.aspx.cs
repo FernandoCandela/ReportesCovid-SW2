@@ -23,5 +23,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                 }
             }
         }
+
+
     }
 }

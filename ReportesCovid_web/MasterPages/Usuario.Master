@@ -36,6 +36,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <%-- MENU --%>
+                    <%--enfermera--%>
                     <li class="nav-item" runat="server" >
                         <asp:HyperLink  runat="server" ID="menu1" class="nav-link active"> </asp:HyperLink>
                     </li>
@@ -46,22 +47,24 @@
                         <asp:HyperLink  runat="server" ID="menu3" class="nav-link active" tabindex="-1"></asp:HyperLink>
                     </li>
 
-                    <%--          
-                    <li class="nav-item" id="medico" runat="server" hidden>
-                        <a class="nav-link active" href="/BuscarPaciente">Lista de Pacientes</a>
+                    <%--medico--%>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu4" class="nav-link active" tabindex="-1"></asp:HyperLink>
                     </li>
 
-                    <li class="nav-item" id="enfermera1" runat="server" >
-                        <a class="nav-link active" href="/MenuEnfermera">Menu Enfermera</a>
+                    <%--administrador--%>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu5" class="nav-link active" tabindex="-1"></asp:HyperLink>
                     </li>
-                    <li class="nav-item" id="enfermera3" runat="server" >
-                        <a class="nav-link active" href="/RegistrarPaciente" tabindex="-1">Registrar Paciente</a>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu6" class="nav-link active" tabindex="-1"></asp:HyperLink>
                     </li>
-                    <li class="nav-item" id="enfermera2" runat="server" >
-                        <a class="nav-link active" href="/TablaModificarPaciente" tabindex="-1">Lista Paciente</a>
-                    </li>--%>
-
-                    <%-- --%>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu7" class="nav-link active" tabindex="-1"></asp:HyperLink>
+                    </li>
+                    <li class="nav-item" runat="server" >
+                        <asp:HyperLink  runat="server" ID="menu8" class="nav-link active" tabindex="-1"></asp:HyperLink>
+                    </li>
 
                     <li class="nav-item" runat="server">
                         <a class="nav-link active" href="/" tabindex="-1">Cerrar Sesion</a>

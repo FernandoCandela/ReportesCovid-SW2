@@ -24,6 +24,14 @@
                             </div>
                         </div>
 
+                        <%--  --%>
+                        <div class="col-sm-6">
+                            <asp:DropDownList ID="DropDownList1" runat="server">
+                                <asp:ListItem Text="DNI"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <%--  --%>
+
                         <div class="col-6">
                             <label for="dni" class="form-label">DNI</label>
                             <input type="text" class="form-control" id="dni" placeholder="12345678" required>
@@ -31,6 +39,20 @@
                                 Please enter your DNI.
                             </div>
                         </div>
+
+                        <%--  --%>
+                        <div class="col-sm-6">
+                            <asp:DropDownList ID="DropDownList2" runat="server">
+                                <asp:ListItem Text="Tipo de seguro"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <asp:DropDownList ID="DropDownList3" runat="server">
+                                <asp:ListItem Text="Estado de paciente"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <%--  --%>
 
                         <div class="col-6">
                             <label for="emailResponsable" class="form-label">Correo de Responsable</label>
@@ -56,7 +78,7 @@
 
                     <div class="col-12 position-relative">
                         <asp:Button runat="server" type="submit" class="btn btn-primary w-25 mb-4" Text="Guardar Cambios"></asp:Button>
-                        <asp:Button runat="server" type="submit" class="btn btn-danger w-25 mb-4 position-absolute bottom-0 end-0" Text="Dar de alta"></asp:Button>
+                        <%--<asp:Button runat="server" type="submit" class="btn btn-danger w-25 mb-4 position-absolute bottom-0 end-0" Text="Dar de alta"></asp:Button>--%>
                     </div>
 
                 </div>

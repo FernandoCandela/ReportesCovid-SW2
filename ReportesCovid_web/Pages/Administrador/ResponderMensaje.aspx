@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Admin.Master" AutoEventWireup="true" CodeBehind="ResponderMensaje.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.ResponderMensaje" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="ResponderMensaje.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.ResponderMensaje" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-center mt-4">

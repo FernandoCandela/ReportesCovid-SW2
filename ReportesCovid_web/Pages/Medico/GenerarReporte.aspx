@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Medico.Master" AutoEventWireup="true" CodeBehind="GenerarReporte.aspx.cs" Inherits="ReportesCovid_web.Pages.Medico.GenerarReporte" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="GenerarReporte.aspx.cs" Inherits="ReportesCovid_web.Pages.Medico.GenerarReporte" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

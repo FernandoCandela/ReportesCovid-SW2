@@ -10,13 +10,11 @@
                 <input class="form-control" id="exampleInputCredencial">
             </div>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-primary btn-lg px-4 me-sm-3">Verificar</asp:LinkButton>
-                <asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-outline-secondary btn-lg px-4">Olvide Credencial</asp:LinkButton>
-                <asp:LinkButton ID="LinkButton3" runat="server" class="btn btn-outline-secondary btn-lg px-4" PostBackUrl="/EnviarMensaje">Soporte</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-primary btn-lg px-4 me-sm-3">Ingresar</asp:LinkButton>
+                <%--<asp:LinkButton ID="LinkButton2" runat="server" class="btn btn-outline-secondary btn-lg px-4">Olvide Credencial</asp:LinkButton>--%>
+                <%--<asp:LinkButton ID="LinkButton3" runat="server" class="btn btn-outline-secondary btn-lg px-4" PostBackUrl="/EnviarMensaje">Soporte</asp:LinkButton>--%>
 
-                <%--<a href="#"><asp:Button runat="server" type="button" class="btn btn-primary btn-lg px-4 me-sm-3" Text="Verificar"></asp:Button></a>
-                <a href="17.RecuperarCredencial.html"><asp:Button runat="server" type="button" class="btn btn-outline-secondary btn-lg px-4" Text="Olvide Credencial"></asp:Button></a>
-                <a href="#"><asp:Button runat="server" type="button" class="btn btn-outline-secondary btn-lg px-4" text="Soporte"></asp:Button></a>--%>
+                
             </div>
         </div>
     </div>

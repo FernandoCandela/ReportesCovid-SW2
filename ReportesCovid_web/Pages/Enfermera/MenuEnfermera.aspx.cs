@@ -20,7 +20,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                 else
                 {
                     Response.Redirect("logIn");
-                }                      
+                }
             }
         }
     }

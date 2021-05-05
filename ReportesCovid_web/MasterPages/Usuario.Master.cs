@@ -36,7 +36,17 @@ namespace ReportesCovid_web.MasterPages
             switch (user.IN_Rol)
             {
                 case 1:
-                   
+                    menu5.Text = "Menu Administrador";
+                    menu5.NavigateUrl = "/MenuAdmin";
+
+                    menu6.Text = "Registrar Usuario";
+                    menu6.NavigateUrl = "/CrearUsuario";
+
+                    menu7.Text = "Lista de usuarios";
+                    menu7.NavigateUrl = "/TablaUsuario";
+
+                    menu8.Text = "Lista de mensajes";
+                    menu8.NavigateUrl = "/TablaMensaje";
                     break;
                 case 2:
                     menu1.Text = "Menu Enfermera";
@@ -47,6 +57,10 @@ namespace ReportesCovid_web.MasterPages
 
                     menu3.Text = "Lista Paciente";
                     menu3.NavigateUrl = "/TablaModificarPaciente";
+                    break;
+                case 3:
+                    menu4.Text = "Lista de Pacientes";
+                    menu4.NavigateUrl = "/BuscarPaciente";
                     break;
             }
 

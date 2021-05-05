@@ -12,7 +12,6 @@
                         </div>
                         <div class="card-body p-5">
                             <asp:HyperLink ID="LinkButton1" runat="server" class="w-100 btn btn-lg btn-primary" NavigateUrl="/RegistrarPaciente">Entrar</asp:HyperLink>
-                            <%--<a href="12.RegistrarPaciente.html" class="w-100 btn btn-lg btn-primary">Entrar</a>--%>
                         </div>
                     </div>
                 </div>
@@ -23,7 +22,6 @@
                         </div>
                         <div class="card-body p-5">
                             <asp:HyperLink ID="LinkButton2" runat="server" class="w-100 btn btn-lg btn-primary" NavigateUrl="/TablaModificarPaciente">Entrar</asp:HyperLink>
-                            <%--<a href="13.TablaModificarPaciente.html" class="w-100 btn btn-lg btn-primary">Entrar</a>--%>
 
                         </div>
                     </div>
