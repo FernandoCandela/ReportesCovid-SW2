@@ -8,7 +8,7 @@ namespace DTO
 {
     public class DtoPaciente : DtoB
     {
-        public int IdPaciente { get; set; } 
+        public int IdPaciente { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public int IN_Tipodoc { get; set; }
@@ -23,9 +23,9 @@ namespace DTO
         //public string Credencial { get; set; }
 
         ////Nombres de los IN
-        //public string NombreTipodoc { get; set; }
-        //public string NombreTipoSeguro { get; set; }
-        //public string NombreEstadoPaciente { get; set; }
+        public string NombreTipodoc { get; set; }
+        public string NombreTipoSeguro { get; set; }
+        public string NombreEstadoPaciente { get; set; }
 
 
 

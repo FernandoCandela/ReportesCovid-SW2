@@ -95,11 +95,13 @@
     <Content Include="html\admin\7.TablaMensaje.html" />
     <Content Include="html\admin\8.ResponderMensaje.html" />
     <Content Include="html\medico\9.BuscarPaciente.html" />
+    <Content Include="favicon.ico" />
     <Content Include="img\corazon.svg" />
     <Content Include="img\opcion.svg" />
     <Content Include="img\paciente.svg" />
     <Content Include="img\person.svg" />
     <Content Include="Index.html" />
+    <Content Include="js\General\jsGeneral.js" />
     <Content Include="Pages\Administrador\CrearUsuario.aspx" />
     <Content Include="Pages\Administrador\MenuAdmin.aspx" />
     <Content Include="Pages\Administrador\ModificarUsuario.aspx" />
@@ -326,9 +328,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CTR\CTR.csproj">
       <Project>{590c564c-b7b5-46a0-acb8-9e3d67cd0b1b}</Project>

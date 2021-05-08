@@ -21,9 +21,6 @@
                     }, false)
                 })
         })()
-
-
-
     </script>
 
 
@@ -124,17 +121,16 @@
                     <div class="row g-3 my-4">
                         <div class="col-md-6">
                             <label for="txtNombres" class="form-label">Nombres</label>
-                            <%--<input type="text" class="form-control" id="validationCustom01" value="Mark" required>--%>
                             <asp:TextBox type="text" class="form-control" ID="txtNombres" runat="server" required="true"></asp:TextBox>
-                            <div class="valid-feedback">
-                                Looks good!
+                            <div class="invalid-feedback">
+                                Debe llenar este cambo.
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="tApellidos" class="form-label">Apellidos</label>
                             <asp:TextBox type="text" class="form-control" ID="txtApellidos" runat="server" required="true"></asp:TextBox>
-                            <div class="valid-feedback">
-                                Looks good!
+                            <div class="invalid-feedback">
+                                Debe llenar este cambo.
                             </div>
                         </div>
 
@@ -145,15 +141,15 @@
                                 <asp:ListItem Text="..."></asp:ListItem>
                             </asp:DropDownList>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Debe seleccionar un Tipo de documento valido.
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <label for="txtNumdoc" class="form-label">Número de Documento</label>
-                            <asp:TextBox type="text" class="form-control" ID="txtNumdoc" name="tDoc" runat="server" required="true"></asp:TextBox>
+                            <asp:TextBox type="text" class="form-control" ID="txtNumdoc" onkeypress="return solonumerosydecimales(event);" name="tDoc" runat="server" required="true"></asp:TextBox>
                             <div class="invalid-feedback">
-                                Please provide a valid city.
+                                Debe llenar este cambo.
                             </div>
                         </div>
 
@@ -164,7 +160,7 @@
                                 <asp:ListItem Text="..."></asp:ListItem>
                             </asp:DropDownList>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Debe seleccionar un Tipo de seguro valido.
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -174,7 +170,7 @@
                                 <asp:ListItem Text="..."></asp:ListItem>
                             </asp:DropDownList>
                             <div class="invalid-feedback">
-                                Please select a valid state.
+                                Debe seleccionar un Estado de paciente valido.
                             </div>
                         </div>
 
@@ -184,30 +180,30 @@
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                                 <asp:TextBox type="email" CssClass="form-control" ID="txtCorreo" runat="server" aria-describedby="inputGroupPrepend" required="true"></asp:TextBox>
                                 <div class="invalid-feedback">
-                                    Please choose a username.
+                                    Debe ingresar un correo valido.
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="txtTelefonoResponsable" class="form-label">Zip</label>
-                            <asp:TextBox type="text" class="form-control" ID="txtTelefonoResponsable" runat="server" required="true"></asp:TextBox>
+                            <label for="txtTelefonoResponsable" class="form-label">Telefono de Responsable</label>
+                            <asp:TextBox type="text" class="form-control" ID="txtTelefonoResponsable" onkeypress ="return solonumerosydecimales(event);" runat="server" required="true" MaxLength="9"></asp:TextBox>
                             <div class="invalid-feedback">
-                                Please provide a valid zip.
+                                Debe llenar este cambo.
                             </div>
                         </div>
 
 
                         <div class="col-md-6">
-                            <label for="txtTelefonoResponsable" class="form-label">Zip</label>
-                            <asp:TextBox type="text" class="form-control" ID="txtNombreApellidoResposable" runat="server"></asp:TextBox>
+                            <label for="txtTelefonoResponsable" class="form-label">Nombre y Apellido de Responsable</label>
+                            <asp:TextBox type="text" class="form-control" ID="txtNombreApellidoResposable" runat="server" required="true"></asp:TextBox>
                             <div class="invalid-feedback">
-                                Please provide a valid zip.
+                                Debe llenar este cambo.
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <asp:Button runat="server" CssClass="btn btn-primary" Text="Submit form"></asp:Button>
+                            <asp:Button runat="server" CssClass="btn btn-primary" Text="Registrar Paciente"></asp:Button>
                         </div>
 
                     </div>

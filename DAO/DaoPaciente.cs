@@ -106,11 +106,11 @@ namespace DAO
                         FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
-                        IB_Estado = GetValue("IB_Estado", reader).ValueBool
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         //Credencial = GetValue("Credencial", reader).ValueString,
-                        //NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
-                        //NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
-                        //NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString,
+                        NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
+                        NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
+                        NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
                     });
                 }
                 reader.Close();
@@ -158,7 +158,7 @@ namespace DAO
                 pr[6] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
-                };    
+                };
                 pr[7] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioModificacionId))

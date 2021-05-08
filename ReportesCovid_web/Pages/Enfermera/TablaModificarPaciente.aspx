@@ -7,8 +7,8 @@
 
     <div class="navbar container-fluid mx-5">
         <div class="d-flex">
-            <asp:TextBox runat="server" ID="txtBuscar" class="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar"></asp:TextBox>
-            <asp:Button runat="server" class="btn btn-outline-success" type="submit" Text="Buscar"></asp:Button>
+            <asp:TextBox runat="server" ID="txtBuscar" CssClass="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar"></asp:TextBox>
+            <asp:LinkButton runat="server" ID="btnBuscar" CssClass="btn btn-outline-success" Text="Buscar" OnClick="btnBuscar_Click"></asp:LinkButton>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
                         <%--<HeaderStyle Width="3%" />--%>
                         <HeaderTemplate>Tipo Documento</HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTipoDocumento" runat="server" Text='<% #Bind("IN_Tipodoc")%>' />
+                            <asp:Label ID="lblTipoDocumento" runat="server" Text='<% #Bind("NombreTipodoc")%>' />
                         </ItemTemplate>
                     </asp:TemplateField>
 
@@ -67,7 +67,7 @@
                         <%--<HeaderStyle Width="3%" />--%>
                         <HeaderTemplate>Tipo Seguro</HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTipoSeguro" runat="server" Text='<% #Bind("IN_TipoSeguro")%>' />
+                            <asp:Label ID="lblTipoSeguro" runat="server" Text='<% #Bind("NombreTipoSeguro")%>' />
                         </ItemTemplate>
                     </asp:TemplateField>
 
@@ -75,7 +75,7 @@
                         <%--<HeaderStyle Width="3%" />--%>
                         <HeaderTemplate>Estado Paciente</HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblEstadoPaciente" runat="server" Text='<% #Bind("IN_EstadoPaciente")%>' />
+                            <asp:Label ID="lblEstadoPaciente" runat="server" Text='<% #Bind("NombreEstadoPaciente")%>' />
                         </ItemTemplate>
                     </asp:TemplateField>
 
@@ -83,7 +83,7 @@
                         <HeaderStyle Width="5%" />
                         <HeaderTemplate>Editar Paciente</HeaderTemplate>
                         <ItemTemplate>
-                            <asp:LinkButton runat="server" ID="lnkEditar" CssClass="" Text="" CommandName="Editar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="fa fa-edit " style="color:black"> Editar </i> </asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="lnkEditar" CssClass="" Text="" CommandName="Editar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="fa fa-edit "></i> Editar </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
 

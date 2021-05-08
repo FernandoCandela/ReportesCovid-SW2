@@ -63,7 +63,9 @@ namespace ReportesCovid_web.Pages.Enfermera
             }
         }
 
-
-
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarPacientes();
+        }
     }
 }
