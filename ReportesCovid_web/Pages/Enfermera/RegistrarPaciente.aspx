@@ -137,8 +137,6 @@
                         <div class="col-md-6">
                             <label for="ddlTipoDocumento" class="form-label">Tipo Documento</label>
                             <asp:DropDownList runat="server" ID="ddlTipoDocumento" class="form-select" required="true">
-                                <asp:ListItem Selected="True" disabled Value="" Text="Choose..."></asp:ListItem>
-                                <asp:ListItem Text="..."></asp:ListItem>
                             </asp:DropDownList>
                             <div class="invalid-feedback">
                                 Debe seleccionar un Tipo de documento valido.
@@ -156,8 +154,6 @@
                         <div class="col-md-6">
                             <label for="ddlTipoSeguro" class="form-label">Tipo Seguro</label>
                             <asp:DropDownList runat="server" ID="ddlTipoSeguro" class="form-select" required="true">
-                                <asp:ListItem Selected="True" disabled Value="" Text="Choose..."></asp:ListItem>
-                                <asp:ListItem Text="..."></asp:ListItem>
                             </asp:DropDownList>
                             <div class="invalid-feedback">
                                 Debe seleccionar un Tipo de seguro valido.
@@ -166,8 +162,6 @@
                         <div class="col-md-6">
                             <label for="ddlEstadoPaciente" class="form-label">Estado Paciente</label>
                             <asp:DropDownList runat="server" ID="ddlEstadoPaciente" class="form-select" required="true">
-                                <asp:ListItem Selected="True" disabled Value="" Text="Choose..."></asp:ListItem>
-                                <asp:ListItem Text="..."></asp:ListItem>
                             </asp:DropDownList>
                             <div class="invalid-feedback">
                                 Debe seleccionar un Estado de paciente valido.

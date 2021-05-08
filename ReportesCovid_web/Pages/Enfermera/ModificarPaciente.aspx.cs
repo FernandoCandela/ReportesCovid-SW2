@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using DTO;
+using CTR;
+using System.Web.Security;
 namespace ReportesCovid_web.Pages.Enfermera
 {
     public partial class ModificarPaciente : System.Web.UI.Page
@@ -13,15 +15,22 @@ namespace ReportesCovid_web.Pages.Enfermera
         {
             if (!IsPostBack)
             {
-                if (Session["UsuarioLogin"] != null)
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                if (user.IN_Rol == 2)
                 {
-
+                    FirstLoad();
                 }
                 else
                 {
+                    Session.Remove("UsuarioLogin");
                     Response.Redirect("logIn");
                 }
             }
+        }
+
+        public void FirstLoad()
+        {
+   
         }
     }
 }
