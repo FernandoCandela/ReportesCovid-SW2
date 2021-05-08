@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DTO;
 using CTR;
+using ReportesCovid_web.Helpers;
 using System.Web.Security;
 
 namespace ReportesCovid_web.Pages.Enfermera
@@ -116,6 +117,49 @@ namespace ReportesCovid_web.Pages.Enfermera
             catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoSeguro." + "', 'error');", true);
+            }
+        }
+        protected void btnRegistrarPaciente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                DtoPaciente dtoPa = new CtrPaciente().Usp_Paciente_Insert(new DtoPaciente
+                {
+                    Nombres = txtNombres.Text.Trim(),
+                    Apellidos = txtApellidos.Text.Trim(),
+                    IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
+                    Numdoc = txtNumdoc.Text.Trim(),
+                    IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
+                    IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
+                    UsuarioCreacionId = user.IdUsuario
+
+                });
+                if (dtoPa.HuboError)
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
+                else
+                {
+                    //registrarContacto
+                    //DtoPaciente dtoPa = new CtrPaciente().Usp_Paciente_Insert(new DtoPaciente
+                    //{
+                    //    Nombres = txtNombres.Text.Trim(),
+                    //    Apellidos = txtApellidos.Text.Trim(),
+                    //    IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
+                    //    Numdoc = txtNumdoc.Text.Trim(),
+                    //    IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
+                    //    IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
+                    //    UsuarioCreacionId = user.IdUsuario
+
+                    //});
+
+
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Registrado", "Se registro correctamente el Paciente", "success", "/TablaModificarPaciente"), true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Registrar el Paciente." + "', 'error');", true);
             }
         }
     }

@@ -30,14 +30,12 @@ namespace ReportesCovid_web.Helpers
         public static string mensajeConfirmacion(string titulo, string mensaje, string tipo)
         {
             string script = @"Swal.fire({title: '" + titulo + "',text: '" + mensaje + "', icon: '" + tipo + "', button: 'OK'})";
-            //script += ".then((willDelete) => { if (willDelete) { window.location = 'GestionarPedido.aspx'; } else { window.location = 'GestionarPedido.aspx'; }});";
             return script;
         }
 
         public static string mensajeConfirmacionRedirect(string titulo, string mensaje, string tipo, string url)
         {
             string script = @"Swal.fire({title: '" + titulo + "',text: '" + mensaje + "', icon: '" + tipo + "', button: 'OK'}).then(function() { window.location = '" + url + "'; });";
-            //script += ".then((willDelete) => { if (willDelete) { window.location = 'GestionarPedido.aspx'; } else { window.location = 'GestionarPedido.aspx'; }});";
             return script;
         }
 
