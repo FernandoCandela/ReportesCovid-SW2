@@ -30,9 +30,36 @@ namespace ReportesCovid_web.Pages.Medico
 
         public void FirstLoad()
         {
+            CargarEstadosPaciente();
             CargarPacientes();
         }
 
+        private void CargarEstadosPaciente()
+        {
+            try
+            {
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                {
+                    TipoAtributo = "IN_EstadoPaciente",
+                    EntidadTabla = "Paciente"
+                });
+                if (!cr.HuboError)
+                {
+                    List<DtoTablaVarios> list = cr.List.Cast<DtoTablaVarios>().ToList();
+                    ddlEstadoPaciente.DataTextField = "Descripcion";
+                    ddlEstadoPaciente.DataValueField = "Valor";
+                    ddlEstadoPaciente.DataSource = list;
+                    ddlEstadoPaciente.DataBind();
+                    ListItem firstLista = new ListItem("Todos", "-1");
+                    firstLista.Attributes.Add("Selected", "True");
+                    ddlEstadoPaciente.Items.Insert(0, firstLista);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Estados del Paciente." + "', 'error');", true);
+            }
+        }
 
         private void CargarPacientes()
         {
@@ -42,7 +69,7 @@ namespace ReportesCovid_web.Pages.Medico
                 ClassResultV cr = new CtrPaciente().Usp_Paciente_Select(new DtoPaciente
                 {
                     IB_Estado = true,
-                    IN_EstadoPaciente = 1,
+                    IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
                     Criterio = txtBuscar.Text.Trim()
                 }
                 );

@@ -33,23 +33,20 @@ namespace ReportesCovid_web.Pages.Inicial
                 if (!dtoR.HuboError)
                 {
                     Session["UsuarioLogin"] = dtoR;
-
-                    if (dtoR.IN_Rol == 2)
+                    switch (dtoR.IN_Rol)
                     {
-                        Response.Redirect("MenuEnfermera");
+                        case 1:
+                            Response.Redirect("MenuAdmin");
+                            break;
+                        case 2:
+                            Response.Redirect("MenuEnfermera");
+                            break;
+                        case 3:
+                            Response.Redirect("BuscarPaciente");
+                            break;
+                        default:
+                            break;
                     }
-
-                    /*para admin y medico
-                    if (dtoR.IN_Rol == 1)
-                    {
-                        Response.Redirect("MenuAdmin");
-                    }
-
-                    if (dtoR.IN_Rol == 3)
-                    {
-                        Response.Redirect("BuscarPaciente");
-                    }
-                    // --------------------------------------- */
                 }
                 else
                 {

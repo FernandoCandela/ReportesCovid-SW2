@@ -5,12 +5,6 @@
         <h1 class="display-5 fw-bold">LISTA DE PACIENTES</h1>
     </div>
 
-    <div class="navbar container-fluid mx-5" style="display: none">
-        <div class="d-flex">
-
-           
-        </div>
-    </div>
     <div class="container rounded" >
 
         <div class="row py-2 float-right">

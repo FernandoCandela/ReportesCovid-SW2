@@ -59,7 +59,7 @@ namespace ReportesCovid_web.Pages.Enfermera
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoSeguro." + "', 'error');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar  Estados del Paciente." + "', 'error');", true);
             }
         }
         private void CargarPacientes()
