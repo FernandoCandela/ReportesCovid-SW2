@@ -9,7 +9,7 @@ namespace DAO
 {
     public class DaoContacto : DaoB
     {
-        public DtoContacto Usp_Contacto_Insert (DtoB dtoBase)   
+        public DtoContacto Usp_Contacto_Insert(DtoB dtoBase)
         {
             DtoContacto dto = (DtoContacto)dtoBase;
             SqlParameter[] pr = new SqlParameter[9];
@@ -19,7 +19,7 @@ namespace DAO
                 {
                     Direction = ParameterDirection.Output
                 };
-                pr[1] = new SqlParameter("@NombreCompleto", SqlDbType.VarChar,200)
+                pr[1] = new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.NombreCompleto))
                 };
@@ -68,7 +68,7 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-        public DtoContacto Usp_Contacto_SelectOne (DtoB dtoBase)
+        public DtoContacto Usp_Contacto_SelectOne(DtoB dtoBase)
         {
             DtoContacto dto = (DtoContacto)dtoBase;
             SqlParameter[] pr = new SqlParameter[1];
@@ -113,6 +113,61 @@ namespace DAO
             }
             ObjCn.Close();
             return dto;
+        }
+        public ClassResultV Usp_Contacto_Update_ByPacienteId(DtoB dtoBase)
+        {
+            DtoContacto dto = (DtoContacto)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[9];
+            try
+            {
+                pr[0] = new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.NombreCompleto))
+                };
+                pr[1] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
+                };
+                pr[2] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                {
+                    Value = (V_ValidaPrNull(dto.Numdoc))
+                };
+                pr[3] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                {
+                    Value = (V_ValidaPrNull(dto.Email))
+                };
+                pr[4] = new SqlParameter("@Telefono", SqlDbType.VarChar, 50)
+                {
+                    Value = (V_ValidaPrNull(dto.Telefono))
+                };
+                pr[5] = new SqlParameter("@PacienteId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.PacienteId))
+                };
+                pr[6] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+                pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Contacto_Update_ByPacienteId", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[8].Value);
+                    cr.LugarError = "Usp_Contacto_Update_ByPacienteId";
+                }
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar los datos del Contacto";
+            }
+            ObjCn.Close();
+            return cr;
         }
     }
 

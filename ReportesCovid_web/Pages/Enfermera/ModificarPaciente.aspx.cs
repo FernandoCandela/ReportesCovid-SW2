@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using DTO;
 using CTR;
 using System.Web.Security;
+using ReportesCovid_web.Helpers;
+
 namespace ReportesCovid_web.Pages.Enfermera
 {
     public partial class ModificarPaciente : System.Web.UI.Page
@@ -129,35 +131,87 @@ namespace ReportesCovid_web.Pages.Enfermera
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoSeguro." + "', 'error');", true);
             }
         }
-
         private void LlenarDetalle()
         {
-
-            DtoPaciente dtop = new CtrPaciente().Usp_Contacto_SelectOne(new DtoPaciente
+            try
             {
-                IdPaciente = Convert.ToInt32(Request.QueryString["idPaciente"])
-            });
-            if (!dtop.HuboError)
-            {
-                txtNombres.Text = dtop.Nombres;
-                txtApellidos.Text = dtop.Apellidos;
-                ddlTipoDocumento.SelectedValue = dtop.IN_Tipodoc.ToString();
-                txtNumdoc.Text = dtop.Numdoc.ToString();
-                ddlTipoSeguro.SelectedValue = dtop.IN_TipoSeguro.ToString();
-                ddlEstadoPaciente.SelectedValue = dtop.IN_EstadoPaciente.ToString();
-
-                DtoContacto dtoC = new CtrContacto().Usp_Contacto_SelectOne(new DtoContacto
+                DtoPaciente dtop = new CtrPaciente().Usp_Contacto_SelectOne(new DtoPaciente
                 {
-                    PacienteId = Convert.ToInt32(Request.QueryString["idPaciente"])
+                    IdPaciente = Convert.ToInt32(Request.QueryString["idPaciente"])
                 });
-                if (!dtoC.HuboError)
+                if (!dtop.HuboError)
                 {
-                    txtNombreApellidoContacto.Text = dtoC.NombreCompleto;
-                    ddlTipoDocContacto.Text = dtoC.IN_Tipodoc.ToString();
-                    txtNumDocContacto.Text = dtoC.Numdoc;
-                    txtCorreoContacto.Text = dtoC.Email;
-                    txtTelefonoContacto.Text = dtoC.Telefono;
+                    txtNombres.Text = dtop.Nombres;
+                    txtApellidos.Text = dtop.Apellidos;
+                    ddlTipoDocumento.SelectedValue = dtop.IN_Tipodoc.ToString();
+                    txtNumdoc.Text = dtop.Numdoc.ToString();
+                    ddlTipoSeguro.SelectedValue = dtop.IN_TipoSeguro.ToString();
+                    ddlEstadoPaciente.SelectedValue = dtop.IN_EstadoPaciente.ToString();
+
+                    DtoContacto dtoC = new CtrContacto().Usp_Contacto_SelectOne(new DtoContacto
+                    {
+                        PacienteId = Convert.ToInt32(Request.QueryString["idPaciente"])
+                    });
+                    if (!dtoC.HuboError)
+                    {
+                        txtNombreApellidoContacto.Text = dtoC.NombreCompleto;
+                        ddlTipoDocContacto.Text = dtoC.IN_Tipodoc.ToString();
+                        txtNumDocContacto.Text = dtoC.Numdoc;
+                        txtCorreoContacto.Text = dtoC.Email;
+                        txtTelefonoContacto.Text = dtoC.Telefono;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        protected void btnActualizarPaciente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                ClassResultV cr = new CtrPaciente().Usp_Paciente_Update_ByIdPaciente(new DtoPaciente
+                {
+                    IdPaciente = Convert.ToInt32(Request.QueryString["idPaciente"]),
+                    Nombres = txtNombres.Text,
+                    Apellidos = txtApellidos.Text,
+                    IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
+                    Numdoc = txtNumdoc.Text,
+                    IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
+                    IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
+                    UsuarioModificacionId = user.IdUsuario
+                });
+                if (cr.HuboError)
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
+                else
+                {
+                    ClassResultV crC = new CtrContacto().Usp_Contacto_Update_ByPacienteId(new DtoContacto
+                    {
+                        NombreCompleto = txtNombreApellidoContacto.Text.Trim(),
+                        IN_Tipodoc = Convert.ToInt32(ddlTipoDocContacto.SelectedValue),
+                        Numdoc = txtNumDocContacto.Text.Trim(),
+                        Email = txtCorreoContacto.Text.Trim(),
+                        Telefono = txtTelefonoContacto.Text.Trim(),
+                        PacienteId = Convert.ToInt32(Request.QueryString["idPaciente"]),
+                        UsuarioModificacionId = user.IdUsuario
+                    });
+                    if (cr.HuboError)
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", crC.ErrorMsj, "error"), true);
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Actualizado", "Se actualizo correctamente el paciente", "success", "/TablaModificarPaciente"), true);
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

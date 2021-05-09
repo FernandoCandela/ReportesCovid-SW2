@@ -136,7 +136,7 @@
             </div>
             <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                <asp:Button runat="server" ID="btnActualizarPaciente" CssClass="btn btn-primary" Text="Actualizar Paciente"></asp:Button>
+                <asp:Button runat="server" ID="btnActualizarPaciente" CssClass="btn btn-primary" Text="Actualizar Paciente" OnClick ="btnActualizarPaciente_Click"></asp:Button>
             </div>
 
 
