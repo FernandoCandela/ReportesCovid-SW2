@@ -16,13 +16,13 @@ namespace ReportesCovid_web.Pages.Administrador
             if (!IsPostBack)
             {
                 DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
-                if (user.IN_Rol == 1)
+                if (user != null && user.IN_Rol == 1)
                 {
                     FirstLoad();
                 }
                 else
                 {
-                    Session.Remove("UsuarioLogin");
+                    Session.RemoveAll();
                     Response.Redirect("logIn");
                 }
             }

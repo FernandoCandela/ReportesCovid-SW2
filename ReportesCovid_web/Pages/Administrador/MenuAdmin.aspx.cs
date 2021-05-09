@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,15 +14,19 @@ namespace ReportesCovid_web.Pages.Administrador
         {
             if (!IsPostBack)
             {
-                if (Session["UsuarioLogin"] != null)
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                if (user != null && user.IN_Rol == 1)
                 {
-
+                    FirstLoad();
                 }
                 else
                 {
+                    Session.RemoveAll();
                     Response.Redirect("logIn");
                 }
             }
         }
+
+        public void FirstLoad() { }
     }
 }

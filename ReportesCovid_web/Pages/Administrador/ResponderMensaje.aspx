@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="ResponderMensaje.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.ResponderMensaje" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="text-center mt-4">
+    <div class="text-center mt-5 p-4">
         <h1 class="display-5 fw-bold">MENSAJES</h1>
     </div>
 
@@ -34,9 +34,8 @@
             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
             <label for="floatingTextarea2">Respuesta</label>
         </div>
-        <div class="col-12">
-            <asp:Button runat="server" type="submit" class="btn btn-primary w-25 mb-4" Text="Guardar Cambios"></asp:Button>
-            <asp:Button runat="server" type="submit" class="btn btn-danger w-25 mb-4" text="Borrar Usuario"></asp:Button>
+        <div class="col-12 ">
+            <asp:Button runat="server" type="submit" class="btn btn-primary w-25 m-auto" Text="Enviar"></asp:Button>
         </div>
     </div>
 </asp:Content>
