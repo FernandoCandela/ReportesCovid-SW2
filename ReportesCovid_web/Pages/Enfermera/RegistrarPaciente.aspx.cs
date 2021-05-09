@@ -141,7 +141,8 @@ namespace ReportesCovid_web.Pages.Enfermera
                     Numdoc = txtNumdoc.Text.Trim(),
                     IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
                     IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
-                    UsuarioCreacionId = user.IdUsuario
+                    UsuarioCreacionId = user.IdUsuario,
+                    Credencial = "credencialtest"
 
                 });
                 if (dtoPa.HuboError)
@@ -156,7 +157,8 @@ namespace ReportesCovid_web.Pages.Enfermera
                         Numdoc = txtNumDocContacto.Text.Trim(),
                         Email = txtCorreoContacto.Text.Trim(),
                         Telefono = txtTelefonoContacto.Text.Trim(),
-                        UsuarioCreacionId = user.IdUsuario
+                        UsuarioCreacionId = user.IdUsuario,
+                        PacienteId = dtoPa.IdPaciente
 
                     });
                     if (dtoContacto.HuboError)

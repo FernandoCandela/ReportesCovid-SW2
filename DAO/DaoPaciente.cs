@@ -12,7 +12,7 @@ namespace DAO
         public DtoPaciente Usp_Paciente_Insert(DtoB dtoBase)
         {
             DtoPaciente dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[9];
+            SqlParameter[] pr = new SqlParameter[10];
             try
             {
                 pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
@@ -47,7 +47,11 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
-                pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[8] = new SqlParameter("@Credencial", SqlDbType.VarChar)
+                {
+                    Value = (V_ValidaPrNull(dto.Credencial))
+                };
+                pr[9] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
@@ -56,9 +60,9 @@ namespace DAO
                 {
                     dto.IdPaciente = Convert.ToInt32(pr[0].Value);
                 }
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[9].Value)))
                 {
-                    dto.ErrorMsj = Convert.ToString(pr[8].Value);
+                    dto.ErrorMsj = Convert.ToString(pr[9].Value);
                     dto.LugarError = "Usp_Paciente_Insert";
                 }
             }
@@ -110,7 +114,7 @@ namespace DAO
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
-                        //Credencial = GetValue("Credencial", reader).ValueString,
+                        Credencial = GetValue("Credencial", reader).ValueString,
                         NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
                         NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
                         NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString

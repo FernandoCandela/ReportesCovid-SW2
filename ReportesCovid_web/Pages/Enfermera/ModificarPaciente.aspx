@@ -120,7 +120,7 @@
                             Debe llenar este cambo.
                         </div>
                     </div>
-                    <div class="col-md-6">
+<%--                    <div class="col-md-6">
                         <label for="txtCredencial" class="form-label">Credencial</label>
                         <div class="input-group">
                             <asp:TextBox type="Password" class="form-control" ClientIDMode="Static" ID="txtPassword" runat="server"></asp:TextBox>
@@ -128,7 +128,7 @@
                                 <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"><span class="fa fa-eye-slash icon"></span></button>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
 
                 </div>
 
@@ -171,7 +171,7 @@
             });
         })
     </script>
-    <script type="text/javascript">
+   <%-- <script type="text/javascript">
         function mostrarPassword() {
             var cambio = document.getElementById("txtPassword");
             if (cambio.type == "password") {
@@ -189,5 +189,5 @@
                 $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
             });
         });
-    </script>
+    </script>--%>
 </asp:Content>

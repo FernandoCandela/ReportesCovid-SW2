@@ -43,6 +43,10 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
+                pr[7] = new SqlParameter("@PacienteId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.PacienteId))
+                };
                 pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
