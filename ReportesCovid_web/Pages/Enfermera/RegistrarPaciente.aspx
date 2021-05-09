@@ -108,18 +108,10 @@
             </div>
             <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                <asp:LinkButton runat="server" ID="btnRegistrarPaciente" CssClass="btn btn-primary" Text="Registrar Paciente" OnClick="btnRegistrarPaciente_Click"></asp:LinkButton>
+                <asp:Button runat="server" ID="btnRegistrarPaciente" CssClass="btn btn-primary" Text="Registrar Paciente" OnClick="btnRegistrarPaciente_Click"></asp:Button>
             </div>
 
 
         </div>
     </div>
-    <script>
-        jQuery(function () {
-            jQuery('#MyTab a').on('click', function () {
-                $(this).tab('show');
-            });
-        })
-
-    </script>
 </asp:Content>

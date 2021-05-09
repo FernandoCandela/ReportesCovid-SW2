@@ -18,7 +18,6 @@
         })
 })()
 
-
 function solonumerosydecimales(e) {
     var key;
     if (window.event) // IE
@@ -37,4 +36,10 @@ function solonumerosydecimales(e) {
         }
     }
     return true;
+
+    jQuery(function () {
+        jQuery('#MyTab a').on('click', function () {
+            $(this).tab('show');
+        });
+    })
 }
