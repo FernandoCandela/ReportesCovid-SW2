@@ -16,13 +16,13 @@ namespace ReportesCovid_web.Pages.Enfermera
             if (!IsPostBack)
             {
                 DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
-                if (user.IN_Rol == 2)
+                if (user != null && user.IN_Rol == 2)
                 {
                     FirstLoad();
                 }
                 else
                 {
-                    Session.Remove("UsuarioLogin");
+                    Session.RemoveAll();
                     Response.Redirect("logIn");
                 }
             }

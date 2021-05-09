@@ -47,7 +47,7 @@
 
                     <div class="col-md-6">
                         <label for="txtNumdoc" class="form-label">Número de Documento</label>
-                        <asp:TextBox type="text" class="form-control" ID="txtNumdoc" onkeypress="return solonumerosydecimales(event);" name="tDoc" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtNumdoc" onkeypress="return solonumerosydecimales(event);" name="tDoc" MaxLength="10" runat="server" required="true"></asp:TextBox>
                         <div class="invalid-feedback">
                             Debe llenar este cambo.
                         </div>
@@ -77,7 +77,7 @@
 
                     <div class="col-md-6">
                         <label for="ddlTipoDocumento" class="form-label">Tipo Documento</label>
-                        <asp:DropDownList runat="server" ID="DropDownList1" class="form-select" required="true">
+                        <asp:DropDownList runat="server" ID="ddlTipoDocContacto" class="form-select" required="true">
                         </asp:DropDownList>
                         <div class="invalid-feedback">
                             Debe seleccionar un Tipo de documento valido.
@@ -86,7 +86,7 @@
 
                     <div class="col-md-6">
                         <label for="txtNumdoc" class="form-label">Número de Documento</label>
-                        <asp:TextBox type="text" class="form-control" ID="TextBox1" onkeypress="return solonumerosydecimales(event);" name="tDoc" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtNumDocContacto" onkeypress="return solonumerosydecimales(event);" name="tNumDocContacto" MaxLength="10" runat="server" required="true"></asp:TextBox>
                         <div class="invalid-feedback">
                             Debe llenar este cambo.
                         </div>
@@ -94,8 +94,8 @@
                     
 
                     <div class="col-md-6">
-                        <label for="txtTelefonoResponsable" class="form-label">Nombre y Apellido de Responsable</label>
-                        <asp:TextBox type="text" class="form-control" ID="txtNombreApellidoResposable" runat="server" required="true"></asp:TextBox>
+                        <label for="txtTelefonoResponsable" class="form-label">Nombres y Apellidos</label>
+                        <asp:TextBox type="text" class="form-control" ID="txtNombreApellidoContacto" runat="server" required="true"></asp:TextBox>
                         <div class="invalid-feedback">
                             Debe llenar este cambo.
                         </div>
@@ -105,7 +105,7 @@
                         <label for="txtCorreo" class="form-label">Correo</label>
                         <div class="input-group has-validation">
                             <span class="input-group-text" id="inputGroupPrepend">@</span>
-                            <asp:TextBox type="email" CssClass="form-control" ID="txtCorreo" runat="server" aria-describedby="inputGroupPrepend" required="true"></asp:TextBox>
+                            <asp:TextBox type="email" CssClass="form-control" ID="txtCorreoContacto" runat="server" aria-describedby="inputGroupPrepend" required="true"></asp:TextBox>
                             <div class="invalid-feedback">
                                 Debe ingresar un correo valido.
                             </div>
@@ -113,8 +113,8 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="txtTelefonoResponsable" class="form-label">Telefono de Responsable</label>
-                        <asp:TextBox type="text" class="form-control" ID="txtTelefonoResponsable" onkeypress="return solonumerosydecimales(event);" runat="server" required="true" MaxLength="9"></asp:TextBox>
+                        <label for="txtTelefonoResponsable" class="form-label">Telefono</label>
+                        <asp:TextBox type="text" class="form-control" ID="txtTelefonoContacto" onkeypress="return solonumerosydecimales(event);" runat="server" required="true" MaxLength="9"></asp:TextBox>
                         <div class="invalid-feedback">
                             Debe llenar este cambo.
                         </div>

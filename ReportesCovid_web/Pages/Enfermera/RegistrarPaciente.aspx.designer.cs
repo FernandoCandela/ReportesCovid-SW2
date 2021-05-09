@@ -69,49 +69,49 @@ namespace ReportesCovid_web.Pages.Enfermera
         protected global::System.Web.UI.WebControls.DropDownList ddlEstadoPaciente;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddlTipoDocContacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoDocContacto;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtNumDocContacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtNumDocContacto;
 
         /// <summary>
-        /// Control txtNombreApellidoResposable.
+        /// Control txtNombreApellidoContacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreApellidoResposable;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreApellidoContacto;
 
         /// <summary>
-        /// Control txtCorreo.
+        /// Control txtCorreoContacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoContacto;
 
         /// <summary>
-        /// Control txtTelefonoResponsable.
+        /// Control txtTelefonoContacto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefonoResponsable;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoContacto;
 
         /// <summary>
         /// Control btnRegistrarPaciente.

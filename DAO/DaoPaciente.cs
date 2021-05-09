@@ -52,7 +52,10 @@ namespace DAO
                     Direction = ParameterDirection.Output
                 };
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Insert", pr);
-                dto.IdPaciente = Convert.ToInt32(pr[0].Value);
+                if(pr[0].Value != DBNull.Value)
+                {
+                    dto.IdPaciente = Convert.ToInt32(pr[0].Value);
+                }
                 if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
                 {
                     dto.ErrorMsj = Convert.ToString(pr[8].Value);

@@ -10,7 +10,7 @@ namespace DTO
     {
         public int IdContacto { get; set; }
         public string NombreCompleto { get; set; }
-        public string IN_Tipodoc { get; set; }
+        public int IN_Tipodoc { get; set; }
         public string Numdoc { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }

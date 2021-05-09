@@ -71,7 +71,7 @@
                     </li>
 
                     <li class="nav-item" runat="server">
-                        <a class="nav-link active" href="/" tabindex="-1">Cerrar Sesion</a>
+                        <a class="nav-link active" href="/logOut" tabindex="-1">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>

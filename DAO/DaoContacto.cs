@@ -23,7 +23,7 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.NombreCompleto))
                 };
-                pr[2] = new SqlParameter("@IN_Tipodoc", SqlDbType.VarChar, 100)
+                pr[2] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_Tipodoc))
                 };

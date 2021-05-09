@@ -66,7 +66,10 @@ namespace ReportesCovid_web.MasterPages
 
 
         }
-
-
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["UsuarioLogin"] = null;
+            Response.Redirect("logIn");
+        }
     }
 }

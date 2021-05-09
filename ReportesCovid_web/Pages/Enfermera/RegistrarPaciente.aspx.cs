@@ -18,13 +18,13 @@ namespace ReportesCovid_web.Pages.Enfermera
             if (!IsPostBack)
             {
                 DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
-                if (user.IN_Rol == 2)
+                if (user != null && user.IN_Rol == 2)
                 {
                     FirstLoad();
                 }
                 else
                 {
-                    Session.Remove("UsuarioLogin");
+                    Session.RemoveAll();
                     Response.Redirect("logIn");
                 }
             }
@@ -47,15 +47,24 @@ namespace ReportesCovid_web.Pages.Enfermera
                 if (!cr.HuboError)
                 {
                     List<DtoTablaVarios> list = cr.List.Cast<DtoTablaVarios>().ToList();
+                    //Paciente
                     ddlTipoDocumento.DataTextField = "Descripcion";
                     ddlTipoDocumento.DataValueField = "Valor";
                     ddlTipoDocumento.DataSource = list;
                     ddlTipoDocumento.DataBind();
+                    //Contacto
+                    ddlTipoDocContacto.DataTextField = "Descripcion";
+                    ddlTipoDocContacto.DataValueField = "Valor";
+                    ddlTipoDocContacto.DataSource = list;
+                    ddlTipoDocContacto.DataBind();
+
                     //"<asp:ListItem Selected="True" disabled Value="" Text="Choose..."></asp:ListItem>"
                     ListItem firstLista = new ListItem("[Seleccionar]", "");
                     firstLista.Attributes.Add("disabled", "disabled");
                     firstLista.Attributes.Add("Selected", "True");
                     ddlTipoDocumento.Items.Insert(0, firstLista);
+                    ddlTipoDocContacto.Items.Insert(0, firstLista);
+
                 }
             }
             catch (Exception ex)
@@ -140,21 +149,24 @@ namespace ReportesCovid_web.Pages.Enfermera
                 else
                 {
                     //registrarContacto
-                    //DtoPaciente dtoPa = new CtrPaciente().Usp_Paciente_Insert(new DtoPaciente
-                    //{
-                    //    Nombres = txtNombres.Text.Trim(),
-                    //    Apellidos = txtApellidos.Text.Trim(),
-                    //    IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
-                    //    Numdoc = txtNumdoc.Text.Trim(),
-                    //    IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
-                    //    IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
-                    //    UsuarioCreacionId = user.IdUsuario
+                    DtoContacto dtoContacto = new CtrContacto().Usp_Contacto_Insert(new DtoContacto
+                    {
+                        NombreCompleto = txtNombreApellidoContacto.Text.Trim(),
+                        IN_Tipodoc = Convert.ToInt32(ddlTipoDocContacto.SelectedValue),
+                        Numdoc = txtNumDocContacto.Text.Trim(),
+                        Email = txtCorreoContacto.Text.Trim(),
+                        Telefono = txtTelefonoContacto.Text.Trim(),
+                        UsuarioCreacionId = user.IdUsuario
 
-                    //});
+                    });
+                    if (dtoContacto.HuboError)
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoContacto.ErrorMsj, "error"), true);
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Registrado", "Se registro correctamente el Paciente", "success", "/TablaModificarPaciente"), true);
+                    }
 
 
-
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Registrado", "Se registro correctamente el Paciente", "success", "/TablaModificarPaciente"), true);
                 }
             }
             catch (Exception ex)
