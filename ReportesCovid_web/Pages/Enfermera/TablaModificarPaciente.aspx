@@ -20,7 +20,7 @@
     <div class="table-responsive mx-5">
         <div class="table table-striped table-sm table-primary">
             <asp:GridView runat="server" ID="gvPacientes" AutoGenerateColumns="False" AllowPaging="True"
-                CssClass="table" PageSize="20"
+                CssClass="table" PageSize="20" OnRowCommand="gvPacientes_RowCommand"
                 EmptyDataText="No se encontraron datos." GridLines="None">
                 <Columns>
                     <asp:TemplateField Visible="false">
@@ -59,7 +59,7 @@
                         <%--<HeaderStyle Width="3%" />--%>
                         <HeaderTemplate>Numero Documento</HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lblTipoDocumento" runat="server" Text='<% #Bind("Numdoc")%>' />
+                            <asp:Label ID="lblNumDocumento" runat="server" Text='<% #Bind("Numdoc")%>' />
                         </ItemTemplate>
                     </asp:TemplateField>
 
