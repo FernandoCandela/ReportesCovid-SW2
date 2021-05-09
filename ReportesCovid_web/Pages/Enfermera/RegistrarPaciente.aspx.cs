@@ -133,6 +133,10 @@ namespace ReportesCovid_web.Pages.Enfermera
             try
             {
                 DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+
+                var guid = Guid.NewGuid().ToString().Replace("-", "");
+
+
                 DtoPaciente dtoPa = new CtrPaciente().Usp_Paciente_Insert(new DtoPaciente
                 {
                     Nombres = txtNombres.Text.Trim(),
@@ -142,7 +146,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                     IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
                     IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
                     UsuarioCreacionId = user.IdUsuario,
-                    Credencial = "credencialtest"
+                    Credencial = guid
 
                 });
                 if (dtoPa.HuboError)
