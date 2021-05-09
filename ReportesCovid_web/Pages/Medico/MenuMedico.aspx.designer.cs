@@ -7,38 +7,29 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ReportesCovid_web.Pages.Administrador
+namespace ReportesCovid_web.Pages.Medico
 {
 
 
-    public partial class WebForm1
+    public partial class MenuMedico
     {
 
         /// <summary>
-        /// Control lnkCrear.
+        /// Control lnkBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCrear;
+        protected global::System.Web.UI.WebControls.HyperLink lnkBuscar;
 
         /// <summary>
-        /// Control lnkModificar.
+        /// Control lnkReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkModificar;
-
-        /// <summary>
-        /// Control lnkEntrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkEntrar;
+        protected global::System.Web.UI.WebControls.HyperLink lnkReporte;
     }
 }

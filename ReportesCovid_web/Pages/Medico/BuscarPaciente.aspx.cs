@@ -71,7 +71,7 @@ namespace ReportesCovid_web.Pages.Medico
             int rowIndex;
             switch (e.CommandName)
             {
-                case "Editar":
+                case "Generar":
                     rowIndex = int.Parse(e.CommandArgument.ToString());
                     string idPaciente = (gvPacientes.Rows[rowIndex].Cells[0].FindControl("lblIdPaciente") as Label).Text;
                     Response.Redirect("/GenerarReporte?idPaciente=" + idPaciente);

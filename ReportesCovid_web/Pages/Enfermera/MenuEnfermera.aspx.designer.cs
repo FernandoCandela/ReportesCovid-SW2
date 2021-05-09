@@ -15,21 +15,21 @@ namespace ReportesCovid_web.Pages.Enfermera
     {
 
         /// <summary>
-        /// Control LinkButton1.
+        /// Control lnkRegistrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LinkButton1;
+        protected global::System.Web.UI.WebControls.HyperLink lnkRegistrar;
 
         /// <summary>
-        /// Control LinkButton2.
+        /// Control lnkModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LinkButton2;
+        protected global::System.Web.UI.WebControls.HyperLink lnkModificar;
     }
 }

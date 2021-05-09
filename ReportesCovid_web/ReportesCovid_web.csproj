@@ -121,6 +121,7 @@
     <Content Include="Pages\Inicial\PaginaInicial.aspx" />
     <Content Include="Pages\Medico\BuscarPaciente.aspx" />
     <Content Include="Pages\Medico\GenerarReporte.aspx" />
+    <Content Include="Pages\Medico\MenuMedico.aspx" />
     <Content Include="Pages\Medico\Reporte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -310,6 +311,13 @@
     </Compile>
     <Compile Include="Pages\Medico\GenerarReporte.aspx.designer.cs">
       <DependentUpon>GenerarReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\MenuMedico.aspx.cs">
+      <DependentUpon>MenuMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\MenuMedico.aspx.designer.cs">
+      <DependentUpon>MenuMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Medico\Reporte.aspx.cs">
       <DependentUpon>Reporte.aspx</DependentUpon>

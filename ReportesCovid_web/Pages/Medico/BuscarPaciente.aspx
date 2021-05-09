@@ -85,7 +85,7 @@
                         <HeaderStyle Width="5%" />
                         <HeaderTemplate>Generar Reporte</HeaderTemplate>
                         <ItemTemplate>
-                            <asp:LinkButton runat="server" ID="lnkEditar" CssClass="" Text="" CommandName="Editar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="fa fa-edit "></i> Generar Reporte </asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="lnkGenerar" CssClass="" Text="" CommandName="Generar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="fa fa-edit "></i> Generar Reporte </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
 
