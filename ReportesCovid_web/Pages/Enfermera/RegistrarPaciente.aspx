@@ -5,7 +5,7 @@
 
         <h4 class="mb-3">Nuevo Paciente</h4>
 
-        <ul class="nav nav-tabs mb-2" role="tablist">
+        <ul class="nav nav-tabs mb-2" id="MyTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link d-flex align-items-center active" id="paciente-tab" data-toggle="tab" href="#paciente" aria-controls="paciente" role="tab" aria-selected="true">
                     <i class="bx bx-shopping-bag mr-25"></i><span class="d-none d-sm-block">Datos de Paciente</span>
@@ -114,4 +114,12 @@
 
         </div>
     </div>
+    <script>
+        jQuery(function () {
+            jQuery('#MyTab a').on('click', function () {
+                $(this).tab('show');
+            });
+        })
+
+    </script>
 </asp:Content>
