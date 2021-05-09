@@ -14,8 +14,8 @@ namespace DTO
         public string Numdoc { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
-        public string EnvioCredencial { get; set; }
-        public string FechaEnvioCredencial { get; set; }
+        public bool EnvioCredencial { get; set; }
+        public DateTime FechaEnvioCredencial { get; set; }
         public int UsuarioCreacionId { get; set; }
         public DateTime FechaCreacion { get; set; }
         public int UsuarioModificacionId { get; set; }

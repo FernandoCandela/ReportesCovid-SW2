@@ -9,7 +9,7 @@ namespace DAO
 {
     public class DaoContacto : DaoB
     {
-        public DtoContacto Usp_Contacto_Insert (DtoB dtoBase)
+        public DtoContacto Usp_Contacto_Insert (DtoB dtoBase)   
         {
             DtoContacto dto = (DtoContacto)dtoBase;
             SqlParameter[] pr = new SqlParameter[9];
@@ -68,6 +68,53 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
+        public DtoContacto Usp_Contacto_SelectOne (DtoB dtoBase)
+        {
+            DtoContacto dto = (DtoContacto)dtoBase;
+            SqlParameter[] pr = new SqlParameter[1];
 
+            try
+            {
+                pr[0] = new SqlParameter("@PacienteId", SqlDbType.Int)
+                {
+                    Value = (dto.PacienteId)
+                };
+
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Contacto_SelectOne", pr);
+
+                //cr.List = new List<DtoB>();
+                if (reader.Read())
+                {
+                    dto = new DtoContacto
+                    {
+                        IdContacto = GetValue("IdContacto", reader).ValueInt32,
+                        NombreCompleto = GetValue("NombreCompleto", reader).ValueString,
+                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
+                        Numdoc = GetValue("Numdoc", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
+                        Telefono = GetValue("Telefono", reader).ValueString,
+                        EnvioCredencial = GetValue("EnvioCredencial", reader).ValueBool,
+                        FechaEnvioCredencial = GetValue("FechaEnvioCredencial", reader).ValueDateTime,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
+                        PacienteId = GetValue("PacienteId", reader).ValueInt32
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error en Usp_Contacto_SelectOne";
+            }
+            ObjCn.Close();
+            return dto;
+        }
     }
+
 }
+
