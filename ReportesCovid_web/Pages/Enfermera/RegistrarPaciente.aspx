@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Usuario.Master" AutoEventWireup="true" CodeBehind="RegistrarPaciente.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.RegistrarPaciente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container m-auto mt-4 shadow p-3 mb-5 bg-body rounded">
+    <div class="container m-auto shadow p-3 mb-5 bg-body rounded" style="margin-top: 5rem !important">
 
         <h4 class="mb-3">Nuevo Paciente</h4>
 

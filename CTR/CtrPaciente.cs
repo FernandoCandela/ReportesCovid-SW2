@@ -8,5 +8,6 @@ namespace CTR
         public DtoPaciente Usp_Paciente_Insert(DtoB dtoBase) => new DaoPaciente().Usp_Paciente_Insert(dtoBase);
         public ClassResultV Usp_Paciente_Select(DtoB dtoBase) => new DaoPaciente().Usp_Paciente_Select(dtoBase);
         public ClassResultV Usp_Paciente_Update_ByIdPaciente(DtoB dtoBase) => new DaoPaciente().Usp_Paciente_Update_ByIdPaciente(dtoBase);
+        public DtoPaciente Usp_Contacto_SelectOne(DtoB dtoBase) => new DaoPaciente().Usp_Paciente_SelectOne(dtoBase);
     }
 }
