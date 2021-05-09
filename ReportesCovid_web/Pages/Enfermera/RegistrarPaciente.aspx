@@ -74,6 +74,33 @@
             </div>
             <div class="tab-pane fade show" id="contacto" aria-labelledby="contacto-tab" role="tabpanel">
                 <div class="row g-3 my-4">
+
+                    <div class="col-md-6">
+                        <label for="ddlTipoDocumento" class="form-label">Tipo Documento</label>
+                        <asp:DropDownList runat="server" ID="DropDownList1" class="form-select" required="true">
+                        </asp:DropDownList>
+                        <div class="invalid-feedback">
+                            Debe seleccionar un Tipo de documento valido.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="txtNumdoc" class="form-label">Número de Documento</label>
+                        <asp:TextBox type="text" class="form-control" ID="TextBox1" onkeypress="return solonumerosydecimales(event);" name="tDoc" runat="server" required="true"></asp:TextBox>
+                        <div class="invalid-feedback">
+                            Debe llenar este cambo.
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-6">
+                        <label for="txtTelefonoResponsable" class="form-label">Nombre y Apellido de Responsable</label>
+                        <asp:TextBox type="text" class="form-control" ID="txtNombreApellidoResposable" runat="server" required="true"></asp:TextBox>
+                        <div class="invalid-feedback">
+                            Debe llenar este cambo.
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                         <label for="txtCorreo" class="form-label">Correo</label>
                         <div class="input-group has-validation">
@@ -93,15 +120,6 @@
                         </div>
                     </div>
 
-
-                    <div class="col-md-6">
-                        <label for="txtTelefonoResponsable" class="form-label">Nombre y Apellido de Responsable</label>
-                        <asp:TextBox type="text" class="form-control" ID="txtNombreApellidoResposable" runat="server" required="true"></asp:TextBox>
-                        <div class="invalid-feedback">
-                            Debe llenar este cambo.
-                        </div>
-                    </div>
-
                 </div>
 
 
@@ -114,4 +132,34 @@
 
         </div>
     </div>
+
+    <script>
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+
+        jQuery(function () {
+            jQuery('#MyTab a').on('click', function () {
+                $(this).tab('show');
+            });
+        })
+
+    </script>
+
 </asp:Content>
