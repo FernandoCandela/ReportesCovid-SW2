@@ -7,9 +7,8 @@
         <h1 class="display-5 fw-bold">LISTA DE PACIENTES</h1>
     </div>
 
-    <div class="container rounded" >
-
-        <div class="row py-2 float-right">
+    <div class="container mw-100 m-2 col-10 p-3 mb-1 bg-body rounded m-auto">
+        <div class="row py-2">
             <div class="col-12 col-sm-6 col-lg-3">
                 <label for="cbActivado">NumeroDocumento/Nombres/Apellidos</label>
                 <asp:TextBox runat="server" ID="txtBuscar" CssClass="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar"></asp:TextBox>
@@ -22,6 +21,7 @@
             <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-end">
                 <asp:LinkButton runat="server" ID="btnBuscar" CssClass="btn btn-outline-success end" Text="Buscar" OnClick="btnBuscar_Click"></asp:LinkButton>
             </div>
+
         </div>
     </div>
     <div class="foto">
