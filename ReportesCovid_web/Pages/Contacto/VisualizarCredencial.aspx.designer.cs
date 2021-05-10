@@ -123,22 +123,13 @@ namespace ReportesCovid_web.Pages.Contacto
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// Control btnUci.
+        /// Control ddlTipoTraslado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton btnUci;
-
-        /// <summary>
-        /// Control btnHospital.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton btnHospital;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoTraslado;
 
         /// <summary>
         /// Control textComentario.

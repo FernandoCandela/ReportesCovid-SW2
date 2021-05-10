@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-center">
-        <h1 class="display-5 fw-bold">LISTA DE PACIENTES</h1>
+        <h1 class="display-5 fw-bold my-5 p-3 mb-0">LISTA DE PACIENTES</h1>
     </div>
 
     <div class="container mw-100 m-2 col-10 p-3 mb-1 bg-body rounded m-auto">
