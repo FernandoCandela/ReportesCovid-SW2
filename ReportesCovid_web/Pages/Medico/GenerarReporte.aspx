@@ -84,19 +84,19 @@
                 <div class="col-sm-10 mb-4">
                     <label for="txtPronostico" class="form-label">Pronóstico</label>
                     <div class="col-10 form-floating">
-                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
+                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
                     </div>
                 </div>
                 <div class="col-sm-10 mb-4">
                     <label for="txtRequerimiento" class="form-label">Requerimiento de medicamentos / cuidado</label>
                     <div class="col-10 form-floating">
-                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtRequerimiento" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
+                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtRequerimiento" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
                     </div>
                 </div>
                 <div class="col-sm-10 mb-4">
                     <label for="txtEvolucion" class="form-label">Evolucion de Paciente</label>
                     <div class="col-10 form-floating">
-                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
+                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
                     </div>
                 </div>
             </div>
@@ -119,6 +119,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12 mb-4">
+                            <label for="textComentario" class="form-label">Tipo de traslado</label>
                             <div class="form-check">
                                 <input runat="server" class="form-check-input" type="radio" name="traslado" id="cbUci">
                                 <label class="form-check-label" for="flexRadioDefault1">
