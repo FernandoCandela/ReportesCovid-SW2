@@ -123,22 +123,13 @@ namespace ReportesCovid_web.Pages.Medico
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// Control cbUci.
+        /// Control ddlTipoTraslado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cbUci;
-
-        /// <summary>
-        /// Control cbHospital.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cbHospital;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoTraslado;
 
         /// <summary>
         /// Control textComentario.

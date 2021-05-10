@@ -115,23 +115,16 @@
                         <div class="col-sm-12 mb-4">
                             <label for="txtEvolucion" class="form-label">Fecha de traslado</label>
                             <div class="col-10 form-floating">
-                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server" disabled></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-12 mb-4">
-                            <label for="textComentario" class="form-label">Tipo de traslado</label>
-                            <div class="form-check">
-                                <input runat="server" class="form-check-input" type="radio" name="traslado" id="cbUci">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    UCI
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input runat="server" class="form-check-input" type="radio" name="traslado" id="cbHospital" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Hospital de mayor complejidad
-                                </label>
-                            </div>
+                                <label for="ddlTipoDocumento" class="form-label">Tipo Traslado</label>
+                                <asp:DropDownList runat="server" ID="ddlTipoTraslado" class="form-select" required="true" disabled>
+                                </asp:DropDownList>
+                                <div class="invalid-feedback">
+                                    Debe seleccionar un Tipo de documento valido.
+                                </div>
                         </div>
 
                         <div class="col-sm-12 mb-4">
