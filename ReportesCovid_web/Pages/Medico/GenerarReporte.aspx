@@ -115,7 +115,7 @@
                         <div class="col-sm-12 mb-4">
                             <label for="txtEvolucion" class="form-label">Fecha de traslado</label>
                             <div class="col-10 form-floating">
-                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-12 mb-4">
@@ -135,13 +135,13 @@
 
                         <div class="col-sm-12 mb-4">
                             <label for="textComentario" class="form-label">Detalles</label>
-                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="textComentario" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
+                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="textComentario" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..." ReadOnly="true"></asp:TextBox>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                    <asp:Button ID="btnActualizar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-top: 29px; margin-left: 5px" runat="server" Text="Guardar"></asp:Button>
-                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-top: 29px; margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                    <asp:Button ID="btnActualizar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Guardar"></asp:Button>
+                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                 </div>
             </div>
 
