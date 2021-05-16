@@ -114,13 +114,22 @@ namespace ReportesCovid_web.Pages.Medico
         protected global::System.Web.UI.WebControls.TextBox txtEvolucion;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control cbTraslado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cbTraslado;
+
+        /// <summary>
+        /// Control txtFechaTraslado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaTraslado;
 
         /// <summary>
         /// Control ddlTipoTraslado.
@@ -132,13 +141,13 @@ namespace ReportesCovid_web.Pages.Medico
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoTraslado;
 
         /// <summary>
-        /// Control textComentario.
+        /// Control txtComentario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textComentario;
+        protected global::System.Web.UI.WebControls.TextBox txtComentario;
 
         /// <summary>
         /// Control btnActualizar.

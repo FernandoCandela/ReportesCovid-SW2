@@ -29,13 +29,6 @@
 
     <div class="container mw-100 m-2 col-10 shadow p-3 mb-5 bg-body rounded m-auto">
         <div class="row ">
-            <%--            <div class="col-sm">
-
-                    <div class="foto mb-4">
-                        <img src="/img/paciente.svg" alt="paciente" class="rounded w-50 mt-4 mb-4 mx-5 img-thumbnail d-block">
-                    </div>
-
-                </div>--%>
             <div class="col-sm">
 
                 <div class="col-sm-8 mb-4">
@@ -103,8 +96,8 @@
             <div class="col-sm">
                 <div class="col-sm-10 mb-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Requiere traslado</label>
+                        <input class="form-check-input" runat="server" clientidmode="Static" type="checkbox" id="cbTraslado">
+                        <label class="form-check-label" for="cbTraslado">Requiere traslado</label>
                     </div>
                 </div>
 
@@ -113,23 +106,23 @@
                     <div class="container">
                         <!-- no se si se ponia fecha de traslado-->
                         <div class="col-sm-12 mb-4">
-                            <label for="txtEvolucion" class="form-label">Fecha de traslado</label>
+                            <label for="txtFechaTraslado" class="form-label">Fecha de traslado</label>
                             <div class="col-10 form-floating">
-                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server" disabled></asp:TextBox>
+                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-12 mb-4">
-                                <label for="ddlTipoDocumento" class="form-label">Tipo Traslado</label>
-                                <asp:DropDownList runat="server" ID="ddlTipoTraslado" class="form-select" required="true" disabled>
-                                </asp:DropDownList>
-                                <div class="invalid-feedback">
-                                    Debe seleccionar un Tipo de documento valido.
-                                </div>
+                            <label for="ddlTipoTraslado" class="form-label">Tipo Traslado</label>
+                            <asp:DropDownList runat="server" ID="ddlTipoTraslado" class="form-select" disabled="true">
+                            </asp:DropDownList>
+                            <div class="invalid-feedback">
+                                Debe seleccionar un Tipo de documento valido.
+                            </div>
                         </div>
 
                         <div class="col-sm-12 mb-4">
-                            <label for="textComentario" class="form-label">Detalles</label>
-                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="textComentario" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..." ReadOnly="true"></asp:TextBox>
+                            <label for="txtComentario" class="form-label">Detalles</label>
+                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="txtComentario" Style="height: 80px" runat="server" ToolTip="Escriba aquí..." ReadOnly="true"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -144,5 +137,5 @@
 
     </div>
 
-
+    <script src="<%= ResolveClientUrl("~/js/Medico/jsReporte.js?1") %>"></script>
 </asp:Content>

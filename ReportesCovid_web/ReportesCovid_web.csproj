@@ -102,6 +102,7 @@
     <Content Include="img\person.svg" />
     <Content Include="Index.html" />
     <Content Include="js\General\jsGeneral.js" />
+    <Content Include="js\Medico\jsReporte.js" />
     <Content Include="Pages\Administrador\CrearUsuario.aspx" />
     <Content Include="Pages\Administrador\MenuAdmin.aspx" />
     <Content Include="Pages\Administrador\ModificarUsuario.aspx" />
