@@ -37,6 +37,7 @@ namespace ReportesCovid_web.Pages.Medico
 
             CargarTipoTraslado();
             cbTraslado.Attributes.Add("OnChange", "changeTraslado('" + cbTraslado.ClientID + "','" + txtFechaTraslado.ClientID + "','" + ddlTipoTraslado.ClientID + "','" + txtComentario.ClientID + "');");
+            btnRegistrar.Attributes.Add("OnClick", "return validarTraslado('" + cbTraslado.ClientID + "','" + txtFechaTraslado.ClientID + "','" + ddlTipoTraslado.ClientID + "','" + txtComentario.ClientID + "');");
         }
         private void CargarTipoTraslado()
         {
