@@ -122,7 +122,7 @@
 
                         <div class="col-sm-12 mb-4">
                             <label for="txtComentario" class="form-label">Detalles</label>
-                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="txtComentario" Style="height: 80px" runat="server" ToolTip="Escriba aquí..." ReadOnly="true"></asp:TextBox>
+                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="txtComentario" Style="height: 80px" runat="server" ToolTip="Escriba aquí..." disabled="true"></asp:TextBox>
                         </div>
                     </div>
                 </div>
