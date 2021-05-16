@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                    <asp:Button ID="btnRegistrar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Guardar"></asp:Button>
+                    <asp:Button ID="btnRegistrar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Guardar" OnClick="btnRegistrar_Click"></asp:Button>
                     <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/BuscarPaciente" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                 </div>
             </div>

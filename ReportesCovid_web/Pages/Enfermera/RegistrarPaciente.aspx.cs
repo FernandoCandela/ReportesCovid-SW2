@@ -150,7 +150,9 @@ namespace ReportesCovid_web.Pages.Enfermera
 
                 });
                 if (dtoPa.HuboError)
+                {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
+                }
                 else
                 {
                     //registrarContacto

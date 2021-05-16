@@ -97,5 +97,50 @@ namespace ReportesCovid_web.Pages.Medico
             txtMedico.Text = user.PrimerNombre + " " + user.SegundoNombre + " " + user.ApellidoPaterno + " " + user.ApellidoMaterno;
         }
 
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+
+                DtoPacienteHistorial dtoPH = new DtoPacienteHistorial
+                {
+                    PacienteId = Convert.ToInt32(Request.QueryString["idPaciente"]),
+                    Temperatura = txtTemperatura.Text.Trim(),
+                    PresionArterial = txtPresion.Text.Trim(),
+                    Saturacion = txtSaturacion.Text.Trim(),
+                    Pronostico = txtPronostico.Text.Trim(),
+                    Requerimiento = txtRequerimiento.Text.Trim(),
+                    Evolucion = txtEvolucion.Text.Trim(),
+                    IB_Traslado = cbTraslado.Checked,
+                    OrganizacionId = user.OrganizacionId,
+                    UsuarioCreacionId = user.IdUsuario
+                };
+                if (cbTraslado.Checked)
+                {
+                    dtoPH.IN_TipoTraslado = Convert.ToInt32(ddlTipoTraslado.SelectedValue);
+                    dtoPH.Evolucion = txtEvolucion.Text.Trim();
+                    dtoPH.DescTraslado = txtComentario.Text.Trim();
+                    dtoPH.FechaSolicitudTraslado = Convert.ToDateTime(txtFechaTraslado.Text);
+                }
+
+                DtoPacienteHistorial dtoPa = new CtrPacienteHistoria().Usp_PacienteHistorial_Insert(dtoPH);
+
+                if (dtoPa.HuboError)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Reporte Registrado", "Se registro correctamente el reporte", "success", "/BuscarPaciente"), true);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Registrar el Reporte." + "', 'error');", true);
+            }
+        }
     }
 }

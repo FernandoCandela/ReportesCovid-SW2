@@ -12,7 +12,7 @@ namespace DAO
         public DtoPacienteHistorial Usp_PacienteHistorial_Insert(DtoB dtoBase)
         {
             DtoPacienteHistorial dto = (DtoPacienteHistorial)dtoBase;
-            SqlParameter[] pr = new SqlParameter[12];
+            SqlParameter[] pr = new SqlParameter[14];
             try
             {
                 pr[0] = new SqlParameter("@IdHistorial", SqlDbType.Int)
@@ -27,7 +27,7 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Temperatura))
                 };
-                pr[3] = new SqlParameter("@PresionArterial", SqlDbType.VarChar,100)
+                pr[3] = new SqlParameter("@PresionArterial", SqlDbType.VarChar, 100)
                 {
                     Value = (V_ValidaPrNull(dto.PresionArterial))
                 };
@@ -35,7 +35,7 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Saturacion))
                 };
-                pr[5] = new SqlParameter("@Pronostico", SqlDbType.VarChar,int.MaxValue)
+                pr[5] = new SqlParameter("@Pronostico", SqlDbType.VarChar, int.MaxValue)
                 {
                     Value = (V_ValidaPrNull(dto.Pronostico))
                 };
@@ -47,19 +47,27 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Evolucion))
                 };
-                pr[8] = new SqlParameter("@DescTraslado", SqlDbType.VarChar, int.MaxValue)
+                pr[8] = new SqlParameter("@IB_Traslado", SqlDbType.Bit)
+                {
+                    Value = (V_ValidaPrNull(dto.IB_Traslado))
+                };
+                pr[9] = new SqlParameter("@IN_TipoTraslado", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_TipoTraslado))
+                };
+                pr[10] = new SqlParameter("@DescTraslado", SqlDbType.VarChar, int.MaxValue)
                 {
                     Value = (V_ValidaPrNull(dto.DescTraslado))
                 };
-                pr[9] = new SqlParameter("@FechaSolicitudTraslado", SqlDbType.DateTime)
+                pr[11] = new SqlParameter("@FechaSolicitudTraslado", SqlDbType.DateTime)
                 {
                     Value = (V_ValidaPrNull(dto.FechaSolicitudTraslado))
                 };
-                pr[10] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                pr[12] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.OrganizacionId))
                 };
-                pr[11] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
+                pr[13] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
@@ -112,7 +120,7 @@ namespace DAO
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool
 
-                     });
+                    });
                 }
                 reader.Close();
             }

@@ -16,6 +16,7 @@ namespace DTO
         public string Pronostico { get; set; }
         public string Requerimiento { get; set; }
         public string Evolucion { get; set; }
+        public bool IB_Traslado { get; set; }
         public int IN_TipoTraslado { get; set; }
         public string DescTraslado { get; set; }
         public DateTime FechaSolicitudTraslado { get; set; }
