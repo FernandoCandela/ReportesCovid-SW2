@@ -32,6 +32,9 @@ namespace ReportesCovid_web.Pages.Medico
 
         public void FirstLoad()
         {
+            CargarDatosPaciente();
+            CargarDatosMedico();
+
             CargarTipoTraslado();
             cbTraslado.Attributes.Add("OnChange", "changeTraslado('" + cbTraslado.ClientID + "','" + txtFechaTraslado.ClientID + "','" + ddlTipoTraslado.ClientID + "','" + txtComentario.ClientID + "');");
         }
@@ -62,6 +65,35 @@ namespace ReportesCovid_web.Pages.Medico
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Tipo Traslado." + "', 'error');", true);
             }
+        }
+
+        private void CargarDatosPaciente()
+        {
+            try
+            {
+                DtoPaciente dtop = new CtrPaciente().Usp_Paciente_SelectOne(new DtoPaciente
+                {
+                    IdPaciente = Convert.ToInt32(Request.QueryString["idPaciente"])
+                });
+                if (!dtop.HuboError)
+                {
+                    txtNombres.Text = dtop.Nombres;
+                    txtApellidos.Text = dtop.Apellidos;
+                    txtNumdoc.Text = (dtop.IN_Tipodoc.ToString() == "1" ? "DNI" : "Pasaporte") + "-" + dtop.Numdoc.ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void CargarDatosMedico()
+        {
+            DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+            txtMedico.Text = user.PrimerNombre + " " + user.SegundoNombre + " " + user.ApellidoPaterno + " " + user.ApellidoMaterno;
         }
 
     }

@@ -135,7 +135,7 @@ namespace ReportesCovid_web.Pages.Enfermera
         {
             try
             {
-                DtoPaciente dtop = new CtrPaciente().Usp_Contacto_SelectOne(new DtoPaciente
+                DtoPaciente dtop = new CtrPaciente().Usp_Paciente_SelectOne(new DtoPaciente
                 {
                     IdPaciente = Convert.ToInt32(Request.QueryString["idPaciente"])
                 });

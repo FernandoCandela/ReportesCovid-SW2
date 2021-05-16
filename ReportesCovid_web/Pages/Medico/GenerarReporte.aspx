@@ -17,11 +17,11 @@
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <label for="txtNumdoc" class="form-label">Número de Documento</label>
-                <asp:TextBox type="number" class="form-control" ID="txtNumdoc" name="tDoc" runat="server" ReadOnly="true"></asp:TextBox>
+                <asp:TextBox type="text" class="form-control" ID="txtNumdoc" name="tDoc" runat="server" ReadOnly="true"></asp:TextBox>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <label for="txtDoctor" class="form-label">Medico</label>
-                <asp:TextBox type="text" class="form-control" ID="txtDoctor" runat="server" ReadOnly="true"></asp:TextBox>
+                <asp:TextBox type="text" class="form-control" ID="txtMedico" runat="server" ReadOnly="true"></asp:TextBox>
             </div>
 
         </div>
@@ -128,7 +128,7 @@
                 </div>
                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
                     <asp:Button ID="btnActualizar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Guardar"></asp:Button>
-                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/BuscarPaciente" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                 </div>
             </div>
 
@@ -138,4 +138,27 @@
     </div>
 
     <script src="<%= ResolveClientUrl("~/js/Medico/jsReporte.js?1") %>"></script>
+
+    <script>
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+
+    </script>
 </asp:Content>
