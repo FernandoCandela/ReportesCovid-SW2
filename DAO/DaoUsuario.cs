@@ -58,8 +58,6 @@ namespace DAO
             return dto;
         }
 
-
-
         //public ClassResultV Usp_Usuario_Insert(DtoB dtoBase)
         //{
         //    DtoUsuario dto = (DtoUsuario)dtoBase;

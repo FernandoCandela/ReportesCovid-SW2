@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using CTR;
+using DTO;
+using ReportesCovid_web.Helpers;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace ReportesCovid_web.Pages.Contacto
 {
@@ -11,7 +11,42 @@ namespace ReportesCovid_web.Pages.Contacto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                FirstLoad();
+            }
+        }
+        public void FirstLoad()
+        {
+            // Validaciones para el usuario
+        }
+        public void LoguearContacto(object sender, EventArgs e)
+        {
+            try
+            {
+                DtoPaciente dto = new DtoPaciente
+                {
+                    Credencial = txtCredencial.Text.Trim()
+                };
+                DtoPaciente dtoP = new CtrContacto().Usp_Contacto_Login(dto);
+                if (!dtoP.HuboError)
+                {
+                    Session["PacienteContacto"] = dtoP;
 
+                    Response.Redirect("VisualizarCredencial");
+
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error!", dtoP.ErrorMsj, "error"), true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error!", "Oops, algo salió mal :(", "error"), true);
+            }
         }
     }
+
 }

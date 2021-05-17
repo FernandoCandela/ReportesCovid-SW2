@@ -61,60 +61,60 @@
                     </div>
                 </div>
 
+            </div>
+            <div class="col-sm">
+                <div class="col-sm-10 mb-4">
+                    <label for="txtPronostico" class="form-label">Pronóstico</label>
+                    <div class="col-10 form-floating">
+                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" runat="server" ReadOnly="true"></asp:TextBox>
+                    </div>
                 </div>
-                <div class="col-sm">
-                    <div class="col-sm-10 mb-4">
-                        <label for="txtPronostico" class="form-label">Pronóstico</label>
-                        <div class="col-10 form-floating">
-                            <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" runat="server" ReadOnly="true"></asp:TextBox>
-                        </div>
+                <div class="col-sm-10 mb-4">
+                    <label for="txtRequerimiento" class="form-label">Requerimiento de medicamentos / cuidado</label>
+                    <div class="col-10 form-floating">
+                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtRequerimiento" runat="server" ReadOnly="true"></asp:TextBox>
                     </div>
-                    <div class="col-sm-10 mb-4">
-                        <label for="txtRequerimiento" class="form-label">Requerimiento de medicamentos / cuidado</label>
-                        <div class="col-10 form-floating">
-                            <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtRequerimiento" runat="server" ReadOnly="true"></asp:TextBox>
-                        </div>
+                </div>
+                <div class="col-sm-10 mb-4">
+                    <label for="txtEvolucion" class="form-label">Evolucion de Paciente</label>
+                    <div class="col-10 form-floating">
+                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" runat="server" ReadOnly="true"></asp:TextBox>
                     </div>
-                    <div class="col-sm-10 mb-4">
-                            <label for="txtEvolucion" class="form-label">Evolucion de Paciente</label>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="col-sm-10 mb-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" disabled>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Requiere traslado</label>
+                    </div>
+                </div>
+                <div class="traslado col-sm-10 mb-4 shadow-sm p-3">
+
+                    <div class="container">
+                        <!-- no se si se ponia fecha de traslado-->
+                        <div class="col-sm-12 mb-4">
+                            <label for="txtEvolucion" class="form-label">Fecha de traslado</label>
                             <div class="col-10 form-floating">
-                                <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" runat="server" ReadOnly="true"></asp:TextBox>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="col-sm-10 mb-4">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" disabled>
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Requiere traslado</label>
-                        </div>
-                    </div>
-                    <div class="traslado col-sm-10 mb-4 shadow-sm p-3">
-
-                        <div class="container">
-                            <!-- no se si se ponia fecha de traslado-->
-                            <div class="col-sm-12 mb-4">
-                                <label for="txtEvolucion" class="form-label">Fecha de traslado</label>
-                                <div class="col-10 form-floating">
-                                    <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server" ReadOnly="true"></asp:TextBox>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 mb-4">
-                                <label for="ddlTipoDocumento" class="form-label">Tipo Traslado</label>
-                                <asp:DropDownList runat="server" ID="ddlTipoTraslado" class="form-select" required="true" disabled>
-                                </asp:DropDownList>
-                            </div>
-
-                            <div class="col-sm-12 mb-4">
-                                <label for="textComentario" class="form-label">Detalles</label>
-                                <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="textComentario" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..." ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="TextBox1" runat="server" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                        <asp:Button runat="server" class="btn btn-primary btn-lg me-3 shadow-sm" Text="Salir"></asp:Button>
+                        <div class="col-sm-12 mb-4">
+                            <label for="ddlTipoDocumento" class="form-label">Tipo Traslado</label>
+                            <asp:DropDownList runat="server" ID="ddlTipoTraslado" class="form-select" required="true" disabled>
+                            </asp:DropDownList>
+                        </div>
+
+                        <div class="col-sm-12 mb-4">
+                            <label for="textComentario" class="form-label">Detalles</label>
+                            <asp:TextBox type="text" TextMode="MultiLine" CssClass="form-control" ID="textComentario" Style="height: 80px" runat="server" required="true" ToolTip="Escriba aquí..." ReadOnly="true"></asp:TextBox>
+                        </div>
                     </div>
                 </div>
+                <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
+                    <asp:Button runat="server" class="btn btn-primary btn-lg me-3 shadow-sm" Text="Salir"></asp:Button>
+                </div>
+            </div>
 
         </div>
     </div>

@@ -169,6 +169,54 @@ namespace DAO
             ObjCn.Close();
             return cr;
         }
+        public DtoPaciente Usp_Contacto_Login(DtoB dtoBase)
+        {
+            DtoPaciente dto = (DtoPaciente)dtoBase;
+            SqlParameter[] pr = new SqlParameter[3];
+            try
+            {
+                pr[0] = new SqlParameter("@Credencial", SqlDbType.VarChar, 100) { Value = dto.Credencial };
+                pr[1] = new SqlParameter("@msj", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
+
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Contacto_Login", pr);
+                if (reader.Read())
+                {
+                    dto = new DtoPaciente
+                    {
+                        IdPaciente = GetValue("IdPaciente", reader).ValueInt32,
+                        Nombres = GetValue("Nombres", reader).ValueString,
+                        Apellidos = GetValue("Apellidos", reader).ValueString,
+                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
+                        Numdoc = GetValue("Numdoc", reader).ValueString,
+                        IN_TipoSeguro = GetValue("IN_TipoSeguro", reader).ValueInt32,
+                        IN_EstadoPaciente = GetValue("IN_EstadoPaciente", reader).ValueInt32,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
+                        Credencial = GetValue("Credencial", reader).ValueString,
+                        NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
+                        NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
+                        NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
+                    };
+                }
+                reader.Close();
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[1].Value)))
+                {
+                    dto.ErrorMsj = Convert.ToString(pr[1].Value);
+                    dto.LugarError = "Usp_Contacto_Login";
+                }
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error al loguear crendecial";
+            }
+            ObjCn.Close();
+            return dto;
+        }
     }
 
 }
