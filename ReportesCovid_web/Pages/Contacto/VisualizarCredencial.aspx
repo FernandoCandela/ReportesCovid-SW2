@@ -38,30 +38,30 @@
 
     <div class="container mw-100 m-2 col-10 shadow p-3 mb-5 bg-body rounded m-auto">
         <div class="row ">
-            <div class="col-sm">
+            <div class="col-12 col-sm-4 col-lg-4 mx-auto">
 
-                <div class="col-sm-8 mb-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtTemperatura" class="form-label">Temperatura <i class="fas fa-temperature-high"></i></label>
                     <div class="input-group">
                         <asp:TextBox type="text" class="form-control" ID="txtTemperatura" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">°C</span>
                     </div>
                 </div>
-                <div class="col-sm-8 mb-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtFrecuencia" class="form-label">Frecuencia cardiaca <i class="fas fa-heartbeat"></i></label>
                     <div class="input-group">
                         <asp:TextBox type="text" class="form-control" ID="txtFrecuencia" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">Lat/min</span>
                     </div>
                 </div>
-                <div class="col-sm-8 mb-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtPresion" class="form-label">Presión arterial <i class="fas fa-stethoscope"></i></label>
                     <div class="input-group">
                         <asp:TextBox type="text" class="form-control" ID="txtPresion" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">mmHg</span>
                     </div>
                 </div>
-                <div class="col-sm-8 mb-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtSaturacion" class="form-label">Saturación de oxigeno <i class="fas fa-head-side-mask"></i></label>
                     <div class="input-group">
                         <asp:TextBox type="text" class="form-control" ID="txtSaturacion" runat="server" ReadOnly="true"></asp:TextBox>
@@ -70,29 +70,29 @@
                 </div>
 
             </div>
-            <div class="col-sm">
-                <div class="col-sm-10 mb-4">
+            <div class="col-12 col-sm-4 col-lg-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtPronostico" class="form-label">Pronóstico</label>
                     <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" Style="height: 85px" runat="server" ReadOnly="true"></asp:TextBox>
                 </div>
-                <div class="col-sm-10 mb-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtRequerimiento" class="form-label">Requerimiento de medicamentos / cuidado</label>
                     <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtRequerimiento" Style="height: 85px" runat="server" ReadOnly="true"></asp:TextBox>
                 </div>
-                <div class="col-sm-10 mb-4">
+                <div class="col-sm-12 mb-4">
                     <label for="txtEvolucion" class="form-label">Evolucion de Paciente</label>
                     <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 85px" runat="server" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
-            <div class="col-sm">
-                <div class="col-sm-10 mb-4">
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-sm-12 mb-4">
                     <div class="form-check form-switch">
                         <input class="form-check-input" runat="server" clientidmode="Static" type="checkbox" id="cbTraslado" disabled="disabled">
                         <label class="form-check-label" for="cbTraslado">Requiere traslado</label>
                     </div>
                 </div>
 
-                <div class="traslado col-sm-10 mb-4 shadow-sm p-3">
+                <div class="col-sm-12 mb-4 shadow-sm p-3">
                     <div class="container">
                         <div class="col-sm-12 mb-2">
                             <asp:Label runat="server" ID="lblTraslado" CssClass="badge rounded-pill bg-success" Text="No requiere traslado"></asp:Label>

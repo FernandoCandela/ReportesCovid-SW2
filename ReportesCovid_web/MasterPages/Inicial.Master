@@ -42,12 +42,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="/logIn">Iniciar Sesion</a>
                     </li>
-                    <li class="nav-item">
+<%--                    <li class="nav-item">
                         <a class="nav-link active" href="/" tabindex="-1">Conocenos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/" tabindex="-1">Comunicate con nosotros</a>
-                    </li>
+                    </li>--%>
                 </ul>
             </div>
         </div>
