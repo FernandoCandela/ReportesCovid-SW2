@@ -50,6 +50,7 @@ namespace ReportesCovid_web
             routes.MapPageRoute("", "", "~/Pages/Inicial/Paginainicial.aspx", true);
             routes.MapPageRoute("logIn", "logIn", "~/Pages/Inicial/Iniciosesion.aspx", true);
             routes.MapPageRoute("logOut", "logOut", "~/Pages/Inicial/CerrarSesion.aspx", true);
+            routes.MapPageRoute("logOutContacto", "logOutContacto", "~/Pages/Inicial/CerrarSesionContacto.aspx", true);
 
             //Enfermera
             routes.MapPageRoute("MenuEnfermera", "MenuEnfermera", "~/Pages/Enfermera/Menuenfermera.aspx", true);

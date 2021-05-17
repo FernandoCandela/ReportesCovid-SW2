@@ -58,6 +58,54 @@ namespace DAO
             return dto;
         }
 
+
+        public DtoUsuario Usp_Usuario_SelectOne(DtoB dtoBase)
+        {
+            DtoUsuario dto = (DtoUsuario)dtoBase;
+            SqlParameter[] pr = new SqlParameter[1];
+
+            try
+            {
+                pr[0] = new SqlParameter("@IdUsuario", SqlDbType.Int)
+                {
+                    Value = (dto.IdUsuario)
+                };
+
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_SelectOne", pr);
+
+                //cr.List = new List<DtoB>();
+                if (reader.Read())
+                {
+                    dto = new DtoUsuario
+                    {
+                        IdUsuario = GetValue("IdUsuario", reader).ValueInt32,
+                        Numdoc = GetValue("Numdoc", reader).ValueString,
+                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
+                        Telefono = GetValue("Telefono", reader).ValueString,
+                        IN_Rol = GetValue("IN_Rol", reader).ValueInt32,
+                        IN_Cargo = GetValue("IN_Cargo", reader).ValueInt32,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
+                        PrimerNombre = GetValue("PrimerNombre", reader).ValueString,
+                        SegundoNombre = GetValue("SegundoNombre", reader).ValueString,
+                        ApellidoPaterno = GetValue("ApellidoPaterno", reader).ValueString,
+                        ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
+                        NombreRol = GetValue("NombreRol", reader).ValueString,
+                        NombreCargo = GetValue("NombreCargo", reader).ValueString
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error en Usp_Usuario_SelectOne";
+            }
+            ObjCn.Close();
+            return dto;
+        }
+
         //public ClassResultV Usp_Usuario_Insert(DtoB dtoBase)
         //{
         //    DtoUsuario dto = (DtoUsuario)dtoBase;

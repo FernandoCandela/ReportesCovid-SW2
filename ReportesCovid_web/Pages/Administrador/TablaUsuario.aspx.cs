@@ -35,29 +35,29 @@ namespace ReportesCovid_web.Pages.Administrador
 
         private void CargarUsuarios()
         {
-            try
-            {
-                List<DtoUsuario> ListUsuarios = new List<DtoUsuario>();
+            //try
+            //{
+            //    List<DtoUsuario> ListUsuarios = new List<DtoUsuario>();
 
-                ClassResultV cr = new CtrUsuario().Usp_Usuario_Login(new DtoUsuario
-                {
-                    IB_Estado = true,
-                    Criterio = txtBuscar.Text.Trim()
-                }
-                );
-                //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;
-                if (!cr.HuboError)
-                {
-                    ListUsuarios.AddRange(cr.List.Cast<DtoUsuario>());
-                    gvUsuarios.DataSource = ListUsuarios;
-                }
-                gvUsuarios.DataBind();
-            }
-            catch (Exception ex)
-            {
+            //    ClassResultV cr = new CtrUsuario().Usp_Usuario_Login(new DtoUsuario
+            //    {
+            //        IB_Estado = true,
+            //        Criterio = txtBuscar.Text.Trim()
+            //    }
+            //    );
+            //    //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;
+            //    if (!cr.HuboError)
+            //    {
+            //        ListUsuarios.AddRange(cr.List.Cast<DtoUsuario>());
+            //        gvUsuarios.DataSource = ListUsuarios;
+            //    }
+            //    gvUsuarios.DataBind();
+            //}
+            //catch (Exception ex)
+            //{
 
-                //ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "script", "fail('" + ex.Message + "');", true);
-            }
+            //    //ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "script", "fail('" + ex.Message + "');", true);
+            //}
         }
     }
 }

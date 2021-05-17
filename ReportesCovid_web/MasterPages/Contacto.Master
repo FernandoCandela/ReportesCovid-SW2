@@ -33,17 +33,17 @@
             <a class="navbar-brand" href="/">ESSALUD</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+<%--                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
+                    </li>--%>
+<%--                    <li class="nav-item">
                         <a class="nav-link active" href="/IngresarCredencial">Ingresar Credencial</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/RecuperarCredencial">Olvide Credencial</a>
-                    </li>
+                    </li>--%>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Cerrar Sesion</a>
+                        <a class="nav-link active" href="/logOutContacto">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>

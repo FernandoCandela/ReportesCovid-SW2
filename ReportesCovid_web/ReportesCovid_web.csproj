@@ -118,6 +118,7 @@
     <Content Include="Pages\Enfermera\RegistrarPaciente.aspx" />
     <Content Include="Pages\Enfermera\TablaModificarPaciente.aspx" />
     <Content Include="Pages\Inicial\CerrarSesion.aspx" />
+    <Content Include="Pages\Inicial\CerrarSesionContacto.aspx" />
     <Content Include="Pages\Inicial\InicioSesion.aspx" />
     <Content Include="Pages\Inicial\PaginaInicial.aspx" />
     <Content Include="Pages\Medico\BuscarPaciente.aspx" />
@@ -284,6 +285,13 @@
     </Compile>
     <Compile Include="Pages\Inicial\CerrarSesion.aspx.designer.cs">
       <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Inicial\CerrarSesionContacto.aspx.cs">
+      <DependentUpon>CerrarSesionContacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Inicial\CerrarSesionContacto.aspx.designer.cs">
+      <DependentUpon>CerrarSesionContacto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Inicial\InicioSesion.aspx.cs">
       <DependentUpon>InicioSesion.aspx</DependentUpon>
