@@ -120,7 +120,7 @@
                             Debe llenar este cambo.
                         </div>
                     </div>
-<%--                    <div class="col-md-6">
+                    <%--                    <div class="col-md-6">
                         <label for="txtCredencial" class="form-label">Credencial</label>
                         <div class="input-group">
                             <asp:TextBox type="Password" class="form-control" ClientIDMode="Static" ID="txtPassword" runat="server"></asp:TextBox>
@@ -129,14 +129,14 @@
                             </div>
                         </div>
                     </div>--%>
-
                 </div>
 
 
             </div>
             <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                <asp:Button runat="server" ID="btnActualizarPaciente" CssClass="btn btn-primary" Text="Actualizar Paciente" OnClick ="btnActualizarPaciente_Click"></asp:Button>
+                <asp:Button runat="server" ID="btnActualizarPaciente" CssClass="btn btn-primary" Text="Actualizar Paciente" OnClick="btnActualizarPaciente_Click"></asp:Button>
+                <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/TablaModificarPaciente" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
             </div>
 
 
@@ -171,7 +171,7 @@
             });
         })
     </script>
-   <%-- <script type="text/javascript">
+    <%-- <script type="text/javascript">
         function mostrarPassword() {
             var cambio = document.getElementById("txtPassword");
             if (cambio.type == "password") {

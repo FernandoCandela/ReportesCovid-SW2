@@ -34,7 +34,7 @@
                 <div class="col-sm-8 mb-4">
                     <label for="txtTemperatura" class="form-label">Temperatura <i class="fas fa-temperature-high"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtTemperatura" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtTemperatura" onkeypress="return solonumerosydecimales(event);" runat="server" required="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">°C</span>
                     </div>
                     <div class="invalid-feedback">
@@ -44,7 +44,7 @@
                 <div class="col-sm-8 mb-4">
                     <label for="txtFrecuencia" class="form-label">Frecuencia cardiaca <i class="fas fa-heartbeat"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtFrecuencia" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtFrecuencia" onkeypress="return solonumerosydecimales(event);" runat="server" required="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">Lat/min</span>
                     </div>
                     <div class="invalid-feedback">
@@ -54,7 +54,7 @@
                 <div class="col-sm-8 mb-4">
                     <label for="txtPresion" class="form-label">Presión arterial <i class="fas fa-stethoscope"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtPresion" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtPresion" onkeypress="return solonumerosydecimales(event);" runat="server" required="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">mmHg</span>
                     </div>
                     <div class="invalid-feedback">
@@ -64,7 +64,7 @@
                 <div class="col-sm-8 mb-4">
                     <label for="txtSaturacion" class="form-label">Saturación de oxigeno <i class="fas fa-head-side-mask"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtSaturacion" runat="server" required="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtSaturacion" onkeypress="return solonumerosydecimales(event);" runat="server" required="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">%SpO2</span>
                     </div>
                     <div class="invalid-feedback">
@@ -76,21 +76,15 @@
             <div class="col-sm">
                 <div class="col-sm-10 mb-4">
                     <label for="txtPronostico" class="form-label">Pronóstico</label>
-                    <div class="col-10 form-floating">
-                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
-                    </div>
+                    <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtPronostico" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
                 </div>
                 <div class="col-sm-10 mb-4">
-                    <label for="txtRequerimiento" class="form-label">Requerimiento de medicamentos / cuidado</label>
-                    <div class="col-10 form-floating">
+                    <label for="txtRequerimiento" class="form-label">Requerimiento de medicamentos / cuidado</label>>
                         <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtRequerimiento" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
-                    </div>
                 </div>
                 <div class="col-sm-10 mb-4">
                     <label for="txtEvolucion" class="form-label">Evolucion de Paciente</label>
-                    <div class="col-10 form-floating">
-                        <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
-                    </div>
+                    <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
                 </div>
             </div>
             <div class="col-sm">
@@ -104,12 +98,9 @@
                 <div class="traslado col-sm-10 mb-4 shadow-sm p-3">
 
                     <div class="container">
-                        <!-- no se si se ponia fecha de traslado-->
                         <div class="col-sm-12 mb-4">
                             <label for="txtFechaTraslado" class="form-label">Fecha de traslado</label>
-                            <div class="col-10 form-floating">
-                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
-                            </div>
+                            <asp:TextBox type="text" TextMode="Date" class="form-control" ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
                         </div>
                         <div class="col-sm-12 mb-4">
                             <label for="ddlTipoTraslado" class="form-label">Tipo Traslado</label>

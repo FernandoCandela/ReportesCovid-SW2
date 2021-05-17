@@ -107,6 +107,7 @@ namespace ReportesCovid_web.Pages.Medico
                 {
                     PacienteId = Convert.ToInt32(Request.QueryString["idPaciente"]),
                     Temperatura = txtTemperatura.Text.Trim(),
+                    FrecuenciaCardiaca = txtFrecuencia.Text.Trim(),
                     PresionArterial = txtPresion.Text.Trim(),
                     Saturacion = txtSaturacion.Text.Trim(),
                     Pronostico = txtPronostico.Text.Trim(),

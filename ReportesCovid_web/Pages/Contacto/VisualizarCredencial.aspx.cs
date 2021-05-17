@@ -96,7 +96,7 @@ namespace ReportesCovid_web.Pages.Contacto
 
                     txtFechaCreacion.Text = dtoPH.FechaCreacion.ToString();
                     txtTemperatura.Text = dtoPH.Temperatura;
-
+                    txtFrecuencia.Text = dtoPH.FrecuenciaCardiaca;
                     txtPresion.Text = dtoPH.PresionArterial;
                     txtSaturacion.Text = dtoPH.Saturacion;
                     txtPronostico.Text = dtoPH.Pronostico;
@@ -106,7 +106,10 @@ namespace ReportesCovid_web.Pages.Contacto
                     cbTraslado.Checked = dtoPH.IB_Traslado;
                     if (dtoPH.IB_Traslado)
                     {
-                        txtFechaTraslado.Text = dtoPH.FechaSolicitudTraslado.ToString();
+                        lblTraslado.CssClass = "badge rounded-pill bg-danger";
+                        lblTraslado.Text = "Requiere Traslado!";
+
+                        txtFechaTraslado.Text = dtoPH.FechaSolicitudTraslado.ToString("dd/MM/yyyy");
                         ddlTipoTraslado.SelectedValue = dtoPH.IN_TipoTraslado.ToString();
                         txtComentario.Text = dtoPH.DescTraslado;
                     }

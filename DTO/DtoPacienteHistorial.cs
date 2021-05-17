@@ -11,6 +11,7 @@ namespace DTO
         public int IdHistorial { get; set; }
         public int PacienteId { get; set; }
         public string Temperatura { get; set; }
+        public string FrecuenciaCardiaca { get; set; }
         public string PresionArterial { get; set; }
         public string Saturacion { get; set; }
         public string Pronostico { get; set; }

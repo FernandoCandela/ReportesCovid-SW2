@@ -12,7 +12,7 @@ namespace DAO
         public DtoPacienteHistorial Usp_PacienteHistorial_Insert(DtoB dtoBase)
         {
             DtoPacienteHistorial dto = (DtoPacienteHistorial)dtoBase;
-            SqlParameter[] pr = new SqlParameter[14];
+            SqlParameter[] pr = new SqlParameter[15];
             try
             {
                 pr[0] = new SqlParameter("@IdHistorial", SqlDbType.Int)
@@ -27,47 +27,51 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Temperatura))
                 };
-                pr[3] = new SqlParameter("@PresionArterial", SqlDbType.VarChar, 100)
+                pr[3] = new SqlParameter("@FrecuenciaCardiaca", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.FrecuenciaCardiaca))
+                };
+                pr[4] = new SqlParameter("@PresionArterial", SqlDbType.VarChar, 100)
                 {
                     Value = (V_ValidaPrNull(dto.PresionArterial))
                 };
-                pr[4] = new SqlParameter("@Saturacion", SqlDbType.VarChar, 100)
+                pr[5] = new SqlParameter("@Saturacion", SqlDbType.VarChar, 100)
                 {
                     Value = (V_ValidaPrNull(dto.Saturacion))
                 };
-                pr[5] = new SqlParameter("@Pronostico", SqlDbType.VarChar, int.MaxValue)
+                pr[6] = new SqlParameter("@Pronostico", SqlDbType.VarChar, int.MaxValue)
                 {
                     Value = (V_ValidaPrNull(dto.Pronostico))
                 };
-                pr[6] = new SqlParameter("@Requerimiento", SqlDbType.VarChar, int.MaxValue)
+                pr[7] = new SqlParameter("@Requerimiento", SqlDbType.VarChar, int.MaxValue)
                 {
                     Value = (V_ValidaPrNull(dto.Requerimiento))
                 };
-                pr[7] = new SqlParameter("@Evolucion", SqlDbType.VarChar, int.MaxValue)
+                pr[8] = new SqlParameter("@Evolucion", SqlDbType.VarChar, int.MaxValue)
                 {
                     Value = (V_ValidaPrNull(dto.Evolucion))
                 };
-                pr[8] = new SqlParameter("@IB_Traslado", SqlDbType.Bit)
+                pr[9] = new SqlParameter("@IB_Traslado", SqlDbType.Bit)
                 {
                     Value = (V_ValidaPrNull(dto.IB_Traslado))
                 };
-                pr[9] = new SqlParameter("@IN_TipoTraslado", SqlDbType.Int)
+                pr[10] = new SqlParameter("@IN_TipoTraslado", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_TipoTraslado))
                 };
-                pr[10] = new SqlParameter("@DescTraslado", SqlDbType.VarChar, int.MaxValue)
+                pr[11] = new SqlParameter("@DescTraslado", SqlDbType.VarChar, int.MaxValue)
                 {
                     Value = (V_ValidaPrNull(dto.DescTraslado))
                 };
-                pr[11] = new SqlParameter("@FechaSolicitudTraslado", SqlDbType.DateTime)
+                pr[12] = new SqlParameter("@FechaSolicitudTraslado", SqlDbType.DateTime)
                 {
                     Value = (V_ValidaPrNull(dto.FechaSolicitudTraslado))
                 };
-                pr[12] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                pr[13] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.OrganizacionId))
                 };
-                pr[13] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
+                pr[14] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
@@ -210,11 +214,13 @@ namespace DAO
                         IdHistorial = GetValue("IdHistorial", reader).ValueInt32,
                         PacienteId = GetValue("PacienteId", reader).ValueInt32,
                         Temperatura = GetValue("Temperatura", reader).ValueString,
+                        FrecuenciaCardiaca = GetValue("FrecuenciaCardiaca", reader).ValueString,
                         PresionArterial = GetValue("PresionArterial", reader).ValueString,
                         Saturacion = GetValue("Saturacion", reader).ValueString,
                         Pronostico = GetValue("Pronostico", reader).ValueString,
                         Requerimiento = GetValue("Requerimiento", reader).ValueString,
                         Evolucion = GetValue("Evolucion", reader).ValueString,
+                        IB_Traslado = GetValue("IB_Traslado", reader).ValueBool,
                         IN_TipoTraslado = GetValue("IN_TipoTraslado", reader).ValueInt32,
                         DescTraslado = GetValue("DescTraslado", reader).ValueString,
                         FechaSolicitudTraslado = GetValue("FechaSolicitudTraslado", reader).ValueDateTime,
