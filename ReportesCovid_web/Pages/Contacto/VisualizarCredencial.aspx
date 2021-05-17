@@ -39,7 +39,6 @@
     <div class="container mw-100 m-2 col-10 shadow p-3 mb-5 bg-body rounded m-auto">
         <div class="row ">
             <div class="col-12 col-sm-4 col-lg-4 mx-auto">
-
                 <div class="col-sm-12 mb-4">
                     <label for="txtTemperatura" class="form-label">Temperatura <i class="fas fa-temperature-high"></i></label>
                     <div class="input-group">
@@ -84,7 +83,7 @@
                     <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 85px" runat="server" ReadOnly="true"></asp:TextBox>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-4 col-lg-4">
                 <div class="col-sm-12 mb-4">
                     <div class="form-check form-switch">
                         <input class="form-check-input" runat="server" clientidmode="Static" type="checkbox" id="cbTraslado" disabled="disabled">

@@ -86,7 +86,7 @@
                     <asp:TextBox type="text" TextMode="MultiLine" class="form-control" ID="txtEvolucion" Style="height: 85px" runat="server" required="true" ToolTip="Escriba aquí..."></asp:TextBox>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-4 col-lg-4">
                 <div class="col-sm-12 mb-4">
                     <div class="form-check form-switch">
                         <input class="form-check-input" runat="server" clientidmode="Static" type="checkbox" id="cbTraslado">

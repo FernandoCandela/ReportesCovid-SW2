@@ -19,6 +19,7 @@ namespace ReportesCovid_web.Pages.Contacto
         public void FirstLoad()
         {
             // Validaciones para el usuario
+            lnkIngresar.Attributes.Add("OnClick", "return validarCredencial('" + txtCredencial.ClientID + "')");
         }
         public void LoguearContacto(object sender, EventArgs e)
         {

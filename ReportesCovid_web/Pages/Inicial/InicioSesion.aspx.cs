@@ -19,6 +19,8 @@ namespace ReportesCovid_web.Pages.Inicial
         public void FirstLoad()
         {
             // Validaciones para el usuario
+            btnLogin.Attributes.Add("OnClick", "return validarLogin('" + username.ClientID + "','" + password.ClientID + "')");
+
         }
         public void LoguearUsuario(object sender, EventArgs e)
         {
