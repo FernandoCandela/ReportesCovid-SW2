@@ -105,5 +105,12 @@ namespace ReportesCovid_web.Pages.Medico
                     break;
             }
         }
+
+        protected void gvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            gv.PageIndex = e.NewPageIndex;
+            CargarPacientes();
+        }
     }
 }
