@@ -101,19 +101,19 @@ namespace DAO
                 {
                     cr.List.Add(new DtoPacienteHistorial
                     {
-                        IdHistorial = GetValue("IdPaciente", reader).ValueInt32,
-                        PacienteId = GetValue("Nombres", reader).ValueInt32,
-                        Temperatura = GetValue("Apellidos", reader).ValueString,
-                        PresionArterial = GetValue("IN_Tipodoc", reader).ValueString,
-                        Saturacion = GetValue("Numdoc", reader).ValueString,
-                        Pronostico = GetValue("IN_TipoSeguro", reader).ValueString,
-                        Requerimiento = GetValue("IN_EstadoPaciente", reader).ValueString,
-                        Evolucion = GetValue("IdPaciente", reader).ValueString,
-                        IN_TipoTraslado = GetValue("Nombres", reader).ValueInt32,
-                        DescTraslado = GetValue("Apellidos", reader).ValueString,
-                        FechaSolicitudTraslado = GetValue("IN_Tipodoc", reader).ValueDateTime,
-                        OrganizacionId = GetValue("Numdoc", reader).ValueInt32,
-                        ContactoId = GetValue("IN_TipoSeguro", reader).ValueInt32,
+                        IdHistorial = GetValue("IdHistorial", reader).ValueInt32,
+                        PacienteId = GetValue("PacienteId", reader).ValueInt32,
+                        Temperatura = GetValue("Temperatura", reader).ValueString,
+                        PresionArterial = GetValue("PresionArterial", reader).ValueString,
+                        Saturacion = GetValue("Saturacion", reader).ValueString,
+                        Pronostico = GetValue("Pronostico", reader).ValueString,
+                        Requerimiento = GetValue("Requerimiento", reader).ValueString,
+                        Evolucion = GetValue("Evolucion", reader).ValueString,
+                        IN_TipoTraslado = GetValue("IN_TipoTraslado", reader).ValueInt32,
+                        DescTraslado = GetValue("DescTraslado", reader).ValueString,
+                        FechaSolicitudTraslado = GetValue("FechaSolicitudTraslado", reader).ValueDateTime,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        ContactoId = GetValue("ContactoId", reader).ValueInt32,
                         UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
                         FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
@@ -195,9 +195,9 @@ namespace DAO
 
             try
             {
-                pr[0] = new SqlParameter("@IdHistorial", SqlDbType.Int)
+                pr[0] = new SqlParameter("@PacienteId", SqlDbType.Int)
                 {
-                    Value = (dto.IdHistorial)
+                    Value = (dto.PacienteId)
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_PacienteHistorial_SelectOne", pr);
@@ -207,19 +207,19 @@ namespace DAO
                 {
                     dto = new DtoPacienteHistorial
                     {
-                        IdHistorial = GetValue("IdPaciente", reader).ValueInt32,
-                        PacienteId = GetValue("Nombres", reader).ValueInt32,
-                        Temperatura = GetValue("Apellidos", reader).ValueString,
-                        PresionArterial = GetValue("IN_Tipodoc", reader).ValueString,
-                        Saturacion = GetValue("Numdoc", reader).ValueString,
-                        Pronostico = GetValue("IN_TipoSeguro", reader).ValueString,
-                        Requerimiento = GetValue("IN_EstadoPaciente", reader).ValueString,
-                        Evolucion = GetValue("IdPaciente", reader).ValueString,
-                        IN_TipoTraslado = GetValue("Nombres", reader).ValueInt32,
-                        DescTraslado = GetValue("Apellidos", reader).ValueString,
-                        FechaSolicitudTraslado = GetValue("IN_Tipodoc", reader).ValueDateTime,
-                        OrganizacionId = GetValue("Numdoc", reader).ValueInt32,
-                        ContactoId = GetValue("IN_TipoSeguro", reader).ValueInt32,
+                        IdHistorial = GetValue("IdHistorial", reader).ValueInt32,
+                        PacienteId = GetValue("PacienteId", reader).ValueInt32,
+                        Temperatura = GetValue("Temperatura", reader).ValueString,
+                        PresionArterial = GetValue("PresionArterial", reader).ValueString,
+                        Saturacion = GetValue("Saturacion", reader).ValueString,
+                        Pronostico = GetValue("Pronostico", reader).ValueString,
+                        Requerimiento = GetValue("Requerimiento", reader).ValueString,
+                        Evolucion = GetValue("Evolucion", reader).ValueString,
+                        IN_TipoTraslado = GetValue("IN_TipoTraslado", reader).ValueInt32,
+                        DescTraslado = GetValue("DescTraslado", reader).ValueString,
+                        FechaSolicitudTraslado = GetValue("FechaSolicitudTraslado", reader).ValueDateTime,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        ContactoId = GetValue("ContactoId", reader).ValueInt32,
                         UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
                         FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,

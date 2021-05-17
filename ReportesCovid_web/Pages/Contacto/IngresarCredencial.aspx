@@ -7,7 +7,7 @@
         <div class="col-lg-6 mx-auto">
             <div class="col mb-4">
                 <label for="txtCredencial" class="form-label">Credencial</label>
-                <asp:TextBox runat="server" CssClass="form-control" ClientIDMode="Static" ID="txtCredencial" />
+                <asp:TextBox runat="server" type="password" CssClass="form-control" ClientIDMode="Static" ID="txtCredencial" />
             </div>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <asp:LinkButton ID="lnkIngresar" runat="server" OnClick="LoguearContacto" class="btn btn-primary btn-lg px-4 me-sm-3">Ingresar</asp:LinkButton>

@@ -60,6 +60,15 @@ namespace ReportesCovid_web.Pages.Contacto
         protected global::System.Web.UI.WebControls.TextBox txtMedico;
 
         /// <summary>
+        /// Control txtFechaCreacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFechaCreacion;
+
+        /// <summary>
         /// Control txtTemperatura.
         /// </summary>
         /// <remarks>

@@ -28,6 +28,10 @@
                 <label for="txtDoctor" class="form-label">Medico</label>
                 <asp:TextBox type="text" class="form-control" ID="txtMedico" runat="server" ReadOnly="true"></asp:TextBox>
             </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <label for="txtFechaTraslado" class="form-label">Fecha de Registro</label>
+                <asp:TextBox type="text" class="form-control" ID="txtFechaCreacion" runat="server" ReadOnly="true"></asp:TextBox>
+            </div>
 
         </div>
     </div>
@@ -39,28 +43,28 @@
                 <div class="col-sm-8 mb-4">
                     <label for="txtTemperatura" class="form-label">Temperatura <i class="fas fa-temperature-high"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtTemperatura" runat="server" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtTemperatura" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">°C</span>
                     </div>
                 </div>
                 <div class="col-sm-8 mb-4">
                     <label for="txtFrecuencia" class="form-label">Frecuencia cardiaca <i class="fas fa-heartbeat"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtFrecuencia" runat="server" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtFrecuencia" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">Lat/min</span>
                     </div>
                 </div>
                 <div class="col-sm-8 mb-4">
                     <label for="txtPresion" class="form-label">Presión arterial <i class="fas fa-stethoscope"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtPresion" runat="server" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtPresion" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">mmHg</span>
                     </div>
                 </div>
                 <div class="col-sm-8 mb-4">
                     <label for="txtSaturacion" class="form-label">Saturación de oxigeno <i class="fas fa-head-side-mask"></i></label>
                     <div class="input-group">
-                        <asp:TextBox type="number" class="form-control" ID="txtSaturacion" runat="server" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox type="text" class="form-control" ID="txtSaturacion" runat="server" ReadOnly="true"></asp:TextBox>
                         <span class="input-group-text" style="font-size: 1rem">%SpO2</span>
                     </div>
                 </div>
@@ -89,18 +93,19 @@
             <div class="col-sm">
                 <div class="col-sm-10 mb-4">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" runat="server" clientidmode="Static" type="checkbox" id="cbTraslado" readonly="true">
+                        <input class="form-check-input" runat="server" clientidmode="Static" type="checkbox" id="cbTraslado" disabled="disabled">
                         <label class="form-check-label" for="cbTraslado">Requiere traslado</label>
                     </div>
                 </div>
 
                 <div class="traslado col-sm-10 mb-4 shadow-sm p-3">
                     <div class="container">
+                        <div class="col-sm-12 mb-2">
+                            <asp:Label runat="server" CssClass="badge rounded-pill bg-success" Text="No requiere traslado" ></asp:Label>
+                        </div>
                         <div class="col-sm-12 mb-4">
                             <label for="txtFechaTraslado" class="form-label">Fecha de traslado</label>
-                            <div class="col-10 form-floating">
-                                <asp:TextBox type="text" TextMode="Date" class="form-control-sm " ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
-                            </div>
+                            <asp:TextBox type="text" class="form-control" ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
                         </div>
                         <div class="col-sm-12 mb-4">
                             <label for="ddlTipoTraslado" class="form-label">Tipo Traslado</label>

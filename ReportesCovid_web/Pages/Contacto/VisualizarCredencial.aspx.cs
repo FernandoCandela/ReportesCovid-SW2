@@ -30,8 +30,9 @@ namespace ReportesCovid_web.Pages.Contacto
         public void FirstLoad()
         {
             CargarDatosPaciente();
-            //CargarReporteMedico();
             CargarTipoTraslado();
+            CargarReporteMedico();
+
         }
         private void CargarTipoTraslado()
         {
@@ -50,7 +51,7 @@ namespace ReportesCovid_web.Pages.Contacto
                     ddlTipoTraslado.DataSource = list;
                     ddlTipoTraslado.DataBind();
 
-                    ListItem firstLista = new ListItem("[Seleccionar]", "");
+                    ListItem firstLista = new ListItem(" ", "");
                     firstLista.Attributes.Add("disabled", "disabled");
                     firstLista.Attributes.Add("Selected", "True");
                     ddlTipoTraslado.Items.Insert(0, firstLista);
@@ -71,7 +72,7 @@ namespace ReportesCovid_web.Pages.Contacto
                 txtNombres.Text = userPaciente.Nombres;
                 txtApellidos.Text = userPaciente.Apellidos;
                 txtNumdoc.Text = userPaciente.NombreTipodoc + "-" + userPaciente.Numdoc.ToString();
-
+                txtEstadoPaciente.Text = userPaciente.NombreEstadoPaciente;
             }
             catch (Exception)
             {
@@ -85,13 +86,39 @@ namespace ReportesCovid_web.Pages.Contacto
         {
             try
             {
-                DtoUsuario dtoUser = new CtrUsuario().Usp_Usuario_SelectOne(new DtoUsuario
+                DtoPaciente userPaciente = (DtoPaciente)Session["PacienteContacto"];
+                DtoPacienteHistorial dtoPH = new CtrPacienteHistoria().Usp_PacienteHistorial_SelectOne(new DtoPacienteHistorial
                 {
-                    IdUsuario = Convert.ToInt32(Request.QueryString["idPaciente"])
+                    PacienteId = userPaciente.IdPaciente
                 });
-                if (!dtoUser.HuboError)
+                if (!dtoPH.HuboError)
                 {
-                    txtMedico.Text = dtoUser.PrimerNombre + " " + dtoUser.SegundoNombre + " " + dtoUser.ApellidoPaterno + " " + dtoUser.ApellidoMaterno;
+
+                    txtFechaCreacion.Text = dtoPH.FechaCreacion.ToString();
+                    txtTemperatura.Text = dtoPH.Temperatura;
+
+                    txtPresion.Text = dtoPH.PresionArterial;
+                    txtSaturacion.Text = dtoPH.Saturacion;
+                    txtPronostico.Text = dtoPH.Pronostico;
+                    txtRequerimiento.Text = dtoPH.Requerimiento;
+                    txtEvolucion.Text = dtoPH.Evolucion;
+
+                    cbTraslado.Checked = dtoPH.IB_Traslado;
+                    if (dtoPH.IB_Traslado)
+                    {
+                        txtFechaTraslado.Text = dtoPH.FechaSolicitudTraslado.ToString();
+                        ddlTipoTraslado.SelectedValue = dtoPH.IN_TipoTraslado.ToString();
+                        txtComentario.Text = dtoPH.DescTraslado;
+                    }
+
+                    DtoUsuario dtoUser = new CtrUsuario().Usp_Usuario_SelectOne(new DtoUsuario
+                    {
+                        IdUsuario = dtoPH.UsuarioCreacionId
+                    });
+                    if (!dtoUser.HuboError)
+                    {
+                        txtMedico.Text = dtoUser.PrimerNombre + " " + dtoUser.SegundoNombre + " " + dtoUser.ApellidoPaterno + " " + dtoUser.ApellidoMaterno;
+                    }
                 }
             }
             catch (Exception)
