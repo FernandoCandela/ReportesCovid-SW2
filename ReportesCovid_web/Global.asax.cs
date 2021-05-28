@@ -51,6 +51,7 @@ namespace ReportesCovid_web
             routes.MapPageRoute("logIn", "logIn", "~/Pages/Inicial/Iniciosesion.aspx", true);
             routes.MapPageRoute("logOut", "logOut", "~/Pages/Inicial/CerrarSesion.aspx", true);
             routes.MapPageRoute("logOutContacto", "logOutContacto", "~/Pages/Inicial/CerrarSesionContacto.aspx", true);
+            routes.MapPageRoute("IngresarCredencial", "IngresarCredencial", "~/Pages/Inicial/Ingresarcredencial.aspx", true);
 
             //Enfermera
             routes.MapPageRoute("MenuEnfermera", "MenuEnfermera", "~/Pages/Enfermera/Menuenfermera.aspx", true);
@@ -68,7 +69,7 @@ namespace ReportesCovid_web
 
             //Contacto
             routes.MapPageRoute("EnviarMensaje", "EnviarMensaje", "~/Pages/Contacto/Enviarmensaje.aspx", true);
-            routes.MapPageRoute("IngresarCredencial", "IngresarCredencial", "~/Pages/Contacto/Ingresarcredencial.aspx", true);
+            
             routes.MapPageRoute("RecuperarCredencial", "RecuperarCredencial", "~/Pages/Contacto/Recuperarcredencial.aspx", true);
             routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
 

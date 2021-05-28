@@ -111,7 +111,7 @@
     <Content Include="Pages\Administrador\TablaMensaje.aspx" />
     <Content Include="Pages\Administrador\TablaUsuario.aspx" />
     <Content Include="Pages\Contacto\EnviarMensaje.aspx" />
-    <Content Include="Pages\Contacto\IngresarCredencial.aspx" />
+    <Content Include="Pages\Inicial\IngresarCredencial.aspx" />
     <Content Include="Pages\Contacto\RecuperarCredencial.aspx" />
     <Content Include="Pages\Contacto\VisualizarCredencial.aspx" />
     <Content Include="Pages\Enfermera\MenuEnfermera.aspx" />
@@ -133,40 +133,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HelpE.cs" />
-    <Compile Include="MasterPages\Inicial.Master.cs">
-      <DependentUpon>Inicial.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\Inicial.Master.designer.cs">
-      <DependentUpon>Inicial.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPages\Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPages\Medico.Master.cs">
-      <DependentUpon>Medico.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\Medico.Master.designer.cs">
-      <DependentUpon>Medico.Master</DependentUpon>
-    </Compile>
-    <Compile Include="MasterPages\Enfermera.Master.cs">
-      <DependentUpon>Enfermera.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MasterPages\Enfermera.Master.designer.cs">
-      <DependentUpon>Enfermera.Master</DependentUpon>
-    </Compile>
     <Compile Include="MasterPages\Contacto.Master.cs">
       <DependentUpon>Contacto.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPages\Contacto.Master.designer.cs">
       <DependentUpon>Contacto.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Inicial.Master.cs">
+      <DependentUpon>Inicial.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Inicial.Master.designer.cs">
+      <DependentUpon>Inicial.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\Usuario.Master.cs">
       <DependentUpon>Usuario.Master</DependentUpon>
@@ -231,11 +210,11 @@
     <Compile Include="Pages\Contacto\EnviarMensaje.aspx.designer.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Contacto\IngresarCredencial.aspx.cs">
+    <Compile Include="Pages\Inicial\IngresarCredencial.aspx.cs">
       <DependentUpon>IngresarCredencial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Contacto\IngresarCredencial.aspx.designer.cs">
+    <Compile Include="Pages\Inicial\IngresarCredencial.aspx.designer.cs">
       <DependentUpon>IngresarCredencial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.cs">
@@ -341,11 +320,8 @@
   <ItemGroup>
     <Content Include="MasterPages\Web_Usuarios.Master" />
     <Content Include="MasterPages\Inicial.Master" />
-    <Content Include="MasterPages\Admin.Master" />
-    <Content Include="MasterPages\Medico.Master" />
-    <Content Include="MasterPages\Enfermera.Master" />
-    <Content Include="MasterPages\Contacto.Master" />
     <Content Include="MasterPages\Usuario.Master" />
+    <Content Include="MasterPages\Contacto.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
