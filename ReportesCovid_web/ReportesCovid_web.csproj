@@ -75,6 +75,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\Administrador\Home\Vendors\boxicons\css\animations.css" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\css\boxicons.css" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\css\boxicons.min.css" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\css\transformations.css" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.svg" />
     <Content Include="favicon.ico" />
     <Content Include="css\Administrador\Home\bootstrap-extended.min.css" />
     <Content Include="css\Administrador\Home\components.min.css" />
@@ -731,6 +736,10 @@
     <Content Include="MasterPages\Inicial.Master" />
     <Content Include="MasterPages\Usuario.Master" />
     <Content Include="MasterPages\Contacto.Master" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.eot" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.ttf" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.woff" />
+    <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.woff2" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

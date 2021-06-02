@@ -143,6 +143,25 @@
                         </li>
                     </ul>
                 </li>
+                <li class=" nav-item">
+                    <a href="/administrador/envios/lista">
+                        <i class="menu-livicon" data-icon="gears"></i>
+                        <span class="menu-title text-truncate" data-i18n="Mensajes">Varios</span>
+                    </a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="/administrador/mensaje/nuevo"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Lista">Lista</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="/administrador/mensaje/lista"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Nuevo">Nuevo</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" navigation-header text-truncate">
+                    <hr />
+                </li>
+                <li class=" nav-item"><a href="/administrador/Usuarios/lista"><i class="bx bx-power-off mr-50"></i><span class="menu-title text-truncate" data-i18n="Home">LogOut</span></a>
+                </li>
+
             </ul>
         </div>
     </div>
