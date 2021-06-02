@@ -15,15 +15,6 @@ namespace ReportesCovid_web.MasterPages
     {
 
         /// <summary>
-        /// Control PlacehoderMaster.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PlacehoderMaster;
-
-        /// <summary>
         /// Control Head.
         /// </summary>
         /// <remarks>
@@ -58,15 +49,6 @@ namespace ReportesCovid_web.MasterPages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbUserRole;
-
-        /// <summary>
-        /// Control hdnRootWeb.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnRootWeb;
 
         /// <summary>
         /// Control ContentPlaceHolder1.
