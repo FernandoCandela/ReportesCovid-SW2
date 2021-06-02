@@ -533,6 +533,8 @@
     <Content Include="Pages\Medico\GenerarReporte.aspx" />
     <Content Include="Pages\Medico\MenuMedico.aspx" />
     <Content Include="Pages\Medico\Reporte.aspx" />
+    <Content Include="PlantillaEmail\htmlCredencial.html" />
+    <Content Include="PlantillaEmail\htmlUsuario.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -748,9 +750,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PlantillasEmails\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CTR\CTR.csproj">
       <Project>{590c564c-b7b5-46a0-acb8-9e3d67cd0b1b}</Project>
