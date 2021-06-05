@@ -518,13 +518,17 @@
     <Content Include="Pages\Administrador\TablaUsuario.aspx" />
     <Content Include="Pages\Administrador\test.aspx" />
     <Content Include="Pages\Contacto\EnviarMensaje.aspx" />
+    <Content Include="Pages\Enfermera\ListaPacientes.aspx" />
+    <Content Include="Pages\Enfermera\MenuEnfermeraV2.aspx" />
+    <Content Include="Pages\Enfermera\ModificarPacienteV2.aspx" />
+    <Content Include="Pages\Enfermera\RegistrarPacienteV2.aspx" />
     <Content Include="Pages\Inicial\IngresarCredencial.aspx" />
     <Content Include="Pages\Contacto\RecuperarCredencial.aspx" />
     <Content Include="Pages\Contacto\VisualizarCredencial.aspx" />
-    <Content Include="Pages\Enfermera\MenuEnfermera.aspx" />
-    <Content Include="Pages\Enfermera\ModificarPaciente.aspx" />
-    <Content Include="Pages\Enfermera\RegistrarPaciente.aspx" />
-    <Content Include="Pages\Enfermera\TablaModificarPaciente.aspx" />
+    <Content Include="Pages\Enfermera\V1\MenuEnfermera.aspx" />
+    <Content Include="Pages\Enfermera\V1\ModificarPaciente.aspx" />
+    <Content Include="Pages\Enfermera\V1\RegistrarPaciente.aspx" />
+    <Content Include="Pages\Enfermera\V1\TablaModificarPaciente.aspx" />
     <Content Include="Pages\Inicial\CerrarSesion.aspx" />
     <Content Include="Pages\Inicial\CerrarSesionContacto.aspx" />
     <Content Include="Pages\Inicial\InicioSesion.aspx" />
@@ -626,6 +630,34 @@
     <Compile Include="Pages\Contacto\EnviarMensaje.aspx.designer.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Enfermera\ListaPacientes.aspx.cs">
+      <DependentUpon>ListaPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\ListaPacientes.aspx.designer.cs">
+      <DependentUpon>ListaPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\MenuEnfermeraV2.aspx.cs">
+      <DependentUpon>MenuEnfermeraV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\MenuEnfermeraV2.aspx.designer.cs">
+      <DependentUpon>MenuEnfermeraV2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\ModificarPacienteV2.aspx.cs">
+      <DependentUpon>ModificarPacienteV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\ModificarPacienteV2.aspx.designer.cs">
+      <DependentUpon>ModificarPacienteV2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Enfermera\RegistrarPacienteV2.aspx.cs">
+      <DependentUpon>RegistrarPacienteV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Enfermera\RegistrarPacienteV2.aspx.designer.cs">
+      <DependentUpon>RegistrarPacienteV2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Inicial\IngresarCredencial.aspx.cs">
       <DependentUpon>IngresarCredencial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -647,32 +679,32 @@
     <Compile Include="Pages\Contacto\VisualizarCredencial.aspx.designer.cs">
       <DependentUpon>VisualizarCredencial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Enfermera\MenuEnfermera.aspx.cs">
+    <Compile Include="Pages\Enfermera\V1\MenuEnfermera.aspx.cs">
       <DependentUpon>MenuEnfermera.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Enfermera\MenuEnfermera.aspx.designer.cs">
+    <Compile Include="Pages\Enfermera\V1\MenuEnfermera.aspx.designer.cs">
       <DependentUpon>MenuEnfermera.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Enfermera\ModificarPaciente.aspx.cs">
+    <Compile Include="Pages\Enfermera\V1\ModificarPaciente.aspx.cs">
       <DependentUpon>ModificarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Enfermera\ModificarPaciente.aspx.designer.cs">
+    <Compile Include="Pages\Enfermera\V1\ModificarPaciente.aspx.designer.cs">
       <DependentUpon>ModificarPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Enfermera\RegistrarPaciente.aspx.cs">
+    <Compile Include="Pages\Enfermera\V1\RegistrarPaciente.aspx.cs">
       <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Enfermera\RegistrarPaciente.aspx.designer.cs">
+    <Compile Include="Pages\Enfermera\V1\RegistrarPaciente.aspx.designer.cs">
       <DependentUpon>RegistrarPaciente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Enfermera\TablaModificarPaciente.aspx.cs">
+    <Compile Include="Pages\Enfermera\V1\TablaModificarPaciente.aspx.cs">
       <DependentUpon>TablaModificarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Enfermera\TablaModificarPaciente.aspx.designer.cs">
+    <Compile Include="Pages\Enfermera\V1\TablaModificarPaciente.aspx.designer.cs">
       <DependentUpon>TablaModificarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Inicial\CerrarSesion.aspx.cs">

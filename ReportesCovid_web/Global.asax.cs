@@ -54,18 +54,19 @@ namespace ReportesCovid_web
             routes.MapPageRoute("IngresarCredencial", "IngresarCredencial", "~/Pages/Inicial/Ingresarcredencial.aspx", true);
 
             //Enfermera
-            routes.MapPageRoute("MenuEnfermera", "MenuEnfermera", "~/Pages/Enfermera/Menuenfermera.aspx", true);
-            routes.MapPageRoute("ModificarPaciente", "ModificarPaciente", "~/Pages/Enfermera/Modificarpaciente.aspx", true);
-            routes.MapPageRoute("RegistrarPaciente", "RegistrarPaciente", "~/Pages/Enfermera/Registrarpaciente.aspx", true);
-            routes.MapPageRoute("TablaModificarPaciente", "TablaModificarPaciente", "~/Pages/Enfermera/TablaModificarpaciente.aspx", true);
+            routes.MapPageRoute("enfermera/menu", "enfermera/menu", "~/Pages/Enfermera/MenuenfermeraV2.aspx", true);
+            routes.MapPageRoute("enfermera/paciente/editar", "enfermera/paciente/editar", "~/Pages/Enfermera/ModificarpacienteV2.aspx", true);
+            routes.MapPageRoute("enfermera/paciente/nuevo", "enfermera/paciente/nuevo", "~/Pages/Enfermera/RegistrarpacienteV2.aspx", true);
+            routes.MapPageRoute("enfermera/paciente/lista", "enfermera/paciente/lista", "~/Pages/Enfermera/ListaPacientes.aspx", true);
 
             //Administrador
-            routes.MapPageRoute("CrearUsuario", "CrearUsuario", "~/Pages/Administrador/Crearusuario.aspx", true);
-            routes.MapPageRoute("MenuAdmin", "MenuAdmin", "~/Pages/Administrador/Menuadmin.aspx", true);
-            routes.MapPageRoute("ModificarUsuario", "ModificarUsuario", "~/Pages/Administrador/Modificarusuario.aspx", true);
-            routes.MapPageRoute("ResponderMensaje", "ResponderMensaje", "~/Pages/Administrador/Respondermensaje.aspx", true);
-            routes.MapPageRoute("TablaMensaje", "TablaMensaje", "~/Pages/Administrador/Tablamensaje.aspx", true);
-            routes.MapPageRoute("TablaUsuario", "TablaUsuario", "~/Pages/Administrador/Tablausuario.aspx", true);
+            routes.MapPageRoute("administrador/menu", "administrador/menu", "~/Pages/Administrador/Menuadmin.aspx", true);
+            routes.MapPageRoute("administrador/usuario/lista", "administrador/usuario/lista", "~/Pages/Administrador/Tablausuario.aspx", true);
+            routes.MapPageRoute("administrador/usuario/nuevo", "administrador/usuarios/nuevo", "~/Pages/Administrador/Crearusuario.aspx", true);
+            routes.MapPageRoute("administrador/usuario/editar", "administrador/usuarios/editar", "~/Pages/Administrador/Modificarusuario.aspx", true);
+            routes.MapPageRoute("administrador/mensaje/ResponderMensaje", "administrador/mensaje/ResponderMensaje", "~/Pages/Administrador/Respondermensaje.aspx", true);
+            routes.MapPageRoute("administrador/mensaje/lista", "administrador/mensaje/lista", "~/Pages/Administrador/Tablamensaje.aspx", true);
+            
 
             //Contacto
             routes.MapPageRoute("EnviarMensaje", "EnviarMensaje", "~/Pages/Contacto/Enviarmensaje.aspx", true);
@@ -74,8 +75,8 @@ namespace ReportesCovid_web
             routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
 
             //Medico
-            routes.MapPageRoute("BuscarPaciente", "BuscarPaciente", "~/Pages/Medico/BuscarPaciente.aspx", true);
-            routes.MapPageRoute("GenerarReporte", "GenerarReporte", "~/Pages/Medico/GenerarReporte.aspx", true);
+            routes.MapPageRoute("medico/paciente/lista", "medico/paciente/lista", "~/Pages/Medico/BuscarPaciente.aspx", true);
+            routes.MapPageRoute("medico/paciente/GenerarReporte", "medico/paciente/GenerarReporte", "~/Pages/Medico/GenerarReporte.aspx", true);
 
             //Ejemplos
             //routes.MapPageRoute("Activacion", "Activacion", "~/Pages/Web/Activacion.aspx", true);

@@ -66,7 +66,6 @@
                             <li class="nav-item mobile-menu d-xl-none me-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="javascript:void(0);"><i class="ficon bx bx-menu"></i></a></li>
                         </ul>
                         <div>
-                            <h3>TEST</h3>
                             <asp:ContentPlaceHolder ID="PageContentTitle" runat="server">
                             </asp:ContentPlaceHolder>
                         </div>
@@ -76,12 +75,12 @@
                         <li class="dropdown dropdown-user nav-item">
                             <a class="dropdown-toggle nav-link dropdown-user-link" href="javascript:void(0);" data-toggle="dropdown">
                                 <div class="user-nav d-sm-flex d-none">
-                                    <asp:Label ID="lbUserName" class="user-name" runat="server">Fernando Candela</asp:Label>
-                                    <asp:Label ID="lbUserRole" class="user-status text-muted" runat="server"> Administrador </asp:Label>
+                                    <asp:Label ID="lbUserName" class="user-name" runat="server"></asp:Label>
+                                    <asp:Label ID="lbUserRole" class="user-status text-muted" runat="server"></asp:Label>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right pb-0">
-                                <a class="dropdown-item" href="/administrador/LogOut">
+                                <a class="dropdown-item" href="/logOut">
                                     <i class="bx bx-power-off mr-50"></i>
                                     LogOut
                                 </a>
@@ -117,50 +116,21 @@
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation" data-icon-style="lines">
 
-                <li class=" nav-item"><a href="/administrador/Usuarios/lista"><i class="menu-livicon" data-icon="home"></i><span class="menu-title text-truncate" data-i18n="Home">Home</span></a>
+                <li class="nav-item">
+                    <asp:HyperLink runat="server" ID="hplMenu"><i class="menu-livicon" data-icon="home"></i><span class="menu-title text-truncate" data-i18n="Home">Home</span></asp:HyperLink>
                 </li>
 
-                <li class=" navigation-header text-truncate"><span data-i18n="Maestros">Maestros</span>
-                </li>
-                <li class=" nav-item"><a href="/administrador/Usuarios/lista"><i class="menu-livicon" data-icon="users"></i><span class="menu-title text-truncate" data-i18n="Usuarios">Usuarios</span></a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="/administrador/Usuarios/lista"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Lista">Lista</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="/administrador/Usuarios/nuevo"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Nuevo">Nuevo</span></a>
-                        </li>
-                    </ul>
-                </li>
+                <asp:Literal ID="ListaMenu" runat="server" />
+                <%--Inicio Administrador--%>
 
-                <li class=" nav-item">
-                    <a href="/administrador/envios/lista">
-                        <i class="menu-livicon" data-icon="envelope-put"></i>
-                        <span class="menu-title text-truncate" data-i18n="Mensajes">Mensajes</span>
-                    </a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="/administrador/mensaje/nuevo"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Lista">Lista</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="/administrador/mensaje/lista"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Nuevo">Nuevo</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class=" nav-item">
-                    <a href="/administrador/envios/lista">
-                        <i class="menu-livicon" data-icon="gears"></i>
-                        <span class="menu-title text-truncate" data-i18n="Mensajes">Varios</span>
-                    </a>
-                    <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="/administrador/mensaje/nuevo"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Lista">Lista</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="/administrador/mensaje/lista"><i class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate" data-i18n="Nuevo">Nuevo</span></a>
-                        </li>
-                    </ul>
-                </li>
+                <%--Fin Administrador--%>
 
                 <li class=" navigation-header text-truncate">
                     <hr />
                 </li>
-                <li class=" nav-item"><a href="/administrador/Usuarios/lista"><i class="bx bx-power-off mr-50"></i><span class="menu-title text-truncate" data-i18n="Home">LogOut</span></a>
+                <li class=" nav-item"><a href="/logOut"><i class="bx bx-power-off mr-50"></i><span class="menu-title text-truncate" data-i18n="Home">LogOut</span></a>
                 </li>
+
 
             </ul>
         </div>

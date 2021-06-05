@@ -38,13 +38,13 @@ namespace ReportesCovid_web.Pages.Inicial
                     switch (dtoR.IN_Rol)
                     {
                         case 1:
-                            Response.Redirect("MenuAdmin");
+                            Response.Redirect("administrador/menu");
                             break;
                         case 2:
-                            Response.Redirect("MenuEnfermera");
+                            Response.Redirect("enfermera/menu");
                             break;
                         case 3:
-                            Response.Redirect("BuscarPaciente");
+                            Response.Redirect("medico/menu");
                             break;
                         default:
                             break;

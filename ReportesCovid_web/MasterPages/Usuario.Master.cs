@@ -23,11 +23,10 @@ namespace ReportesCovid_web.MasterPages
                     }
                     else
                     {
-                        Response.Redirect("logIn");
+                        Response.Redirect("logOut");
                     }
                 }
         }
-
 
         public void FirsLoad()
         {
@@ -68,8 +67,7 @@ namespace ReportesCovid_web.MasterPages
         }
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Session["UsuarioLogin"] = null;
-            Response.Redirect("logIn");
+            Response.Redirect("logOut");
         }
     }
 }

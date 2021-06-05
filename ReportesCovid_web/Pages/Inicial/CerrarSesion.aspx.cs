@@ -12,7 +12,7 @@ namespace ReportesCovid_web.Pages.Inicial
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.RemoveAll();
-            Response.Redirect("logIn");
+            Response.Redirect("/logIn");
         }
     }
 }
