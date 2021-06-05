@@ -11,7 +11,7 @@ namespace ReportesCovid_web.Pages.Medico
 {
 
 
-    public partial class GenerarReporte1
+    public partial class GenerarReporte
     {
 
         /// <summary>

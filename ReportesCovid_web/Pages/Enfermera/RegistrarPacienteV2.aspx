@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="RegistrarPacienteV2.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.RegistrarPacienteV2" %>
+﻿<%@ Page Title="Essalud - Nuevo" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="RegistrarPacienteV2.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.RegistrarPacienteV2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
@@ -130,16 +130,15 @@
                                                 Debe llenar este cambo.
                                             </div>
                                         </div>
-
                                     </div>
-
 
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
                                     <asp:Button runat="server" ID="btnRegistrarPaciente" CssClass="btn btn-primary" Text="Registrar Paciente" OnClick="btnRegistrarPaciente_Click"></asp:Button>
-                                </div>
+                                     <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/enfermera/paciente/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
 
+                                </div>
 
                             </div>
                         </div>

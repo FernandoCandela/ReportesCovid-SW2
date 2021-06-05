@@ -6,23 +6,27 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-namespace ReportesCovid_web.Pages.Enfermera
+namespace ReportesCovid_web.Pages.Medico
 {
     public partial class ListaPacientes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
-            if (user != null && user.IN_Rol == 2)
+            if (!IsPostBack)
             {
-                FirstLoad();
-            }
-            else
-            {
-                Response.Redirect("/logOut");
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                if (user != null && user.IN_Rol == 3)
+                {
+                    FirstLoad();
+                }
+                else
+                {
+                    Session.RemoveAll();
+                    Response.Redirect("logIn");
+                }
             }
         }
+
         public void FirstLoad()
         {
             CargarEstadosPaciente();
@@ -52,9 +56,10 @@ namespace ReportesCovid_web.Pages.Enfermera
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar  Estados del Paciente." + "', 'error');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Estados del Paciente." + "', 'error');", true);
             }
         }
+
         private void CargarPacientes()
         {
             try
@@ -67,6 +72,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                     Criterio = txtBuscar.Text.Trim()
                 }
                 );
+                //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;
                 if (!cr.HuboError)
                 {
                     ListPacientes.AddRange(cr.List.Cast<DtoPaciente>());
@@ -77,7 +83,7 @@ namespace ReportesCovid_web.Pages.Enfermera
             catch (Exception ex)
             {
 
-                throw;
+                //ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "script", "fail('" + ex.Message + "');", true);
             }
         }
 
@@ -91,13 +97,14 @@ namespace ReportesCovid_web.Pages.Enfermera
             int rowIndex;
             switch (e.CommandName)
             {
-                case "Editar":
+                case "Generar":
                     rowIndex = int.Parse(e.CommandArgument.ToString());
                     string idPaciente = (gvPacientes.Rows[rowIndex].Cells[0].FindControl("lblIdPaciente") as Label).Text;
-                    Response.Redirect("/enfermera/paciente/editar?idPaciente=" + idPaciente);
+                    Response.Redirect("/medico/paciente/GenerarReporte?idPaciente=" + idPaciente);
                     break;
             }
         }
+
         protected void gvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView gv = (GridView)sender;

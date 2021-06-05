@@ -533,10 +533,12 @@
     <Content Include="Pages\Inicial\CerrarSesionContacto.aspx" />
     <Content Include="Pages\Inicial\InicioSesion.aspx" />
     <Content Include="Pages\Inicial\PaginaInicial.aspx" />
-    <Content Include="Pages\Medico\BuscarPaciente.aspx" />
     <Content Include="Pages\Medico\GenerarReporte.aspx" />
     <Content Include="Pages\Medico\MenuMedico.aspx" />
-    <Content Include="Pages\Medico\Reporte.aspx" />
+    <Content Include="Pages\Medico\V1\BuscarPaciente.aspx" />
+    <Content Include="Pages\Medico\V1\GenerarReporte.aspx" />
+    <Content Include="Pages\Medico\ListaPacientes.aspx" />
+    <Content Include="Pages\Medico\V1\MenuMedico.aspx" />
     <Content Include="PlantillaEmail\htmlCredencial.html" />
     <Content Include="PlantillaEmail\htmlUsuario.html" />
     <Content Include="Web.config" />
@@ -735,13 +737,6 @@
     <Compile Include="Pages\Inicial\PaginaInicial.aspx.designer.cs">
       <DependentUpon>PaginaInicial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Medico\BuscarPaciente.aspx.cs">
-      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Medico\BuscarPaciente.aspx.designer.cs">
-      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Medico\GenerarReporte.aspx.cs">
       <DependentUpon>GenerarReporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -756,12 +751,33 @@
     <Compile Include="Pages\Medico\MenuMedico.aspx.designer.cs">
       <DependentUpon>MenuMedico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Medico\Reporte.aspx.cs">
-      <DependentUpon>Reporte.aspx</DependentUpon>
+    <Compile Include="Pages\Medico\V1\BuscarPaciente.aspx.cs">
+      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Medico\Reporte.aspx.designer.cs">
-      <DependentUpon>Reporte.aspx</DependentUpon>
+    <Compile Include="Pages\Medico\V1\BuscarPaciente.aspx.designer.cs">
+      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\V1\GenerarReporte.aspx.cs">
+      <DependentUpon>GenerarReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\V1\GenerarReporte.aspx.designer.cs">
+      <DependentUpon>GenerarReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\ListaPacientes.aspx.cs">
+      <DependentUpon>ListaPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\ListaPacientes.aspx.designer.cs">
+      <DependentUpon>ListaPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\V1\MenuMedico.aspx.cs">
+      <DependentUpon>MenuMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\V1\MenuMedico.aspx.designer.cs">
+      <DependentUpon>MenuMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

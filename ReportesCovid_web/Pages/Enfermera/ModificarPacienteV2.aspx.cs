@@ -198,7 +198,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                         ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", crC.ErrorMsj, "error"), true);
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Actualizado", "Se actualizo correctamente el paciente", "success", "/TablaModificarPaciente"), true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Actualizado", "Se actualizo correctamente el paciente", "success", "/enfermera/paciente/lista"), true);
                     }
 
                 }

@@ -169,7 +169,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                         ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoContacto.ErrorMsj, "error"), true);
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Registrado", "Se registro correctamente el Paciente Crendencial: " + guid, "success", "/TablaModificarPaciente"), true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Registrado", "Se registro correctamente el Paciente Crendencial: " + guid, "success", "/enfermera/paciente/lista"), true);
                     }
                 }
             }

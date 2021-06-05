@@ -75,21 +75,10 @@ namespace ReportesCovid_web
             routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
 
             //Medico
-            routes.MapPageRoute("medico/paciente/lista", "medico/paciente/lista", "~/Pages/Medico/BuscarPaciente.aspx", true);
+
+            routes.MapPageRoute("medico/menu", "medico/menu", "~/Pages/Medico/MenuMedico.aspx", true);
+            routes.MapPageRoute("medico/paciente/lista", "medico/paciente/lista", "~/Pages/Medico/ListaPacientes.aspx", true);
             routes.MapPageRoute("medico/paciente/GenerarReporte", "medico/paciente/GenerarReporte", "~/Pages/Medico/GenerarReporte.aspx", true);
-
-            //Ejemplos
-            //routes.MapPageRoute("Activacion", "Activacion", "~/Pages/Web/Activacion.aspx", true);
-
-
-            //routes.MapPageRoute("login", "login", "~/Pages/Web/Login.aspx", true);
-            //routes.MapPageRoute("registrate", "registrate", "~/Pages/Web/Registrate.aspx", true);
-
-            //routes.MapPageRoute("principal", "principal", "~/Pages/Cuentas/Principal.aspx", true);
-            //routes.MapPageRoute("micuenta/perfil", "micuenta/perfil", "~/Pages/Cuentas/Perfil.aspx", true);
-            //routes.MapPageRoute("micuenta/direccion", "micuenta/direccion", "~/Pages/Cuentas/Direccion.aspx", true);
-            //routes.MapPageRoute("micuenta/seguridad", "micuenta/seguridad", "~/Pages/Cuentas/Seguridad.aspx", true);
-            //routes.MapPageRoute("micuenta/direcciones", "micuenta/direcciones", "~/Pages/Cuentas/DireccionesGeneral.aspx", true);
 
             #endregion
 

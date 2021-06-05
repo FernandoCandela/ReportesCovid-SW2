@@ -11,7 +11,7 @@ namespace ReportesCovid_web.Pages.Medico
 {
 
 
-    public partial class MenuMedico1
+    public partial class MenuMedico
     {
 
         /// <summary>
@@ -22,5 +22,14 @@ namespace ReportesCovid_web.Pages.Medico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkBuscar;
+
+        /// <summary>
+        /// Control lnkReporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkReporte;
     }
 }

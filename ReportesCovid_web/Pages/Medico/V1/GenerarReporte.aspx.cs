@@ -11,7 +11,7 @@ using System.Web.Security;
 
 namespace ReportesCovid_web.Pages.Medico
 {
-    public partial class GenerarReporte1 : System.Web.UI.Page
+    public partial class GenerarReporte : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -133,7 +133,7 @@ namespace ReportesCovid_web.Pages.Medico
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Reporte Registrado", "Se registro correctamente el reporte", "success", "/medico/paciente/lista"), true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Reporte Registrado", "Se registro correctamente el reporte", "success", "/BuscarPaciente"), true);
                 }
 
 
