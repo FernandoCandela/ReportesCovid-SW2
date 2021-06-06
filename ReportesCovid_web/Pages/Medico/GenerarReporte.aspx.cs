@@ -24,8 +24,7 @@ namespace ReportesCovid_web.Pages.Medico
                 }
                 else
                 {
-                    Session.RemoveAll();
-                    Response.Redirect("logIn");
+                    Response.Redirect("/logOut");
                 }
             }
         }

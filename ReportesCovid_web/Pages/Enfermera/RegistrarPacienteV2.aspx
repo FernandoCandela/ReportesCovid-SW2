@@ -6,6 +6,7 @@
     <h3>Nuevo Paciente</h3>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
@@ -136,7 +137,7 @@
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
                                     <asp:Button runat="server" ID="btnRegistrarPaciente" CssClass="btn btn-primary" Text="Registrar Paciente" OnClick="btnRegistrarPaciente_Click"></asp:Button>
-                                     <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/enfermera/paciente/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/enfermera/paciente/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
 
                                 </div>
 
@@ -150,9 +151,9 @@
         </div>
     </div>
 
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Foot" runat="server">
-
     <script>
         (function () {
             'use strict'

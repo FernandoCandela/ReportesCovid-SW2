@@ -121,9 +121,6 @@
                 </li>
 
                 <asp:Literal ID="ListaMenu" runat="server" />
-                <%--Inicio Administrador--%>
-
-                <%--Fin Administrador--%>
 
                 <li class=" navigation-header text-truncate">
                     <hr />
@@ -139,7 +136,7 @@
 
     <!-- BEGIN: Content-->
     <div>
-        <form runat="server">
+        <form runat="server" class="needs-validation" novalidate>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </form>

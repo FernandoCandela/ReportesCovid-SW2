@@ -169,6 +169,11 @@ namespace ReportesCovid_web.Pages.Enfermera
                         ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoContacto.ErrorMsj, "error"), true);
                     else
                     {
+                        String HTML = Resource1.htmlCredencial;
+                        HTML = HTML.Replace("{credencial}", dtoPa.Credencial);
+                        string to = dtoContacto.Email;
+                        HelpE.SendMail_Gmail(to.Trim(), "Essalud - Crendencial", HTML);
+
                         ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Paciente Registrado", "Se registro correctamente el Paciente Crendencial: " + guid, "success", "/enfermera/paciente/lista"), true);
                     }
                 }
