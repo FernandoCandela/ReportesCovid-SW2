@@ -61,16 +61,21 @@ namespace ReportesCovid_web
 
             //Administrador
             routes.MapPageRoute("administrador/menu", "administrador/menu", "~/Pages/Administrador/MenuAdmin.aspx", true);
-            routes.MapPageRoute("administrador/usuario/lista", "administrador/usuario/lista", "~/Pages/Administrador/Tablausuario.aspx", true);
-            routes.MapPageRoute("administrador/usuario/nuevo", "administrador/usuarios/nuevo", "~/Pages/Administrador/Crearusuario.aspx", true);
-            routes.MapPageRoute("administrador/usuario/editar", "administrador/usuarios/editar", "~/Pages/Administrador/Modificarusuario.aspx", true);
-            routes.MapPageRoute("administrador/mensaje/respondermensaje", "administrador/mensaje/respondermensaje", "~/Pages/Administrador/Respondermensaje.aspx", true);
-            routes.MapPageRoute("administrador/mensaje/lista", "administrador/mensaje/lista", "~/Pages/Administrador/Tablamensaje.aspx", true);
-            
+
+            routes.MapPageRoute("administrador/usuario/lista", "administrador/usuario/lista", "~/Pages/Administrador/Usuarios/ListaUsuarios.aspx", true);
+            routes.MapPageRoute("administrador/usuario/nuevo", "administrador/usuario/nuevo", "~/Pages/Administrador/Usuarios/NuevoUsuario.aspx", true);
+            routes.MapPageRoute("administrador/usuario/editar", "administrador/usuario/editar", "~/Pages/Administrador/Usuarios/EditarUsuario.aspx", true);
+
+            routes.MapPageRoute("administrador/mensaje/respondermensaje", "administrador/mensaje/respondermensaje", "~/Pages/Administrador/Mensajes/ResponderMensajes.aspx", true);
+            routes.MapPageRoute("administrador/mensaje/lista", "administrador/mensaje/lista", "~/Pages/Administrador/Mensajes/ListaMensajes.aspx", true);
+
+            routes.MapPageRoute("administrador/varios/lista", "administrador/varios/lista", "~/Pages/Administrador/Varios/ListaVarios.aspx", true);
+            routes.MapPageRoute("administrador/varios/nuevo", "administrador/varios/nuevo", "~/Pages/Administrador/Varios/NuevoVarios.aspx", true);
+            routes.MapPageRoute("administrador/varios/editar", "administrador/varios/editar", "~/Pages/Administrador/Varios/EditarVarios.aspx", true);
 
             //Contacto
             routes.MapPageRoute("EnviarMensaje", "EnviarMensaje", "~/Pages/Contacto/Enviarmensaje.aspx", true);
-            
+
             routes.MapPageRoute("RecuperarCredencial", "RecuperarCredencial", "~/Pages/Contacto/Recuperarcredencial.aspx", true);
             routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
 
