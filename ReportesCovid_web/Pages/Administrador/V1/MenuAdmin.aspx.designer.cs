@@ -11,7 +11,7 @@ namespace ReportesCovid_web.Pages.Administrador
 {
 
 
-    public partial class MenuAdmin
+    public partial class WebForm1
     {
 
         /// <summary>

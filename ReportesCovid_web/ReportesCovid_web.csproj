@@ -520,13 +520,21 @@
     <Content Include="js\General\jsGeneral.js" />
     <Content Include="js\Inicio\jsInicio.js" />
     <Content Include="js\Medico\jsReporte.js" />
-    <Content Include="Pages\Administrador\CrearUsuario.aspx" />
+    <Content Include="Pages\Administrador\Mensajes\ListaMensajes.aspx" />
+    <Content Include="Pages\Administrador\Mensajes\ResponderMensaje.aspx" />
     <Content Include="Pages\Administrador\MenuAdmin.aspx" />
-    <Content Include="Pages\Administrador\ModificarUsuario.aspx" />
-    <Content Include="Pages\Administrador\ResponderMensaje.aspx" />
-    <Content Include="Pages\Administrador\TablaMensaje.aspx" />
-    <Content Include="Pages\Administrador\TablaUsuario.aspx" />
-    <Content Include="Pages\Administrador\test.aspx" />
+    <Content Include="Pages\Administrador\Usuarios\EditarUsuario.aspx" />
+    <Content Include="Pages\Administrador\Usuarios\ListaUsuarios.aspx" />
+    <Content Include="Pages\Administrador\Usuarios\NuevoUsuario.aspx" />
+    <Content Include="Pages\Administrador\V1\CrearUsuario.aspx" />
+    <Content Include="Pages\Administrador\V1\MenuAdmin.aspx" />
+    <Content Include="Pages\Administrador\V1\ModificarUsuario.aspx" />
+    <Content Include="Pages\Administrador\V1\ResponderMensaje.aspx" />
+    <Content Include="Pages\Administrador\V1\TablaMensaje.aspx" />
+    <Content Include="Pages\Administrador\V1\TablaUsuario.aspx" />
+    <Content Include="Pages\Administrador\Varios\EditarVarios.aspx" />
+    <Content Include="Pages\Administrador\Varios\ListaVarios.aspx" />
+    <Content Include="Pages\Administrador\Varios\NuevoVarios.aspx" />
     <Content Include="Pages\Contacto\EnviarMensaje.aspx" />
     <Content Include="Pages\Enfermera\ListaPacientes.aspx" />
     <Content Include="Pages\Enfermera\MenuEnfermeraV2.aspx" />
@@ -586,12 +594,19 @@
     <Compile Include="MasterPages\Web_Usuarios.Master.designer.cs">
       <DependentUpon>Web_Usuarios.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Administrador\CrearUsuario.aspx.cs">
-      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    <Compile Include="Pages\Administrador\Mensajes\ListaMensajes.aspx.cs">
+      <DependentUpon>ListaMensajes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Administrador\CrearUsuario.aspx.designer.cs">
-      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    <Compile Include="Pages\Administrador\Mensajes\ListaMensajes.aspx.designer.cs">
+      <DependentUpon>ListaMensajes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\Mensajes\ResponderMensaje.aspx.cs">
+      <DependentUpon>ResponderMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\Mensajes\ResponderMensaje.aspx.designer.cs">
+      <DependentUpon>ResponderMensaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Administrador\MenuAdmin.aspx.cs">
       <DependentUpon>MenuAdmin.aspx</DependentUpon>
@@ -600,40 +615,89 @@
     <Compile Include="Pages\Administrador\MenuAdmin.aspx.designer.cs">
       <DependentUpon>MenuAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Administrador\ModificarUsuario.aspx.cs">
+    <Compile Include="Pages\Administrador\Usuarios\EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\Usuarios\EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\Usuarios\ListaUsuarios.aspx.cs">
+      <DependentUpon>ListaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\Usuarios\ListaUsuarios.aspx.designer.cs">
+      <DependentUpon>ListaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\Usuarios\NuevoUsuario.aspx.cs">
+      <DependentUpon>NuevoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\Usuarios\NuevoUsuario.aspx.designer.cs">
+      <DependentUpon>NuevoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\V1\CrearUsuario.aspx.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\V1\CrearUsuario.aspx.designer.cs">
+      <DependentUpon>CrearUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\V1\MenuAdmin.aspx.cs">
+      <DependentUpon>MenuAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\V1\MenuAdmin.aspx.designer.cs">
+      <DependentUpon>MenuAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\V1\ModificarUsuario.aspx.cs">
       <DependentUpon>ModificarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Administrador\ModificarUsuario.aspx.designer.cs">
+    <Compile Include="Pages\Administrador\V1\ModificarUsuario.aspx.designer.cs">
       <DependentUpon>ModificarUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Administrador\ResponderMensaje.aspx.cs">
+    <Compile Include="Pages\Administrador\V1\ResponderMensaje.aspx.cs">
       <DependentUpon>ResponderMensaje.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Administrador\ResponderMensaje.aspx.designer.cs">
+    <Compile Include="Pages\Administrador\V1\ResponderMensaje.aspx.designer.cs">
       <DependentUpon>ResponderMensaje.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Administrador\TablaMensaje.aspx.cs">
+    <Compile Include="Pages\Administrador\V1\TablaMensaje.aspx.cs">
       <DependentUpon>TablaMensaje.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Administrador\TablaMensaje.aspx.designer.cs">
+    <Compile Include="Pages\Administrador\V1\TablaMensaje.aspx.designer.cs">
       <DependentUpon>TablaMensaje.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Administrador\TablaUsuario.aspx.cs">
+    <Compile Include="Pages\Administrador\V1\TablaUsuario.aspx.cs">
       <DependentUpon>TablaUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Administrador\TablaUsuario.aspx.designer.cs">
+    <Compile Include="Pages\Administrador\V1\TablaUsuario.aspx.designer.cs">
       <DependentUpon>TablaUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Administrador\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="Pages\Administrador\Varios\EditarVarios.aspx.cs">
+      <DependentUpon>EditarVarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Administrador\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="Pages\Administrador\Varios\EditarVarios.aspx.designer.cs">
+      <DependentUpon>EditarVarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\Varios\ListaVarios.aspx.cs">
+      <DependentUpon>ListaVarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\Varios\ListaVarios.aspx.designer.cs">
+      <DependentUpon>ListaVarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrador\Varios\NuevoVarios.aspx.cs">
+      <DependentUpon>NuevoVarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administrador\Varios\NuevoVarios.aspx.designer.cs">
+      <DependentUpon>NuevoVarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contacto\EnviarMensaje.aspx.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
@@ -829,6 +893,7 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

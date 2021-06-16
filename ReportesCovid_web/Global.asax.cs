@@ -60,11 +60,11 @@ namespace ReportesCovid_web
             routes.MapPageRoute("enfermera/paciente/lista", "enfermera/paciente/lista", "~/Pages/Enfermera/ListaPacientes.aspx", true);
 
             //Administrador
-            routes.MapPageRoute("administrador/menu", "administrador/menu", "~/Pages/Administrador/Menuadmin.aspx", true);
+            routes.MapPageRoute("administrador/menu", "administrador/menu", "~/Pages/Administrador/MenuAdmin.aspx", true);
             routes.MapPageRoute("administrador/usuario/lista", "administrador/usuario/lista", "~/Pages/Administrador/Tablausuario.aspx", true);
             routes.MapPageRoute("administrador/usuario/nuevo", "administrador/usuarios/nuevo", "~/Pages/Administrador/Crearusuario.aspx", true);
             routes.MapPageRoute("administrador/usuario/editar", "administrador/usuarios/editar", "~/Pages/Administrador/Modificarusuario.aspx", true);
-            routes.MapPageRoute("administrador/mensaje/ResponderMensaje", "administrador/mensaje/ResponderMensaje", "~/Pages/Administrador/Respondermensaje.aspx", true);
+            routes.MapPageRoute("administrador/mensaje/respondermensaje", "administrador/mensaje/respondermensaje", "~/Pages/Administrador/Respondermensaje.aspx", true);
             routes.MapPageRoute("administrador/mensaje/lista", "administrador/mensaje/lista", "~/Pages/Administrador/Tablamensaje.aspx", true);
             
 
