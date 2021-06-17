@@ -20,12 +20,12 @@
                             <ul class="nav nav-tabs mb-2" id="MyTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center active" id="paciente-tab" data-toggle="tab" href="#paciente" aria-controls="paciente" role="tab" aria-selected="true">
-                                        <i class="bx bx-shopping-bag mr-25"></i><span class="d-none d-sm-block">Datos de Paciente</span>
+                                        <i class="bx bx-highlight  mr-25"></i><span class="d-none d-sm-block">Datos de Paciente</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center" id="contacto-tab" data-toggle="tab" href="#contacto" aria-controls="contacto" role="tab" aria-selected="false">
-                                        <i class="bx bx-user mr-25"></i><span class="d-none d-sm-block">Datos de Contacto</span>
+                                        <i class="bx bxs-contact mr-25"></i><span class="d-none d-sm-block">Datos de Contacto</span>
                                     </a>
                                 </li>
                             </ul>
