@@ -48,9 +48,7 @@ namespace ReportesCovid_web.Pages.Medico
                     ddlEstadoPaciente.DataValueField = "Valor";
                     ddlEstadoPaciente.DataSource = list;
                     ddlEstadoPaciente.DataBind();
-                    ListItem firstLista = new ListItem("Todos", "-1");
-                    firstLista.Attributes.Add("Selected", "True");
-                    ddlEstadoPaciente.Items.Insert(0, firstLista);
+                    ddlEstadoPaciente.Items.Insert(0, new ListItem("Todos", "0"));
                 }
             }
             catch (Exception ex)

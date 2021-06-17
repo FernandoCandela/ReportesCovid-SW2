@@ -11,7 +11,7 @@ namespace ReportesCovid_web.Pages.Enfermera
 {
 
 
-    public partial class ListaPacientes
+    public partial class ListaPacientes1
     {
 
         /// <summary>

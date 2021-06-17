@@ -58,11 +58,11 @@
                         <div class="container border rounded">
                             <div class="row py-2">
                                 <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="cbActivado">NumeroDocumento/Nombres/Apellidos</label>
+                                    <label for="txtBuscar">Criterio</label>
                                     <asp:TextBox runat="server" ID="txtBuscar" CssClass="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar"></asp:TextBox>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="cbActivado">Estado</label>
+                                    <label for="ddlEstadoPaciente">Estado</label>
                                     <asp:DropDownList runat="server" ID="ddlEstadoPaciente" class="form-select">
                                     </asp:DropDownList>
                                 </div>

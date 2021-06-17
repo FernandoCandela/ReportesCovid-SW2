@@ -88,7 +88,7 @@ namespace DAO
                 };
                 pr[1] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
                 {
-                    Value = (dto.IN_EstadoPaciente)
+                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
                 };
                 pr[2] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
                 {

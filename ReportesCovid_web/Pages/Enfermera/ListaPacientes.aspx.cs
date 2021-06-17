@@ -6,23 +6,26 @@ using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 namespace ReportesCovid_web.Pages.Enfermera
 {
-    public partial class ListaPacientes : System.Web.UI.Page
+    public partial class ListaPacientes1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
-            if (user != null && user.IN_Rol == 2)
+            if (!IsPostBack)
             {
-                FirstLoad();
-            }
-            else
-            {
-                Response.Redirect("/logOut");
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                if (user != null && user.IN_Rol == 2)
+                {
+                    FirstLoad();
+                }
+                else
+                {
+                    Response.Redirect("/logOut");
+                }
             }
         }
+
         public void FirstLoad()
         {
             CargarEstadosPaciente();
@@ -45,16 +48,15 @@ namespace ReportesCovid_web.Pages.Enfermera
                     ddlEstadoPaciente.DataValueField = "Valor";
                     ddlEstadoPaciente.DataSource = list;
                     ddlEstadoPaciente.DataBind();
-                    ListItem firstLista = new ListItem("Todos", "-1");
-                    firstLista.Attributes.Add("Selected", "True");
-                    ddlEstadoPaciente.Items.Insert(0, firstLista);
+                    ddlEstadoPaciente.Items.Insert(0, new ListItem("Todos", "0"));
                 }
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar  Estados del Paciente." + "', 'error');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Estados del Paciente." + "', 'error');", true);
             }
         }
+
         private void CargarPacientes()
         {
             try
@@ -67,6 +69,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                     Criterio = txtBuscar.Text.Trim()
                 }
                 );
+                //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;
                 if (!cr.HuboError)
                 {
                     ListPacientes.AddRange(cr.List.Cast<DtoPaciente>());
@@ -98,6 +101,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                     break;
             }
         }
+
         protected void gvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView gv = (GridView)sender;

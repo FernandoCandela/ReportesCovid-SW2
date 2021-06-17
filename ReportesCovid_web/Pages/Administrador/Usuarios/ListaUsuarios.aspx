@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="ddlEstado">Rol</label>
+                                    <label for="ddlRol">Rol</label>
                                     <asp:DropDownList runat="server" ID="ddlRol" class="form-control">
                                     </asp:DropDownList>
                                 </div>
