@@ -106,6 +106,64 @@ namespace DAO
             return dto;
         }
 
+        public ClassResultV Usp_Usuario_SelectAll(DtoB dtoBase)
+        {
+            ClassResultV cr = new ClassResultV();
+            var dto = (DtoUsuario)dtoBase;
+            SqlParameter[] pr = new SqlParameter[3];
+            try
+            {
+                pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
+                {
+                    Value = (dto.Criterio)
+                };
+                pr[1] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
+                {
+                    Value = (dto.IB_Estado)
+                };
+                pr[2] = new SqlParameter("@IN_Rol", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_Rol))
+                };
+
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_SelectAll", pr);
+
+                cr.List = new List<DtoB>();
+                while (reader.Read())
+                {
+                    cr.List.Add(new DtoUsuario
+                    {
+                        IdUsuario = GetValue("IdUsuario", reader).ValueInt32,
+                        Numdoc = GetValue("Numdoc", reader).ValueString,
+                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
+                        Telefono = GetValue("Telefono", reader).ValueString,
+                        IN_Rol = GetValue("IN_Rol", reader).ValueInt32,
+                        IN_Cargo = GetValue("IN_Cargo", reader).ValueInt32,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
+                        PrimerNombre = GetValue("PrimerNombre", reader).ValueString,
+                        SegundoNombre = GetValue("SegundoNombre", reader).ValueString,
+                        ApellidoPaterno = GetValue("ApellidoPaterno", reader).ValueString,
+                        ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
+                        NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
+                        NombreRol = GetValue("NombreRol", reader).ValueString,
+                        NombreCargo = GetValue("NombreCargo", reader).ValueString,
+                        Usuario = GetValue("Usuario", reader).ValueString
+                    });
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al consultar Usuarios";
+            }
+            ObjCn.Close();
+            return cr;
+        }
+        
+
         //public ClassResultV Usp_Usuario_Insert(DtoB dtoBase)
         //{
         //    DtoUsuario dto = (DtoUsuario)dtoBase;

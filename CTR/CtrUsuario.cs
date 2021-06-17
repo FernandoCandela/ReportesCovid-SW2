@@ -7,6 +7,7 @@ namespace CTR
     {
         public DtoUsuario Usp_Usuario_Login(DtoB dtoBase) => new DaoUsuario().Usp_Usuario_Login(dtoBase);
         public DtoUsuario Usp_Usuario_SelectOne(DtoB dtoBase) => new DaoUsuario().Usp_Usuario_SelectOne(dtoBase);
+        public ClassResultV Usp_Usuario_SelectAll(DtoB dtoBase) => new DaoUsuario().Usp_Usuario_SelectAll(dtoBase);
 
     }
 }

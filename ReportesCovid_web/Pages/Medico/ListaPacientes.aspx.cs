@@ -82,7 +82,7 @@ namespace ReportesCovid_web.Pages.Medico
             catch (Exception ex)
             {
 
-                //ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "script", "fail('" + ex.Message + "');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los Pacientes." + "', 'error');", true);
             }
         }
 

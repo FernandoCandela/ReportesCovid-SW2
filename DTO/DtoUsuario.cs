@@ -17,9 +17,9 @@ namespace DTO
         public int IN_Rol { get; set; }
         public int IN_Cargo { get; set; }
         public int OrganizacionId { get; set; }
-        public string UsuarioCreacion { get; set; }
+        public int UsuarioCreacionId { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public string UsuarioModificacion { get; set; }
+        public int UsuarioModificacionId { get; set; }
         public DateTime FechaModificacion { get; set; }
         public bool IB_Estado { get; set; }
         public string PrimerNombre { get; set; }
@@ -27,6 +27,7 @@ namespace DTO
         public string ApellidoPaterno { get; set; }
         public string ApellidoMaterno { get; set; }
         //Nombres de los IN
+        public string NombreTipodoc { get; set; }
         public string NombreRol { get; set; }
         public string NombreCargo { get; set; }
     }

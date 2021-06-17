@@ -77,7 +77,7 @@ namespace ReportesCovid_web.Pages.Enfermera
             catch (Exception ex)
             {
 
-                throw;
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los Pacientes." + "', 'error');", true);
             }
         }
 
