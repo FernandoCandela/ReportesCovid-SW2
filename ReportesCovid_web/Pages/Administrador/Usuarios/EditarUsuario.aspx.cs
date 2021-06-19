@@ -1,5 +1,6 @@
 ﻿using CTR;
 using DTO;
+using ReportesCovid_web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
             CargarTipoDocumento();
             CargarRol();
             CargarCargos();
+            LlenarDetalle();
         }
         private void CargarTipoDocumento()
         {
@@ -117,11 +119,76 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Cargos." + "', 'error');", true);
             }
         }
+        private void LlenarDetalle()
+        {
+            try
+            {
+                DtoUsuario dto = new CtrUsuario().Usp_Usuario_SelectOne(new DtoUsuario
+                {
+                    IdUsuario = Convert.ToInt32(Request.QueryString["idusuario"])
+                });
+                if (!dto.HuboError)
+                {
+                    txtPrimerNombre.Text = dto.PrimerNombre;
+                    txtSegundoNombre.Text = dto.SegundoNombre;
+                    txtApellidoPaterno.Text = dto.ApellidoPaterno;
+                    txtApellidoMaterno.Text = dto.ApellidoPaterno;
+                    tUsuario.Text = dto.Usuario;
+                    tContrasena.Text = dto.Contrasena;
+                    ddlTipoDocumento.SelectedValue = dto.IN_Tipodoc.ToString();
+                    txtNumdoc.Text = dto.Numdoc;
+                    txtTelefono.Text = dto.Telefono;
+                    ddlRol.SelectedValue = dto.IN_Rol.ToString();
+                    ddlCargo.SelectedValue = dto.IN_Cargo.ToString();
+                    ddlEstado.SelectedValue = dto.IB_Estado == true ? "1" : "0";
+                    txtCorreo.Text = dto.Email;
+                }
+            }
+            catch (Exception)
+            {
 
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo cargar el Usuario." + "', 'error');", true);
+            }
+        }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                ClassResultV cr = new CtrUsuario().Usp_Usuario_Update(new DtoUsuario
+                {
+                    IdUsuario = Convert.ToInt32(Request.QueryString["idusuario"]),
+                    Usuario = tUsuario.Text,
+                    Contrasena = tContrasena.Text,
+                    Numdoc = txtNumdoc.Text,
+                    IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
+                    Telefono = txtTelefono.Text,
+                    IN_Rol = Convert.ToInt32(ddlRol.SelectedValue),
+                    IN_Cargo = Convert.ToInt32(ddlCargo.SelectedValue),
+                    UsuarioModificacionId = user.IdUsuario,
+                    IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
+                    PrimerNombre = txtPrimerNombre.Text,
+                    SegundoNombre = txtSegundoNombre.Text,
+                    ApellidoPaterno = txtApellidoPaterno.Text,
+                    ApellidoMaterno = txtApellidoMaterno.Text,
+                    Email = txtCorreo.Text
 
+                });
+                if (cr.HuboError)
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
+                else
+                {
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Usuario Actualizado", "Se actualizo correctamente el usuario", "success", "/administrador/usuario/lista"), true);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar el Usuario." + "', 'error');", true);
+            }
         }
     }
 }

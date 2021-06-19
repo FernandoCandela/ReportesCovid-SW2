@@ -26,17 +26,23 @@ namespace DAO
                     dto = new DtoUsuario
                     {
                         IdUsuario = GetValue("IdUsuario", reader).ValueInt32,
+                        Usuario = GetValue("Usuario", reader).ValueString,
                         Numdoc = GetValue("Numdoc", reader).ValueString,
                         IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
                         Telefono = GetValue("Telefono", reader).ValueString,
                         IN_Rol = GetValue("IN_Rol", reader).ValueInt32,
                         IN_Cargo = GetValue("IN_Cargo", reader).ValueInt32,
                         OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         PrimerNombre = GetValue("PrimerNombre", reader).ValueString,
                         SegundoNombre = GetValue("SegundoNombre", reader).ValueString,
                         ApellidoPaterno = GetValue("ApellidoPaterno", reader).ValueString,
                         ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
                         NombreRol = GetValue("NombreRol", reader).ValueString,
                         NombreCargo = GetValue("NombreCargo", reader).ValueString
                     };
@@ -78,17 +84,24 @@ namespace DAO
                     dto = new DtoUsuario
                     {
                         IdUsuario = GetValue("IdUsuario", reader).ValueInt32,
+                        Usuario = GetValue("Usuario", reader).ValueString,
+                        Contrasena = GetValue("Contrasena", reader).ValueString,
                         Numdoc = GetValue("Numdoc", reader).ValueString,
                         IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
                         Telefono = GetValue("Telefono", reader).ValueString,
                         IN_Rol = GetValue("IN_Rol", reader).ValueInt32,
                         IN_Cargo = GetValue("IN_Cargo", reader).ValueInt32,
                         OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         PrimerNombre = GetValue("PrimerNombre", reader).ValueString,
                         SegundoNombre = GetValue("SegundoNombre", reader).ValueString,
                         ApellidoPaterno = GetValue("ApellidoPaterno", reader).ValueString,
                         ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
                         NombreRol = GetValue("NombreRol", reader).ValueString,
                         NombreCargo = GetValue("NombreCargo", reader).ValueString
                     };
@@ -133,21 +146,26 @@ namespace DAO
                     cr.List.Add(new DtoUsuario
                     {
                         IdUsuario = GetValue("IdUsuario", reader).ValueInt32,
+                        Usuario = GetValue("Usuario", reader).ValueString,
                         Numdoc = GetValue("Numdoc", reader).ValueString,
                         IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
                         Telefono = GetValue("Telefono", reader).ValueString,
                         IN_Rol = GetValue("IN_Rol", reader).ValueInt32,
                         IN_Cargo = GetValue("IN_Cargo", reader).ValueInt32,
                         OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         PrimerNombre = GetValue("PrimerNombre", reader).ValueString,
                         SegundoNombre = GetValue("SegundoNombre", reader).ValueString,
                         ApellidoPaterno = GetValue("ApellidoPaterno", reader).ValueString,
                         ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
                         NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
                         NombreRol = GetValue("NombreRol", reader).ValueString,
-                        NombreCargo = GetValue("NombreCargo", reader).ValueString,
-                        Usuario = GetValue("Usuario", reader).ValueString
+                        NombreCargo = GetValue("NombreCargo", reader).ValueString
                     });
                 }
                 reader.Close();
@@ -253,6 +271,95 @@ namespace DAO
             }
             ObjCn.Close();
             return dto;
+        }
+
+
+        public ClassResultV Usp_Usuario_Update(DtoB dtoBase)
+        {
+            DtoUsuario dto = (DtoUsuario)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[16];
+            try
+            {
+                pr[0] = new SqlParameter("@IdUsuario", SqlDbType.Int)
+                {
+                    Value = (dto.IdUsuario)
+                };
+                pr[1] = new SqlParameter("@Usuario", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.Usuario))
+                };
+                pr[2] = new SqlParameter("@Contrasena", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.Contrasena))
+                };
+                pr[3] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                {
+                    Value = (V_ValidaPrNull(dto.Numdoc))
+                };
+                pr[4] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
+                };
+                pr[5] = new SqlParameter("@Telefono", SqlDbType.VarChar, 20)
+                {
+                    Value = (V_ValidaPrNull(dto.Telefono))
+                };
+                pr[6] = new SqlParameter("@IN_Rol", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_Rol))
+                };
+                pr[7] = new SqlParameter("@IN_Cargo", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_Cargo))
+                };
+                pr[8] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+                pr[9] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
+                {
+                    Value = (V_ValidaPrNull(dto.IB_Estado))
+                };
+                pr[10] = new SqlParameter("@PrimerNombre", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.PrimerNombre))
+                };
+                pr[11] = new SqlParameter("@SegundoNombre", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.SegundoNombre))
+                };
+                pr[12] = new SqlParameter("@ApellidoPaterno", SqlDbType.VarChar,100)
+                {
+                    Value = (V_ValidaPrNull(dto.ApellidoPaterno))
+                };
+                pr[13] = new SqlParameter("@ApellidoMaterno", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.ApellidoMaterno))
+                };
+                pr[14] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                pr[15] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                {
+                    Value = (V_ValidaPrNull(dto.Email))
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_Update", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[14].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[14].Value);
+                    cr.LugarError = "Usp_Usuario_Update";
+                }
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar los datos del usuario";
+            }
+            ObjCn.Close();
+            return cr;
         }
     }
 }

@@ -56,12 +56,25 @@
                                                 Debe llenar este cambo.
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <label for="txtCorreo" class="form-label">Correo</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <asp:TextBox type="email" CssClass="form-control" ID="txtCorreo" runat="server" aria-describedby="inputGroupPrepend" required="true"></asp:TextBox>
+                                                <div class="invalid-feedback">
+                                                    Debe ingresar un correo valido.
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="col-md-6">
                                             <label for="tUsuario" class="form-label">Usuario</label>
-                                            <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
-                                            <div class="invalid-feedback">
-                                                Debe llenar este cambo.
+                                            <div class="input-group mb-3">
+                                                <button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>
+                                                <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
+                                                <div class="invalid-feedback">
+                                                    Debe llenar este cambo.
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
