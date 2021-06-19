@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class DtoMensajes : DtoB
+    public class DtoMensajes : DtoB
     {
         public int IdMensaje {get; set;}
         public String NombreCompleto {get; set;}
