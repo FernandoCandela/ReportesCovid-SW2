@@ -30,5 +30,6 @@ namespace DTO
         public string NombreTipodoc { get; set; }
         public string NombreRol { get; set; }
         public string NombreCargo { get; set; }
+        public string Email { get; set; }
     }
 }

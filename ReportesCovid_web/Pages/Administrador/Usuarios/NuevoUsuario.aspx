@@ -56,12 +56,21 @@
                                                 Debe llenar este cambo.
                                             </div>
                                         </div>
-
+                                        <div class="col-md-6">
+                                            <label for="txtCorreo" class="form-label">Correo</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <asp:TextBox type="email" CssClass="form-control" ID="txtCorreo" runat="server" aria-describedby="inputGroupPrepend" required="true"></asp:TextBox>
+                                                <div class="invalid-feedback">
+                                                    Debe ingresar un correo valido.
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="col-md-6">
                                             <label for="tUsuario" class="form-label">Usuario</label>
                                             <div class="input-group mb-3">
-                                                <button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>                                        
+                                                <button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>
                                                 <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
                                                 <div class="invalid-feedback">
                                                     Debe llenar este cambo.
@@ -116,12 +125,19 @@
                                                 Debe seleccionar un Cargo valido.
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <label for="ddlEstado" class="form-label">Estado</label>
+                                            <asp:DropDownList runat="server" ID="ddlEstado" class="form-select">
+                                                <asp:ListItem Text="Activo" Value="1"></asp:ListItem>
+                                                <asp:ListItem Text="Desactivado" Value="0"></asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
 
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                                    <asp:Button runat="server" ID="btnRegistrar" CssClass="btn btn-primary" Text="Registrar"></asp:Button>
+                                    <asp:Button runat="server" ID="btnRegistrar" CssClass="btn btn-primary" Text="Registrar" OnClick="btnRegistrar_Click"></asp:Button>
                                     <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/administrador/usuario/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                                 </div>
 

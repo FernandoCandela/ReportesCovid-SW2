@@ -64,12 +64,12 @@
 
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="ddlRol">Rol</label>
-                                    <asp:DropDownList runat="server" ID="ddlRol" class="form-control">
+                                    <asp:DropDownList runat="server" ID="ddlRol" class="form-select">
                                     </asp:DropDownList>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="ddlEstado">Estado</label>
-                                    <asp:DropDownList runat="server" ID="ddlEstado" class="form-control">
+                                    <asp:DropDownList runat="server" ID="ddlEstado" class="form-select">
                                         <asp:ListItem Text="Activo" Value="1"></asp:ListItem>
                                         <asp:ListItem Text="Desactivado" Value="0"></asp:ListItem>
                                     </asp:DropDownList>
@@ -152,7 +152,7 @@
                                                 </asp:TemplateField>--%>
 
                                                 <asp:TemplateField>
-                                                     <HeaderStyle Width="3%" />
+                                                    <HeaderStyle Width="3%" />
                                                     <HeaderTemplate>Estado</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Literal runat="server" ID="ltlEstados"></asp:Literal>

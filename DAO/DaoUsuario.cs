@@ -58,7 +58,6 @@ namespace DAO
             return dto;
         }
 
-
         public DtoUsuario Usp_Usuario_SelectOne(DtoB dtoBase)
         {
             DtoUsuario dto = (DtoUsuario)dtoBase;
@@ -162,87 +161,98 @@ namespace DAO
             ObjCn.Close();
             return cr;
         }
-        
 
-        //public ClassResultV Usp_Usuario_Insert(DtoB dtoBase)
-        //{
-        //    DtoUsuario dto = (DtoUsuario)dtoBase;
-        //    ClassResultV cr = new ClassResultV();
-        //    SqlParameter[] pr = new SqlParameter[14];
-        //    try
-        //    {
-        //        pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
-        //        {
-        //            Direction = ParameterDirection.Output
-        //        };
-        //        pr[1] = new SqlParameter("@Nombre", SqlDbType.VarChar, 100)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[2] = new SqlParameter("@Apellido", SqlDbType.VarChar, 100)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[4] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[5] = new SqlParameter("@IN_TipoSeguro", SqlDbType.Int)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[6] = new SqlParameter("@IN_estadopaciente", SqlDbType.Int)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[7] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[8] = new SqlParameter("@FechaCreacion", SqlDbType.DateTime)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[9] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[10] = new SqlParameter("@FechaModificacion", SqlDbType.DateTime)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[11] = new SqlParameter("@IN_Estado", SqlDbType.Int)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[12] = new SqlParameter("@Credencial", SqlDbType.VarChar, 200)
-        //        {
-        //            Value = (dto.Nombres)
-        //        };
-        //        pr[13] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
-        //        {
-        //            Direction = ParameterDirection.Output
-        //        };
-        //        SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Insert", pr);
-        //        dto.IdPaciente = Convert.ToInt32(pr[0].Value);
-        //        if (!String.IsNullOrEmpty(Convert.ToString(pr[13].Value)))
-        //        {
-        //            cr.ErrorMsj = Convert.ToString(pr[13].Value);
-        //            cr.LugarError = "Usp_Paciente_Insert";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        cr.LugarError = ex.StackTrace;
-        //        cr.ErrorEx = ex.Message;
-        //        cr.ErrorMsj = "Error al insertar Usuario";
-        //    }
-        //    ObjCn.Close();
-        //    return cr;
-        //}
+        public DtoUsuario Usp_Usuario_Insert(DtoB dtoBase)
+        {
+            DtoUsuario dto = (DtoUsuario)dtoBase;
+            //ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[17];
+            try
+            {
+                pr[0] = new SqlParameter("@IdUsuario", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                pr[1] = new SqlParameter("@Usuario", SqlDbType.VarChar, 100)
+                {
+                    Value = (dto.Usuario)
+                };
+                pr[2] = new SqlParameter("@Contrasena", SqlDbType.VarChar, 200)
+                {
+                    Value = (dto.Contrasena)
+                };
+                pr[3] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                {
+                    Value = (dto.Numdoc)
+                };
+                pr[4] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                {
+                    Value = (dto.IN_Tipodoc)
+                };
+                pr[5] = new SqlParameter("@Telefono", SqlDbType.VarChar, 20)
+                {
+                    Value = (dto.Telefono)
+                };
+                pr[6] = new SqlParameter("@IN_Rol", SqlDbType.Int)
+                {
+                    Value = (dto.IN_Rol)
+                };
+                pr[7] = new SqlParameter("@IN_Cargo", SqlDbType.Int)
+                {
+                    Value = (dto.IN_Cargo)
+                };
+                pr[8] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (dto.OrganizacionId)
+                };
+                pr[9] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
+                {
+                    Value = (dto.UsuarioCreacionId)
+                };
+                pr[10] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
+                {
+                    Value = (dto.IB_Estado)
+                };
+                pr[11] = new SqlParameter("@PrimerNombre", SqlDbType.VarChar, 100)
+                {
+                    Value = (dto.PrimerNombre)
+                };
+                pr[12] = new SqlParameter("@SegundoNombre", SqlDbType.VarChar, 100)
+                {
+                    Value = (dto.SegundoNombre)
+                };
+                pr[13] = new SqlParameter("@ApellidoPaterno", SqlDbType.VarChar, 100)
+                {
+                    Value = (dto.ApellidoPaterno)
+                };
+                pr[14] = new SqlParameter("@ApellidoMaterno", SqlDbType.VarChar, 100)
+                {
+                    Value = (dto.ApellidoMaterno)
+                };
+                pr[15] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                pr[16] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                {
+                    Value = dto.Email
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_Insert", pr);
+                dto.IdUsuario = Convert.ToInt32(pr[0].Value);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[15].Value)))
+                {
+                    dto.ErrorMsj = Convert.ToString(pr[15].Value);
+                    dto.LugarError = "Usp_Usuario_Insert";
+                }
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error al insertar Usuario";
+            }
+            ObjCn.Close();
+            return dto;
+        }
     }
 }

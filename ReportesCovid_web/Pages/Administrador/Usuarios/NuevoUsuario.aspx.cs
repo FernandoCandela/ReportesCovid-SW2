@@ -1,5 +1,6 @@
 ﻿using CTR;
 using DTO;
+using ReportesCovid_web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +61,6 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoDocumento." + "', 'error');", true);
             }
         }
-
         private void CargarRol()
         {
             try
@@ -115,6 +115,54 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
             catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Cargos." + "', 'error');", true);
+            }
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+
+                DtoUsuario dtoPa = new CtrUsuario().Usp_Usuario_Insert(new DtoUsuario
+                {
+                    Usuario = tUsuario.Text.Trim(),
+                    Contrasena = tContrasena.Text.Trim(),
+                    IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
+                    Numdoc = txtNumdoc.Text.Trim(),
+                    Telefono = txtTelefono.Text.Trim(),
+                    IN_Rol = Convert.ToInt32(ddlRol.SelectedValue),
+                    IN_Cargo = Convert.ToInt32(ddlCargo.SelectedValue),
+                    OrganizacionId = 1,
+                    UsuarioCreacionId = user.IdUsuario,
+                    IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
+                    PrimerNombre = txtPrimerNombre.Text.Trim(),
+                    SegundoNombre = txtSegundoNombre.Text.Trim(),
+                    ApellidoPaterno = txtApellidoPaterno.Text.Trim(),
+                    ApellidoMaterno = txtApellidoPaterno.Text.Trim(),
+                    Email = txtCorreo.Text.Trim()
+
+                });
+                if (dtoPa.HuboError)
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
+                }
+                else
+                {
+
+                    String HTML = Resource1.htmlUsuario;
+                    HTML = HTML.Replace("{usuario}", dtoPa.Usuario);
+                    HTML = HTML.Replace("{clave}", dtoPa.Contrasena);
+
+                    string to = dtoPa.Email;
+                    HelpE.SendMail_Gmail(to, "Essalud - Usuario", HTML);
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Usuario Registrado", "Se registro correctamente el Usuario", "success", "/administrador/usuario/lista"), true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Registrar el Usuario." + "', 'error');", true);
             }
         }
     }

@@ -112,6 +112,13 @@
                                                 Debe seleccionar un Cargo valido.
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <label for="ddlEstado" class="form-label">Estado</label>
+                                            <asp:DropDownList runat="server" ID="ddlEstado" class="form-select">
+                                                <asp:ListItem Text="Activo" Value="1"></asp:ListItem>
+                                                <asp:ListItem Text="Desactivado" Value="0"></asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
 
                                     </div>
                                 </div>
