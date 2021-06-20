@@ -106,38 +106,35 @@ namespace DAO
             ObjCn.Close();
             return cr;
         }
-        public DtoPaciente Usp_Paciente_SelectOne(DtoB dtoBase)
+        public DtoMensajes Usp_Mensajes_SelectOne(DtoB dtoBase)
         {
-            DtoPaciente dto = (DtoPaciente)dtoBase;
+            DtoMensajes dto = (DtoMensajes)dtoBase;
             SqlParameter[] pr = new SqlParameter[1];
 
             try
             {
-                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
+                pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
                 {
-                    Value = (dto.IdPaciente)
+                    Value = (dto.IdMensaje)
                 };
 
-                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_SelectOne", pr);
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_SelectOne", pr);
 
-                //cr.List = new List<DtoB>();
                 if (reader.Read())
                 {
-                    dto = new DtoPaciente
+                    dto = new DtoMensajes
                     {
-                        IdPaciente = GetValue("IdPaciente", reader).ValueInt32,
-                        Nombres = GetValue("Nombres", reader).ValueString,
-                        Apellidos = GetValue("Apellidos", reader).ValueString,
-                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
-                        Numdoc = GetValue("Numdoc", reader).ValueString,
-                        IN_TipoSeguro = GetValue("IN_TipoSeguro", reader).ValueInt32,
-                        IN_EstadoPaciente = GetValue("IN_EstadoPaciente", reader).ValueInt32,
+                        IdMensaje = GetValue("IdMensaje", reader).ValueInt32,
+                        NombreCompleto = GetValue("NombreCompleto", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
+                        Asunto = GetValue("Asunto", reader).ValueString,
+                        Mensaje = GetValue("Mensaje", reader).ValueString,
                         UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
                         FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
-                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
-                        Credencial = GetValue("Credencial", reader).ValueString,
+                        IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
+                        IdMensajeRespuesta = GetValue("IdMensajeRespuesta", reader).ValueInt32,
                     };
                 }
                 reader.Close();
@@ -146,7 +143,7 @@ namespace DAO
             {
                 dto.LugarError = ex.StackTrace;
                 dto.ErrorEx = ex.Message;
-                dto.ErrorMsj = "Error en Usp_Paciente_SelectOne";
+                dto.ErrorMsj = "Error en Usp_Mensajes_SelectOne";
             }
             ObjCn.Close();
             return dto;
