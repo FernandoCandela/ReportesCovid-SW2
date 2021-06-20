@@ -137,11 +137,9 @@
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                                    <asp:Button runat="server" ID="btnRegistrar" CssClass="btn btn-primary" Text="Registrar" OnClick="btnRegistrar_Click"></asp:Button>
-                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/administrador/usuario/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                                    <asp:Button runat="server" ID="btnRegistrar" CssClass="btn btn-primary glow" Text="Registrar" OnClick="btnRegistrar_Click"></asp:Button>
+                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow" NavigateUrl="/administrador/usuario/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

@@ -141,13 +141,9 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoPacienteHistorial)dtoBase;
-            SqlParameter[] pr = new SqlParameter[2];
+            SqlParameter[] pr = new SqlParameter[1];
             try
             {
-                pr[0] = new SqlParameter("@PacienteId", SqlDbType.Int)
-                {
-                    Value = (dto.PacienteId)
-                };
                 pr[0] = new SqlParameter("@PacienteId", SqlDbType.Int)
                 {
                     Value = (dto.PacienteId)

@@ -90,6 +90,7 @@
     <Content Include="css\Administrador\Home\Vendors\boxicons\css\boxicons.min.css" />
     <Content Include="css\Administrador\Home\Vendors\boxicons\css\transformations.css" />
     <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.svg" />
+    <Content Include="css\Administrador\Index.css" />
     <Content Include="favicon.ico" />
     <Content Include="css\Administrador\Home\bootstrap-extended.min.css" />
     <Content Include="css\Administrador\Home\components.min.css" />

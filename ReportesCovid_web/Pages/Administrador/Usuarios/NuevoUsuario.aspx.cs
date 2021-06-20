@@ -139,7 +139,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                     PrimerNombre = txtPrimerNombre.Text.Trim(),
                     SegundoNombre = txtSegundoNombre.Text.Trim(),
                     ApellidoPaterno = txtApellidoPaterno.Text.Trim(),
-                    ApellidoMaterno = txtApellidoPaterno.Text.Trim(),
+                    ApellidoMaterno = txtApellidoMaterno.Text.Trim(),
                     Email = txtCorreo.Text.Trim()
 
                 });

@@ -56,12 +56,25 @@
                                                 Debe llenar este cambo.
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <label for="txtCorreo" class="form-label">Correo</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <asp:TextBox type="email" CssClass="form-control" ID="txtCorreo" runat="server" aria-describedby="inputGroupPrepend" required="true"></asp:TextBox>
+                                                <div class="invalid-feedback">
+                                                    Debe ingresar un correo valido.
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="col-md-6">
                                             <label for="tUsuario" class="form-label">Usuario</label>
-                                            <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
-                                            <div class="invalid-feedback">
-                                                Debe llenar este cambo.
+                                            <div class="input-group mb-3">
+                                                <button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>
+                                                <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
+                                                <div class="invalid-feedback">
+                                                    Debe llenar este cambo.
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -124,8 +137,8 @@
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                                    <asp:Button runat="server" ID="btnActualizar" CssClass="btn btn-primary" Text="Actualizar" OnClick="btnActualizar_Click"></asp:Button>
-                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/administrador/usuario/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                                    <asp:Button runat="server" ID="btnActualizar" CssClass="btn btn-primary glow" Text="Actualizar" OnClick="btnActualizar_Click"></asp:Button>
+                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow" NavigateUrl="/administrador/usuario/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                                 </div>
 
 
