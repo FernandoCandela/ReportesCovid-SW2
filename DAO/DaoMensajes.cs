@@ -50,49 +50,40 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-        public ClassResultV Usp_Paciente_Select(DtoB dtoBase)
+        public ClassResultV Usp_Mensajes_SelectAll(DtoB dtoBase)
         {
             ClassResultV cr = new ClassResultV();
-            var dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[3];
+            var dto = (DtoMensajes)dtoBase;
+            SqlParameter[] pr = new SqlParameter[2];
             try
             {
                 pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
                 {
                     Value = (dto.Criterio)
                 };
-                pr[1] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
+                pr[1] = new SqlParameter("@IB_Respondido", SqlDbType.Bit)
                 {
-                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
-                };
-                pr[2] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
-                {
-                    Value = (dto.IB_Estado)
+                    Value = (dto.IB_Respondido)
                 };
 
-                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Select", pr);
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_SelectAll", pr);
 
                 cr.List = new List<DtoB>();
                 while (reader.Read())
                 {
-                    cr.List.Add(new DtoPaciente
+                    cr.List.Add(new DtoMensajes
                     {
-                        IdPaciente = GetValue("IdPaciente", reader).ValueInt32,
-                        Nombres = GetValue("Nombres", reader).ValueString,
-                        Apellidos = GetValue("Apellidos", reader).ValueString,
-                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
-                        Numdoc = GetValue("Numdoc", reader).ValueString,
-                        IN_TipoSeguro = GetValue("IN_TipoSeguro", reader).ValueInt32,
-                        IN_EstadoPaciente = GetValue("IN_EstadoPaciente", reader).ValueInt32,
+                        IdMensaje = GetValue("IdMensaje", reader).ValueInt32,
+                        NombreCompleto = GetValue("NombreCompleto", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
+                        Asunto = GetValue("Asunto", reader).ValueString,
+                        Mensaje = GetValue("Mensaje", reader).ValueString,
                         UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
                         FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
-                        IB_Estado = GetValue("IB_Estado", reader).ValueBool,
-                        Credencial = GetValue("Credencial", reader).ValueString,
-                        NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
-                        NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
-                        NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
+                        IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
+                        IdMensajeRespuesta = GetValue("IdMensajeRespuesta", reader).ValueInt32,
                     });
                 }
                 reader.Close();
@@ -101,7 +92,7 @@ namespace DAO
             {
                 cr.LugarError = ex.StackTrace;
                 cr.ErrorEx = ex.Message;
-                cr.ErrorMsj = "Error al consultar usuarios del Paciente";
+                cr.ErrorMsj = "Error al mostrar la bandeja de entrada";
             }
             ObjCn.Close();
             return cr;
@@ -119,7 +110,7 @@ namespace DAO
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_SelectOne", pr);
-
+                
                 if (reader.Read())
                 {
                     dto = new DtoMensajes
