@@ -146,8 +146,8 @@
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
 
-                                    <asp:Button runat="server" ID="btnActualizarPaciente" CssClass="btn btn-primary" Text="Actualizar Paciente" OnClick="btnActualizarPaciente_Click"></asp:Button>
-                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/enfermera/paciente/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                                    <asp:Button runat="server" ID="btnActualizarPaciente" CssClass="btn btn-primary glow" Text="Actualizar Paciente" OnClick="btnActualizarPaciente_Click"></asp:Button>
+                                    <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow" NavigateUrl="/enfermera/paciente/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                                 </div>
 
 

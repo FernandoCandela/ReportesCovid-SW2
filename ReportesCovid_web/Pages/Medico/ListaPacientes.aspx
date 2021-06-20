@@ -1,47 +1,6 @@
 ﻿<%@ Page Title="Essalud - Pacientes" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="ListaPacientes.aspx.cs" Inherits="ReportesCovid_web.Pages.Medico.ListaPacientes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <style>
-        .Pager span {
-            border-top-left-radius: .2rem;
-            border-bottom-left-radius: .2rem;
-            z-index: 3;
-            color: #fff;
-            background-color: #0d6efd;
-            border-color: #0d6efd;
-            text-align: center;
-            display: inline-block;
-            padding: .25rem .5rem;
-            font-size: .875rem;
-            margin-right: 3px;
-            line-height: 150%;
-            border: 1px solid #dee2e6;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-            text-decoration: none;
-            position: relative;
-            display: block;
-        }
-
-        .Pager a {
-            border-top-left-radius: .2rem;
-            border-bottom-left-radius: .2rem;
-            z-index: 3;
-            color: #0d6efd;
-            background-color: #fff;
-            border-color: #0d6efd;
-            text-align: center;
-            display: inline-block;
-            padding: .25rem .5rem;
-            font-size: .875rem;
-            margin-right: 3px;
-            line-height: 150%;
-            border: 1px solid #dee2e6;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-            text-decoration: none;
-            position: relative;
-            display: block;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContentTitle" runat="server">
     <h3>Lista Pacientes</h3>
@@ -84,74 +43,82 @@
                                         <asp:GridView runat="server" ID="gvPacientes" AutoGenerateColumns="False" AllowPaging="True"
                                             CssClass="table" PageSize="5" OnRowCommand="gvPacientes_RowCommand" OnPageIndexChanging="gvPacientes_PageIndexChanging"
                                             EmptyDataText="No se encontraron datos." GridLines="None">
-                                            <columns>
+                                            <Columns>
                                                 <asp:TemplateField Visible="false">
                                                     <%--<HeaderStyle Width="11%" />--%>
-                                                    <headertemplate>Código Paciente</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Código Paciente</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblIdPaciente" runat="server" Text='<% #Bind("IdPaciente")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <%--<HeaderStyle Width="3%" />--%>
-                                                    <headertemplate>Nombres</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Nombres</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblNombres" runat="server" Text='<% #Bind("Nombres")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <%--      <HeaderStyle Width="3%" />--%>
-                                                    <headertemplate>Apellidos</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Apellidos</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblApellidos" runat="server" Text='<% #Bind("Apellidos")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <%--<HeaderStyle Width="3%" />--%>
-                                                    <headertemplate>Tipo Documento</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Tipo Documento</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblTipoDocumento" runat="server" Text='<% #Bind("NombreTipodoc")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <%--<HeaderStyle Width="3%" />--%>
-                                                    <headertemplate>Numero Documento</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Numero Documento</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblNumDocumento" runat="server" Text='<% #Bind("Numdoc")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <%--<HeaderStyle Width="3%" />--%>
-                                                    <headertemplate>Tipo Seguro</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Tipo Seguro</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblTipoSeguro" runat="server" Text='<% #Bind("NombreTipoSeguro")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <%--<HeaderStyle Width="3%" />--%>
-                                                    <headertemplate>Estado Paciente</headertemplate>
-                                                    <itemtemplate>
+                                                    <HeaderTemplate>Estado Paciente</HeaderTemplate>
+                                                    <ItemTemplate>
                                                         <asp:Label ID="lblEstadoPaciente" runat="server" Text='<% #Bind("NombreEstadoPaciente")%>' />
-                                                    </itemtemplate>
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
 
                                                 <asp:TemplateField ItemStyle-HorizontalAlign="Center">
-                                                    <headerstyle width="7.5%" />
-                                                    <headertemplate>Generar Reporte</headertemplate>
-                                                    <itemtemplate>
-                                                        <asp:LinkButton runat="server" ID="lnkGenerar" CommandName="Generar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-bar-chart-square"></i>Generar Reporte </asp:LinkButton>
-                                                    </itemtemplate>
+                                                    <HeaderStyle Width="7.5%" />
+                                                    <HeaderTemplate>Generar Reporte</HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <button data-toggle='dropdown' class='btn btn-primary btn-sm dropdown-toggle'>Opciones <span class='caret'></span></button>
+                                                        <ul class='dropdown-menu dropdown-menu-right'>
+                                                            <li>
+                                                                <asp:LinkButton runat="server" ID="lnkVerImpuestos" CssClass="" Text="" CommandName="VerImpuestos" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Ver Reportes </asp:LinkButton></li>
+                                                            <hr />
+                                                            <li>
+                                                                <asp:LinkButton runat="server" ID="lnkGenerar" CommandName="Generar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-bar-chart-square"></i>Generar Reporte </asp:LinkButton></li>
+                                                        </ul>
+
+                                                    </ItemTemplate>
                                                 </asp:TemplateField>
 
-                                            </columns>
-                                            <pagerstyle cssclass="Pager" />
+                                            </Columns>
+                                            <PagerStyle CssClass="Pager" />
                                         </asp:GridView>
                                     </div>
                                 </div>

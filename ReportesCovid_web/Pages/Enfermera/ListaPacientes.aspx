@@ -1,46 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="ListaPacientes.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.ListaPacientes1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <style>
-        .Pager span {
-            border-top-left-radius: .2rem;
-            border-bottom-left-radius: .2rem;
-            z-index: 3;
-            color: #fff;
-            background-color: #0d6efd;
-            border-color: #0d6efd;
-            text-align: center;
-            display: inline-block;
-            padding: .25rem .5rem;
-            font-size: .875rem;
-            margin-right: 3px;
-            line-height: 150%;
-            border: 1px solid #dee2e6;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-            text-decoration: none;
-            position: relative;
-            display: block;
-        }
-
-        .Pager a {
-            border-top-left-radius: .2rem;
-            border-bottom-left-radius: .2rem;
-            z-index: 3;
-            color: #0d6efd;
-            background-color: #fff;
-            border-color: #0d6efd;
-            text-align: center;
-            display: inline-block;
-            padding: .25rem .5rem;
-            font-size: .875rem;
-            margin-right: 3px;
-            line-height: 150%;
-            border: 1px solid #dee2e6;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-            text-decoration: none;
-            position: relative;
-            display: block;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContentTitle" runat="server">
     <h3>Lista Pacientes</h3>
