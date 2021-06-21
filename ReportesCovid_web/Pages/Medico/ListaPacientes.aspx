@@ -44,8 +44,8 @@
                                             CssClass="table" PageSize="5" OnRowCommand="gvPacientes_RowCommand" OnPageIndexChanging="gvPacientes_PageIndexChanging"
                                             EmptyDataText="No se encontraron datos." GridLines="None">
                                             <Columns>
-                                                <asp:TemplateField Visible="false">
-                                                    <%--<HeaderStyle Width="11%" />--%>
+                                                <asp:TemplateField>
+                                                    <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Código Paciente</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblIdPaciente" runat="server" Text='<% #Bind("IdPaciente")%>' />
@@ -53,7 +53,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <%--<HeaderStyle Width="3%" />--%>
+                                                    <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Nombres</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblNombres" runat="server" Text='<% #Bind("Nombres")%>' />
@@ -61,7 +61,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <%--      <HeaderStyle Width="3%" />--%>
+                                                    <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Apellidos</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblApellidos" runat="server" Text='<% #Bind("Apellidos")%>' />
@@ -69,7 +69,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <%--<HeaderStyle Width="3%" />--%>
+                                                    <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Tipo Documento</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblTipoDocumento" runat="server" Text='<% #Bind("NombreTipodoc")%>' />
@@ -77,7 +77,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <%--<HeaderStyle Width="3%" />--%>
+                                                    <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Numero Documento</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblNumDocumento" runat="server" Text='<% #Bind("Numdoc")%>' />
@@ -85,7 +85,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <%--<HeaderStyle Width="3%" />--%>
+                                                   <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Tipo Seguro</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblTipoSeguro" runat="server" Text='<% #Bind("NombreTipoSeguro")%>' />
@@ -93,7 +93,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <%--<HeaderStyle Width="3%" />--%>
+                                                    <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Estado Paciente</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblEstadoPaciente" runat="server" Text='<% #Bind("NombreEstadoPaciente")%>' />
@@ -101,14 +101,14 @@
                                                 </asp:TemplateField>
 
 
-                                                <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                                                <asp:TemplateField>
                                                     <HeaderStyle Width="7.5%" />
                                                     <HeaderTemplate>Generar Reporte</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <button data-toggle='dropdown' class='btn btn-primary btn-sm dropdown-toggle'>Opciones <span class='caret'></span></button>
                                                         <ul class='dropdown-menu dropdown-menu-right'>
                                                             <li>
-                                                                <asp:LinkButton runat="server" ID="lnkVerImpuestos" CssClass="" Text="" CommandName="VerImpuestos" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Ver Reportes </asp:LinkButton></li>
+                                                                <asp:LinkButton runat="server" ID="lnkVerReportes" CommandName="VerReportes" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Ver Reportes </asp:LinkButton></li>
                                                             <hr />
                                                             <li>
                                                                 <asp:LinkButton runat="server" ID="lnkGenerar" CommandName="Generar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-bar-chart-square"></i>Generar Reporte </asp:LinkButton></li>

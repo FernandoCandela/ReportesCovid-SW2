@@ -91,12 +91,20 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoPacienteHistorial)dtoBase;
-            SqlParameter[] pr = new SqlParameter[1];
+            SqlParameter[] pr = new SqlParameter[3];
             try
             {
                 pr[0] = new SqlParameter("@PacienteId", SqlDbType.Int)
                 {
                     Value = (dto.PacienteId)
+                };
+                pr[1] = new SqlParameter("@FechaInicio", SqlDbType.Date)
+                {
+                    Value = V_ValidaPrNull(dto.FechaInicio)
+                };
+                pr[2] = new SqlParameter("@FechaFin", SqlDbType.Date)
+                {
+                    Value = V_ValidaPrNull(dto.FechaFin)
                 };
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_PacienteHistorial_SelectAll_Usuario", pr);
 
@@ -148,6 +156,15 @@ namespace DAO
                 {
                     Value = (dto.PacienteId)
                 };
+                pr[0] = new SqlParameter("@FechaInicio", SqlDbType.DateTime)
+                {
+                    Value = V_ValidaPrNull(dto.FechaInicio)
+                };
+                pr[0] = new SqlParameter("@FechaFin", SqlDbType.DateTime)
+                {
+                    Value = V_ValidaPrNull(dto.FechaFin)
+                };
+
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_PacienteHistorial_SelectAll_Contacto", pr);
 
                 cr.List = new List<DtoB>();

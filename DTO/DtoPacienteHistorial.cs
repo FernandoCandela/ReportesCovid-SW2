@@ -28,5 +28,8 @@ namespace DTO
         public int UsuarioModificacionId { get; set; }
         public DateTime FechaModificacion { get; set; }
         public bool IB_Estado { get; set; }
+        //Datos filtro
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
     }
 }

@@ -69,7 +69,6 @@ namespace ReportesCovid_web.Pages.Medico
                     Criterio = txtBuscar.Text.Trim()
                 }
                 );
-                //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;
                 if (!cr.HuboError)
                 {
                     ListPacientes.AddRange(cr.List.Cast<DtoPaciente>());
@@ -91,13 +90,15 @@ namespace ReportesCovid_web.Pages.Medico
 
         protected void gvPacientes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int rowIndex;
+            int rowIndex = int.Parse(e.CommandArgument.ToString());
+            string idPaciente = (gvPacientes.Rows[rowIndex].Cells[0].FindControl("lblIdPaciente") as Label).Text;
             switch (e.CommandName)
             {
                 case "Generar":
-                    rowIndex = int.Parse(e.CommandArgument.ToString());
-                    string idPaciente = (gvPacientes.Rows[rowIndex].Cells[0].FindControl("lblIdPaciente") as Label).Text;
                     Response.Redirect("/medico/paciente/GenerarReporte?idPaciente=" + idPaciente);
+                    break;
+                case "VerReportes":
+                    Response.Redirect("/medico/reporte/lista?idPaciente=" + idPaciente);
                     break;
             }
         }

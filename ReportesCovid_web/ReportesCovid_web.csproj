@@ -553,6 +553,7 @@
     <Content Include="Pages\Inicial\InicioSesion.aspx" />
     <Content Include="Pages\Inicial\PaginaInicial.aspx" />
     <Content Include="Pages\Medico\GenerarReporte.aspx" />
+    <Content Include="Pages\Medico\ListaReportes.aspx" />
     <Content Include="Pages\Medico\MenuMedico.aspx" />
     <Content Include="Pages\Medico\V1\BuscarPaciente.aspx" />
     <Content Include="Pages\Medico\V1\GenerarReporte.aspx" />
@@ -818,6 +819,13 @@
     </Compile>
     <Compile Include="Pages\Medico\GenerarReporte.aspx.designer.cs">
       <DependentUpon>GenerarReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Medico\ListaReportes.aspx.cs">
+      <DependentUpon>ListaReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Medico\ListaReportes.aspx.designer.cs">
+      <DependentUpon>ListaReportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Medico\MenuMedico.aspx.cs">
       <DependentUpon>MenuMedico.aspx</DependentUpon>
