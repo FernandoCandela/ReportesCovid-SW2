@@ -19,5 +19,6 @@ namespace DTO
         public DateTime FechaModificacion { get; set; }
         public bool IB_Respondido { get; set; }
         public int IdMensajeRespuesta { get; set; }
+        public int IN_TipoMensaje { get; set; }
     }
 }
