@@ -86,7 +86,7 @@ namespace ReportesCovid_web
             routes.MapPageRoute("medico/paciente/GenerarReporte", "medico/paciente/GenerarReporte", "~/Pages/Medico/GenerarReporte.aspx", true);
 
             routes.MapPageRoute("medico/reporte/lista", "medico/reporte/lista", "~/Pages/Medico/ListaReportes.aspx", true);
-
+            routes.MapPageRoute("medico/reporte/verreporte", "medico/reporte/verreporte", "~/Pages/Medico/VerReporte.aspx", true);
 
             #endregion
 

@@ -212,9 +212,9 @@ namespace DAO
 
             try
             {
-                pr[0] = new SqlParameter("@PacienteId", SqlDbType.Int)
+                pr[0] = new SqlParameter("@IdHistorial", SqlDbType.Int)
                 {
-                    Value = (dto.PacienteId)
+                    Value = (dto.IdHistorial)
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_PacienteHistorial_SelectOne", pr);

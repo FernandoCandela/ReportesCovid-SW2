@@ -24,6 +24,9 @@
                                 <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-end">
                                     <asp:LinkButton runat="server" ID="btnMostrar" CssClass="btn btn-outline-success end" Text="Mostrar todos los Reportes" OnClick="btnMostrar_Click"></asp:LinkButton>
                                 </div>
+                                <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-end">
+                                    <asp:HyperLink runat="server" ID="btnVolver" CssClass="btn btn-outline-danger end" Text="Volver" NavigateUrl="/medico/paciente/lista"></asp:HyperLink>
+                                </div>
                             </div>
                             <div class="row mb-2">
                             </div>
@@ -64,7 +67,7 @@
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
-                                                <asp:TemplateField >
+                                                <asp:TemplateField>
                                                     <HeaderStyle Width="7.5%" />
                                                     <HeaderTemplate>Ver Reporte</HeaderTemplate>
                                                     <ItemTemplate>
