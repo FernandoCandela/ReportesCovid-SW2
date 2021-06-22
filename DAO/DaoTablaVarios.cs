@@ -105,61 +105,53 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-        public ClassResultV Usp_Paciente_Update_ByIdPaciente(DtoB dtoBase)
+        public ClassResultV Usp_TablaVarios_Update(DtoB dtoBase)
         {
-            DtoPaciente dto = (DtoPaciente)dtoBase;
+            DtoTablaVarios dto = (DtoTablaVarios)dtoBase;
             ClassResultV cr = new ClassResultV();
-            SqlParameter[] pr = new SqlParameter[9];
+            SqlParameter[] pr = new SqlParameter[7];
             try
             {
-                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
+                pr[0] = new SqlParameter("@IdTabVarios", SqlDbType.Int)
                 {
-                    Value = (dto.IdPaciente)
+                    Value = (dto.IdTabVarios)
                 };
-                pr[1] = new SqlParameter("@Nombres", SqlDbType.VarChar, 100)
+                pr[1] = new SqlParameter("@Valor", SqlDbType.VarChar, 200)
                 {
-                    Value = (V_ValidaPrNull(dto.Nombres))
+                    Value = (V_ValidaPrNull(dto.Valor))
                 };
-                pr[2] = new SqlParameter("@Apellidos", SqlDbType.VarChar, 100)
+                pr[2] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
                 {
-                    Value = (V_ValidaPrNull(dto.Apellidos))
+                    Value = (V_ValidaPrNull(dto.Descripcion))
                 };
-                pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                pr[3] = new SqlParameter("TipoAtributo", SqlDbType.VarChar, 200)
                 {
-                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
+                    Value = (V_ValidaPrNull(dto.TipoAtributo))
                 };
-                pr[4] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                pr[4] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
                 {
-                    Value = (V_ValidaPrNull(dto.Numdoc))
+                    Value = (V_ValidaPrNull(dto.EntidadTabla))
                 };
-                pr[5] = new SqlParameter("@IN_TipoSeguro", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.IN_TipoSeguro))
-                };
-                pr[6] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
-                };
-                pr[7] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                pr[5] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
                 };
-                pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[6] = new SqlParameter("IB_Estado", SqlDbType.Bit)
                 {
-                    Direction = ParameterDirection.Output
+                    Value = (V_ValidaPrNull(dto.IB_Estado))
                 };
-                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Update_ByIdPaciente", pr);
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Update", pr);
                 if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
                 {
                     cr.ErrorMsj = Convert.ToString(pr[8].Value);
-                    cr.LugarError = "Usp_Paciente_Update_ByIdPaciente";
+                    cr.LugarError = "Usp_TablaVarios_Update";
                 }
             }
             catch (Exception ex)
             {
                 cr.LugarError = ex.StackTrace;
                 cr.ErrorEx = ex.Message;
-                cr.ErrorMsj = "Error al actualizar los datos del paciente";
+                cr.ErrorMsj = "Error al actualizar los datos de TablaVarios";
             }
             ObjCn.Close();
             return cr;
