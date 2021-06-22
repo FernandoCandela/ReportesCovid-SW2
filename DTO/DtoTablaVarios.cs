@@ -18,6 +18,5 @@ namespace DTO
         public int UsuarioModificacionId{ get; set; }
         public DateTime FechaModificacion{ get; set; }
         public bool IB_Estado { get; set; }
-        public String TipoMensaje { get; set; }
 }
 }
