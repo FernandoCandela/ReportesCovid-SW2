@@ -28,7 +28,7 @@
                                                     </div>
                                                     <div class="card-body p-5">
                                                         <i class="fas fa-user-plus d-block mb-3 fa-10x"></i>
-                                                        <asp:HyperLink ID="lnkCrear" runat="server" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/usuario/lista">Crear</asp:HyperLink>
+                                                        <asp:HyperLink ID="lnkCrear" runat="server" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/usuario/lista">Entrar</asp:HyperLink>
 
                                                     </div>
                                                 </div>
@@ -40,7 +40,7 @@
                                                     </div>
                                                     <div class="card-body p-5">
                                                         <i class="fas fa-user-edit d-block mb-3 fa-10x"></i>
-                                                        <asp:HyperLink runat="server" ID="lnkModificar" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/mensaje/lista">Modificar</asp:HyperLink>
+                                                        <asp:HyperLink runat="server" ID="lnkModificar" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/mensaje/lista">Entrar</asp:HyperLink>
                                                     </div>
                                                 </div>
                                             </div>

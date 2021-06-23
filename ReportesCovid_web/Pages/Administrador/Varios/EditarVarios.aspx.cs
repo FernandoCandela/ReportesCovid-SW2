@@ -35,55 +35,55 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
 
         private void LlenarDetalle()
         {
-            try
-            {
-                /*PREGUNTAR A FERNANDO*/
-                DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
-                { 
-                    IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"])
-                });
-                if (!dto.HuboError)
-                {
-                    txtValor.Text = dto.Valor;
-                    txtDescripcion.Text = dto.Descripcion;
-                    txtAtributo.Text = dto.TipoAtributo;
-                    txtEntidad.Text = dto.EntidadTabla;
-                    ddlEstado.SelectedValue = dto.IB_Estado == true ? "1" : "0";
-                }
-            }
-            catch (Exception)
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los datos." + "', 'error');", true);
-            }
+            //try
+            //{
+            //    /*PREGUNTAR A FERNANDO*/
+            //    DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+            //    { 
+            //        IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"])
+            //    });
+            //    if (!dto.HuboError)
+            //    {
+            //        txtValor.Text = dto.Valor;
+            //        txtDescripcion.Text = dto.Descripcion;
+            //        txtAtributo.Text = dto.TipoAtributo;
+            //        txtEntidad.Text = dto.EntidadTabla;
+            //        ddlEstado.SelectedValue = dto.IB_Estado == true ? "1" : "0";
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los datos." + "', 'error');", true);
+            //}
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            try
-            {   
-                /*PREGUNTAR A FERNANDO*/
-                DtoTablaVarios varios = (DtoTablaVarios)Session["UsuarioLogin"];
-                ClassResultV cr = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
-                {
-                    IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"]),
-                    Valor = txtValor.Text,
-                    Descripcion = txtDescripcion.Text,
-                    TipoAtributo = txtAtributo.Text,
-                    EntidadTabla = txtEntidad.Text,
-                    IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue))
-                });
-                if(cr.HuboError)
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Usuario Actualizado", "Se actualizo correctamente el usuario", "success", "/administrador/varios/lista"), true);
+            //try
+            //{   
+            //    /*PREGUNTAR A FERNANDO*/
+            //    DtoTablaVarios varios = (DtoTablaVarios)Session["UsuarioLogin"];
+            //    ClassResultV cr = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+            //    {
+            //        IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"]),
+            //        Valor = txtValor.Text,
+            //        Descripcion = txtDescripcion.Text,
+            //        TipoAtributo = txtAtributo.Text,
+            //        EntidadTabla = txtEntidad.Text,
+            //        IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue))
+            //    });
+            //    if(cr.HuboError)
+            //        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
+            //    else
+            //    {
+            //        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Usuario Actualizado", "Se actualizo correctamente el usuario", "success", "/administrador/varios/lista"), true);
 
-                }
-            }
-            catch (Exception)
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar el Usuario." + "', 'error');", true);
-            }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar el Usuario." + "', 'error');", true);
+            //}
         }
     }
 }

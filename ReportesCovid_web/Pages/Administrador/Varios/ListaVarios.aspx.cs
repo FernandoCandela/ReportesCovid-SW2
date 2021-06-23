@@ -37,7 +37,7 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
             try
             {
                 List<DtoTablaVarios> ListVarios = new List<DtoTablaVarios>();
-                ClassResultV cr = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                ClassResultV cr = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
                 {
                     IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
                     Criterio = txtBuscar.Text.Trim()

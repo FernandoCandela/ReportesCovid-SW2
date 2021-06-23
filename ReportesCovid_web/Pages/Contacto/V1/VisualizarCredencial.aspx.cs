@@ -38,7 +38,7 @@ namespace ReportesCovid_web.Pages.Contacto
         {
             try
             {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
                 {
                     TipoAtributo = "IN_TipoTraslado",
                     EntidadTabla = "PacienteHistorial"

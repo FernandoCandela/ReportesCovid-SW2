@@ -37,7 +37,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
         {
             try
             {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
                 {
                     TipoAtributo = "IN_Tipodoc",
                     EntidadTabla = "Paciente"
@@ -65,7 +65,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
         {
             try
             {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
                 {
                     TipoAtributo = "IN_Rol",
                     EntidadTabla = "Usuario"
@@ -93,7 +93,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
         {
             try
             {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
                 {
                     TipoAtributo = "IN_Cargo",
                     EntidadTabla = "Usuario"

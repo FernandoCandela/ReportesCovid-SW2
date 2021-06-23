@@ -39,7 +39,7 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
             try
             {
                 /*PREGUNTAR A FERNANDO*/
-                DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
+                DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
                 {
                     Valor = txtValor.Text.Trim(),
                     Descripcion = txtDescripcion.Text.Trim(),
@@ -64,7 +64,7 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
         {
             try
             {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios());
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios());
                 if (!cr.HuboError)
                 {
                     List<DtoTablaVarios> list = cr.List.Cast<DtoTablaVarios>().ToList();
@@ -87,7 +87,7 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
         {
             try
             {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios());
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios());
                 if (!cr.HuboError)
                 {
                     List<DtoTablaVarios> list = cr.List.Cast<DtoTablaVarios>().ToList();
