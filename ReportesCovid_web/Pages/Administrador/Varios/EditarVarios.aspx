@@ -30,13 +30,6 @@
                                 <div class="tab-pane active fade show" id="paciente" aria-labelledby="paciente-tab" role="tabpanel">
                                     <div class="row g-3 my-4">
                                         <div class="col-md-6">
-                                            <label for="txtValor" class="form-label">Valor</label>
-                                            <asp:TextBox type="text" class="form-control" ID="txtValor" runat="server" required="true"></asp:TextBox>
-                                            <div class="invalid-feedback">
-                                                Debe llenar este campo.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
                                             <label for="txtDescripcion" class="form-label">Descripcion</label>
                                             <asp:TextBox type="text" class="form-control" ID="txtDescripcion" runat="server" required="true"></asp:TextBox>
                                             <div class="invalid-feedback">
@@ -44,17 +37,19 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="txtAtributo" class="form-label">Tipo Atributo</label>
-                                            <asp:TextBox type="text" class="form-control" ID="txtAtributo" runat="server" required="true"></asp:TextBox>
+                                            <label for="ddlTiposVarios" class="form-label">Tipo Atributo</label>
+                                            <asp:DropDownList runat="server" ID="ddlTiposVarios" class="form-select" required="true">
+                                                <asp:ListItem Text="[Seleccionar]" disabled="disabled" Selected="True"></asp:ListItem>
+                                                <asp:ListItem Text="Estados de Paciente" Value="IN_EstadoPaciente"></asp:ListItem>
+                                                <asp:ListItem Text="Roles" Value="IN_Rol"></asp:ListItem>
+                                                <asp:ListItem Text="Tipos de Documento" Value="IN_Tipodoc"></asp:ListItem>
+                                                <asp:ListItem Text="Tipos de Mensajes" Value="IN_TipoMensaje"></asp:ListItem>
+                                                <asp:ListItem Text="Cargos" Value="IN_Cargo"></asp:ListItem>
+                                                <asp:ListItem Text="Tipos de Seguro" Value="IN_TipoSeguro"></asp:ListItem>
+                                                <asp:ListItem Text="Tipos de Traslado" Value="IN_TipoTraslado"></asp:ListItem>
+                                            </asp:DropDownList>
                                             <div class="invalid-feedback">
-                                                Debe llenar este cambo.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="txtEntidad" class="form-label">Entidad tabla</label>
-                                            <asp:TextBox type="text" class="form-control" ID="txtEntidad" runat="server" required="true"></asp:TextBox>
-                                            <div class="invalid-feedback">
-                                                Debe llenar este cambo.
+                                                Debe seleccionar un Tipo de Atributo valido.
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -86,7 +81,7 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="Foot" runat="server">
-        <script>
+    <script>
         (function () {
             'use strict'
 
@@ -112,5 +107,5 @@
                 $(this).tab('show');
             });
         })
-        </script>
+    </script>
 </asp:Content>

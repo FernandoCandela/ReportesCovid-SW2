@@ -30,19 +30,46 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
 
         private void FirstLoad()
         {
-            CargarAtributo();
-            CargarEntidad();
+
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
-                /*PREGUNTAR A FERNANDO*/
-                DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+
+                var entidad = "";
+                switch (ddlTiposVarios.SelectedValue)
                 {
-                    Valor = txtValor.Text.Trim(),
+                    case "IN_EstadoPaciente":
+                        entidad = "Paciente";
+                        break;
+                    case "IN_Rol":
+                        entidad = "Usuario";
+                        break;
+                    case "IN_Tipodoc":
+                        entidad = "Paciente";
+                        break;
+                    case "IN_TipoMensaje":
+                        entidad = "Mensajes";
+                        break;
+                    case "IN_Cargo":
+                        entidad = "Usuario";
+                        break;
+                    case "IN_TipoSeguro":
+                        entidad = "Paciente";
+                        break;
+                    case "IN_TipoTraslado":
+                        entidad = "PacienteHistorial";
+                        break;
+                }
+                DtoTablaVarios dto = new CtrTablaVarios().Usp_TablaVarios_Insert(new DtoTablaVarios
+                {
                     Descripcion = txtDescripcion.Text.Trim(),
+                    TipoAtributo = ddlTiposVarios.SelectedValue,
+                    EntidadTabla = entidad,
+                    UsuarioCreacionId = user.IdUsuario,
                     IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
                 });
                 if (dto.HuboError)
@@ -51,67 +78,14 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Usuario Registrado", "Se registro correctamente", "success", "/administrador/varios/lista"), true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Atributo Registrado", "Se registro correctamente el Atributo", "success", "/administrador/varios/lista"), true);
                 }
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron guardar los datos." + "', 'error');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Registrar el Atributo." + "', 'error');", true);
             }
         }
-
-        private void CargarAtributo()
-        {
-            try
-            {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios());
-                if (!cr.HuboError)
-                {
-                    List<DtoTablaVarios> list = cr.List.Cast<DtoTablaVarios>().ToList();
-                    ddlTipoAtributo.DataSource = list;
-                    ddlTipoAtributo.DataBind();
-                    ListItem firstLista = new ListItem("Seleccionar]", "");
-                    firstLista.Attributes.Add("disabled", "disabled");
-                    firstLista.Attributes.Add("Selected", "True");
-                    ddlTipoAtributo.Items.Insert(0, firstLista);
-                }
-            }
-            catch (Exception ex)
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoAtributo." + "', 'error');", true);
-            }
-
-        }
-
-        private void CargarEntidad()
-        {
-            try
-            {
-                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios());
-                if (!cr.HuboError)
-                {
-                    List<DtoTablaVarios> list = cr.List.Cast<DtoTablaVarios>().ToList();
-                    ddlEntidadTabla.DataSource = list;
-                    ddlEntidadTabla.DataBind();
-                    ListItem firstLista = new ListItem("Seleccionar]", "");
-                    firstLista.Attributes.Add("disabled", "disabled");
-                    firstLista.Attributes.Add("Selected", "True");
-                    ddlEntidadTabla.Items.Insert(0, firstLista);
-                }
-            }
-            catch (Exception ex)
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar EntidadTabla." + "', 'error');", true);
-            }
-
-        }
-
-
     }
 
 }
-
-
-/*
- REVISAR TODO
- */

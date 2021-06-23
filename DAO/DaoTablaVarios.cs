@@ -66,7 +66,7 @@ namespace DAO
                 {
                     Value = (dto.Criterio)
                 };
-                pr[1] = new SqlParameter("@TipoAtributo", SqlDbType.VarChar,200)
+                pr[1] = new SqlParameter("@TipoAtributo", SqlDbType.VarChar, 200)
                 {
                     Value = V_ValidaPrNull(dto.TipoAtributo)
                 };
@@ -108,41 +108,46 @@ namespace DAO
         public DtoTablaVarios Usp_TablaVarios_Insert(DtoB dtoBase)
         {
             DtoTablaVarios dto = (DtoTablaVarios)dtoBase;
-            SqlParameter[] pr = new SqlParameter[6];
+            SqlParameter[] pr = new SqlParameter[7];
             try
             {
                 pr[0] = new SqlParameter("@IdTabVarios", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output
                 };
-                pr[1] = new SqlParameter("@Valor", SqlDbType.VarChar, 200)
-                {
-                    Value = (V_ValidaPrNull(dto.Valor))
-                };
-                pr[2] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
+                pr[1] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.Descripcion))
                 };
-                pr[3] = new SqlParameter("@TipoAtributo", SqlDbType.VarChar, 200)
+                pr[2] = new SqlParameter("@TipoAtributo", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.TipoAtributo))
                 };
-                pr[4] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
+                pr[3] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.EntidadTabla))
                 };
-                pr[5] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
+                pr[4] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
+                pr[5] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
+                {
+                    Value = V_ValidaPrNull(dto.IB_Estado)
+                };
+                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Insert", pr);
                 if (pr[0].Value != DBNull.Value)
                 {
                     dto.IdTabVarios = Convert.ToInt32(pr[0].Value);
                 }
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[9].Value)))
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[6].Value)))
                 {
-                    dto.ErrorMsj = Convert.ToString(pr[9].Value);
+                    dto.ErrorMsj = Convert.ToString(pr[6].Value);
                     dto.LugarError = "Usp_TablaVarios_Insert";
                 }
             }

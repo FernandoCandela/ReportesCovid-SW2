@@ -256,7 +256,10 @@ namespace DAO
                     Value = dto.Email
                 };
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_Insert", pr);
-                dto.IdUsuario = Convert.ToInt32(pr[0].Value);
+                if (pr[0].Value != DBNull.Value)
+                {
+                    dto.IdUsuario = Convert.ToInt32(pr[0].Value);
+                }
                 if (!String.IsNullOrEmpty(Convert.ToString(pr[15].Value)))
                 {
                     dto.ErrorMsj = Convert.ToString(pr[15].Value);
