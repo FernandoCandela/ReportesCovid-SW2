@@ -9,7 +9,7 @@ namespace DAO
 {
     public class DaoTablaVarios : DaoB
     {
-        public ClassResultV Usp_TablaVarios_Select(DtoB dtoBase)
+        public ClassResultV Usp_TablaVarios_SelectAll(DtoB dtoBase)
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoTablaVarios)dtoBase;
@@ -25,7 +25,7 @@ namespace DAO
                     Value = (dto.EntidadTabla)
                 };
 
-                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Select", pr);
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_SelectAll", pr);
 
                 cr.List = new List<DtoB>();
                 while (reader.Read())
@@ -54,6 +54,148 @@ namespace DAO
             }
             ObjCn.Close();
             return cr;
+        }
+        public DtoTablaVarios Usp_TablaVarios_Insert(DtoB dtoBase)
+        {
+            DtoTablaVarios dto = (DtoTablaVarios)dtoBase;
+            SqlParameter[] pr = new SqlParameter[6];
+            try
+            {
+                pr[0] = new SqlParameter("@IdTabVarios", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                pr[1] = new SqlParameter("@Valor", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.Valor))
+                };
+                pr[2] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.Descripcion))
+                };
+                pr[3] = new SqlParameter("@TipoAtributo", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.TipoAtributo))
+                };
+                pr[4] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.EntidadTabla))
+                };
+                pr[5] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Insert", pr);
+                if (pr[0].Value != DBNull.Value)
+                {
+                    dto.IdTabVarios = Convert.ToInt32(pr[0].Value);
+                }
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[9].Value)))
+                {
+                    dto.ErrorMsj = Convert.ToString(pr[9].Value);
+                    dto.LugarError = "Usp_TablaVarios_Insert";
+                }
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error al insertar en TablaVarios";
+            }
+            ObjCn.Close();
+            return dto;
+        }
+        public ClassResultV Usp_TablaVarios_Update(DtoB dtoBase)
+        {
+            DtoTablaVarios dto = (DtoTablaVarios)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[7];
+            try
+            {
+                pr[0] = new SqlParameter("@IdTabVarios", SqlDbType.Int)
+                {
+                    Value = (dto.IdTabVarios)
+                };
+                pr[1] = new SqlParameter("@Valor", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.Valor))
+                };
+                pr[2] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.Descripcion))
+                };
+                pr[3] = new SqlParameter("TipoAtributo", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.TipoAtributo))
+                };
+                pr[4] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.EntidadTabla))
+                };
+                pr[5] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+                pr[6] = new SqlParameter("IB_Estado", SqlDbType.Bit)
+                {
+                    Value = (V_ValidaPrNull(dto.IB_Estado))
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Update", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[8].Value);
+                    cr.LugarError = "Usp_TablaVarios_Update";
+                }
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar los datos de TablaVarios";
+            }
+            ObjCn.Close();
+            return cr;
+        }
+        public DtoTablaVarios Usp_TablaVarios_SelectOne(DtoB dtoBase)
+        {
+            DtoTablaVarios dto = (DtoTablaVarios)dtoBase;
+            SqlParameter[] pr = new SqlParameter[1];
+
+            try
+            {
+                pr[0] = new SqlParameter("@IdTabVarios", SqlDbType.Int)
+                {
+                    Value = (dto.IdTabVarios)
+                };
+
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_SelectOne", pr);
+
+                if (reader.Read())
+                {
+                    dto = new DtoTablaVarios
+                    {
+                        IdTabVarios = GetValue("IdTabVarios", reader).ValueInt32,
+                        Valor = GetValue("Valor", reader).ValueString,
+                        Descripcion = GetValue("Descripcion", reader).ValueString,
+                        TipoAtributo = GetValue("TipoAtributo", reader).ValueString,
+                        EntidadTabla = GetValue("EntidadTabla", reader).ValueString,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error en Usp_TablaVarios_SelectOne";
+            }
+            ObjCn.Close();
+            return dto;
         }
     }
 }

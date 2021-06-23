@@ -564,6 +564,10 @@
     <Content Include="Pages\Medico\VerReporte.aspx" />
     <Content Include="PlantillaEmail\htmlCredencial.html" />
     <Content Include="PlantillaEmail\htmlUsuario.html" />
+    <Content Include="PlantillaEmail\Nuevo_Mensaje.html" />
+    <Content Include="PlantillaEmail\Reporte_Actualizado.html" />
+    <Content Include="PlantillaEmail\Reporte_Resgistrado.html" />
+    <Content Include="PlantillaEmail\Respuesta.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,7 @@ namespace DAO
         public DtoMensajes Usp_Mensajes_Insert(DtoB dtoBase)
         {
             DtoMensajes dto = (DtoMensajes)dtoBase;
-            SqlParameter[] pr = new SqlParameter[6];
+            SqlParameter[] pr = new SqlParameter[7];
             try
             {
                 pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
@@ -38,6 +38,10 @@ namespace DAO
                 pr[5] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
+                };
+                pr[5] = new SqlParameter("@IN_TipoMensaje", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_TipoMensaje))
                 };
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_Insert", pr);
             }
@@ -84,6 +88,7 @@ namespace DAO
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
                         IdMensajeRespuesta = GetValue("IdMensajeRespuesta", reader).ValueInt32,
+                        IN_TipoMensaje = GetValue("IN_TipoMensaje", reader).ValueInt32,
                     });
                 }
                 reader.Close();
@@ -126,6 +131,7 @@ namespace DAO
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
                         IdMensajeRespuesta = GetValue("IdMensajeRespuesta", reader).ValueInt32,
+                        IN_TipoMensaje = GetValue("IN_TipoMensaje", reader).ValueInt32,
                     };
                 }
                 reader.Close();
