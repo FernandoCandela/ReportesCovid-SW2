@@ -23,6 +23,19 @@
                                     <asp:TextBox runat="server" ID="txtBuscar" CssClass="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar"></asp:TextBox>
                                 </div>
 
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <label for="ddlTiposVarios">Tipos</label>
+                                    <asp:DropDownList runat="server" ID="ddlTiposVarios" class="form-select">
+                                        <asp:ListItem Text="Todos" Value=""></asp:ListItem>
+                                        <asp:ListItem Text="Estados de Paciente" Value="IN_EstadoPaciente"></asp:ListItem>
+                                        <asp:ListItem Text="Roles" Value="IN_Rol"></asp:ListItem>
+                                        <asp:ListItem Text="Tipos de Documento" Value="IN_Tipodoc"></asp:ListItem>
+                                        <asp:ListItem Text="Tipos de Mensajes" Value="IN_TipoMensaje"></asp:ListItem>
+                                        <asp:ListItem Text="Cargos" Value="IN_Cargo"></asp:ListItem>
+                                        <asp:ListItem Text="Tipos de Seguro" Value="IN_TipoSeguro"></asp:ListItem>
+                                        <asp:ListItem Text="Tipos de Traslado" Value="IN_TipoTraslado"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
 
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="ddlEstado">Estado</label>
@@ -48,11 +61,11 @@
                                 <div class="table-responsive mx-5">
                                     <div class="table table-striped table-sm table-primary">
                                         <asp:GridView runat="server" ID="gvVarios" AutoGenerateColumns="False" AllowPaging="True"
-                                            CssClass="table" PageSize="5" OnRowCommand="gvVarios_RowCommand" OnRowDataBound="gvVarios_RowDataBound" OnPageIndexChanging="gvVarios_PageIndexChanging"
+                                            CssClass="table" PageSize="10" OnRowCommand="gvVarios_RowCommand" OnRowDataBound="gvVarios_RowDataBound" OnPageIndexChanging="gvVarios_PageIndexChanging"
                                             EmptyDataText="No se encontraron datos." GridLines="None">
                                             <Columns>
                                                 <asp:TemplateField>
-                                                    <HeaderStyle Width="11%" />
+                                                    <HeaderStyle Width="9%" />
                                                     <HeaderTemplate>Id Tablas varios</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblIdTab" runat="server" Text='<% #Bind("IdTabVarios")%>' />
@@ -60,7 +73,7 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <HeaderStyle Width="11%" />
+                                                    <HeaderStyle Width="3%" />
                                                     <HeaderTemplate>Valor</HeaderTemplate>
                                                     <ItemTemplate>
                                                         <asp:Label ID="lblValor" runat="server" Text='<% #Bind("Valor")%>' />
@@ -82,7 +95,7 @@
                                                         <asp:Label ID="lblAtributo" runat="server" Text='<% #Bind("TipoAtributo")%>' />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                
+
                                                 <asp:TemplateField>
                                                     <HeaderStyle Width="11%" />
                                                     <HeaderTemplate>Entidad Tabla</HeaderTemplate>
@@ -104,7 +117,7 @@
                                                     <HeaderStyle Width="5%" />
                                                     <HeaderTemplate>Editar</HeaderTemplate>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lnkEditar" CssClass="" Text="" CommandName="Editar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Editar </asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lnkEditar" CommandName="Editar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Editar </asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 

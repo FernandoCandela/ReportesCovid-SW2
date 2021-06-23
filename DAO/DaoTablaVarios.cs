@@ -32,7 +32,57 @@ namespace DAO
                 {
                     cr.List.Add(new DtoTablaVarios
                     {
-                        IdTabVarios= GetValue("IdTabVarios", reader).ValueInt32,
+                        IdTabVarios = GetValue("IdTabVarios", reader).ValueInt32,
+                        Valor = GetValue("Valor", reader).ValueString,
+                        Descripcion = GetValue("Descripcion", reader).ValueString,
+                        TipoAtributo = GetValue("TipoAtributo", reader).ValueString,
+                        EntidadTabla = GetValue("EntidadTabla", reader).ValueString,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
+                        IB_Estado = GetValue("IB_Estado", reader).ValueBool
+                    });
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al consultar tabla varios";
+            }
+            ObjCn.Close();
+            return cr;
+        }
+        public ClassResultV Usp_TablaVarios_SelectAll_Admin(DtoB dtoBase)
+        {
+            ClassResultV cr = new ClassResultV();
+            var dto = (DtoTablaVarios)dtoBase;
+            SqlParameter[] pr = new SqlParameter[3];
+            try
+            {
+                pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
+                {
+                    Value = (dto.Criterio)
+                };
+                pr[1] = new SqlParameter("@TipoAtributo", SqlDbType.VarChar,200)
+                {
+                    Value = V_ValidaPrNull(dto.TipoAtributo)
+                };
+                pr[2] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
+                {
+                    Value = dto.IB_Estado
+                };
+
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_SelectAll_Admin", pr);
+
+                cr.List = new List<DtoB>();
+                while (reader.Read())
+                {
+                    cr.List.Add(new DtoTablaVarios
+                    {
+                        IdTabVarios = GetValue("IdTabVarios", reader).ValueInt32,
                         Valor = GetValue("Valor", reader).ValueString,
                         Descripcion = GetValue("Descripcion", reader).ValueString,
                         TipoAtributo = GetValue("TipoAtributo", reader).ValueString,

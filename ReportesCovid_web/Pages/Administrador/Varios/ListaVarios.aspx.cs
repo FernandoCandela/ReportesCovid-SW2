@@ -29,7 +29,7 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
 
         private void FirstLoad()
         {
-
+            CargarTablas();
         }
 
         private void CargarTablas()
@@ -37,12 +37,13 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
             try
             {
                 List<DtoTablaVarios> ListVarios = new List<DtoTablaVarios>();
-                ClassResultV cr = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_SelectAll(new DtoTablaVarios
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_SelectAll_Admin(new DtoTablaVarios
                 {
                     IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
-                    Criterio = txtBuscar.Text.Trim()
+                    Criterio = txtBuscar.Text.Trim(),
+                    TipoAtributo = ddlTiposVarios.SelectedValue
                 });
-                if (cr.HuboError)
+                if (!cr.HuboError)
                 {
                     ListVarios.AddRange(cr.List.Cast<DtoTablaVarios>());
                     gvVarios.DataSource = ListVarios;
@@ -86,9 +87,9 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
             {
                 try
                 {
-                    var dto = (DtoUsuario)e.Row.DataItem;
+                    var dto = (DtoTablaVarios)e.Row.DataItem;
                     string msj = "<span class='badge " + (dto.IB_Estado == true ? "bg-success" : "bg-warning") + "'>" + (dto.IB_Estado == true ? "Activo" : "Desactivado") + "</span>";
-                    (e.Row.Cells[7].FindControl("ltlEstados") as Literal).Text = msj;
+                    (e.Row.Cells[6].FindControl("ltlEstados") as Literal).Text = msj;
                 }
                 catch (Exception ex)
                 {
