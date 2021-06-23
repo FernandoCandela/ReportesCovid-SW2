@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="ListaMensajes.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.Mensajes.ListaMensajes" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 
@@ -21,12 +22,17 @@
                                     <label for="cbActivado">Criterio</label>
                                     <asp:TextBox runat="server" ID="txtBuscar" CssClass="form-control me-2" type="search" placeholder="Buscar" aria-label="buscar"></asp:TextBox>
                                 </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <label for="ddlTipoMensaje">Estado</label>
+                                    <asp:DropDownList runat="server" ID="ddlTipoMensaje" class="form-select">
+                                    </asp:DropDownList>
+                                </div>
 
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="ddlEstado">Respondido</label>
                                     <asp:DropDownList runat="server" ID="ddlEstado" class="form-select">
-                                        <asp:ListItem Text="Si" Value="1"></asp:ListItem>
                                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
+                                        <asp:ListItem Text="Si" Value="1"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
 
