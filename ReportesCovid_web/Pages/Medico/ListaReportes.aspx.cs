@@ -100,5 +100,21 @@ namespace ReportesCovid_web.Pages.Medico
             calendario.SelectedDates.Clear();
             CargarReportes();
         }
+        protected void gvReportes_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                try
+                {
+                    var dto = (DtoPacienteHistorial)e.Row.DataItem;
+                    string msj = "<span class='badge " + (dto.IB_Traslado == true ? "bg-danger" : "bg-success") + "'>" + (dto.IB_Traslado == true ? "SI" : "NO") + "</span>";
+                    (e.Row.Cells[3].FindControl("ltlTraslado") as Literal).Text = msj;
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
     }
 }

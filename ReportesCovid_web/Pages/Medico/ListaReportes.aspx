@@ -40,7 +40,7 @@
                                 <div class="table-responsive mx-5">
                                     <div class="table table-striped table-sm table-primary">
                                         <asp:GridView runat="server" ID="gvReportes" AutoGenerateColumns="False" AllowPaging="True"
-                                            CssClass="table" PageSize="5" OnRowCommand="gvReportes_RowCommand" OnPageIndexChanging="gvReportes_PageIndexChanging"
+                                            CssClass="table" PageSize="5" OnRowCommand="gvReportes_RowCommand" onRowDataBound="gvReportes_RowDataBound" OnPageIndexChanging="gvReportes_PageIndexChanging"
                                             EmptyDataText="No se encontraron datos." GridLines="None">
                                             <Columns>
                                                 <asp:TemplateField>
@@ -60,10 +60,11 @@
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
-                                                    <HeaderStyle Width="11%" />
-                                                    <HeaderTemplate>Traslado</HeaderTemplate>
+                                                    <HeaderStyle Width="3%" />
+                                                    <HeaderTemplate>Necesita Traslado</HeaderTemplate>
                                                     <ItemTemplate>
-                                                        <asp:Label ID="lblIB_Traslado" runat="server" Text='<% #Bind("IB_Traslado")%>' />
+                                                        <asp:Literal runat="server" ID="ltlTraslado"></asp:Literal>
+                                                        <asp:Label ID="lblTraslado" runat="server" Text='' Style="visibility: hidden;" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
