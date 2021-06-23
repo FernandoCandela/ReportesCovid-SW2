@@ -74,10 +74,15 @@ namespace ReportesCovid_web
             routes.MapPageRoute("administrador/varios/editar", "administrador/varios/editar", "~/Pages/Administrador/Varios/EditarVarios.aspx", true);
 
             //Contacto
-            routes.MapPageRoute("EnviarMensaje", "EnviarMensaje", "~/Pages/Contacto/Enviarmensaje.aspx", true);
+            //routes.MapPageRoute("EnviarMensaje", "EnviarMensaje", "~/Pages/Contacto/Enviarmensaje.aspx", true);
 
-            routes.MapPageRoute("RecuperarCredencial", "RecuperarCredencial", "~/Pages/Contacto/Recuperarcredencial.aspx", true);
-            routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
+            //routes.MapPageRoute("RecuperarCredencial", "RecuperarCredencial", "~/Pages/Contacto/Recuperarcredencial.aspx", true);
+            //routes.MapPageRoute("VisualizarCredencial", "VisualizarCredencial", "~/Pages/Contacto/Visualizarcredencial.aspx", true);
+
+            routes.MapPageRoute("contacto/menu", "contacto/menu", "~/Pages/Contacto/MenuContacto.aspx", true);
+
+            routes.MapPageRoute("contacto/reporte/lista", "contacto/reporte/lista", "~/Pages/Contacto/Reportes/ListaReportes.aspx", true);
+            routes.MapPageRoute("contacto/reporte/verreporte", "contacto/reporte/verreporte", "~/Pages/Contacto/Reportes/VerReporte.aspx", true);
 
             //Medico
 

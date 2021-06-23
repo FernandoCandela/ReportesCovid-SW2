@@ -537,6 +537,8 @@
     <Content Include="Pages\Administrador\Varios\ListaVarios.aspx" />
     <Content Include="Pages\Administrador\Varios\NuevoVarios.aspx" />
     <Content Include="Pages\Contacto\MenuContacto.aspx" />
+    <Content Include="Pages\Contacto\Reportes\ListaReportes.aspx" />
+    <Content Include="Pages\Contacto\Reportes\VerReporte.aspx" />
     <Content Include="Pages\Contacto\V1\EnviarMensaje.aspx" />
     <Content Include="Pages\Contacto\test.aspx" />
     <Content Include="Pages\Enfermera\ListaPacientes.aspx" />
@@ -721,6 +723,20 @@
     </Compile>
     <Compile Include="Pages\Contacto\MenuContacto.aspx.designer.cs">
       <DependentUpon>MenuContacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\Reportes\ListaReportes.aspx.cs">
+      <DependentUpon>ListaReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\Reportes\ListaReportes.aspx.designer.cs">
+      <DependentUpon>ListaReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\Reportes\VerReporte.aspx.cs">
+      <DependentUpon>VerReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\Reportes\VerReporte.aspx.designer.cs">
+      <DependentUpon>VerReporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contacto\V1\EnviarMensaje.aspx.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
@@ -938,7 +954,9 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\Contacto\Mensajes\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

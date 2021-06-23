@@ -70,7 +70,7 @@
                                         <div class="col-md-6">
                                             <label for="tUsuario" class="form-label">Usuario</label>
                                             <div class="input-group mb-3">
-                                                <button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>
+                                                <%--<button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>--%>
                                                 <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
                                                 <div class="invalid-feedback">
                                                     Debe llenar este cambo.

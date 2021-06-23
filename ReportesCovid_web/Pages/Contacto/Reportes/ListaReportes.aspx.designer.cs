@@ -7,29 +7,38 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ReportesCovid_web.Pages.Contacto
+namespace ReportesCovid_web.Pages.Contacto.Reportes
 {
 
 
-    public partial class MenuContacto
+    public partial class ListaReportes
     {
 
         /// <summary>
-        /// Control lnkCrear.
+        /// Control calendario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkCrear;
+        protected global::System.Web.UI.WebControls.Calendar calendario;
 
         /// <summary>
-        /// Control lnkModificar.
+        /// Control btnMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkModificar;
+        protected global::System.Web.UI.WebControls.LinkButton btnMostrar;
+
+        /// <summary>
+        /// Control gvReportes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvReportes;
     }
 }

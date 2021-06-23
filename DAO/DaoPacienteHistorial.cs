@@ -121,6 +121,7 @@ namespace DAO
                         Pronostico = GetValue("Pronostico", reader).ValueString,
                         Requerimiento = GetValue("Requerimiento", reader).ValueString,
                         Evolucion = GetValue("Evolucion", reader).ValueString,
+                        IB_Traslado = GetValue("IB_Traslado", reader).ValueBool,
                         IN_TipoTraslado = GetValue("IN_TipoTraslado", reader).ValueInt32,
                         DescTraslado = GetValue("DescTraslado", reader).ValueString,
                         FechaSolicitudTraslado = GetValue("FechaSolicitudTraslado", reader).ValueDateTime,

@@ -34,7 +34,7 @@ namespace ReportesCovid_web.Pages.Contacto
                 {
                     Session["PacienteContacto"] = dtoP;
 
-                    Response.Redirect("VisualizarCredencial");
+                    Response.Redirect("/contacto/menu");
 
                 }
                 else

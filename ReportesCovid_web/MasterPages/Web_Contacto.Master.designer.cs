@@ -15,13 +15,13 @@ namespace ReportesCovid_web.MasterPages
     {
 
         /// <summary>
-        /// Control titulo.
+        /// Control title.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTitle titulo;
+        protected global::System.Web.UI.HtmlControls.HtmlTitle title;
 
         /// <summary>
         /// Control Head.
@@ -31,6 +31,15 @@ namespace ReportesCovid_web.MasterPages
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Head;
+
+        /// <summary>
+        /// Control titulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl titulo;
 
         /// <summary>
         /// Control PageContentTitle.
