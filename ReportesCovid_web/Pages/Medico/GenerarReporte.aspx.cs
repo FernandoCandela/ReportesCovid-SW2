@@ -128,6 +128,19 @@ namespace ReportesCovid_web.Pages.Medico
 
                 if (dtoPa.HuboError)
                 {
+                    DtoContacto dtoC = new CtrContacto().Usp_Contacto_SelectOne(new DtoContacto
+                    {
+                        PacienteId = Convert.ToInt32(Request.QueryString["idPaciente"])
+                    });
+
+                    String HTML = Resource1.Reporte_Resgistrado;
+                    HTML = HTML.Replace("{fecha}", DateTime.Now.ToString());
+                    HTML = HTML.Replace("{nomPaciente}", txtNombres.Text + " " + txtApellidos.Text);
+
+                    string to = dtoC.Email;
+                    HelpE.SendMail_Gmail(to, "Essalud - Nuevo Reporte Registrado", HTML);
+
+
                     ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
                 }
                 else

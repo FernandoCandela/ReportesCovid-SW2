@@ -105,5 +105,28 @@ namespace ReportesCovid_web {
                 return ResourceManager.GetString("htmlUsuario", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;!-- saved from url=(0049)file:///C:/Users/Gabriel/Desktop/htmlUsuario.html --&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        ///    &lt;title&gt;&lt;/title&gt;
+        ///
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///        @media screen {
+        ///            @font-face {
+        ///                font-family: &apos;Lato&apos;;
+        ///                font-style: normal;
+        ///               [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Reporte_Resgistrado {
+            get {
+                return ResourceManager.GetString("Reporte_Resgistrado", resourceCulture);
+            }
+        }
     }
 }
