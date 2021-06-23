@@ -21,7 +21,7 @@ namespace ReportesCovid_web.Pages.Administrador
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCrear;
+        protected global::System.Web.UI.WebControls.HyperLink lnkCrear;
 
         /// <summary>
         /// Control lnkModificar.
@@ -30,7 +30,7 @@ namespace ReportesCovid_web.Pages.Administrador
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkModificar;
+        protected global::System.Web.UI.WebControls.HyperLink lnkModificar;
 
         /// <summary>
         /// Control lnkEntrar.
@@ -39,6 +39,6 @@ namespace ReportesCovid_web.Pages.Administrador
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkEntrar;
+        protected global::System.Web.UI.WebControls.HyperLink lnkEntrar;
     }
 }

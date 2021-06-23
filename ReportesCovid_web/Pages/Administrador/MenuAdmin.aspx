@@ -24,11 +24,11 @@
                                             <div class="col">
                                                 <div class="card mb-4 rounded-3 shadow-sm">
                                                     <div class="card-header py-3  ">
-                                                        <h3 class="my-0 fw-normal">Crear Cuenta</h3>
+                                                        <h3 class="my-0 fw-normal">Lista de Usuarios</h3>
                                                     </div>
                                                     <div class="card-body p-5">
                                                         <i class="fas fa-user-plus d-block mb-3 fa-10x"></i>
-                                                        <asp:LinkButton ID="lnkCrear" runat="server" class="w-75 btn btn-lg btn-primary" PostBackUrl="/CrearUsuario">Crear</asp:LinkButton>
+                                                        <asp:HyperLink ID="lnkCrear" runat="server" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/usuario/lista">Crear</asp:HyperLink>
 
                                                     </div>
                                                 </div>
@@ -36,22 +36,22 @@
                                             <div class="col">
                                                 <div class="card mb-4 rounded-3 shadow-sm">
                                                     <div class="card-header py-3  ">
-                                                        <h3 class="my-0 fw-normal">Modificar Usuario</h3>
+                                                        <h3 class="my-0 fw-normal">Lista de Mensajes</h3>
                                                     </div>
                                                     <div class="card-body p-5">
                                                         <i class="fas fa-user-edit d-block mb-3 fa-10x"></i>
-                                                        <asp:LinkButton runat="server" ID="lnkModificar" class="w-75 btn btn-lg btn-primary" PostBackUrl="/ModificarUsuario">Modificar</asp:LinkButton>
+                                                        <asp:HyperLink runat="server" ID="lnkModificar" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/mensaje/lista">Modificar</asp:HyperLink>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="card mb-4 rounded-3 shadow-sm">
                                                     <div class="card-header py-3  ">
-                                                        <h3 class="my-0 fw-normal">Revisar Mensajes</h3>
+                                                        <h3 class="my-0 fw-normal">Configuracion</h3>
                                                     </div>
                                                     <div class="card-body p-5">
                                                         <i class="fas fa-envelope d-block mb-3 fa-10x"></i>
-                                                        <asp:LinkButton ID="lnkEntrar" runat="server" class="w-75 btn btn-lg btn-primary" PostBackUrl="/TablaMensaje">Entrar</asp:LinkButton>
+                                                        <asp:HyperLink ID="lnkEntrar" runat="server" class="w-75 btn btn-lg btn-primary" NavigateUrl="/administrador/varios/lista">Entrar</asp:HyperLink>
                                                     </div>
                                                 </div>
                                             </div>

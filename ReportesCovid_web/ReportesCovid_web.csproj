@@ -536,14 +536,16 @@
     <Content Include="Pages\Administrador\Varios\EditarVarios.aspx" />
     <Content Include="Pages\Administrador\Varios\ListaVarios.aspx" />
     <Content Include="Pages\Administrador\Varios\NuevoVarios.aspx" />
-    <Content Include="Pages\Contacto\EnviarMensaje.aspx" />
+    <Content Include="Pages\Contacto\MenuContacto.aspx" />
+    <Content Include="Pages\Contacto\V1\EnviarMensaje.aspx" />
+    <Content Include="Pages\Contacto\test.aspx" />
     <Content Include="Pages\Enfermera\ListaPacientes.aspx" />
     <Content Include="Pages\Enfermera\MenuEnfermeraV2.aspx" />
     <Content Include="Pages\Enfermera\ModificarPacienteV2.aspx" />
     <Content Include="Pages\Enfermera\RegistrarPacienteV2.aspx" />
     <Content Include="Pages\Inicial\IngresarCredencial.aspx" />
-    <Content Include="Pages\Contacto\RecuperarCredencial.aspx" />
-    <Content Include="Pages\Contacto\VisualizarCredencial.aspx" />
+    <Content Include="Pages\Contacto\V1\RecuperarCredencial.aspx" />
+    <Content Include="Pages\Contacto\V1\VisualizarCredencial.aspx" />
     <Content Include="Pages\Enfermera\V1\MenuEnfermera.aspx" />
     <Content Include="Pages\Enfermera\V1\ModificarPaciente.aspx" />
     <Content Include="Pages\Enfermera\V1\RegistrarPaciente.aspx" />
@@ -589,6 +591,13 @@
     </Compile>
     <Compile Include="MasterPages\Usuario.Master.designer.cs">
       <DependentUpon>Usuario.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Web_Contacto.Master.cs">
+      <DependentUpon>Web_Contacto.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Web_Contacto.Master.designer.cs">
+      <DependentUpon>Web_Contacto.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\Web_Usuarios.Master.cs">
       <DependentUpon>Web_Usuarios.Master</DependentUpon>
@@ -702,12 +711,26 @@
     <Compile Include="Pages\Administrador\Varios\NuevoVarios.aspx.designer.cs">
       <DependentUpon>NuevoVarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Contacto\EnviarMensaje.aspx.cs">
+    <Compile Include="Pages\Contacto\MenuContacto.aspx.cs">
+      <DependentUpon>MenuContacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\MenuContacto.aspx.designer.cs">
+      <DependentUpon>MenuContacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\V1\EnviarMensaje.aspx.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Contacto\EnviarMensaje.aspx.designer.cs">
+    <Compile Include="Pages\Contacto\V1\EnviarMensaje.aspx.designer.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Enfermera\ListaPacientes.aspx.cs">
       <DependentUpon>ListaPacientes.aspx</DependentUpon>
@@ -744,18 +767,18 @@
     <Compile Include="Pages\Inicial\IngresarCredencial.aspx.designer.cs">
       <DependentUpon>IngresarCredencial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.cs">
+    <Compile Include="Pages\Contacto\V1\RecuperarCredencial.aspx.cs">
       <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.designer.cs">
+    <Compile Include="Pages\Contacto\V1\RecuperarCredencial.aspx.designer.cs">
       <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Contacto\VisualizarCredencial.aspx.cs">
+    <Compile Include="Pages\Contacto\V1\VisualizarCredencial.aspx.cs">
       <DependentUpon>VisualizarCredencial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Contacto\VisualizarCredencial.aspx.designer.cs">
+    <Compile Include="Pages\Contacto\V1\VisualizarCredencial.aspx.designer.cs">
       <DependentUpon>VisualizarCredencial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Enfermera\V1\MenuEnfermera.aspx.cs">
@@ -886,6 +909,7 @@
     <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.ttf" />
     <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.woff" />
     <Content Include="css\Administrador\Home\Vendors\boxicons\fonts\boxicons.woff2" />
+    <Content Include="MasterPages\Web_Contacto.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
