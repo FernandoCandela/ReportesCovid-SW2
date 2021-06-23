@@ -171,34 +171,35 @@ namespace DAO
                 {
                     Value = (dto.IdTabVarios)
                 };
-                pr[1] = new SqlParameter("@Valor", SqlDbType.VarChar, 200)
-                {
-                    Value = (V_ValidaPrNull(dto.Valor))
-                };
-                pr[2] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
+                pr[1] = new SqlParameter("@Descripcion", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.Descripcion))
                 };
-                pr[3] = new SqlParameter("TipoAtributo", SqlDbType.VarChar, 200)
+                pr[2] = new SqlParameter("TipoAtributo", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.TipoAtributo))
                 };
-                pr[4] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
+                pr[3] = new SqlParameter("@EntidadTabla", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.EntidadTabla))
                 };
-                pr[5] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                pr[4] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
                 };
-                pr[6] = new SqlParameter("IB_Estado", SqlDbType.Bit)
+                pr[5] = new SqlParameter("IB_Estado", SqlDbType.Bit)
                 {
                     Value = (V_ValidaPrNull(dto.IB_Estado))
                 };
-                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Update", pr);
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
+                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
-                    cr.ErrorMsj = Convert.ToString(pr[8].Value);
+                    Direction = ParameterDirection.Output
+                };
+
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_TablaVarios_Update", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[6].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[6].Value);
                     cr.LugarError = "Usp_TablaVarios_Update";
                 }
             }

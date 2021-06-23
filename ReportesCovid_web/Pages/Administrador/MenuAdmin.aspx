@@ -47,7 +47,7 @@
                                             <div class="col">
                                                 <div class="card mb-4 rounded-3 shadow-sm">
                                                     <div class="card-header py-3  ">
-                                                        <h3 class="my-0 fw-normal">Configuracion</h3>
+                                                        <h3 class="my-0 fw-normal">Varios</h3>
                                                     </div>
                                                     <div class="card-body p-5">
                                                         <i class="fas fa-envelope d-block mb-3 fa-10x"></i>

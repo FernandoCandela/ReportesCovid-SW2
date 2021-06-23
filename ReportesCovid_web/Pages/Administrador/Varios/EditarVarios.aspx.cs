@@ -35,55 +35,77 @@ namespace ReportesCovid_web.Pages.Administrador.Varios
 
         private void LlenarDetalle()
         {
-            //try
-            //{
-            //    /*PREGUNTAR A FERNANDO*/
-            //    DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
-            //    { 
-            //        IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"])
-            //    });
-            //    if (!dto.HuboError)
-            //    {
-            //        txtValor.Text = dto.Valor;
-            //        txtDescripcion.Text = dto.Descripcion;
-            //        txtAtributo.Text = dto.TipoAtributo;
-            //        txtEntidad.Text = dto.EntidadTabla;
-            //        ddlEstado.SelectedValue = dto.IB_Estado == true ? "1" : "0";
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los datos." + "', 'error');", true);
-            //}
+            try
+            {
+                DtoTablaVarios dto = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_SelectOne(new DtoTablaVarios
+                {
+                    IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"])
+                });
+                if (!dto.HuboError)
+                {
+                    txtDescripcion.Text = dto.Descripcion;
+                    ddlTiposVarios.Text = dto.TipoAtributo;
+                    ddlEstado.SelectedValue = dto.IB_Estado == true ? "1" : "0";
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los datos." + "', 'error');", true);
+            }
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            //try
-            //{   
-            //    /*PREGUNTAR A FERNANDO*/
-            //    DtoTablaVarios varios = (DtoTablaVarios)Session["UsuarioLogin"];
-            //    ClassResultV cr = (DtoTablaVarios)new CtrTablaVarios().Usp_TablaVarios_Select(new DtoTablaVarios
-            //    {
-            //        IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"]),
-            //        Valor = txtValor.Text,
-            //        Descripcion = txtDescripcion.Text,
-            //        TipoAtributo = txtAtributo.Text,
-            //        EntidadTabla = txtEntidad.Text,
-            //        IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue))
-            //    });
-            //    if(cr.HuboError)
-            //        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
-            //    else
-            //    {
-            //        ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Usuario Actualizado", "Se actualizo correctamente el usuario", "success", "/administrador/varios/lista"), true);
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
 
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar el Usuario." + "', 'error');", true);
-            //}
+                var entidad = "";
+                switch (ddlTiposVarios.SelectedValue)
+                {
+                    case "IN_EstadoPaciente":
+                        entidad = "Paciente";
+                        break;
+                    case "IN_Rol":
+                        entidad = "Usuario";
+                        break;
+                    case "IN_Tipodoc":
+                        entidad = "Paciente";
+                        break;
+                    case "IN_TipoMensaje":
+                        entidad = "Mensajes";
+                        break;
+                    case "IN_Cargo":
+                        entidad = "Usuario";
+                        break;
+                    case "IN_TipoSeguro":
+                        entidad = "Paciente";
+                        break;
+                    case "IN_TipoTraslado":
+                        entidad = "PacienteHistorial";
+                        break;
+                }
+                ClassResultV cr = new CtrTablaVarios().Usp_TablaVarios_Update(new DtoTablaVarios
+                {
+                    IdTabVarios = Convert.ToInt32(Request.QueryString["IdTabVarios"]),
+                    Descripcion = txtDescripcion.Text,
+                    TipoAtributo = ddlTiposVarios.SelectedValue,
+                    EntidadTabla = entidad,
+                    UsuarioModificacionId = user.IdUsuario,
+                    IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue))
+                });
+                if (cr.HuboError)
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Atributo Actualizado", "Se actualizo correctamente el atributo", "success", "/administrador/varios/lista"), true);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar el Atributo." + "', 'error');", true);
+            }
         }
     }
 }
