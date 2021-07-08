@@ -12,7 +12,7 @@ namespace DAO
         public DtoPaciente Usp_Paciente_Insert(DtoB dtoBase)
         {
             DtoPaciente dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[10];
+            SqlParameter[] pr = new SqlParameter[11];
             try
             {
                 pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
@@ -51,7 +51,11 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Credencial))
                 };
-                pr[9] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[9] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.OrganizacionId))
+                };
+                pr[10] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
