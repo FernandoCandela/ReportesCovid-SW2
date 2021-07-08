@@ -227,6 +227,7 @@ namespace DAO
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         Credencial = GetValue("Credencial", reader).ValueString,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
                         NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
                         NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
                         NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
