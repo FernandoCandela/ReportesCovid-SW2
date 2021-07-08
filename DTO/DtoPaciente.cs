@@ -21,6 +21,7 @@ namespace DTO
         public DateTime FechaModificacion { get; set; }
         public bool IB_Estado { get; set; }
         public string Credencial { get; set; }
+        public int OrganizacionId { get; set; }
 
         ////Nombres de los IN
         public string NombreTipodoc { get; set; }
