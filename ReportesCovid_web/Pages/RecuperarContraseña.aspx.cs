@@ -45,7 +45,6 @@ namespace ReportesCovid_web.Pages
                     firstLista.Attributes.Add("disabled", "disabled");
                     firstLista.Attributes.Add("Selected", "True");
                     ddlTipoDoc.Items.Insert(0, firstLista);
-                    ddlTipoDoc.Items.Insert(0, firstLista);
                 }
             }
             catch (Exception ex)

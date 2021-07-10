@@ -77,13 +77,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="tContrasena" class="form-label">Contraseña</label>
-                                            <asp:TextBox type="password" class="form-control" ID="tContrasena" runat="server" required="true"></asp:TextBox>
-                                            <div class="invalid-feedback">
-                                                Debe llenar este cambo.
-                                            </div>
-                                        </div>
 
                                         <div class="col-md-6">
                                             <label for="ddlTipoDocumento" class="form-label">Tipo Documento</label>
@@ -136,7 +129,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                                    <asp:Button runat="server" ID="btnNuevaContraseña" CssClass="btn btn-success glow" Text="Nueva Contraseña" OnClick="btnNuevaContraseña_Click" Style="margin-left: 5px"></asp:Button>
+                                    <asp:Button runat="server" ID="btnNuevaContraseña" CssClass="btn btn-success glow" Text="Nueva Contraseña" OnClick="btnNuevaContraseña_Click" Style="margin-right: 5px"></asp:Button>
                                     <asp:Button runat="server" ID="btnActualizar" CssClass="btn btn-primary glow" Text="Actualizar" OnClick="btnActualizar_Click"></asp:Button>
                                     <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow" NavigateUrl="/administrador/usuario/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
                                 </div>

@@ -152,6 +152,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                 {
 
                     String HTML = Resource1.htmlUsuario;
+                    HTML = HTML.Replace("{titulo}", "¡Bienvenido!");
                     HTML = HTML.Replace("{usuario}", dtoPa.Usuario);
                     HTML = HTML.Replace("{clave}", dtoPa.Contrasena);
 

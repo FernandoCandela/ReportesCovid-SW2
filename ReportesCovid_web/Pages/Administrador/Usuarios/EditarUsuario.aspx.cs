@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -134,7 +135,6 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                     txtApellidoPaterno.Text = dto.ApellidoPaterno;
                     txtApellidoMaterno.Text = dto.ApellidoMaterno;
                     tUsuario.Text = dto.Usuario;
-                    tContrasena.Text = dto.Contrasena;
                     ddlTipoDocumento.SelectedValue = dto.IN_Tipodoc.ToString();
                     txtNumdoc.Text = dto.Numdoc;
                     txtTelefono.Text = dto.Telefono;
@@ -160,7 +160,6 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                 {
                     IdUsuario = Convert.ToInt32(Request.QueryString["idusuario"]),
                     Usuario = tUsuario.Text,
-                    Contrasena = tContrasena.Text,
                     Numdoc = txtNumdoc.Text,
                     IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
                     Telefono = txtTelefono.Text,
@@ -193,7 +192,39 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
 
         protected void btnNuevaContraseña_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var newpassword = Membership.GeneratePassword(12, 2);
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                ClassResultV cr = new CtrUsuario().Usp_Usuario_ResetPassword_Admin(new DtoUsuario
+                {
+                    IdUsuario = Convert.ToInt32(Request.QueryString["idusuario"]),
+                    Contrasena = newpassword,
+                    UsuarioModificacionId = user.IdUsuario
 
+
+                });
+                if (cr.HuboError)
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", cr.ErrorMsj, "error"), true);
+                else
+                {
+                    String HTML = Resource1.htmlUsuario;
+                    HTML = HTML.Replace("{titulo}", "Contraseña Actualizada");
+                    HTML = HTML.Replace("{usuario}", tUsuario.Text);
+                    HTML = HTML.Replace("{clave}", newpassword);
+
+                    string to = txtCorreo.Text;
+                    HelpE.SendMail_Gmail(to, "Essalud - Usuario", HTML);
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Contraseña Actualizada", "Se actualizo correctamente la contraseña", "success", "/administrador/usuario/lista"), true);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar la Contraseña ." + "', 'error');", true);
+            }
         }
     }
 }

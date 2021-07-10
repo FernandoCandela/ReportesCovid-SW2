@@ -296,66 +296,62 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Usuario))
                 };
-                pr[2] = new SqlParameter("@Contrasena", SqlDbType.VarChar, 200)
-                {
-                    Value = (V_ValidaPrNull(dto.Contrasena))
-                };
-                pr[3] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                pr[2] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
                 {
                     Value = (V_ValidaPrNull(dto.Numdoc))
                 };
-                pr[4] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_Tipodoc))
                 };
-                pr[5] = new SqlParameter("@Telefono", SqlDbType.VarChar, 20)
+                pr[4] = new SqlParameter("@Telefono", SqlDbType.VarChar, 20)
                 {
                     Value = (V_ValidaPrNull(dto.Telefono))
                 };
-                pr[6] = new SqlParameter("@IN_Rol", SqlDbType.Int)
+                pr[5] = new SqlParameter("@IN_Rol", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_Rol))
                 };
-                pr[7] = new SqlParameter("@IN_Cargo", SqlDbType.Int)
+                pr[6] = new SqlParameter("@IN_Cargo", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_Cargo))
                 };
-                pr[8] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                pr[7] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
                 };
-                pr[9] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
+                pr[8] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
                 {
                     Value = (V_ValidaPrNull(dto.IB_Estado))
                 };
-                pr[10] = new SqlParameter("@PrimerNombre", SqlDbType.VarChar, 100)
+                pr[9] = new SqlParameter("@PrimerNombre", SqlDbType.VarChar, 100)
                 {
                     Value = (V_ValidaPrNull(dto.PrimerNombre))
                 };
-                pr[11] = new SqlParameter("@SegundoNombre", SqlDbType.VarChar, 100)
+                pr[10] = new SqlParameter("@SegundoNombre", SqlDbType.VarChar, 100)
                 {
                     Value = (V_ValidaPrNull(dto.SegundoNombre))
                 };
-                pr[12] = new SqlParameter("@ApellidoPaterno", SqlDbType.VarChar,100)
+                pr[11] = new SqlParameter("@ApellidoPaterno", SqlDbType.VarChar,100)
                 {
                     Value = (V_ValidaPrNull(dto.ApellidoPaterno))
                 };
-                pr[13] = new SqlParameter("@ApellidoMaterno", SqlDbType.VarChar, 100)
+                pr[12] = new SqlParameter("@ApellidoMaterno", SqlDbType.VarChar, 100)
                 {
                     Value = (V_ValidaPrNull(dto.ApellidoMaterno))
                 };
-                pr[14] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[13] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
-                pr[15] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                pr[14] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
                 {
                     Value = (V_ValidaPrNull(dto.Email))
                 };
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_Update", pr);
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[14].Value)))
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[13].Value)))
                 {
-                    cr.ErrorMsj = Convert.ToString(pr[14].Value);
+                    cr.ErrorMsj = Convert.ToString(pr[13].Value);
                     cr.LugarError = "Usp_Usuario_Update";
                 }
             }
@@ -416,6 +412,40 @@ namespace DAO
                 cr.LugarError = ex.StackTrace;
                 cr.ErrorEx = ex.Message;
                 cr.ErrorMsj = "Error al actualizar la nueva contraseña";
+            }
+            ObjCn.Close();
+            return cr;
+        }
+
+        public ClassResultV Usp_Usuario_ResetPassword_Admin(DtoB dtoBase)
+        {
+            DtoUsuario dto = (DtoUsuario)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[3];
+            try
+            {
+
+                pr[0] = new SqlParameter("@IdUsuario", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IdUsuario))
+                };
+                pr[1] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+                pr[2] = new SqlParameter("@NuevaContrasena", SqlDbType.VarChar,200)
+                {
+                    Value = (V_ValidaPrNull(dto.Contrasena))
+                };
+
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_ResetPassword_Admin", pr);
+
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar contraseña";
             }
             ObjCn.Close();
             return cr;
