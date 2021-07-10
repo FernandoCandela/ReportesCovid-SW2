@@ -133,7 +133,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                     Telefono = txtTelefono.Text.Trim(),
                     IN_Rol = Convert.ToInt32(ddlRol.SelectedValue),
                     IN_Cargo = Convert.ToInt32(ddlCargo.SelectedValue),
-                    OrganizacionId = 1,
+                    OrganizacionId = user.OrganizacionId,
                     UsuarioCreacionId = user.IdUsuario,
                     IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
                     PrimerNombre = txtPrimerNombre.Text.Trim(),

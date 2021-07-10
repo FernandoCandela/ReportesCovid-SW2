@@ -62,12 +62,15 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
             try
             {
                 List<DtoMensajes> ListMensajes = new List<DtoMensajes>();
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
 
                 ClassResultV cr = new CtrMensajes().Usp_Mensajes_SelectAll(new DtoMensajes
                 {
                     IB_Respondido = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
                     Criterio = txtBuscar.Text.Trim(),
-                    IN_TipoMensaje = Convert.ToInt32(ddlTipoMensaje.SelectedValue)
+                    IN_TipoMensaje = Convert.ToInt32(ddlTipoMensaje.SelectedValue),
+                    OrganizacionId = user.OrganizacionId
+
                 }
                 );
                 if (!cr.HuboError)
@@ -126,7 +129,3 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
         }
     }
 }
-
-/*
- REVISAR TODO DE NUEVO, ALGO FALLA (CREO)
- */

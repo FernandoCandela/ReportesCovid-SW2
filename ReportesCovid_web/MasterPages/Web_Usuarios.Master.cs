@@ -26,8 +26,9 @@ namespace ReportesCovid_web.MasterPages
 
             lbUserName.Text = user.PrimerNombre + " " + user.ApellidoPaterno;
             lbUserRole.Text = user.NombreRol;
+            lblOrganizacion.Text = user.NombreOrganizacion;
 
-        StringBuilder content = new StringBuilder();
+            StringBuilder content = new StringBuilder();
             switch (user.IN_Rol)
             {
                 case 1:

@@ -20,5 +20,6 @@ namespace DTO
         public bool IB_Respondido { get; set; }
         public int IdMensajeRespuesta { get; set; }
         public int IN_TipoMensaje { get; set; }
+        public int OrganizacionId { get; set; }
     }
 }

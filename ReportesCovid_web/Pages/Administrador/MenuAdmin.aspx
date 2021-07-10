@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="MenuAdmin.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.MenuAdmin" %>
+﻿<%@ Page Title="Essalud - Menu" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="MenuAdmin.aspx.cs" Inherits="ReportesCovid_web.Pages.Administrador.MenuAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>

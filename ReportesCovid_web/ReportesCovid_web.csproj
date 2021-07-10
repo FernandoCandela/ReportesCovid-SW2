@@ -540,7 +540,6 @@
     <Content Include="Pages\Contacto\Reportes\ListaReportes.aspx" />
     <Content Include="Pages\Contacto\Reportes\VerReporte.aspx" />
     <Content Include="Pages\Contacto\V1\EnviarMensaje.aspx" />
-    <Content Include="Pages\Contacto\test.aspx" />
     <Content Include="Pages\Enfermera\ListaPacientes.aspx" />
     <Content Include="Pages\Enfermera\MenuEnfermeraV2.aspx" />
     <Content Include="Pages\Enfermera\ModificarPacienteV2.aspx" />
@@ -744,13 +743,6 @@
     </Compile>
     <Compile Include="Pages\Contacto\V1\EnviarMensaje.aspx.designer.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Contacto\test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Contacto\test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Enfermera\ListaPacientes.aspx.cs">
       <DependentUpon>ListaPacientes.aspx</DependentUpon>

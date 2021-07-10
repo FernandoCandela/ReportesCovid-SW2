@@ -51,6 +51,15 @@ namespace ReportesCovid_web.MasterPages
         protected global::System.Web.UI.WebControls.Label lbUserRole;
 
         /// <summary>
+        /// Control lblOrganizacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrganizacion;
+
+        /// <summary>
         /// Control hplMenu.
         /// </summary>
         /// <remarks>

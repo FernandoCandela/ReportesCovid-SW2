@@ -44,7 +44,8 @@ namespace DAO
                         ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
                         Email = GetValue("Email", reader).ValueString,
                         NombreRol = GetValue("NombreRol", reader).ValueString,
-                        NombreCargo = GetValue("NombreCargo", reader).ValueString
+                        NombreCargo = GetValue("NombreCargo", reader).ValueString,
+                        NombreOrganizacion = GetValue("NombreOrganizacion", reader).ValueString
                     };
                 }
                 reader.Close();
@@ -122,7 +123,7 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoUsuario)dtoBase;
-            SqlParameter[] pr = new SqlParameter[3];
+            SqlParameter[] pr = new SqlParameter[4];
             try
             {
                 pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
@@ -136,6 +137,10 @@ namespace DAO
                 pr[2] = new SqlParameter("@IN_Rol", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_Rol))
+                };
+                pr[3] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.OrganizacionId))
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_SelectAll", pr);
@@ -275,7 +280,6 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-
 
         public ClassResultV Usp_Usuario_Update(DtoB dtoBase)
         {
