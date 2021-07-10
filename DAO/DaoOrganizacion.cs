@@ -12,7 +12,7 @@ namespace DAO
         public DtoOrganizacion Usp_Organizacion_Insert(DtoB dtoBase)
         {
             DtoOrganizacion dto = (DtoOrganizacion)dtoBase;
-            SqlParameter[] pr = new SqlParameter[5];
+            SqlParameter[] pr = new SqlParameter[6];
             try
             {
                 pr[0] = new SqlParameter("@IdOrganizacion", SqlDbType.Int)
@@ -38,6 +38,10 @@ namespace DAO
                 pr[5] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
+                };
+                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
                 };
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Organizacion_Insert", pr);
             }
