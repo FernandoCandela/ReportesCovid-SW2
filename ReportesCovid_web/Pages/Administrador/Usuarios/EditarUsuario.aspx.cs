@@ -29,6 +29,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
         }
         public void FirstLoad()
         {
+            btnGenerarUsuario.Attributes.Add("OnClick", "return GenerarUsuario('" + txtPrimerNombre.ClientID + "','" + txtSegundoNombre.ClientID + "','" + txtApellidoPaterno.ClientID + "','" + txtApellidoMaterno.ClientID + "','" + tUsuario.ClientID + "')");
             CargarTipoDocumento();
             CargarRol();
             CargarCargos();
@@ -62,7 +63,6 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoDocumento." + "', 'error');", true);
             }
         }
-
         private void CargarRol()
         {
             try
@@ -132,7 +132,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                     txtPrimerNombre.Text = dto.PrimerNombre;
                     txtSegundoNombre.Text = dto.SegundoNombre;
                     txtApellidoPaterno.Text = dto.ApellidoPaterno;
-                    txtApellidoMaterno.Text = dto.ApellidoPaterno;
+                    txtApellidoMaterno.Text = dto.ApellidoMaterno;
                     tUsuario.Text = dto.Usuario;
                     tContrasena.Text = dto.Contrasena;
                     ddlTipoDocumento.SelectedValue = dto.IN_Tipodoc.ToString();
@@ -189,6 +189,11 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
 
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo Actualizar el Usuario." + "', 'error');", true);
             }
+        }
+
+        protected void btnNuevaContraseña_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

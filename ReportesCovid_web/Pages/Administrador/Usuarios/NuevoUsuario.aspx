@@ -70,18 +70,11 @@
                                         <div class="col-md-6">
                                             <label for="tUsuario" class="form-label">Usuario</label>
                                             <div class="input-group mb-3">
-                                                <%--<button class="btn btn-outline-primary" type="button" id="button-addon1">Generar Usuario</button>--%>
+                                                <asp:LinkButton runat="server" class="btn btn-outline-primary" type="button" ID="btnGenerarUsuario">Generar Usuario</asp:LinkButton>
                                                 <asp:TextBox type="text" class="form-control" ID="tUsuario" runat="server" required="true"></asp:TextBox>
                                                 <div class="invalid-feedback">
                                                     Debe llenar este cambo.
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="tContrasena" class="form-label">Contraseña</label>
-                                            <asp:TextBox type="password" class="form-control" ID="tContrasena" runat="server" required="true"></asp:TextBox>
-                                            <div class="invalid-feedback">
-                                                Debe llenar este cambo.
                                             </div>
                                         </div>
 
@@ -152,6 +145,7 @@
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Foot" runat="server">
+    <script src="<%= ResolveClientUrl("~/js/Administrador/Usuarios/jsUsuarios.js?1") %>"></script>
     <script>
         (function () {
             'use strict'
