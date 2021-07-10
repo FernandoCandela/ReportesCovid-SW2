@@ -7,74 +7,45 @@ using System.Data.SqlClient;
 
 namespace DAO
 {
-    public class DaoPaciente : DaoB
+    public class DaoOrganizacion : DaoB
     {
-        public DtoPaciente Usp_Paciente_Insert(DtoB dtoBase)
+        public DaoOrganizacion Usp_Organizacion_Insert(DtoB dtoBase)
         {
-            DtoPaciente dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[11];
+            DtoOrganizacion dto = (DtoOrganizacion)dtoBase;
+            SqlParameter[] pr = new SqlParameter[5];
             try
             {
-                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
+                pr[0] = new SqlParameter("@IdOrganizacion", SqlDbType.Int)
                 {
                     Direction = ParameterDirection.Output
                 };
-                pr[1] = new SqlParameter("@Nombres", SqlDbType.VarChar, 100)
+                pr[1] = new SqlParameter("@NombreOrganizacion", SqlDbType.VarChar, 200)
                 {
-                    Value = (V_ValidaPrNull(dto.Nombres))
+                    Value = (V_ValidaPrNull(dto.NombreOrganizacion))
                 };
-                pr[2] = new SqlParameter("@Apellidos", SqlDbType.VarChar, 100)
+                pr[2] = new SqlParameter("@Departamento", SqlDbType.VarChar, 100)
                 {
-                    Value = (V_ValidaPrNull(dto.Apellidos))
+                    Value = (V_ValidaPrNull(dto.Departamento))
                 };
-                pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                pr[3] = new SqlParameter("@Distrito", SqlDbType.VarChar, 100)
                 {
-                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
+                    Value = (V_ValidaPrNull(dto.Distrito))
                 };
-                pr[4] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                pr[4] = new SqlParameter("@Capacidad", SqlDbType.Int)
                 {
-                    Value = (V_ValidaPrNull(dto.Numdoc))
+                    Value = (V_ValidaPrNull(dto.Capacidad))
                 };
-                pr[5] = new SqlParameter("@IN_TipoSeguro", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.IN_TipoSeguro))
-                };
-                pr[6] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
-                };
-                pr[7] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
+                pr[5] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
                 };
-                pr[8] = new SqlParameter("@Credencial", SqlDbType.VarChar)
-                {
-                    Value = (V_ValidaPrNull(dto.Credencial))
-                };
-                pr[9] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.OrganizacionId))
-                };
-                pr[10] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
-                {
-                    Direction = ParameterDirection.Output
-                };
-                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Insert", pr);
-                if (pr[0].Value != DBNull.Value)
-                {
-                    dto.IdPaciente = Convert.ToInt32(pr[0].Value);
-                }
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[9].Value)))
-                {
-                    dto.ErrorMsj = Convert.ToString(pr[9].Value);
-                    dto.LugarError = "Usp_Paciente_Insert";
-                }
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Organizacion_Insert", pr);
             }
             catch (Exception ex)
             {
                 dto.LugarError = ex.StackTrace;
                 dto.ErrorEx = ex.Message;
-                dto.ErrorMsj = "Error al insertar Paciente";
+                dto.ErrorMsj = "Error al insertar Organizacion";
             }
             ObjCn.Close();
             return dto;
@@ -244,6 +215,5 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-
     }
 }

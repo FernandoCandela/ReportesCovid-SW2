@@ -48,6 +48,7 @@
     <Compile Include="AuxClasses\SQLHelper.cs" />
     <Compile Include="DaoContacto.cs" />
     <Compile Include="DaoMensajes.cs" />
+    <Compile Include="DaoOrganizacion.cs" />
     <Compile Include="DaoPaciente.cs" />
     <Compile Include="DaoPacienteHistorial.cs" />
     <Compile Include="DaoTablaVarios.cs" />

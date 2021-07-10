@@ -45,6 +45,7 @@
     <Compile Include="AuxClasses\DtoB.cs" />
     <Compile Include="DtoContacto.cs" />
     <Compile Include="DtoMensajes.cs" />
+    <Compile Include="DtoOrganizacion.cs" />
     <Compile Include="DtoPacienteHistorial.cs" />
     <Compile Include="DtoTablaVarios.cs" />
     <Compile Include="DtoUsuario.cs" />
