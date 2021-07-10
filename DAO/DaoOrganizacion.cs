@@ -151,42 +151,35 @@ namespace DAO
             ObjCn.Close();
             return cr;
         }
-        public DtoPaciente Usp_Paciente_SelectOne(DtoB dtoBase)
+        public DtoOrganizacion Usp_Organizacion_SelectOne(DtoB dtoBase)
         {
-            DtoPaciente dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[1];
+            DtoOrganizacion dto = (DtoOrganizacion)dtoBase;
+            SqlParameter[] pr = new SqlParameter[0];
 
             try
             {
-                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
+                pr[0] = new SqlParameter("@IdOrganizacion", SqlDbType.Int)
                 {
-                    Value = (dto.IdPaciente)
+                    Value = (dto.IdOrganizacion)
                 };
 
-                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_SelectOne", pr);
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Organizacion_SelectOne", pr);
 
                 //cr.List = new List<DtoB>();
                 if (reader.Read())
                 {
-                    dto = new DtoPaciente
+                    dto = new DtoOrganizacion
                     {
-                        IdPaciente = GetValue("IdPaciente", reader).ValueInt32,
-                        Nombres = GetValue("Nombres", reader).ValueString,
-                        Apellidos = GetValue("Apellidos", reader).ValueString,
-                        IN_Tipodoc = GetValue("IN_Tipodoc", reader).ValueInt32,
-                        Numdoc = GetValue("Numdoc", reader).ValueString,
-                        IN_TipoSeguro = GetValue("IN_TipoSeguro", reader).ValueInt32,
-                        IN_EstadoPaciente = GetValue("IN_EstadoPaciente", reader).ValueInt32,
+                        IdOrganizacion = GetValue("IdPaciente", reader).ValueInt32,
+                        NombreOrganizacion = GetValue("NombreOrganizacion", reader).ValueString,
+                        Departamento = GetValue("Departamento", reader).ValueString,
+                        Distrito = GetValue("Distrito", reader).ValueString,
+                        Capacidad = GetValue("Capacidad", reader).ValueInt32,
                         UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
                         FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
                         UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
-                        Credencial = GetValue("Credencial", reader).ValueString,
-                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
-                        NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
-                        NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
-                        NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
                     };
                 }
                 reader.Close();
@@ -195,7 +188,7 @@ namespace DAO
             {
                 dto.LugarError = ex.StackTrace;
                 dto.ErrorEx = ex.Message;
-                dto.ErrorMsj = "Error en Usp_Paciente_SelectOne";
+                dto.ErrorMsj = "Error en Usp_Organizacion_SelectOne";
             }
             ObjCn.Close();
             return dto;
