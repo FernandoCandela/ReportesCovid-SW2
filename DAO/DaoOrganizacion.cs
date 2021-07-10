@@ -9,7 +9,7 @@ namespace DAO
 {
     public class DaoOrganizacion : DaoB
     {
-        public DaoOrganizacion Usp_Organizacion_Insert(DtoB dtoBase)
+        public DtoOrganizacion Usp_Organizacion_Insert(DtoB dtoBase)
         {
             DtoOrganizacion dto = (DtoOrganizacion)dtoBase;
             SqlParameter[] pr = new SqlParameter[5];

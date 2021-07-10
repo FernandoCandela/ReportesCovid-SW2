@@ -61,12 +61,14 @@ namespace ReportesCovid_web.Pages.Enfermera
         {
             try
             {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
                 List<DtoPaciente> ListPacientes = new List<DtoPaciente>();
                 ClassResultV cr = new CtrPaciente().Usp_Paciente_Select(new DtoPaciente
                 {
                     IB_Estado = true,
                     IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
-                    Criterio = txtBuscar.Text.Trim()
+                    Criterio = txtBuscar.Text.Trim(),
+                    OrganizacionId = user.OrganizacionId
                 }
                 );
                 //lblResultados.Text = "Resultados encontrados: " + cr.List.Count;

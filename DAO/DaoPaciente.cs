@@ -64,9 +64,9 @@ namespace DAO
                 {
                     dto.IdPaciente = Convert.ToInt32(pr[0].Value);
                 }
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[9].Value)))
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[10].Value)))
                 {
-                    dto.ErrorMsj = Convert.ToString(pr[9].Value);
+                    dto.ErrorMsj = Convert.ToString(pr[10].Value);
                     dto.LugarError = "Usp_Paciente_Insert";
                 }
             }
@@ -83,7 +83,7 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[3];
+            SqlParameter[] pr = new SqlParameter[4];
             try
             {
                 pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
@@ -97,6 +97,10 @@ namespace DAO
                 pr[2] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
                 {
                     Value = (dto.IB_Estado)
+                };
+                pr[3] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (dto.OrganizacionId)
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Select", pr);
