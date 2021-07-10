@@ -45,6 +45,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="/IngresarCredencial">Ingresar Credencial</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recuperar</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/RecuperarContraseña">Recuperar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="/RecuperarCredencial">Recuperar Credencial</a></li>
+                        </ul>
+                    </li>
+
                     <%--                    <li class="nav-item">
                         <a class="nav-link active" href="/" tabindex="-1">Conocenos</a>
                     </li>

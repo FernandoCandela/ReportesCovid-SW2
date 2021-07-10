@@ -536,9 +536,12 @@
     <Content Include="Pages\Administrador\Varios\EditarVarios.aspx" />
     <Content Include="Pages\Administrador\Varios\ListaVarios.aspx" />
     <Content Include="Pages\Administrador\Varios\NuevoVarios.aspx" />
+    <Content Include="Pages\Contacto\Mensajes\ListaMensajes.aspx" />
+    <Content Include="Pages\Contacto\Mensajes\NuevoMensaje.aspx" />
     <Content Include="Pages\Contacto\MenuContacto.aspx" />
     <Content Include="Pages\Contacto\Reportes\ListaReportes.aspx" />
     <Content Include="Pages\Contacto\Reportes\VerReporte.aspx" />
+    <Content Include="Pages\Contacto\RecuperarCredencial.aspx" />
     <Content Include="Pages\Contacto\V1\EnviarMensaje.aspx" />
     <Content Include="Pages\Contacto\test.aspx" />
     <Content Include="Pages\Enfermera\ListaPacientes.aspx" />
@@ -564,6 +567,7 @@
     <Content Include="Pages\Medico\ListaPacientes.aspx" />
     <Content Include="Pages\Medico\V1\MenuMedico.aspx" />
     <Content Include="Pages\Medico\VerReporte.aspx" />
+    <Content Include="Pages\RecuperarContraseña.aspx" />
     <Content Include="PlantillaEmail\htmlCredencial.html" />
     <Content Include="PlantillaEmail\htmlUsuario.html" />
     <Content Include="PlantillaEmail\Nuevo_Mensaje.html" />
@@ -717,6 +721,20 @@
     <Compile Include="Pages\Administrador\Varios\NuevoVarios.aspx.designer.cs">
       <DependentUpon>NuevoVarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Contacto\Mensajes\ListaMensajes.aspx.cs">
+      <DependentUpon>ListaMensajes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\Mensajes\ListaMensajes.aspx.designer.cs">
+      <DependentUpon>ListaMensajes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\Mensajes\NuevoMensaje.aspx.cs">
+      <DependentUpon>NuevoMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\Mensajes\NuevoMensaje.aspx.designer.cs">
+      <DependentUpon>NuevoMensaje.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Contacto\MenuContacto.aspx.cs">
       <DependentUpon>MenuContacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -737,6 +755,13 @@
     </Compile>
     <Compile Include="Pages\Contacto\Reportes\VerReporte.aspx.designer.cs">
       <DependentUpon>VerReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.cs">
+      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\RecuperarCredencial.aspx.designer.cs">
+      <DependentUpon>RecuperarCredencial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contacto\V1\EnviarMensaje.aspx.cs">
       <DependentUpon>EnviarMensaje.aspx</DependentUpon>
@@ -913,6 +938,13 @@
     <Compile Include="Pages\Medico\VerReporte.aspx.designer.cs">
       <DependentUpon>VerReporte.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RecuperarContraseña.aspx.cs">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RecuperarContraseña.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -954,9 +986,7 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Contacto\Mensajes\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
