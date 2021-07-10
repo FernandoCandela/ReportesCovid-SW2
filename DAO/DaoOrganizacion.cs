@@ -100,61 +100,53 @@ namespace DAO
             ObjCn.Close();
             return cr;
         }
-        public ClassResultV Usp_Paciente_Update_ByIdPaciente(DtoB dtoBase)
+        public ClassResultV Usp_Organizacion_Update_ByIdOrganizacion(DtoB dtoBase)
         {
-            DtoPaciente dto = (DtoPaciente)dtoBase;
+            DtoOrganizacion dto = (DtoOrganizacion)dtoBase;
             ClassResultV cr = new ClassResultV();
-            SqlParameter[] pr = new SqlParameter[9];
+            SqlParameter[] pr = new SqlParameter[6];
             try
             {
-                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
+                pr[0] = new SqlParameter("@IdOrganizacion", SqlDbType.Int)
                 {
-                    Value = (dto.IdPaciente)
+                    Value = (dto.IdOrganizacion)
                 };
-                pr[1] = new SqlParameter("@Nombres", SqlDbType.VarChar, 100)
+                pr[1] = new SqlParameter("@NombreOrganizacion", SqlDbType.VarChar, 200)
                 {
-                    Value = (V_ValidaPrNull(dto.Nombres))
+                    Value = (V_ValidaPrNull(dto.NombreOrganizacion))
                 };
-                pr[2] = new SqlParameter("@Apellidos", SqlDbType.VarChar, 100)
+                pr[2] = new SqlParameter("@Departamento", SqlDbType.VarChar, 100)
                 {
-                    Value = (V_ValidaPrNull(dto.Apellidos))
+                    Value = (V_ValidaPrNull(dto.Departamento))
                 };
-                pr[3] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                pr[3] = new SqlParameter("@Distrito", SqlDbType.VarChar, 100)
                 {
-                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
+                    Value = (V_ValidaPrNull(dto.Distrito))
                 };
-                pr[4] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                pr[4] = new SqlParameter("@Capacidad", SqlDbType.Int)
                 {
-                    Value = (V_ValidaPrNull(dto.Numdoc))
+                    Value = (V_ValidaPrNull(dto.Capacidad))
                 };
-                pr[5] = new SqlParameter("@IN_TipoSeguro", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.IN_TipoSeguro))
-                };
-                pr[6] = new SqlParameter("@IN_EstadoPaciente", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.IN_EstadoPaciente))
-                };
-                pr[7] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                pr[5] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
                 };
-                pr[8] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
-                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Update_ByIdPaciente", pr);
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[8].Value)))
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Organizacion_Update_ByIdOrganizacion", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[6].Value)))
                 {
-                    cr.ErrorMsj = Convert.ToString(pr[8].Value);
-                    cr.LugarError = "Usp_Paciente_Update_ByIdPaciente";
+                    cr.ErrorMsj = Convert.ToString(pr[6].Value);
+                    cr.LugarError = "Usp_Organizacion_Update_ByIdOrganizacion";
                 }
             }
             catch (Exception ex)
             {
                 cr.LugarError = ex.StackTrace;
                 cr.ErrorEx = ex.Message;
-                cr.ErrorMsj = "Error al actualizar los datos del paciente";
+                cr.ErrorMsj = "Error al actualizar los datos de la organizacion";
             }
             ObjCn.Close();
             return cr;
