@@ -31,7 +31,7 @@ namespace ReportesCovid_web.Pages.Medico
 
         public void FirstLoad()
         {
-            CargarDatosPaciente();
+            CargarDatosPaciente();  
             CargarDatosMedico();
 
             CargarTipoTraslado();

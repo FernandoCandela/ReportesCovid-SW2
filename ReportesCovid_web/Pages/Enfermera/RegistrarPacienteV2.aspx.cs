@@ -144,7 +144,8 @@ namespace ReportesCovid_web.Pages.Enfermera
                     IN_TipoSeguro = Convert.ToInt32(ddlTipoSeguro.SelectedValue),
                     IN_EstadoPaciente = Convert.ToInt32(ddlEstadoPaciente.SelectedValue),
                     UsuarioCreacionId = user.IdUsuario,
-                    Credencial = guid
+                    Credencial = guid,
+                    OrganizacionId = user.OrganizacionId
 
                 });
                 if (dtoPa.HuboError)

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Essalud - Nuevo" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="RegistrarPacienteV2.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.RegistrarPacienteV2" %>
+﻿<%@ Page Title="Essalud - Nuevo Paciente" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="RegistrarPacienteV2.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.RegistrarPacienteV2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>

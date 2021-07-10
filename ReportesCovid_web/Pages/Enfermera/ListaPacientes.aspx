@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="ListaPacientes.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.ListaPacientes1" %>
+﻿<%@ Page Title="Essalud - Pacientes" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="ListaPacientes.aspx.cs" Inherits="ReportesCovid_web.Pages.Enfermera.ListaPacientes1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContentTitle" runat="server">

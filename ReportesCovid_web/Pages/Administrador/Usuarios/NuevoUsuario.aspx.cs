@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -29,6 +30,7 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
         }
         public void FirstLoad()
         {
+            btnGenerarUsuario.Attributes.Add("OnClick", "return GenerarUsuario('" + txtPrimerNombre.ClientID + "','" + txtSegundoNombre.ClientID + "','" + txtApellidoPaterno.ClientID + "','" + txtApellidoMaterno.ClientID + "','" + tUsuario.ClientID + "')");
             CargarTipoDocumento();
             CargarRol();
             CargarCargos();
@@ -123,17 +125,16 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
             try
             {
                 DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
-
                 DtoUsuario dtoPa = new CtrUsuario().Usp_Usuario_Insert(new DtoUsuario
                 {
                     Usuario = tUsuario.Text.Trim(),
-                    Contrasena = tContrasena.Text.Trim(),
+                    Contrasena = Membership.GeneratePassword(12, 2),
                     IN_Tipodoc = Convert.ToInt32(ddlTipoDocumento.SelectedValue),
                     Numdoc = txtNumdoc.Text.Trim(),
                     Telefono = txtTelefono.Text.Trim(),
                     IN_Rol = Convert.ToInt32(ddlRol.SelectedValue),
                     IN_Cargo = Convert.ToInt32(ddlCargo.SelectedValue),
-                    OrganizacionId = 1,
+                    OrganizacionId = user.OrganizacionId,
                     UsuarioCreacionId = user.IdUsuario,
                     IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
                     PrimerNombre = txtPrimerNombre.Text.Trim(),

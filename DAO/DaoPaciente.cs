@@ -12,7 +12,7 @@ namespace DAO
         public DtoPaciente Usp_Paciente_Insert(DtoB dtoBase)
         {
             DtoPaciente dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[10];
+            SqlParameter[] pr = new SqlParameter[11];
             try
             {
                 pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
@@ -51,7 +51,11 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.Credencial))
                 };
-                pr[9] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[9] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.OrganizacionId))
+                };
+                pr[10] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
@@ -60,9 +64,9 @@ namespace DAO
                 {
                     dto.IdPaciente = Convert.ToInt32(pr[0].Value);
                 }
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[9].Value)))
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[10].Value)))
                 {
-                    dto.ErrorMsj = Convert.ToString(pr[9].Value);
+                    dto.ErrorMsj = Convert.ToString(pr[10].Value);
                     dto.LugarError = "Usp_Paciente_Insert";
                 }
             }
@@ -79,7 +83,7 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoPaciente)dtoBase;
-            SqlParameter[] pr = new SqlParameter[3];
+            SqlParameter[] pr = new SqlParameter[4];
             try
             {
                 pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
@@ -93,6 +97,10 @@ namespace DAO
                 pr[2] = new SqlParameter("@IB_Estado", SqlDbType.Bit)
                 {
                     Value = (dto.IB_Estado)
+                };
+                pr[3] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (dto.OrganizacionId)
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_Select", pr);
@@ -115,6 +123,7 @@ namespace DAO
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         Credencial = GetValue("Credencial", reader).ValueString,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
                         NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
                         NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
                         NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
@@ -222,6 +231,7 @@ namespace DAO
                         FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
                         IB_Estado = GetValue("IB_Estado", reader).ValueBool,
                         Credencial = GetValue("Credencial", reader).ValueString,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
                         NombreTipodoc = GetValue("NombreTipodoc", reader).ValueString,
                         NombreTipoSeguro = GetValue("NombreTipoSeguro", reader).ValueString,
                         NombreEstadoPaciente = GetValue("NombreEstadoPaciente", reader).ValueString
@@ -238,6 +248,44 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-
+        public ClassResultV Usp_Paciente_ForgotCredential(DtoB dtoBase)
+        {
+            DtoPaciente dto = (DtoPaciente)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[3];
+            try
+            {
+                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
+                {
+                    Value = (dto.IdPaciente)
+                };
+                pr[1] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+                pr[2] = new SqlParameter("@NuevaCredencial", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.Credencial))
+                };
+                pr[3] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_ForgotPassword", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[3].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[3].Value);
+                    cr.LugarError = "Usp_Paciente_ForgotPassword";
+                }
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar la nueva credencial";
+            }
+            ObjCn.Close();
+            return cr;
+        }
     }
 }

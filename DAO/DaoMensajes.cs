@@ -58,7 +58,7 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoMensajes)dtoBase;
-            SqlParameter[] pr = new SqlParameter[3];
+            SqlParameter[] pr = new SqlParameter[4];
             try
             {
                 pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
@@ -72,6 +72,10 @@ namespace DAO
                 pr[2] = new SqlParameter("@IN_TipoMensaje", SqlDbType.Int)
                 {
                     Value = V_ValidaPrNull(dto.IN_TipoMensaje)
+                };
+                pr[3] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = V_ValidaPrNull(dto.OrganizacionId)
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_SelectAll", pr);
@@ -93,6 +97,7 @@ namespace DAO
                         IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
                         IdMensajeRespuesta = GetValue("IdMensajeRespuesta", reader).ValueInt32,
                         IN_TipoMensaje = GetValue("IN_TipoMensaje", reader).ValueInt32,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
                     });
                 }
                 reader.Close();

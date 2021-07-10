@@ -44,7 +44,8 @@ namespace DAO
                         ApellidoMaterno = GetValue("ApellidoMaterno", reader).ValueString,
                         Email = GetValue("Email", reader).ValueString,
                         NombreRol = GetValue("NombreRol", reader).ValueString,
-                        NombreCargo = GetValue("NombreCargo", reader).ValueString
+                        NombreCargo = GetValue("NombreCargo", reader).ValueString,
+                        NombreOrganizacion = GetValue("NombreOrganizacion", reader).ValueString
                     };
                 }
                 reader.Close();
@@ -122,7 +123,7 @@ namespace DAO
         {
             ClassResultV cr = new ClassResultV();
             var dto = (DtoUsuario)dtoBase;
-            SqlParameter[] pr = new SqlParameter[3];
+            SqlParameter[] pr = new SqlParameter[4];
             try
             {
                 pr[0] = new SqlParameter("@Criterio", SqlDbType.VarChar, 300)
@@ -136,6 +137,10 @@ namespace DAO
                 pr[2] = new SqlParameter("@IN_Rol", SqlDbType.Int)
                 {
                     Value = (V_ValidaPrNull(dto.IN_Rol))
+                };
+                pr[3] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.OrganizacionId))
                 };
 
                 SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_SelectAll", pr);
@@ -276,7 +281,6 @@ namespace DAO
             return dto;
         }
 
-
         public ClassResultV Usp_Usuario_Update(DtoB dtoBase)
         {
             DtoUsuario dto = (DtoUsuario)dtoBase;
@@ -360,6 +364,58 @@ namespace DAO
                 cr.LugarError = ex.StackTrace;
                 cr.ErrorEx = ex.Message;
                 cr.ErrorMsj = "Error al actualizar los datos del usuario";
+            }
+            ObjCn.Close();
+            return cr;
+        }
+        public ClassResultV Usp_Usuario_ForgotPassword(DtoB dtoBase)
+        {
+            DtoUsuario dto = (DtoUsuario)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[6];
+            try
+            {
+                
+                pr[0] = new SqlParameter("@Usuario", SqlDbType.VarChar, 100)
+                {
+                    Value = (V_ValidaPrNull(dto.Usuario))
+                };
+                pr[1] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                {
+                    Value = (V_ValidaPrNull(dto.Numdoc))
+                };
+                pr[2] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_Tipodoc))
+                };
+                pr[3] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+                pr[4] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                {
+                    Value = (V_ValidaPrNull(dto.Email))
+                };
+                pr[5] = new SqlParameter("@NuevaContrasena", SqlDbType.VarChar, 200)
+                {
+                    Value = (V_ValidaPrNull(dto.Contrasena))
+                };
+                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_ForgotPassword", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[6].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[6].Value);
+                    cr.LugarError = "Usp_Usuario_ForgotPassword";
+                }
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar la nueva contraseña";
             }
             ObjCn.Close();
             return cr;

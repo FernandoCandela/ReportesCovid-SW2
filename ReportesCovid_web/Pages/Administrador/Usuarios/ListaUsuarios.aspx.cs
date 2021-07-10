@@ -61,13 +61,15 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
         {
             try
             {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
                 List<DtoUsuario> ListUsuarios = new List<DtoUsuario>();
 
                 ClassResultV cr = new CtrUsuario().Usp_Usuario_SelectAll(new DtoUsuario
                 {
                     IB_Estado = Convert.ToBoolean(Convert.ToInt32(ddlEstado.SelectedValue)),
                     IN_Rol = Convert.ToInt32(ddlRol.SelectedValue),
-                    Criterio = txtBuscar.Text.Trim()
+                    Criterio = txtBuscar.Text.Trim(),
+                    OrganizacionId = user.OrganizacionId
                 }
                 );
                 if (!cr.HuboError)
