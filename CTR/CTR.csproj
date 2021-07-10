@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CtrContacto.cs" />
     <Compile Include="CtrMensajes.cs" />
+    <Compile Include="CtrOrganizacion.cs" />
     <Compile Include="CtrPaciente.cs" />
     <Compile Include="CtrPacienteHistoria.cs" />
     <Compile Include="CtrTablaVarios.cs" />
