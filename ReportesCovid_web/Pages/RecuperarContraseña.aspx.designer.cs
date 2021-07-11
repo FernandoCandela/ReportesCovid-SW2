@@ -15,6 +15,15 @@ namespace ReportesCovid_web.Pages
     {
 
         /// <summary>
+        /// Control hdnTipoDoc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnTipoDoc;
+
+        /// <summary>
         /// Control txtUsuario.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace ReportesCovid_web.Pages
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
 
         /// <summary>
-        /// Control ddlTipoDoc.
+        /// Control ddlTipoDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoDoc;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoDocumento;
 
         /// <summary>
         /// Control txtNumDoc.
@@ -42,13 +51,13 @@ namespace ReportesCovid_web.Pages
         protected global::System.Web.UI.WebControls.TextBox txtNumDoc;
 
         /// <summary>
-        /// Control txtCorreoContacto.
+        /// Control txtCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreoContacto;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
 
         /// <summary>
         /// Control btnRestaurar.

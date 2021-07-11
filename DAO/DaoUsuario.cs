@@ -384,26 +384,22 @@ namespace DAO
                 {
                     Value = (V_ValidaPrNull(dto.IN_Tipodoc))
                 };
-                pr[3] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
-                };
-                pr[4] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                pr[3] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
                 {
                     Value = (V_ValidaPrNull(dto.Email))
                 };
-                pr[5] = new SqlParameter("@NuevaContrasena", SqlDbType.VarChar, 200)
+                pr[4] = new SqlParameter("@NuevaContrasena", SqlDbType.VarChar, 200)
                 {
                     Value = (V_ValidaPrNull(dto.Contrasena))
                 };
-                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                pr[5] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
                 {
                     Direction = ParameterDirection.Output
                 };
                 SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Usuario_ForgotPassword", pr);
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[6].Value)))
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[5].Value)))
                 {
-                    cr.ErrorMsj = Convert.ToString(pr[6].Value);
+                    cr.ErrorMsj = Convert.ToString(pr[5].Value);
                     cr.LugarError = "Usp_Usuario_ForgotPassword";
                 }
             }

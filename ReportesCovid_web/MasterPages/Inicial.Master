@@ -21,7 +21,7 @@
     <!--swit alert-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="<%= ResolveClientUrl("~/js/Inicio/jsInicio.js?1") %>"></script>
-
+    <script src="<%= ResolveClientUrl("~/js/General/jsGeneral.js?1") %>"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -65,7 +65,7 @@
     </nav>
     <!-- inicio de menu -->
 
-    <form runat="server">
+    <form runat="server" class="needs-validation" novalidate>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </form>
