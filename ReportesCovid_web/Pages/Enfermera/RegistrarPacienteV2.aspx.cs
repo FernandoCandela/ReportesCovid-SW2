@@ -171,6 +171,7 @@ namespace ReportesCovid_web.Pages.Enfermera
                     else
                     {
                         String HTML = Resource1.htmlCredencial;
+                        HTML = HTML.Replace("{titulo}", "¡Bienvenido!");
                         HTML = HTML.Replace("{credencial}", dtoPa.Credencial);
                         string to = dtoContacto.Email;
                         HelpE.SendMail_Gmail(to.Trim(), "Essalud - Crendencial", HTML);

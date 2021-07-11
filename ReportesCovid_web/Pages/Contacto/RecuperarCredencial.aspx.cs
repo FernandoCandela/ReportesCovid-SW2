@@ -1,5 +1,6 @@
 ﻿using CTR;
 using DTO;
+using ReportesCovid_web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace ReportesCovid_web.Pages.Contacto
 
         public void FirstLoad()
         {
+            ddlTipoDocContacto.Attributes.Add("OnChange", "return changeTipoDoc('" + ddlTipoDocContacto.ClientID + "','" + hdnTipoDoc.ClientID + "')");
+            ddlTipoDocumento.Attributes.Add("OnChange", "return changeTipoDoc('" + ddlTipoDocumento.ClientID + "','" + hdnTipoDoc_Paciente.ClientID + "')");
             CargarTipoDocumento();
         }
 
@@ -56,6 +59,45 @@ namespace ReportesCovid_web.Pages.Contacto
             {
 
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar TipoDocumento." + "', 'error');", true);
+            }
+        }
+
+        protected void btnRestaurar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var guid = Guid.NewGuid().ToString().Replace("-", "");
+                DtoContacto dto = new DtoContacto
+                {
+                    IN_Tipodoc = Convert.ToInt32(hdnTipoDoc.Value),
+                    Numdoc = txtNumDocContacto.Text.Trim(),
+                    Email = txtCorreoContacto.Text.Trim(),
+                    NuevaCredencial = guid,
+                    Numdoc_Paciente = txtNumdoc.Text.Trim(),
+                    IN_Tipodoc_Paciente = Convert.ToInt32(hdnTipoDoc_Paciente.Value),
+
+                };
+                ClassResultV cr = new CtrContacto().Usp_Contacto_ForgotCredential(dto);
+                if (!cr.HuboError)
+                {
+
+                    String HTML = Resource1.htmlCredencial;
+                    HTML = HTML.Replace("{titulo}", "Credencial Actualizada");
+                    HTML = HTML.Replace("{credencial}", dto.NuevaCredencial);
+                    string to = dto.Email;
+                    HelpE.SendMail_Gmail(to.Trim(), "Essalud - Crendencial", HTML);
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Credencial Actualizada", "Se envio un correo con la nueva credencial de acceso", "success", "/IngresarCredencial"), true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error!", cr.ErrorMsj, "error"), true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error!", "Oops, algo salió mal :(", "error"), true);
             }
         }
     }

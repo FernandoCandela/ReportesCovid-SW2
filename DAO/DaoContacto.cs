@@ -217,6 +217,58 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
+
+        public ClassResultV Usp_Contacto_ForgotCredential(DtoB dtoBase)
+        {
+            DtoContacto dto = (DtoContacto)dtoBase;
+            ClassResultV cr = new ClassResultV();
+            SqlParameter[] pr = new SqlParameter[7];
+            try
+            {
+                pr[0] = new SqlParameter("@IN_Tipodoc", SqlDbType.Int)
+                {
+                    Value = V_ValidaPrNull(dto.IN_Tipodoc)
+                };
+                pr[1] = new SqlParameter("@Numdoc", SqlDbType.VarChar, 20)
+                {
+                    Value = V_ValidaPrNull(dto.Numdoc)
+                };
+                pr[2] = new SqlParameter("@Email", SqlDbType.VarChar, 50)
+                {
+                    Value = V_ValidaPrNull(dto.Email)
+                };
+                pr[3] = new SqlParameter("@NuevaCredencial", SqlDbType.VarChar, 100)
+                {
+                    Value = V_ValidaPrNull(dto.NuevaCredencial)
+                };
+                pr[4] = new SqlParameter("@IN_Tipodoc_Paciente", SqlDbType.Int)
+                {
+                    Value = V_ValidaPrNull(dto.IN_Tipodoc_Paciente)
+                };
+                pr[5] = new SqlParameter("@Numdoc_Paciente", SqlDbType.VarChar, 20)
+                {
+                    Value = V_ValidaPrNull(dto.Numdoc_Paciente)
+                };
+                pr[6] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Contacto_ForgotCredential", pr);
+                if (!String.IsNullOrEmpty(Convert.ToString(pr[6].Value)))
+                {
+                    cr.ErrorMsj = Convert.ToString(pr[6].Value);
+                    cr.LugarError = "Usp_Contacto_ForgotCredential";
+                }
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar la nueva credencial";
+            }
+            ObjCn.Close();
+            return cr;
+        }
     }
 
 }

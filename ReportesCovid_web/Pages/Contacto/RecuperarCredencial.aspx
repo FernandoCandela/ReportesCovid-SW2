@@ -1,13 +1,9 @@
 ﻿<%@ Page Title="Restaurar" Language="C#" MasterPageFile="~/MasterPages/Inicial.Master" AutoEventWireup="true" CodeBehind="RecuperarCredencial.aspx.cs" Inherits="ReportesCovid_web.Pages.Contacto.RestaurarCredencial" %>
 
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="PageContentTitle" runat="server">
-</asp:Content>--%>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <asp:HiddenField runat="server" ClientIDMode="Static" ID="hdnTipoDoc" />
+    <asp:HiddenField runat="server" ClientIDMode="Static" ID="hdnTipoDoc_Paciente" />
+
     <div class="app-content content m-lg-5">
         <h1 class="text-center">Restaurar Credencial</h1>
         <div class="content-overlay m-4"></div>
@@ -21,6 +17,7 @@
                         <div class="card-body">
 
                             <div class="tab-content" id="contentTab">
+
                                 <div class="active fade show" id="paciente" aria-labelledby="paciente-tab">
                                     <div class="row g-3 my-4">
 
@@ -40,13 +37,10 @@
                                                 Debe llenar este cambo.
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
 
-                                <hr style="height:2px; border-width:0; color:red; background-color:gray"/>
+                                <hr style="height: 2px; border-width: 0; color: red; background-color: gray" />
 
                                 <div class="ade show" id="contacto" aria-labelledby="contacto-tab">
                                     <div class="row g-3 my-4">
@@ -84,12 +78,8 @@
 
                                 </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-
-                                    <%--<asp:Button runat="server" ID="btnRegistrarPaciente" CssClass="btn btn-primary glow" Text="Registrar Paciente" OnClick="btnRegistrarPaciente_Click"></asp:Button>--%>
-                                    <asp:Button runat="server" ID="btnRestaurar" CssClass="btn btn-primary glow" Text="Restaurar" ></asp:Button>
+                                    <asp:Button runat="server" ID="btnRestaurar" CssClass="btn btn-primary glow" Text="Restaurar" OnClick="btnRestaurar_Click"></asp:Button>
                                 </div>
-
-                                <%-- FALTA FUNCIONAMIENTO DE BOTON --%>
 
                             </div>
                         </div>
@@ -100,9 +90,8 @@
             </div>
         </div>
     </div>
-</asp:Content>
 
-<%--<asp:Content ID="Content4" ContentPlaceHolderID="Foot" runat="server">
+
     <script>
         (function () {
             'use strict'
@@ -129,6 +118,9 @@
                 $(this).tab('show');
             });
         })
-
+        var changeTipoDoc = function (ddl, hdn) {
+            $("#" + hdn).val($("#" + ddl).val());
+            return false;
+        }
     </script>
-</asp:Content>--%>
+</asp:Content>

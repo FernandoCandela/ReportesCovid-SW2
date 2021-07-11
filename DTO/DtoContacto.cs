@@ -22,6 +22,9 @@ namespace DTO
         public DateTime FechaModificacion { get; set; }
         public bool IB_Estado { get; set; }
         public int PacienteId { get; set; }
-
+        //datos Extra
+        public string NuevaCredencial { get; set; }
+        public int IN_Tipodoc_Paciente { get; set; }
+        public string Numdoc_Paciente { get; set; }
     }
 }

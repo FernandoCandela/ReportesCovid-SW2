@@ -248,44 +248,6 @@ namespace DAO
             ObjCn.Close();
             return dto;
         }
-        public ClassResultV Usp_Paciente_ForgotCredential(DtoB dtoBase)
-        {
-            DtoPaciente dto = (DtoPaciente)dtoBase;
-            ClassResultV cr = new ClassResultV();
-            SqlParameter[] pr = new SqlParameter[3];
-            try
-            {
-                pr[0] = new SqlParameter("@IdPaciente", SqlDbType.Int)
-                {
-                    Value = (dto.IdPaciente)
-                };
-                pr[1] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
-                {
-                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
-                };
-                pr[2] = new SqlParameter("@NuevaCredencial", SqlDbType.VarChar, 100)
-                {
-                    Value = (V_ValidaPrNull(dto.Credencial))
-                };
-                pr[3] = new SqlParameter("@msj", SqlDbType.VarChar, 100)
-                {
-                    Direction = ParameterDirection.Output
-                };
-                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Paciente_ForgotPassword", pr);
-                if (!String.IsNullOrEmpty(Convert.ToString(pr[3].Value)))
-                {
-                    cr.ErrorMsj = Convert.ToString(pr[3].Value);
-                    cr.LugarError = "Usp_Paciente_ForgotPassword";
-                }
-            }
-            catch (Exception ex)
-            {
-                cr.LugarError = ex.StackTrace;
-                cr.ErrorEx = ex.Message;
-                cr.ErrorMsj = "Error al actualizar la nueva credencial";
-            }
-            ObjCn.Close();
-            return cr;
-        }
+
     }
 }

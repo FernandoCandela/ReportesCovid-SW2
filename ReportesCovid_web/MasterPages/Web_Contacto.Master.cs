@@ -13,15 +13,15 @@ namespace ReportesCovid_web.MasterPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //DtoPaciente userPaciente = (DtoPaciente)Session["PacienteContacto"];
-            //if (userPaciente != null)
-            //{
-            //    FirstLoad();
-            //}
-            //else
-            //{
-            //    Response.Redirect("/logOutContacto");
-            //}
+            DtoPaciente userPaciente = (DtoPaciente)Session["PacienteContacto"];
+            if (userPaciente != null)
+            {
+                FirstLoad();
+            }
+            else
+            {
+                Response.Redirect("/logOutContacto");
+            }
         }
         public void FirstLoad()
         {
