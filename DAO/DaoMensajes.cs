@@ -9,51 +9,47 @@ namespace DAO
 {
     public class DaoMensajes : DaoB
     {
-        //public DtoMensajes Usp_Mensajes_Insert(DtoB dtoBase)
-        //{
-        //    DtoMensajes dto = (DtoMensajes)dtoBase;
-        //    SqlParameter[] pr = new SqlParameter[7];
-        //    try
-        //    {
-        //        pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
-        //        {
-        //            Direction = ParameterDirection.Output
-        //        };
-        //        pr[1] = new SqlParameter("@NombreCompleto", SqlDbType.VarChar, 100)
-        //        {
-        //            Value = (V_ValidaPrNull(dto.NombreCompleto))
-        //        };
-        //        pr[2] = new SqlParameter("@Email", SqlDbType.VarChar, 100)
-        //        {
-        //            Value = (V_ValidaPrNull(dto.Email))
-        //        };
-        //        pr[3] = new SqlParameter("@Asunto", SqlDbType.VarChar, 500)
-        //        {
-        //            Value = (V_ValidaPrNull(dto.Asunto))
-        //        };
-        //        pr[4] = new SqlParameter("@Mensaje", SqlDbType.VarChar, 500)
-        //        {
-        //            Value = (V_ValidaPrNull(dto.Mensaje))
-        //        };
-        //        pr[5] = new SqlParameter("@UsuarioCreacionId", SqlDbType.Int)
-        //        {
-        //            Value = (V_ValidaPrNull(dto.UsuarioCreacionId))
-        //        };
-        //        pr[5] = new SqlParameter("@IN_TipoMensaje", SqlDbType.Int)
-        //        {
-        //            Value = (V_ValidaPrNull(dto.IN_TipoMensaje))
-        //        };
-        //        SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_Insert", pr);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        dto.LugarError = ex.StackTrace;
-        //        dto.ErrorEx = ex.Message;
-        //        dto.ErrorMsj = "Error al crear mensaje";
-        //    }
-        //    ObjCn.Close();
-        //    return dto;
-        //}
+        public DtoMensajes Usp_Mensajes_Insert(DtoB dtoBase)
+        {
+            DtoMensajes dto = (DtoMensajes)dtoBase;
+            SqlParameter[] pr = new SqlParameter[6];
+            try
+            {
+                pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                pr[1] = new SqlParameter("@ContactoId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.ContactoId))
+                };
+                pr[2] = new SqlParameter("@Asunto", SqlDbType.VarChar, 500)
+                {
+                    Value = (V_ValidaPrNull(dto.Asunto))
+                };
+                pr[3] = new SqlParameter("@Mensaje", SqlDbType.VarChar, 3000)
+                {
+                    Value = (V_ValidaPrNull(dto.Mensaje))
+                };
+                pr[4] = new SqlParameter("@IN_TipoMensaje", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.IN_TipoMensaje))
+                };
+                pr[5] = new SqlParameter("@OrganizacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.OrganizacionId))
+                };
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_Insert", pr);
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error al crear mensaje";
+            }
+            ObjCn.Close();
+            return dto;
+        }
         public ClassResultV Usp_Mensajes_SelectAll(DtoB dtoBase)
         {
             ClassResultV cr = new ClassResultV();
