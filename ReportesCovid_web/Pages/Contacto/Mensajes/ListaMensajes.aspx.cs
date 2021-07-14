@@ -21,6 +21,7 @@ namespace ReportesCovid_web.Pages.Contacto
 
         public void FirstLoad()
         {
+            Session.Remove("idMensaje");
             CargarTiposMensajes();
             CargarMensajes();
         }
@@ -112,7 +113,8 @@ namespace ReportesCovid_web.Pages.Contacto
             switch (e.CommandName)
             {
                 case "VerMensaje":
-                    Response.Redirect("/contacto/mensaje/vermensaje?idMensaje=" + idMensaje);
+                    Session["idMensaje"] = idMensaje;
+                    Response.Redirect("/contacto/mensaje/vermensaje");
                     break;
             }
         }

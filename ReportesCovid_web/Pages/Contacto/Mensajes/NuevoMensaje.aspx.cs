@@ -22,7 +22,6 @@ namespace ReportesCovid_web.Pages.Contacto.Mensajes
         public void FirstLoad()
         {
             CargarTiposMensajes();
-            //CargarMensajes();
         }
         private void CargarTiposMensajes()
         {

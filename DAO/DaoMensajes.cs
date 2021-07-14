@@ -164,48 +164,48 @@ namespace DAO
             ObjCn.Close();
             return cr;
         }
-        //public DtoMensajes Usp_Mensajes_SelectOne(DtoB dtoBase)
-        //{
-        //    DtoMensajes dto = (DtoMensajes)dtoBase;
-        //    SqlParameter[] pr = new SqlParameter[1];
+        public DtoMensajes Usp_Mensajes_SelectOne(DtoB dtoBase)
+        {
+            DtoMensajes dto = (DtoMensajes)dtoBase;
+            SqlParameter[] pr = new SqlParameter[1];
 
-        //    try
-        //    {
-        //        pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
-        //        {
-        //            Value = (dto.IdMensaje)
-        //        };
+            try
+            {
+                pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
+                {
+                    Value = (dto.IdMensaje)
+                };
 
-        //        SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_SelectOne", pr);
+                SqlDataReader reader = SqlHelper.ExecuteReader(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_SelectOne", pr);
 
-        //        if (reader.Read())
-        //        {
-        //            dto = new DtoMensajes
-        //            {
-        //                IdMensaje = GetValue("IdMensaje", reader).ValueInt32,
-        //                NombreCompleto = GetValue("NombreCompleto", reader).ValueString,
-        //                Email = GetValue("Email", reader).ValueString,
-        //                Asunto = GetValue("Asunto", reader).ValueString,
-        //                Mensaje = GetValue("Mensaje", reader).ValueString,
-        //                UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
-        //                FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
-        //                UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
-        //                FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
-        //                IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
-        //                IdMensajeRespuesta = GetValue("IdMensajeRespuesta", reader).ValueInt32,
-        //                IN_TipoMensaje = GetValue("IN_TipoMensaje", reader).ValueInt32,
-        //            };
-        //        }
-        //        reader.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        dto.LugarError = ex.StackTrace;
-        //        dto.ErrorEx = ex.Message;
-        //        dto.ErrorMsj = "Error en Usp_Mensajes_SelectOne";
-        //    }
-        //    ObjCn.Close();
-        //    return dto;
-        //}
+                if (reader.Read())
+                {
+                    dto = new DtoMensajes
+                    {
+                        IdMensaje = GetValue("IdMensaje", reader).ValueInt32,
+                        ContactoId = GetValue("ContactoId", reader).ValueInt32,
+                        Asunto = GetValue("Asunto", reader).ValueString,
+                        Mensaje = GetValue("Mensaje", reader).ValueString,
+                        UsuarioCreacionId = GetValue("UsuarioCreacionId", reader).ValueInt32,
+                        FechaCreacion = GetValue("FechaCreacion", reader).ValueDateTime,
+                        UsuarioModificacionId = GetValue("UsuarioModificacionId", reader).ValueInt32,
+                        FechaModificacion = GetValue("FechaModificacion", reader).ValueDateTime,
+                        IB_Respondido = GetValue("IB_Respondido", reader).ValueBool,
+                        Respuesta = GetValue("Respuesta", reader).ValueString,
+                        IN_TipoMensaje = GetValue("IN_TipoMensaje", reader).ValueInt32,
+                        OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                dto.LugarError = ex.StackTrace;
+                dto.ErrorEx = ex.Message;
+                dto.ErrorMsj = "Error en Usp_Mensajes_SelectOne";
+            }
+            ObjCn.Close();
+            return dto;
+        }
     }
 }
