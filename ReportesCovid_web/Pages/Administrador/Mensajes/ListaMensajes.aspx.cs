@@ -52,7 +52,7 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
             }
             catch (Exception ex)
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Estados del Paciente." + "', 'error');", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar los tipos de mensajes." + "', 'error');", true);
             }
         }
 

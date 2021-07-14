@@ -31,6 +31,7 @@ namespace ReportesCovid_web.MasterPages
             {
                 PacienteId = userPaciente.IdPaciente
             });
+            Session["ContactoSession"] = dtoC;
             if (!dtoC.HuboError)
             {
                 lbUserName.Text = dtoC.NombreCompleto;

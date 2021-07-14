@@ -34,24 +34,24 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
 
         private void LlenarDetalle()
         {
-            try
-            {
-                DtoMensajes dto = new CtrMensajes().Usp_Mensajes_SelectOne(new DtoMensajes
-                {
-                    IdMensaje = Convert.ToInt32(Request.QueryString["IdMensaje"])
-                });
-                if (!dto.HuboError)
-                {
-                    nombre.Text = dto.NombreCompleto;
-                    correo.Text = dto.Email;
-                    asunto.Text = dto.Asunto;
-                    mensaje.Text = dto.Mensaje;
-                }
-            }
-            catch (Exception)
-            {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo cargar los datos." + "', 'error');", true);
-            }
+            //try
+            //{
+            //    DtoMensajes dto = new CtrMensajes().Usp_Mensajes_SelectOne(new DtoMensajes
+            //    {
+            //        IdMensaje = Convert.ToInt32(Request.QueryString["IdMensaje"])
+            //    });
+            //    if (!dto.HuboError)
+            //    {
+            //        nombre.Text = dto.NombreCompleto;
+            //        correo.Text = dto.Email;
+            //        asunto.Text = dto.Asunto;
+            //        mensaje.Text = dto.Mensaje;
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo cargar los datos." + "', 'error');", true);
+            //}
         }
 
         /*

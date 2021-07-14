@@ -89,7 +89,8 @@ namespace ReportesCovid_web
             routes.MapPageRoute("contacto/reporte/verreporte", "contacto/reporte/verreporte", "~/Pages/Contacto/Reportes/VerReporte.aspx", true);
 
             routes.MapPageRoute("contacto/mensaje/lista", "contacto/mensaje/lista", "~/Pages/Contacto/Mensajes/ListaMensajes.aspx", true);
-
+            routes.MapPageRoute("contacto/mensaje/vermensaje", "contacto/mensaje/vermensaje", "~/Pages/Contacto/Mensajes/VerMensaje.aspx", true);
+            routes.MapPageRoute("contacto/mensaje/nuevo", "contacto/mensaje/nuevo", "~/Pages/Contacto/Mensajes/NuevoMensaje.aspx", true);
             //Medico
 
             routes.MapPageRoute("medico/menu", "medico/menu", "~/Pages/Medico/MenuMedico.aspx", true);

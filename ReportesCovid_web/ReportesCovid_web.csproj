@@ -539,6 +539,7 @@
     <Content Include="Pages\Administrador\Varios\NuevoVarios.aspx" />
     <Content Include="Pages\Contacto\Mensajes\ListaMensajes.aspx" />
     <Content Include="Pages\Contacto\Mensajes\NuevoMensaje.aspx" />
+    <Content Include="Pages\Contacto\Mensajes\VerMensaje.aspx" />
     <Content Include="Pages\Contacto\MenuContacto.aspx" />
     <Content Include="Pages\Contacto\Reportes\ListaReportes.aspx" />
     <Content Include="Pages\Contacto\Reportes\VerReporte.aspx" />
@@ -735,6 +736,13 @@
     </Compile>
     <Compile Include="Pages\Contacto\Mensajes\NuevoMensaje.aspx.designer.cs">
       <DependentUpon>NuevoMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto\Mensajes\VerMensaje.aspx.cs">
+      <DependentUpon>VerMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto\Mensajes\VerMensaje.aspx.designer.cs">
+      <DependentUpon>VerMensaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Contacto\MenuContacto.aspx.cs">
       <DependentUpon>MenuContacto.aspx</DependentUpon>

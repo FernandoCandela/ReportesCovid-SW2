@@ -9,8 +9,7 @@ namespace DTO
     public class DtoMensajes : DtoB
     {
         public int IdMensaje {get; set;}
-        public String NombreCompleto {get; set;}
-        public String Email {get; set;}
+        public int ContactoId {get; set;}
         public String Asunto { get; set; }
         public String Mensaje { get; set; }
         public int UsuarioCreacionId { get; set; }
@@ -18,8 +17,10 @@ namespace DTO
         public int UsuarioModificacionId { get; set; }
         public DateTime FechaModificacion { get; set; }
         public bool IB_Respondido { get; set; }
-        public int IdMensajeRespuesta { get; set; }
+        public string Respuesta { get; set; }
         public int IN_TipoMensaje { get; set; }
         public int OrganizacionId { get; set; }
+        public string NombreTipoMensaje { get; set; }
+        
     }
 }
