@@ -1,12 +1,12 @@
-﻿<%@ Page Title="Essalud - Generar Reporte" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="GenerarReporte.aspx.cs" Inherits="ReportesCovid_web.Pages.Medico.GenerarReporte1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/Web_Usuarios.Master" AutoEventWireup="true" CodeBehind="EditarReporte.aspx.cs" Inherits="ReportesCovid_web.Pages.Medico.EditarReporte" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContentTitle" runat="server">
-    <h3>REPORTE DE PACIENTE</h3>
+    <h3>EDITAR REPORTE DE PACIENTE</h3>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <asp:HiddenField runat="server" ClientIDMode="Static" ID="hdnIdPaciente"    />
     <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="content-wrapper">
@@ -17,25 +17,32 @@
                     <div class="users-list-filter px-1">
                         <div class="container border rounded">
                             <div class="row py-2">
-                                <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="txtNombres" class="form-label">Nombres</label>
+                                <div class="col-12 col-sm-6 mb-2 col-lg-3">
+                                    <label for="txtNombres" class="form-label">Nombres de Paciente</label>
                                     <asp:TextBox type="text" class="form-control" ID="txtNombres" runat="server" ReadOnly="true"></asp:TextBox>
                                 </div>
-                                <div class="col-12 col-sm-6 col-lg-3">
-                                    <label for="tApellidos" class="form-label">Apellidos</label>
+                                <div class="col-12 col-sm-6 mb-2 col-lg-3">
+                                    <label for="tApellidos" class="form-label">Apellidos de Paciente</label>
                                     <asp:TextBox type="text" class="form-control" ID="txtApellidos" runat="server" ReadOnly="true"></asp:TextBox>
                                 </div>
-                                <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="col-12 col-sm-6 mb-2 col-lg-3">
                                     <label for="txtNumdoc" class="form-label">Número de Documento</label>
                                     <asp:TextBox type="text" class="form-control" ID="txtNumdoc" name="tDoc" runat="server" ReadOnly="true"></asp:TextBox>
                                 </div>
+                                <div class="col-12 col-sm-6 mb-2 col-lg-3">
+                                    <label for="txtEstadoPaciente" class="form-label">Estado Paciente</label>
+                                    <asp:TextBox type="text" class="form-control" ID="txtEstadoPaciente" name="tDoc" runat="server" ReadOnly="true"></asp:TextBox>
+                                </div>
+
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <label for="txtDoctor" class="form-label">Medico</label>
                                     <asp:TextBox type="text" class="form-control" ID="txtMedico" runat="server" ReadOnly="true"></asp:TextBox>
                                 </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <label for="txtFechaTraslado" class="form-label">Fecha de Registro</label>
+                                    <asp:TextBox type="text" class="form-control" ID="txtFechaCreacion" runat="server" ReadOnly="true"></asp:TextBox>
+                                </div>
 
-                            </div>
-                            <div class="row mb-2">
                             </div>
                         </div>
                     </div>
@@ -115,7 +122,7 @@
                                             <div class="container">
                                                 <div class="col-sm-12 mb-4">
                                                     <label for="txtFechaTraslado" class="form-label">Fecha de traslado</label>
-                                                    <asp:TextBox type="text" TextMode="Date" class="form-control" ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
+                                                    <asp:TextBox type="date" TextMode="Date" class="form-control" ID="txtFechaTraslado" runat="server" disabled="true"></asp:TextBox>
                                                 </div>
                                                 <div class="col-sm-12 mb-4">
                                                     <label for="ddlTipoTraslado" class="form-label">Tipo Traslado</label>
@@ -133,8 +140,8 @@
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                                            <asp:Button ID="btnRegistrar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Guardar" OnClick="btnRegistrar_Click"></asp:Button>
-                                            <asp:HyperLink ID="btnCancelar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" NavigateUrl="/medico/paciente/lista" Style="margin-left: 5px" runat="server" Text="Cancelar"></asp:HyperLink>
+                                            <asp:Button ID="btnActualizar" CssClass="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Actualizar" OnClick="btnActualizar_Click"></asp:Button>
+                                           <asp:LinkButton ID="btnRegresar" CssClass="btn btn-danger glow mb-1 mb-sm-0 mr-0 mr-sm-1" Style="margin-left: 5px" runat="server" Text="Cancelar" OnClick="btnRegresar_Click"></asp:LinkButton>
                                         </div>
                                     </div>
 

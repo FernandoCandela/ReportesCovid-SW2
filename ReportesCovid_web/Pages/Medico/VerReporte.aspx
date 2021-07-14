@@ -106,7 +106,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-12 mb-4 shadow-sm p-3">
+                                        <div class="col-sm-12 mb-4 shadow-sm p-3 border">
                                             <div class="container">
                                                 <div class="col-sm-12 mb-2">
                                                     <asp:Label runat="server" ID="lblTraslado" CssClass="badge rounded-pill bg-success" Text="No requiere traslado"></asp:Label>

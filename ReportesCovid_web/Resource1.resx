@@ -124,6 +124,9 @@
   <data name="htmlUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>PlantillaEmail\htmlUsuario.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Reporte_Actualizado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PlantillaEmail\Reporte_Actualizado.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="Reporte_Resgistrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>PlantillaEmail\Reporte_Resgistrado.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

@@ -40,7 +40,7 @@
                                 <div class="table-responsive mx-5">
                                     <div class="table table-striped table-sm table-primary">
                                         <asp:GridView runat="server" ID="gvReportes" AutoGenerateColumns="False" AllowPaging="True"
-                                            CssClass="table" PageSize="5" OnRowCommand="gvReportes_RowCommand" onRowDataBound="gvReportes_RowDataBound" OnPageIndexChanging="gvReportes_PageIndexChanging"
+                                            CssClass="table" PageSize="5" OnRowCommand="gvReportes_RowCommand" OnRowDataBound="gvReportes_RowDataBound" OnPageIndexChanging="gvReportes_PageIndexChanging"
                                             EmptyDataText="No se encontraron datos." GridLines="None">
                                             <Columns>
                                                 <asp:TemplateField>
@@ -70,9 +70,18 @@
 
                                                 <asp:TemplateField>
                                                     <HeaderStyle Width="7.5%" />
-                                                    <HeaderTemplate>Ver Reporte</HeaderTemplate>
+                                                    <HeaderTemplate>Opciones</HeaderTemplate>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lnkVerReporte" CommandName="VerReporte" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Ver Reporte </asp:LinkButton></li>                                              
+                                                        <button data-toggle='dropdown' class='btn btn-primary btn-sm dropdown-toggle'>Opciones <span class='caret'></span></button>
+                                                        <ul class='dropdown-menu dropdown-menu-right'>
+                                                            <li>
+                                                                <asp:LinkButton runat="server" ID="lnkVerReporte" CommandName="VerReporte" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-show"></i>Ver Reporte </asp:LinkButton></li>
+
+                                                            <hr id="hrOption" runat="server" Style="display: none"/>
+                                                            <li>
+                                                                <asp:LinkButton runat="server" ID="lnkEditarReporte" Style="display: none" CommandName="Editar" CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'><i class="bx bx-edit-alt"></i>Editar Reporte</asp:LinkButton></li>
+                                                        </ul>
+
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 

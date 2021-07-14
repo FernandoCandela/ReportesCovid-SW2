@@ -1,5 +1,6 @@
 ﻿using CTR;
 using DTO;
+using ReportesCovid_web.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,22 +8,34 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ReportesCovid_web.Pages.Contacto.Reportes
+namespace ReportesCovid_web.Pages.Medico
 {
-    public partial class VerReporte : System.Web.UI.Page
+    public partial class EditarReporte : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                FirstLoad();
-
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                if (user != null && user.IN_Rol == 3)
+                {
+                    FirstLoad();
+                }
+                else
+                {
+                    Response.Redirect("/logOut");
+                }
             }
         }
+
         public void FirstLoad()
         {
             CargarTipoTraslado();
             CargarReporteMedico();
+
+
+            cbTraslado.Attributes.Add("OnChange", "changeTraslado('" + cbTraslado.ClientID + "','" + txtFechaTraslado.ClientID + "','" + ddlTipoTraslado.ClientID + "','" + txtComentario.ClientID + "');");
+            btnActualizar.Attributes.Add("OnClick", "return validarTraslado('" + cbTraslado.ClientID + "','" + txtFechaTraslado.ClientID + "','" + ddlTipoTraslado.ClientID + "','" + txtComentario.ClientID + "');");
         }
         private void CargarTipoTraslado()
         {
@@ -41,7 +54,7 @@ namespace ReportesCovid_web.Pages.Contacto.Reportes
                     ddlTipoTraslado.DataSource = list;
                     ddlTipoTraslado.DataBind();
 
-                    ListItem firstLista = new ListItem(" ", "");
+                    ListItem firstLista = new ListItem("[Seleccionar]", "");
                     firstLista.Attributes.Add("disabled", "disabled");
                     firstLista.Attributes.Add("Selected", "True");
                     ddlTipoTraslado.Items.Insert(0, firstLista);
@@ -52,6 +65,7 @@ namespace ReportesCovid_web.Pages.Contacto.Reportes
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudieron cargar Tipo Traslado." + "', 'error');", true);
             }
         }
+
         private void CargarDatosPaciente(int idPaciente)
         {
             try
@@ -72,13 +86,14 @@ namespace ReportesCovid_web.Pages.Contacto.Reportes
             }
 
         }
+
         private void CargarReporteMedico()
         {
             try
             {
                 DtoPacienteHistorial dtoPH = new CtrPacienteHistoria().Usp_PacienteHistorial_SelectOne(new DtoPacienteHistorial
                 {
-                    IdHistorial = Convert.ToInt32(Session["idHistoria"])
+                    IdHistorial = Convert.ToInt32(Request.QueryString["idHistoria"])
                 });
                 if (!dtoPH.HuboError)
                 {
@@ -94,10 +109,10 @@ namespace ReportesCovid_web.Pages.Contacto.Reportes
                     cbTraslado.Checked = dtoPH.IB_Traslado;
                     if (dtoPH.IB_Traslado)
                     {
-                        lblTraslado.CssClass = "badge rounded-pill bg-danger";
-                        lblTraslado.Text = "Requiere Traslado!";
-
-                        txtFechaTraslado.Text = dtoPH.FechaSolicitudTraslado.ToString("dd/MM/yyyy");
+                        txtFechaTraslado.Attributes.Remove("disabled");
+                        ddlTipoTraslado.Attributes.Remove("disabled");
+                        txtComentario.Attributes.Remove("disabled");
+                        txtFechaTraslado.Text = dtoPH.FechaSolicitudTraslado.ToString("yyyy-MM-dd");
                         ddlTipoTraslado.SelectedValue = dtoPH.IN_TipoTraslado.ToString();
                         txtComentario.Text = dtoPH.DescTraslado;
                     }
@@ -119,10 +134,67 @@ namespace ReportesCovid_web.Pages.Contacto.Reportes
                 ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo cargar el reporte." + "', 'error');", true);
             }
         }
-
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/contacto/reporte/lista");
+            Response.Redirect("/medico/reporte/lista?idPaciente=" + hdnIdPaciente.Value.ToString());
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+
+                DtoPacienteHistorial dtoPH = new DtoPacienteHistorial
+                {
+                    IdHistorial = Convert.ToInt32(Request.QueryString["idHistoria"]),
+                    Temperatura = txtTemperatura.Text.Trim(),
+                    FrecuenciaCardiaca = txtFrecuencia.Text.Trim(),
+                    PresionArterial = txtPresion.Text.Trim(),
+                    Saturacion = txtSaturacion.Text.Trim(),
+                    Pronostico = txtPronostico.Text.Trim(),
+                    Requerimiento = txtRequerimiento.Text.Trim(),
+                    Evolucion = txtEvolucion.Text.Trim(),
+                    IB_Traslado = cbTraslado.Checked,
+                    UsuarioModificacionId = user.IdUsuario
+                };
+                if (cbTraslado.Checked)
+                {
+                    dtoPH.IN_TipoTraslado = Convert.ToInt32(ddlTipoTraslado.SelectedValue);
+                    dtoPH.Evolucion = txtEvolucion.Text.Trim();
+                    dtoPH.DescTraslado = txtComentario.Text.Trim();
+                    dtoPH.FechaSolicitudTraslado = Convert.ToDateTime(txtFechaTraslado.Text);
+                }
+
+                DtoPacienteHistorial dtoPa = new CtrPacienteHistoria().Usp_PacienteHistorial_Update_ByIdHistorial(dtoPH);
+
+                if (!dtoPa.HuboError)
+                {
+                    DtoContacto dtoC = new CtrContacto().Usp_Contacto_SelectOne(new DtoContacto
+                    {
+                        PacienteId = Convert.ToInt32(hdnIdPaciente.Value)
+                    });
+
+                    String HTML = Resource1.Reporte_Actualizado;
+                    HTML = HTML.Replace("{fecha}", DateTime.Now.ToString());
+                    HTML = HTML.Replace("{nomPaciente}", txtNombres.Text + " " + txtApellidos.Text);
+
+                    string to = dtoC.Email;
+                    HelpE.SendMail_Gmail(to, "Essalud - Reporte Actualizado", HTML);
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Reporte Acatualizado", "Se actualizo correctamente el reporte", "success", "/medico/reporte/lista?idPaciente=" + hdnIdPaciente.Value.ToString()), true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Pop", @"Swal.fire('Error!', '" + "No se pudo actualizar el Reporte." + "', 'error');", true);
+            }
         }
     }
 }

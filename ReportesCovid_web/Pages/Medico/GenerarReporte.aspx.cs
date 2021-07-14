@@ -31,7 +31,7 @@ namespace ReportesCovid_web.Pages.Medico
 
         public void FirstLoad()
         {
-            CargarDatosPaciente();  
+            CargarDatosPaciente();
             CargarDatosMedico();
 
             CargarTipoTraslado();
@@ -126,7 +126,7 @@ namespace ReportesCovid_web.Pages.Medico
 
                 DtoPacienteHistorial dtoPa = new CtrPacienteHistoria().Usp_PacienteHistorial_Insert(dtoPH);
 
-                if (dtoPa.HuboError)
+                if (!dtoPa.HuboError)
                 {
                     DtoContacto dtoC = new CtrContacto().Usp_Contacto_SelectOne(new DtoContacto
                     {
@@ -140,12 +140,11 @@ namespace ReportesCovid_web.Pages.Medico
                     string to = dtoC.Email;
                     HelpE.SendMail_Gmail(to, "Essalud - Nuevo Reporte Registrado", HTML);
 
-
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Reporte Registrado", "Se registro correctamente el reporte", "success", "/medico/paciente/lista"), true);
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacionRedirect("Reporte Registrado", "Se registro correctamente el reporte", "success", "/medico/paciente/lista"), true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Pop", HelpE.mensajeConfirmacion("Error", dtoPa.ErrorMsj, "error"), true);
                 }
 
 

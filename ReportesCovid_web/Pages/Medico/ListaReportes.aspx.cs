@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ReportesCovid_web.Pages.Medico
@@ -81,6 +82,9 @@ namespace ReportesCovid_web.Pages.Medico
                 case "VerReporte":
                     Response.Redirect("/medico/reporte/verreporte?idHistoria=" + idHistoria);
                     break;
+                case "Editar":
+                    Response.Redirect("/medico/reporte/editar?idHistoria=" + idHistoria);
+                    break;
             }
         }
 
@@ -109,6 +113,15 @@ namespace ReportesCovid_web.Pages.Medico
                     var dto = (DtoPacienteHistorial)e.Row.DataItem;
                     string msj = "<span class='badge " + (dto.IB_Traslado == true ? "bg-danger" : "bg-success") + "'>" + (dto.IB_Traslado == true ? "SI" : "NO") + "</span>";
                     (e.Row.Cells[3].FindControl("ltlTraslado") as Literal).Text = msj;
+
+                    var fechasolo = dto.FechaCreacion.ToString("dd/MM/yyyy");
+                    var fechaactual = DateTime.Now.Date.ToString("dd/MM/yyyy");
+                    if (fechasolo.Equals(fechaactual))
+                    {
+                        (e.Row.Cells[3].FindControl("lnkEditarReporte") as LinkButton).Attributes.Add("style", "display: block;");
+                        ((HtmlControl)e.Row.Cells[3].FindControl("hrOption")).Attributes.Add("style", "display: block;");
+                    }
+
                 }
                 catch (Exception ex)
                 {

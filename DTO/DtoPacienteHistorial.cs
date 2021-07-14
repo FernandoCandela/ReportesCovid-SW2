@@ -31,5 +31,6 @@ namespace DTO
         //Datos filtro
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        public bool IB_Modificar { get; set; }
     }
 }

@@ -89,7 +89,7 @@ namespace ReportesCovid_web.Pages.Medico
                 });
                 if (!dtoPH.HuboError)
                 {
-                    txtFechaCreacion.Text = dtoPH.FechaCreacion.ToString();
+                    txtFechaCreacion.Text = dtoPH.UsuarioModificacionId == 0 ? dtoPH.FechaCreacion.ToString() : dtoPH.FechaModificacion.ToString();
                     txtTemperatura.Text = dtoPH.Temperatura;
                     txtFrecuencia.Text = dtoPH.FrecuenciaCardiaca;
                     txtPresion.Text = dtoPH.PresionArterial;
@@ -112,7 +112,7 @@ namespace ReportesCovid_web.Pages.Medico
                     CargarDatosPaciente(dtoPH.PacienteId);
                     DtoUsuario dtoUser = new CtrUsuario().Usp_Usuario_SelectOne(new DtoUsuario
                     {
-                        IdUsuario = dtoPH.UsuarioCreacionId
+                        IdUsuario = dtoPH.UsuarioModificacionId == 0 ? dtoPH.UsuarioCreacionId : dtoPH.UsuarioModificacionId
                     });
                     if (!dtoUser.HuboError)
                     {
@@ -129,7 +129,7 @@ namespace ReportesCovid_web.Pages.Medico
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/medico/reporte/lista?idPaciente="+hdnIdPaciente.Value.ToString());
+            Response.Redirect("/medico/reporte/lista?idPaciente=" + hdnIdPaciente.Value.ToString());
         }
     }
 }

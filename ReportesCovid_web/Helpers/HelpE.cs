@@ -21,7 +21,7 @@ namespace ReportesCovid_web.Helpers
             {
                 smtpClient.Connect("smtp.gmail.com", 465, true);
                 //Ingresar Contrasena
-                smtpClient.Authenticate("20171937@aloe.ulima.edu.pe", "");
+                smtpClient.Authenticate("20171937@aloe.ulima.edu.pe", "EPEJXX103");
                 smtpClient.Send(mailMessage);
                 smtpClient.Disconnect(true);
             }

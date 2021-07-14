@@ -113,6 +113,8 @@ namespace ReportesCovid_web.Pages.Administrador.Usuarios
                     firstLista.Attributes.Add("disabled", "disabled");
                     firstLista.Attributes.Add("Selected", "True");
                     ddlCargo.Items.Insert(0, firstLista);
+                    ListItem secondLista = new ListItem("No especifica", "-1");
+                    ddlCargo.Items.Insert(1, secondLista);
                 }
             }
             catch (Exception ex)
