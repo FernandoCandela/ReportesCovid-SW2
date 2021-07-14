@@ -93,7 +93,9 @@ namespace DAO
                         Respuesta = GetValue("Respuesta", reader).ValueString,
                         IN_TipoMensaje = GetValue("IN_TipoMensaje", reader).ValueInt32,
                         OrganizacionId = GetValue("OrganizacionId", reader).ValueInt32,
-                        NombreTipoMensaje = GetValue("NombreTipoMensaje", reader).ValueString,
+                        Email = GetValue("Email", reader).ValueString,
+                        NombreCompleto = GetValue("NombreCompleto", reader).ValueString,
+                        NombreTipoMensaje = GetValue("NombreTipoMensaje", reader).ValueString
                     });
                 }
                 reader.Close();
@@ -206,6 +208,38 @@ namespace DAO
             }
             ObjCn.Close();
             return dto;
+        }
+        public ClassResultV Usp_Mensajes_Update_Respuesta(DtoB dtoBase)
+        {
+            ClassResultV cr = new ClassResultV();
+            DtoMensajes dto = (DtoMensajes)dtoBase;
+            SqlParameter[] pr = new SqlParameter[6];
+            try
+            {
+                pr[0] = new SqlParameter("@IdMensaje", SqlDbType.Int)
+                {
+                    Value = dto.IdMensaje
+                };
+                pr[1] = new SqlParameter("@Respuesta", SqlDbType.VarChar,3000)
+                {
+                    Value = (V_ValidaPrNull(dto.Respuesta))
+                };
+                pr[2] = new SqlParameter("@UsuarioModificacionId", SqlDbType.Int)
+                {
+                    Value = (V_ValidaPrNull(dto.UsuarioModificacionId))
+                };
+              
+                SqlHelper.ExecuteNonQuery(ObjCn, CommandType.StoredProcedure, "Usp_Mensajes_Update_Respuesta", pr);
+
+            }
+            catch (Exception ex)
+            {
+                cr.LugarError = ex.StackTrace;
+                cr.ErrorEx = ex.Message;
+                cr.ErrorMsj = "Error al actualizar la respuesta";
+            }
+            ObjCn.Close();
+            return cr;
         }
     }
 }

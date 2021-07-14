@@ -46,7 +46,6 @@ namespace ReportesCovid_web.MasterPages
                     content.Append("<li class='nav-item'><a href='/administrador/mensaje/lista'><i class='menu-livicon' data-icon='envelope-put'></i><span class='menu-title text-truncate' data-i18n='Mensajes'>Mensajes</span></a>");
                     content.Append("<ul class='menu-content'>");
                     content.Append("<li><a class='d-flex align-items-center' href='/administrador/mensaje/lista'><i class='bx bx-right-arrow-alt'></i><span class='menu-item text-truncate' data-i18n='Lista'>Lista</span></a></li>");
-                    content.Append("<li><a class='d-flex align-items-center' href='/administrador/mensaje/nuevo'><i class='bx bx-right-arrow-alt'></i><span class='menu-item text-truncate' data-i18n='Nuevo'>Nuevo</span></a></li>");
                     content.Append("</ul>");
                     content.Append("</li>");
 

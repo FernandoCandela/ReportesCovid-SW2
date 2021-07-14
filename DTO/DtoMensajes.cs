@@ -21,6 +21,10 @@ namespace DTO
         public int IN_TipoMensaje { get; set; }
         public int OrganizacionId { get; set; }
         public string NombreTipoMensaje { get; set; }
-        
+        public String Email { get; set; }
+        public String NombreCompleto { get; set; }
+
+
+
     }
 }

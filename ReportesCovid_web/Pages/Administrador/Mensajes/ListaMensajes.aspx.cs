@@ -56,13 +56,12 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
             }
         }
 
-
         private void CargarMensajes()
         {
             try
             {
-                List<DtoMensajes> ListMensajes = new List<DtoMensajes>();
                 DtoUsuario user = (DtoUsuario)Session["UsuarioLogin"];
+                List<DtoMensajes> ListaMensajes = new List<DtoMensajes>();
 
                 ClassResultV cr = new CtrMensajes().Usp_Mensajes_SelectAll(new DtoMensajes
                 {
@@ -71,12 +70,11 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
                     IN_TipoMensaje = Convert.ToInt32(ddlTipoMensaje.SelectedValue),
                     OrganizacionId = user.OrganizacionId
 
-                }
-                );
+                });
                 if (!cr.HuboError)
                 {
-                    ListMensajes.AddRange(cr.List.Cast<DtoMensajes>());
-                    gvMensajes.DataSource = ListMensajes;
+                    ListaMensajes.AddRange(cr.List.Cast<DtoMensajes>());
+                    gvMensajes.DataSource = ListaMensajes;
                 }
                 gvMensajes.DataBind();
             }
@@ -96,10 +94,10 @@ namespace ReportesCovid_web.Pages.Administrador.Mensajes
             int rowIndex;
             switch (e.CommandName)
             {
-                case "Editar":
+                case "VerMensaje":
                     rowIndex = int.Parse(e.CommandArgument.ToString());
                     string idMensaje = (gvMensajes.Rows[rowIndex].Cells[0].FindControl("lblIdMensaje") as Label).Text;
-                    Response.Redirect("/administrador/mensaje/respondermensaje?IdMensaje=" + idMensaje);
+                    Response.Redirect("/administrador/mensaje/respondermensaje?idMensaje=" + idMensaje);
                     break;
             }
         }
