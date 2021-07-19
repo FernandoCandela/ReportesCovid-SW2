@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTR", "CTR\CTR.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportesCovid_web", "ReportesCovid_web\ReportesCovid_web.csproj", "{A7D72C8D-1DDF-4AE0-A61A-E043E494D409}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{C077778C-AF67-4F4D-8125-9FFC15A8739B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing-ReporteCovid", "Testing-ReporteCovid\Testing-ReporteCovid.csproj", "{E586FC98-A7BB-4A49-A923-A2377035F418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,10 @@ Global
 		{A7D72C8D-1DDF-4AE0-A61A-E043E494D409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D72C8D-1DDF-4AE0-A61A-E043E494D409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D72C8D-1DDF-4AE0-A61A-E043E494D409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E586FC98-A7BB-4A49-A923-A2377035F418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E586FC98-A7BB-4A49-A923-A2377035F418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E586FC98-A7BB-4A49-A923-A2377035F418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E586FC98-A7BB-4A49-A923-A2377035F418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +61,7 @@ Global
 		{3D36A84B-3B7E-46DD-9875-00A337046D07} = {8240F894-B249-46B1-817F-E23F4C8A9085}
 		{590C564C-B7B5-46A0-ACB8-9E3D67CD0B1B} = {8240F894-B249-46B1-817F-E23F4C8A9085}
 		{A7D72C8D-1DDF-4AE0-A61A-E043E494D409} = {2B924C85-E3E7-4656-B3EC-BB6B9D296EC5}
+		{E586FC98-A7BB-4A49-A923-A2377035F418} = {C077778C-AF67-4F4D-8125-9FFC15A8739B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C4A645E-9F2D-4F5D-864F-DB25CED44EEB}
