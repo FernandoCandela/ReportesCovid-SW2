@@ -9,7 +9,7 @@ namespace DAO
         #region Conexion
         public Conexion()
         {
-            StrCon = ConfigurationManager.ConnectionStrings["DB_ReportesCovid"].ToString();
+            StrCon = "Data Source =reportescovidsw2.database.windows.net; initial catalog=DB_ReportesCovid; User Id=admin1; Password=!administrador123";
         }
         #endregion
     }
